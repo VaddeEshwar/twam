@@ -1,0 +1,130 @@
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+<div class="row" *ngIf="loginType=='OPERATOR'">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                {{subtitle}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="loginType=='STUDENT'">
+    <div class="col-12">
+        {{subtitle}}
+    </div>
+</div>
+<div class="row" *ngIf="loginType=='STUDENT'">
+    <div class="col-lg-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body border-start border-orange text-center">
+                        <p>Project-S will majorly focusses on giving practice questions as far as we can.</p>
+                        <p>This will help the students who are using this application towards learning and practice</p>
+                        <p>This will help the students who are using this application towards learning and practice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body video-div">
+                        <youtube-player [videoId]="videoId" suggestedQuality="small" [height]="height"
+                        [width]="width"> </youtube-player>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <div class="row text-end">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2">
+                <div class="card border-bottom border-orange stu-dsh-card">
+                    <div class="card-body text-center">
+                        <span><i class="fa fa-home big-icon home-gradiant"></i></span>
+                    </div>
+                    <div class="card-footer h6 text-center">
+                        Home
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card border-bottom border-orange stu-dsh-card" (click)="coursesOpen()">
+                    <div class="card-body text-center">
+                        <span><i class="fa fa-graduation-cap big-icon grad-gradiant"></i></span>
+                    </div>
+                    <div class="card-footer h6 text-center">
+                        Courses
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card border-bottom border-orange stu-dsh-card">
+                    <div class="card-body text-center">
+                        <span><i class="fas fa-file-alt big-icon file-gradiant"></i></span>
+                    </div>
+                    <div class="card-footer h6 text-center">
+                        Result
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card border-bottom border-orange stu-dsh-card">
+                    <div class="card-body text-center">
+                        <span><i class="fa fa-exclamation-triangle big-icon error-gradiant"></i> </span>
+                    </div>
+                    <div class="card-footer h6 text-center">
+                        Errors
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card border-bottom border-orange stu-dsh-card">
+                    <div class="card-body text-center">
+                        <span><i class="fas fa-check-square big-icon check-gradiant"></i> </span>
+                    </div>
+                    <div class="card-footer h6 text-center">
+                        Attempted
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>CA-FOUNDATION</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>CA-INTER</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>CA-FINAL</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>IIT</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+

@@ -1,0 +1,68 @@
+// In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
+.table-success{
+    background:#0b89d3;
+    color: #fff;
+}
+.table-primary{
+
+}
+.modal-content {
+    height: 30rem !important;
+}
+.modal-body{
+    overflow-y: auto !important;
+}
+.modal-dialog{
+    max-width: inherit;
+    margin-right: auto;
+    margin-left: auto;
+}
+.modal-footer{
+  position: sticky;
+  bottom: 0;
+  background-color: inherit; /* [1] */
+  z-index: 1055;
+  justify-content: center;
+}
+.modal-dialog .modal-sm {
+    width: 500px !important;
+}
+.modal-dialog .modal-lg {
+    width: 900px !important;
+}
+.modal-dialog .modal-xl {
+    width: 1100px !important;
+}
+.buy-package{
+    padding: 20px;
+    /* border: 1px solid gray; */
+    background: #07c191;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+li.nav-item.buy-package:hover {
+    background: #06a47b !important;
+    color: #fff;
+}
+// .topbar .top-navbar .navbar-nav > .nav-item > .buy-package:hover{
+//     background: #1d7b63;
+//     color: #fff;
+// }
+.badge.badge-pill {
+    padding: 0.2em 0.6em !important;
+    top: 11px !important;
+    right: 11rem !important;
+    border-radius: 50px;
+} 
+@media (min-width: 1024px){
+    .modal-sm {
+        width: 500px !important;
+    }
+    .modal-lg {
+        width: 900px !important;
+    }
+    .modal-xl {
+        width: 1100px !important;
+    }
+}

@@ -1,0 +1,50 @@
+.big-icon{
+    font-size: 3rem;
+    -webkit-text-fill-color: transparent;
+    display: initial;
+}
+.stu-dsh-card{
+    border-radius: 25px;
+    .card-body{
+        border-radius: 25px;
+    }
+    
+}
+.stu-dsh-card:hover{
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    
+    }
+.home-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(32, 204, 147, 0.74)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.grad-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(176, 101, 26, 0.655)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.file-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(40, 74, 186, 0.696)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+   
+}
+.error-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(230, 22, 46, 0.79)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.book-open-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 176, 169, 0.525)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.check-gradiant:before{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 176, 169, 0.525)), to(#333));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
