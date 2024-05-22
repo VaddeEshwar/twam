@@ -17,7 +17,11 @@ import { FullComponent } from './full/full.component';
 import { StarterComponent } from './starter/starter.component';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { HorizontalNavigationComponent } from './shared/horizontal-header/horizontal-navigation.component';
+import { HorizontalSidebarComponent } from './shared/horizontal-sidebar/horizontal-sidebar.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { VerticalNavigationComponent } from './shared/vertical-header/vertical-navigation.component';
+import { VerticalSidebarComponent } from './shared/vertical-sidebar/vertical-sidebar.component';
+import { StudentHorizontalSidebarComponent } from './shared/student-horizontal-sidebar/student-horizontal-sidebar.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -34,6 +38,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // StarterComponent,
     BreadcrumbComponent,
     HorizontalNavigationComponent,
+    HorizontalSidebarComponent,
+    VerticalNavigationComponent,
+    VerticalSidebarComponent,
+    StudentHorizontalSidebarComponent,
   ],
   imports: [
     CommonModule,

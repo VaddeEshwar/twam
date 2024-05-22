@@ -1,0 +1,161 @@
+
+
+
+
+.section-6 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.Offres img {
+    height: 200px;
+}
+
+.section-7 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.list ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    text-align: justify;
+}
+
+.list h3 {
+    color: brown;
+
+}
+
+.list ul li {
+    padding: 6%;
+}
+
+.list-1 h3 {
+    color: brown;
+}
+
+.list-1 {
+    position: relative;
+}
+
+.list-1 input {
+    border-radius: 28px;
+    width: 100%;
+    height: 45px;
+    margin-top: 10%;
+    border: snow;
+}
+
+.list-1 button {
+    position: absolute;
+    height: 46px;
+    width: 35%;
+    left: 65%;
+    top: 19%;
+    background-color: brown;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.cons {
+    display: flex;
+    flex-direction: column;
+    color: brown;
+    margin-top: 4%;
+    gap: 7%;
+}
+
+.section-8 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+
+@media(max-width:757px) {
+
+    .nav-bar {
+        flex-direction: column;
+        margin-bottom: 56%;
+    }
+
+    .sub-1 ul {
+        flex-direction: column;
+        gap: 13px;
+
+}
+
+.section-2{
+    flex-direction: column;
+    gap: 60px;
+
+}
+
+.form input {
+    margin-left: 17%;
+    width: 67%;
+}
+.form i{
+    
+    left: 11rem;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+}
+.section-3{
+  
+    padding: 18% 5%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Team{
+    margin-left: 20%;
+}
+.bg-img{
+    width: 100%;
+}
+
+.bras h3{
+    text-align: center;
+}
+.section-4{
+    grid-template-columns: auto;
+    margin-bottom: 5%;
+    gap: 0%;
+}
+.section-5{
+    grid-template-columns: auto;
+    gap: 1%;
+    margin-bottom: 20%;
+}
+.section-6{
+    flex-direction: column;
+    width: 100%;
+}
+.section-7{
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+}
+
+
+.Offres img{
+    width: 100%;
+}
+
+
+.cons{
+    flex-direction: row;
+}
+.list-1 button{
+    top: 50%;
+}
+}

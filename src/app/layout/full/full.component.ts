@@ -41,11 +41,11 @@ export class FullComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('full component::'+localStorage.getItem('loginType'));
-    this.loginType = localStorage.getItem('loginType')
-    if (this.router.url === '/') {
-      this.router.navigate(['/home']);
-    }
+    // console.log('full component::'+localStorage.getItem('loginType'));
+    // this.loginType = localStorage.getItem('loginType')
+    // if (this.router.url === '/') {
+    //   this.router.navigate(['/home']);
+    // }
     this.defaultSidebar = this.options.sidebartype;
     this.handleSidebar();
   }

@@ -6,7 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
-import { YouTubePlayerModule } from '@angular/youtube-player';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
     imports: [
         CommonModule,
@@ -14,7 +14,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
         NgbAlertModule,
         HomeRoutingModule,
         FeatherModule.pick(allIcons),
-        YouTubePlayerModule
+        CarouselModule.forRoot(),
     ],
     declarations: [
         HomeComponent,
