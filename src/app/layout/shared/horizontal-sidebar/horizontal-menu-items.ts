@@ -22,8 +22,40 @@ export const ROUTES: RouteInfo[] = [
     submenu: [
       
     ],
+  }, 
+  {
+    path: "panties",
+    title: "Home",
+    icon: "mdi mdi-view-dashboard",
+    class: "has-arrow",
+    ddclass: "",
+    extralink: false,
+    submenu: [
+      
+    ],
   },
-  
+  {
+    path: "bras",
+    title: "Home",
+    icon: "mdi mdi-view-dashboard",
+    class: "has-arrow",
+    ddclass: "",
+    extralink: false,
+    submenu: [
+      
+    ],
+  },
+  {
+    path: "essentials",
+    title: "Home",
+    icon: "mdi mdi-view-dashboard",
+    class: "has-arrow",
+    ddclass: "",
+    extralink: false,
+    submenu: [
+      
+    ],
+  },
  
  
 ];

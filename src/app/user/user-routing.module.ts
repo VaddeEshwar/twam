@@ -10,10 +10,10 @@ const routes: Routes = [
   path: '', 
   component: LayoutComponent,
   children: [
+   
     { path: 'home', loadChildren:()=>import( './home/home.module').then(x => x.HomeModule) },
-    { path: 'panties', loadChildren:()=>import( './panties/panties.module').then(x => x.PantiesModule) },
-    { path: 'bras', loadChildren:()=>import( './bras/bras.module').then(x => x.BrasModule) },
-    { path: 'essentials', loadChildren:()=>import( './essentials/essentials.module').then(x => x.EssentialsModule) },
+    
+    
   ],
 },
 
