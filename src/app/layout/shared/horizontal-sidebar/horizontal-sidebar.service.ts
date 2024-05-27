@@ -19,4 +19,7 @@ export class HorizontalSidebarService {
 
     constructor() {
     }
+    ngOnInit(): void {
+        console.log("this is Hello");
+      }
 }

@@ -9,6 +9,7 @@ import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
     imports: [
+        // NgbModal,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,

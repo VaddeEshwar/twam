@@ -36,6 +36,7 @@ export class HorizontalSidebarComponent {
     } else {
       this.showMenu = element;
     }
+    console.log('hello')
   }
 
   addActiveClass(element: any) {
@@ -49,7 +50,7 @@ export class HorizontalSidebarComponent {
       left: 0,
       behavior: 'smooth'
     });
+    console.log("hello Eshwar")
   }
-
 
 }

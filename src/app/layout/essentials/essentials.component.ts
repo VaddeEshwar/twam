@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
     // animations: [routerTransition()]
 })
 export class EssentialsComponent implements OnInit {
-    subtitle: string;
+    rewardImagePath: string = ' assets/images/rating/star-on.png';
+    price: string;
     constructor() {
+        this.price = '899.00';
     }
 
     ngOnInit() {

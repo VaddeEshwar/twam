@@ -14,10 +14,8 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  loginform = true;
   recoverform = false;
   public showSearch = false;
-  public userName;
   public loginType;
   public isCollapsed = false;
   public showMobileMenu = false;
@@ -115,24 +113,22 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService,private _router: Router) {
+  constructor(private modalService: NgbModal, private translate: TranslateService,private routes: Router) {
 
     translate.setDefaultLang('en');
-    this.userName = localStorage.getItem('userName');
-    this.loginType = localStorage.getItem('loginType');
+   
 
   }
-  logout(){
-    localStorage.setItem('isLoggedin', 'false');
-    localStorage.removeItem('userName');
-    this._router.navigateByUrl('/login');
-  }
+
   buyPackage(){
     alert("package");
   }
   ngAfterViewInit() { }
   
+  login(){
 
+    this.routes.navigate(['/login']);
+  }
  
   changeLanguage(lang: any) {
     this.translate.use(lang.code)

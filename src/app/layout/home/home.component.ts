@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("dashboard");
+        console.log("Hello Eshwar this working please reslove header");
       
     }
      
