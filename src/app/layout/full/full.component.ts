@@ -9,7 +9,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 })
 export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
-  active=1;
+  active=0;
 
   constructor(public router: Router) { }
 
@@ -37,15 +37,11 @@ export class FullComponent implements OnInit {
   };
 
   Logo() {
-    this.expandLogo = !this.expandLogo;
+    this.expandLogo = this.expandLogo;
   }
 
   ngOnInit() {
-    // console.log('full component::'+localStorage.getItem('loginType'));
-    // this.loginType = localStorage.getItem('loginType')
-    // if (this.router.url === '/') {
-    //   this.router.navigate(['/home']);
-    // }
+ 
     this.defaultSidebar = this.options.sidebartype;
     this.handleSidebar();
   }

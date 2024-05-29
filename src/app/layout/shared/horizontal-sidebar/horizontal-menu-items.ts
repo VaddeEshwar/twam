@@ -4,30 +4,8 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "home",
     title: "Home",
-    icon: "mdi mdi-view-dashboard",
-    class: "has-arrow",
-    ddclass: "",
-    extralink: false,
-    submenu: [
-      
-    ],
-  },
-  {
-    path: "home",
-    title: "Home",
-    icon: "mdi mdi-view-dashboard",
-    class: "has-arrow",
-    ddclass: "",
-    extralink: false,
-    submenu: [
-      
-    ],
-  }, 
-  {
-    path: "panties",
-    title: "Home",
-    icon: "mdi mdi-view-dashboard",
-    class: "has-arrow",
+    icon: "",
+    class: "",
     ddclass: "",
     extralink: false,
     submenu: [
@@ -36,9 +14,9 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "bras",
-    title: "Home",
-    icon: "mdi mdi-view-dashboard",
-    class: "has-arrow",
+    title: "Bras",
+    icon: "",
+    class: "",
     ddclass: "",
     extralink: false,
     submenu: [
@@ -47,15 +25,29 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "essentials",
-    title: "Home",
-    icon: "mdi mdi-view-dashboard",
-    class: "has-arrow",
+    title: "Essentials",
+    icon: "",
+    class: "",
     ddclass: "",
     extralink: false,
     submenu: [
       
     ],
   },
+  {
+    path: "panties",
+    title: "Panties",
+    icon: "",
+    class: "",
+    ddclass: "",
+    extralink: false,
+    submenu: [
+      
+    ],
+  }, 
+ 
+  
+
  
  
 ];

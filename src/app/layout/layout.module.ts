@@ -14,7 +14,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { LayoutComponent } from './layout.component';
 import { FullComponent } from './full/full.component';
-import { StarterComponent } from './starter/starter.component';
+// import { StarterComponent } from './starter/starter.component';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { HorizontalNavigationComponent } from './shared/horizontal-header/horizontal-navigation.component';
 import { HorizontalSidebarComponent } from './shared/horizontal-sidebar/horizontal-sidebar.component';
@@ -34,7 +34,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     LayoutComponent,
     FullComponent,
-    StarterComponent,
+    // StarterComponent,
     BreadcrumbComponent,
     HorizontalNavigationComponent,
     HorizontalSidebarComponent,

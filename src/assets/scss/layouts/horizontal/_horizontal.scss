@@ -140,7 +140,7 @@ $sidebarheight: 54px;
           width: auto;
         }
         > .sidebar-item {
-          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          // border-right: 1px solid rgba(0, 0, 0, 0.1);
           &:last-child {
             border-right: none;
           }
@@ -183,7 +183,7 @@ $sidebarheight: 54px;
           }
         }
         > .sidebar-item:hover {
-          background: rgba(0, 0, 0, 0.025);
+          // background: rgba(0, 0, 0, 0.025);
         }
         > .sidebar-item:hover ul.first-level,
         > .sidebar-item:hover ul.first-level.collapse {

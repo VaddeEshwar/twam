@@ -13,12 +13,46 @@
   <!-- Logo -->
   <!-- ============================================================== -->
   <a class="navbar-brand" href="/">
-    
+    <!-- Logo icon -->
+    <!-- <b class="logo-icon"> -->
+      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+      <!-- Dark Logo icon -->
+      <!-- <img
+        src="assets/images/logos/xtreme-dark-icon.svg"
+        alt="homepage"
+        class="dark-logo"
+      /> -->
+      <!-- Light Logo icon -->
+      <!-- <img
+        src="assets/images/logos/xtreme-white-icon.svg"
+        alt="homepage"
+        class="light-logo"
+      />
+    </b> -->
+    <!--End Logo icon -->
+    <!-- Logo text -->
     <span class="logo-text">
-  <!-- <img src="assets/images/logos/logo.jpeg" alt=""> -->
+      <!-- dark Logo text -->
+  
+      <!-- <img
+        src="assets/images/logos/xtreme-dark-text1.svg"
+        alt="homepage"
+        class="dark-logo"
+      /> -->
+      <!-- Light Logo text -->
+      <!-- <img
+        src="assets/images/logos/xtreme-white-text.svg"
+        class="light-logo"
+        alt="homepage"
+      /> -->
     </span>
   </a>
-  
+  <!-- ============================================================== -->
+  <!-- End Logo -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Toggle which is visible on mobile only -->
+  <!-- ============================================================== -->
   <a
     class="topbartoggler d-block d-lg-none waves-effect waves-light"
     href="javascript:void(0)"
@@ -34,6 +68,8 @@
 <!-- ============================================================== -->
 <ul class="navbar-nav float-start">
   
+ 
+    <app-horizontal-sidebar></app-horizontal-sidebar>
   
   
 </ul>
@@ -41,13 +77,13 @@
 <!-- Navbar Header for horizontal only -->
 
 
-
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
 <ul class="navbar-nav float-md-end">
   <!-- ============================================================== -->  
   <!-- Search -->
   <!-- ============================================================== -->
-  <li class="nav-item buy-package" (click)="buyPackage()" *ngIf="loginType=='STUDENT'">Recharge Now</li>
-  <li class="nav-item" (click)="buyPackage()" *ngIf="loginType=='STUDENT'"><i class="fas fa-wallet  fa-2x p-3"></i><span class="badge badge-pill bg-success position-absolute translate-middle"><i class="fas fa-rupee-sign"></i> 1000</span></li>
   <li class="nav-item search-box">
     <a
       (click)="showSearch = !showSearch"
@@ -104,7 +140,7 @@
             <!-- Message -->
             <a
               href="javascript:void(0)"
-              class="message-item border-bottom d-block text-decoration-none"
+              class="message-item d-block text-decoration-none"
               *ngFor="let notification of notifications"
             >
               <!-- <span
@@ -261,7 +297,6 @@
             width="60"
           />
         </div>
-        
       </div>
       <a class="dropdown-item" href="javascript:void(0)">
         <i class="ti-user me-2 ms-1"></i> My Profile</a
@@ -277,9 +312,9 @@
         <i class="ti-settings me-2 ms-1"></i> Account Setting</a
       >
       <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="login()" style="cursor: pointer;">
-          <i class="fa fa-power-off me-2 ms-1"></i> Login</a
-        >
+      <a class="dropdown-item" (click)="login()" style="cursor: pointer;">
+        <i class="fa fa-power-off me-2 ms-1"></i> Login</a
+      >
       <div class="dropdown-divider"></div>
       <div class="ps-4 p-2">
         <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded"

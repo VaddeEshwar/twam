@@ -17,16 +17,17 @@ export class HorizontalSidebarComponent {
   constructor(private menuServise: HorizontalSidebarService, private router: Router) {
     this.menuServise.items.subscribe(menuItems => {
       this.sidebarnavItems = menuItems;
-      console.log('menuItems')
+  
       // Active menu 
-      this.sidebarnavItems.filter(m => m.submenu.filter(
-        (s) => {
-          if (s.path === this.router.url) {
-            this.path = m.title;
+      this.sidebarnavItems.forEach(menuItem => {
+        menuItem.submenu.forEach(submenuItem => {
+          if (submenuItem.path === this.router.url) {
+            this.path = menuItem.title;
           }
-        }
-      ));
+        });
+      });
       this.addExpandClass(this.path);
+      console.log(this.sidebarnavItems);
     });
   }
 
@@ -36,7 +37,6 @@ export class HorizontalSidebarComponent {
     } else {
       this.showMenu = element;
     }
-    console.log('hello')
   }
 
   addActiveClass(element: any) {
@@ -50,7 +50,9 @@ export class HorizontalSidebarComponent {
       left: 0,
       behavior: 'smooth'
     });
-    console.log("hello Eshwar")
+    alert("hello")
+    console.log("hello")
   }
+
 
 }

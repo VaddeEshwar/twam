@@ -14,7 +14,8 @@ const routes: Routes = [
     { path: 'panties', loadChildren:()=>import( './panties/panties.module').then(x => x.PantiesModule) },
     { path: 'bras', loadChildren:()=>import( './bras/bras.module').then(x => x.BrasModule) },
     { path: 'essentials', loadChildren:()=>import( './essentials/essentials.module').then(x => x.EssentialsModule) },
-    { path: 'login', loadChildren:()=>import( './login/login.module').then(x => x.LoginModule) },
+    { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
+
   ],
 },
 
