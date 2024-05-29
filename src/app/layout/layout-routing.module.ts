@@ -10,10 +10,10 @@ const routes: Routes = [
   path: '', 
   component: LayoutComponent,
   children: [
-    { path: 'home', loadChildren:()=>import( './home/home.module').then(x => x.HomeModule) },
-    { path: 'panties', loadChildren:()=>import( './panties/panties.module').then(x => x.PantiesModule) },
-    { path: 'bras', loadChildren:()=>import( './bras/bras.module').then(x => x.BrasModule) },
-    { path: 'essentials', loadChildren:()=>import( './essentials/essentials.module').then(x => x.EssentialsModule) },
+    { path: 'home', loadChildren:()=>import( './user-components/home/home.module').then(x => x.HomeModule) },
+    { path: 'panties', loadChildren:()=>import( './user-components/panties/panties.module').then(x => x.PantiesModule) },
+    { path: 'bras', loadChildren:()=>import( './user-components/bras/bras.module').then(x => x.BrasModule) },
+    { path: 'essentials', loadChildren:()=>import( './user-components/essentials/essentials.module').then(x => x.EssentialsModule) },
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
 
   ],

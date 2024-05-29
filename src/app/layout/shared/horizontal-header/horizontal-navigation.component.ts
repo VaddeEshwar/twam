@@ -118,9 +118,6 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   constructor(private modalService: NgbModal, private translate: TranslateService,private _router: Router) {
 
     translate.setDefaultLang('en');
-    this.userName = localStorage.getItem('userName');
-    this.loginType = localStorage.getItem('loginType');
-
   }
   login(){
     this._router.navigateByUrl('/login');
