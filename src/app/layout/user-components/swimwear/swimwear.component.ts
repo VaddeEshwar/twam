@@ -1,0 +1,25 @@
+import { Component, OnInit } from '@angular/core';
+// import { routerTransition } from '../../router.animations';
+
+@Component({
+    selector: 'app-swimwear',
+    templateUrl: './swimwear.component.html',
+    styleUrls: ['./swimwear.component.scss'],
+    // animations: [routerTransition()]
+})
+export class SwimwearComponent implements OnInit {
+    rewardImagePath: string = ' assets/images/rating/star-on.png';
+    title: string;
+    price: string;
+    constructor() {
+        this.price = '799.00';
+        this.title = 'Swim Wear';
+    }
+    ngOnInit() {
+        console.log("dashboard");
+      
+    }
+     
+    
+    
+}

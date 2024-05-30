@@ -4,8 +4,10 @@ export interface RouteInfo {
   title: string;
   icon: string;
   class: string;
+  ddclass: string; 
   extralink: boolean;
   label: string;
   labelClass: string;
   submenu: RouteInfo[];
+
 }

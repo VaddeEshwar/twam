@@ -49,7 +49,7 @@
             />
             <!-- Light Logo icon -->
             <!-- <img
-              src="assets/images/logos/xtreme-white-icon.svg"
+              src="assets/images/logos/logo.jpg"
               alt="homepage"
               class="light-logo"
             /> -->
@@ -99,7 +99,7 @@
       >
         <!-- Horizontal Header -->
         <div
-          *ngIf="options.layout === 'horizontal'"
+          *ngIf="options.layout === 'horizontal'; else vheader"
           class="w-100"
         >
           <app-horizontal-navigation
@@ -128,19 +128,20 @@
     (mouseout)="Logo()"
   >
     <!-- Sidebar scroll-->
-    <!-- <div *ngIf="options.layout === 'horizontal'">
+    <div *ngIf="options.layout === 'horizontal' && loginType === 'OPERATOR'">
       <app-horizontal-sidebar></app-horizontal-sidebar>
-    </div> -->
+    </div>
     <!-- <div *ngIf="options.layout === 'horizontal' && loginType === 'STUDENT'">
       <app-student-horizontal-sidebar></app-student-horizontal-sidebar>
     </div> -->
     
-    <!-- <div *ngIf="options.layout === 'horizontal' ">
+    <div *ngIf="options.layout === 'horizontal'; else vlayout">
+
       <app-horizontal-sidebar></app-horizontal-sidebar>
-    </div>  -->
+    </div>
 
     <!-- Horizontal Header -->
-   <ng-template #vlayout>
+  <ng-template #vlayout>
       <div class="scroll-sidebar" [perfectScrollbar]="config">
         <app-vertical-sidebar
           [showClass]="showMobileMenu"
@@ -148,7 +149,7 @@
         >
         </app-vertical-sidebar>
       </div>
-    </ng-template>
+    </ng-template> 
     <!-- End Sidebar scroll-->
   </aside>
   <!-- ============================================================== -->
@@ -203,12 +204,12 @@
         [(activeId)]="active"
         class="nav-pills nav-justified"
       >
-        <li [ngbNavItem]="0">
+        <li [ngbNavItem]="1">
           <a ngbNavLink>
             <i class="mdi mdi-wrench fs-6"></i>
           </a>
           <ng-template ngbNavContent>
-            <div class="p-3 ">
+            <div class="p-3 border-bottom">
               <h5 class="font-medium mb-4 mt-2">Layout Settings</h5>
               <div class="form-check mt-2">
                 <input

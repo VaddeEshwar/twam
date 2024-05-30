@@ -2,7 +2,7 @@ import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbPanelChangeEvent, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -14,11 +14,9 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  loginform = true;
-  recoverform = false;
+
   public showSearch = false;
-  public userName;
-  public loginType;
+
   public isCollapsed = false;
   public showMobileMenu = false;
 
@@ -115,22 +113,21 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService,private _router: Router) {
+  constructor(private modalService: NgbModal, private translate: TranslateService,public router: Router){
 
     translate.setDefaultLang('en');
-  }
-  login(){
-    this._router.navigateByUrl('/login');
-  }
-  buyPackage(){
-    alert("package");
-  }
-  ngAfterViewInit() { }
-  
 
- 
+  }
+
+  ngAfterViewInit() { }
+
   changeLanguage(lang: any) {
     this.translate.use(lang.code)
     this.selectedLanguage = lang;
+    alert('hello')
+
+  }
+  login(){
+    this.router.navigate(['/login']);
   }
 }

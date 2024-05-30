@@ -14,8 +14,10 @@ const routes: Routes = [
     { path: 'panties', loadChildren:()=>import( './user-components/panties/panties.module').then(x => x.PantiesModule) },
     { path: 'bras', loadChildren:()=>import( './user-components/bras/bras.module').then(x => x.BrasModule) },
     { path: 'essentials', loadChildren:()=>import( './user-components/essentials/essentials.module').then(x => x.EssentialsModule) },
-    { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
+    { path: 'swimwear', loadChildren:()=>import( './user-components/swimwear/swimwear.module').then(x => x.SwimwearModule) },
 
+    { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
+    
   ],
 },
 

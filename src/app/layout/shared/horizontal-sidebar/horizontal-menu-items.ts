@@ -46,7 +46,7 @@ export const ROUTES: RouteInfo[] = [
     ],
   }, 
   {
-    path: "",
+    path: "home",
     title: "Leakproof",
     icon: "",
     class: "",
@@ -58,7 +58,7 @@ export const ROUTES: RouteInfo[] = [
   }, 
  
   {
-    path: "",
+    path: "home",
     title: "Active Wear",
     icon: "",
     class: "",
@@ -69,7 +69,7 @@ export const ROUTES: RouteInfo[] = [
     ],
   }, 
   {
-    path: "",
+    path: "swimwear",
     title: "Swim Wear",
     icon: "",
     class: "",
@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
     ],
   }, 
   {
-    path: "",
+    path: "home",
     title: "Special Needs",
     icon: "",
     class: "",

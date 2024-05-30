@@ -21,8 +21,6 @@ import { HorizontalSidebarComponent } from './shared/horizontal-sidebar/horizont
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { VerticalNavigationComponent } from './shared/vertical-header/vertical-navigation.component';
 import { VerticalSidebarComponent } from './shared/vertical-sidebar/vertical-sidebar.component';
-import { StudentHorizontalSidebarComponent } from './shared/student-horizontal-sidebar/student-horizontal-sidebar.component';
-
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -40,7 +38,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HorizontalSidebarComponent,
     VerticalNavigationComponent,
     VerticalSidebarComponent,
-    StudentHorizontalSidebarComponent,
+    
   ],
   imports: [
     CommonModule,
