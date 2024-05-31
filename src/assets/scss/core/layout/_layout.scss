@@ -25,10 +25,10 @@
  Footer
 *******************/
 
-.footer {
-  padding: 15px 20px;
-  background: #f3f3f3;
-}
+// .footer {
+//   padding: 15px 20px;
+//   background: #f3f3f3;
+// }
 
 /*******************
  Stickey inner-left-part
@@ -325,4 +325,249 @@ $left-part-width: 260px;
     width: 100%;
     margin-left: 0px;
   }
+}
+/*----------------------------------------*/
+/*  00. FOOTER CSS START
+/*----------------------------------------*/
+.footer {
+  padding: 15px 20px;
+  background: #d2173f;
+}
+.footer__widget-title {
+  padding-top: 5px;
+  font-size: 20px;
+  color: #f3f3f3;
+}
+
+.footer__widget-title-2 {
+  color: #0e1133;
+}
+
+.footer__widget-body p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.footer__widget-body-2 p {
+  color: #53545b;
+}
+
+.footer__social ul li {
+  display: inline-block;
+}
+
+.footer__social ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer__social ul li a {
+  display: inline-block;
+  font-size: 15px;
+  width: 44px;
+  height: 44px;
+  line-height: 34px;
+  text-align: center;
+  border: 2px solid #285da1;
+  background: #285da1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.footer__social ul li a:hover {
+  background: transparent;
+  color: #285da1;
+}
+
+.footer__social ul li a.tw {
+  background: transparent;
+  border-color: #fff;
+}
+
+.footer__social ul li a.tw:hover {
+  background: transparent;
+  color: #d2173f;
+}
+
+.footer__social ul li a.pin {
+  background: #285da1 ;
+  border-color: #fff;
+}
+.footer__social ul li a.instagram {
+  background: #d2173f;
+  border-color: #fff;
+}
+
+.footer__social ul li a.pin:hover {
+  background: transparent;
+  color: #d2173f;
+}
+
+.footer__link ul li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.footer__link ul li a {
+  color: #fff;
+}
+
+.footer__link ul li a:hover {
+  color: #ffffff;
+}
+
+.footer__link-2 ul li a {
+  color: #fff;
+}
+
+.footer__link-2 ul li a:hover {
+  color: #2b4eff;
+}
+
+.footer__subscribe-input {
+  position: relative;
+  margin: 10px auto;
+}
+
+.footer__subscribe-input input {
+  width: 100%;
+  height: 60px;
+  padding: 0 30px;
+  padding-right: 50px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.footer__subscribe-input input::placeholder {
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer__subscribe-input button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: #ffffff;
+  background: #2b4eff;
+  width: 70px;
+  height: 60px;
+  padding-right: 25px;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  overflow: hidden;
+}
+
+.footer__subscribe-input button i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+}
+
+.footer__subscribe-input button i:last-child {
+  left: 0%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.footer__subscribe-input button:hover i {
+  left: 100%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.footer__subscribe-input button:hover i:last-child {
+  left: 50%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer__subscribe p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  padding-right: 60px;
+}
+
+.footer__subscribe-2 p {
+  color: #fff;
+}
+
+.footer__pl-70 {
+  padding-left: 70px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .footer__pl-70 {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__pl-70 {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .footer__pl-70 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer__pl-70 {
+    padding-left: 0;
+  }
+}
+
+.footer__bottom {
+  padding: 20px 0;
+  border-top: 1px solid #fff;
+}
+
+.footer__bottom-2 {
+  border-color: #fff;
+}
+
+.footer__copyright p {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.footer__copyright p a {
+  color: #ffffff;
+}
+
+.footer__copyright-2 p {
+  color: #fff;
+}
+
+.footer__copyright-2 p a {
+  color: #2b4eff;
+}
+ul.list-style-none li a {
+  color: #fff;
+  padding: 1px 0px;
+  display: block;
+  text-decoration: none;
 }

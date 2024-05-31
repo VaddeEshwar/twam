@@ -20,18 +20,18 @@
     <nav
       class="d-flex top-navbar navbar-expand-lg"
       [ngClass]="options.navbarbg == 'skin6' ? 'navbar-light' : 'navbar-dark'"
-    >
+       >
       <div
         class="navbar-header"
         [ngClass]="expandLogo ? 'expand-logo' : ''"
         [attr.data-logobg]="options.logobg"
-      >
+        >
         <!-- This is for the sidebar toggle which is visible on mobile only -->
         <a
           (click)="showMobileMenu = !showMobileMenu"
           class="nav-toggler waves-effect waves-light d-block d-lg-none"
           href="javascript:void(0)"
-        >
+          >
           <i [ngClass]="showMobileMenu ? 'ti-close' : 'ti-menu'"></i>
         </a>
         <!-- ============================================================== -->
@@ -116,7 +116,9 @@
           </div>
         </ng-template>
       </div>
+      
     </nav>
+   
   </header>
   <!-- ============================================================== -->
   <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -125,8 +127,7 @@
     class="left-sidebar"
     [attr.data-sidebarbg]="options.sidebarbg"
     (mouseover)="Logo()"
-    (mouseout)="Logo()"
-  >
+    (mouseout)="Logo()">
     <!-- Sidebar scroll-->
     <div *ngIf="options.layout === 'horizontal' && loginType === 'OPERATOR'">
       <app-horizontal-sidebar></app-horizontal-sidebar>
@@ -136,12 +137,10 @@
     </div> -->
     
     <div *ngIf="options.layout === 'horizontal'; else vlayout">
-
       <app-horizontal-sidebar></app-horizontal-sidebar>
     </div>
-
     <!-- Horizontal Header -->
-  <ng-template #vlayout>
+   <ng-template #vlayout>
       <div class="scroll-sidebar" [perfectScrollbar]="config">
         <app-vertical-sidebar
           [showClass]="showMobileMenu"
@@ -179,8 +178,106 @@
     <!-- footer -->
     <!-- ============================================================== -->
     <footer class="footer text-center">
-      All Rights Reserved by . Designed and Developed by
-      <a href="#"></a>.
+      <div class="footer__area footer-bg">
+        <div class="footer__top pt-90 pb-40">
+           <div class="container">
+              <div class="row">
+                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="footer__widget mb-50">
+                       <div class="footer__widget-head mb-22">
+                          <div class="footer__logo">
+                             <a href="index.html">
+                                <img src="assets/img/logo/logo-2.png" alt="">
+                             </a>
+                          </div>
+                       </div>
+                       <div class="footer__widget-body">
+                          <p>We are Only TWAM, a multibrand plaform where women have a wide variety
+                            of lingerie brands, that can help them pick their most comfortable fit based
+                            on their daily needs</p>
+
+                        
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
+                    <div class="footer__widget mb-50">
+                       <div class="footer__widget-head mb-22">
+                          <h3 class="footer__widget-title">CUSTOMER CARE</h3>
+                       </div>
+                       <div class="footer__widget-body">
+                          <div class="footer__link">
+                             <ul class="list-style-none">
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Returns & Exchanges</a></li>
+                                <li><a href="#">Shipping</a></li>
+                                <li><a href="#">FAQ</a></li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                    <div class="footer__widget mb-50">
+                       <div class="footer__widget-head mb-22">
+                          <h3 class="footer__widget-title">ABOUT US</h3>
+                       </div>
+                       <div class="footer__widget-body">
+                          <div class="footer__link">
+                             <ul class="list-style-none">
+                                <li><a href="#">Story</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Blog</a></li>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
+                    <div class="footer__widget footer__pl-70 mb-50">
+                       <div class="footer__widget-head mb-22">
+                          <h3 class="footer__widget-title">Subscribe</h3>
+                       </div>
+                       <div class="footer__widget-body">
+                        <div class="footer__social">
+                          <ul class="list-style-none">
+                             <li><a href="#"><i-feather name="facebook"></i-feather></a></li>
+                             <li><a href="#" class="tw"><i-feather name="youtube"></i-feather></a></li>
+                             <li><a href="#" class="pin"><i-feather name="twitter"></i-feather></a></li>
+                             <li><a href="#" class="instagram"><i-feather name="instagram"></i-feather></a></li>
+                          </ul>
+                       </div>
+                          <div class="footer__subscribe">
+                             <form action="#">
+                                <div class="footer__subscribe-input mb-15">
+                                   <input type="email" placeholder="Your email address">
+                                   <button type="submit" class="btn btn-outline-success">
+                                      <i class="fa fa-arrow-right"></i>
+                                      <i class="fa fa-arrow-right"></i>
+                                   </button>
+                                </div>
+                             </form>
+                             <p>Get the latest news and updates right at your inbox.</p>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="footer__bottom">
+           <div class="container">
+              <div class="row">
+                 <div class="col-xxl-12">
+                    <div class="footer__copyright text-center">
+                       <p>All Rights Reserved by Twam  <a href="index.html">Designed and Developed by Twam</a></p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  
     </footer>
     <!-- ============================================================== -->
     <!-- End footer -->

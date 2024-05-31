@@ -16,7 +16,7 @@ export class FullComponent implements OnInit {
   tabStatus = 'justified';
 
   public isCollapsed = false;
-
+  public showSearch = false;
   public innerWidth: any;
   public defaultSidebar: any;
   public showSettings = false;
@@ -105,4 +105,65 @@ export class FullComponent implements OnInit {
   handleClick(event: boolean) {
     this.showMobileMenu = event;
   }
+  // This is for Mymessages
+  mymessages: Object[] = [
+    {
+      useravatar: 'assets/images/users/user1.jpg',
+      status: 'online',
+      from: 'Pavan kumar',
+      subject: 'Just see the my admin!',
+      time: '9:30 AM'
+    },
+    {
+      useravatar: 'assets/images/users/user2.jpg',
+      status: 'busy',
+      from: 'Sonu Nigam',
+      subject: 'I have sung a song! See you at',
+      time: '9:10 AM'
+    },
+    {
+      useravatar: 'assets/images/users/user2.jpg',
+      status: 'away',
+      from: 'Arijit Sinh',
+      subject: 'I am a singer!',
+      time: '9:08 AM'
+    },
+    {
+      useravatar: 'assets/images/users/user4.jpg',
+      status: 'offline',
+      from: 'Pavan kumar',
+      subject: 'Just see the my admin!',
+      time: '9:00 AM'
+    }
+  ];
+  notifications: Object[] = [
+    {
+      btn: 'btn-danger',
+      icon: 'ti-link',
+      title: 'Luanch Admin',
+      subject: 'Just see the my new admin!',
+      time: '9:30 AM'
+    },
+    {
+      btn: 'btn-success',
+      icon: 'ti-calendar',
+      title: 'Event today',
+      subject: 'Just a reminder that you have event',
+      time: '9:10 AM'
+    },
+    {
+      btn: 'btn-info',
+      icon: 'ti-settings',
+      title: 'Settings',
+      subject: 'You can customize this template as you want',
+      time: '9:08 AM'
+    },
+    {
+      btn: 'btn-primary',
+      icon: 'ti-user',
+      title: 'Pavan kumar',
+      subject: 'Just see the my admin!',
+      time: '9:00 AM'
+    }
+  ];
 }
