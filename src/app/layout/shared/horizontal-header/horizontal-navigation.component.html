@@ -1,6 +1,6 @@
 <!-- ============================================================== -->
-<div class="navbar-header d-none d-lg-flex justify-content-center">
-  <!-- This is for the sidebar toggle which is visible on mobile only -->
+<!-- <div class="navbar-header d-none d-lg-flex justify-content-center">
+ 
   <a
     (click)="showMobileMenu = !showMobileMenu"
     class="nav-toggler waves-effect waves-light d-block d-lg-none"
@@ -8,49 +8,39 @@
   >
     <i [ngClass]="showMobileMenu ? 'ti-close' : 'ti-menu'"></i>
   </a>
-  <!-- ============================================================== -->
-  <!-- Logo -->
-  <!-- ============================================================== -->
+ 
   <a class="navbar-brand" href="/">
-    <!-- Logo icon -->
+   
     <b class="logo-icon">
-      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-      <!-- Dark Logo icon -->
-      <!-- <img
+   
+      <img
         src="assets/images/logos/xtreme-dark-icon.svg"
         alt="homepage"
         class="dark-logo"
-      /> -->
-      <!-- Light Logo icon -->
-      <!-- <img
+      />
+  
+      <img
         src="assets/images/logos/xtreme-dark-icon.svg"
         alt="homepage"
         class="light-logo"
-      /> -->
+      />
     </b>
-    <!--End Logo icon -->
-    <!-- Logo text -->
+ 
     <span class="logo-text">
-      <!-- dark Logo text -->
-      <!-- <img
+      <img
         src="assets/images/logos/xtreme-dark-text.svg"
         alt="homepage"
         class="dark-logo"
-      /> -->
-      <!-- Light Logo text -->
-      <!-- <img
+      />
+     
+      <img
         src="assets/images/logos/xtreme-dark-text.svg"
         class="light-logo"
         alt="homepage"
-      /> -->
+      />
     </span>
   </a>
-  <!-- ============================================================== -->
-  <!-- End Logo -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Toggle which is visible on mobile only -->
-  <!-- ============================================================== -->
+
   <a
     class="topbartoggler d-block d-lg-none waves-effect waves-light"
     href="javascript:void(0)"
@@ -61,13 +51,14 @@
   >
     <i class="ti-more"></i>
   </a>
-</div>
+</div> -->
 <!-- toggle and nav items -->
 <!-- ============================================================== -->
 <ul class="navbar-nav float-start">
-  
-  
-  
+
+  <app-horizontal-sidebar></app-horizontal-sidebar>
+
+
 </ul>
 
 <!-- Navbar Header for horizontal only -->
@@ -77,68 +68,45 @@
 <!-- Right side toggle and nav items -->
 <!-- ============================================================== -->
 <ul class="navbar-nav float-md-end">
-  <!-- ============================================================== -->  
+  <!-- ============================================================== -->
   <!-- Search -->
   <!-- ============================================================== -->
   <li class="nav-item search-box">
-    <a
-      (click)="showSearch = !showSearch"
-      class="nav-link waves-effect waves-dark"
-      href="javascript:void(0)"
-    >
+    <a (click)="showSearch = !showSearch" class="nav-link waves-effect waves-dark" href="javascript:void(0)">
       <i-feather name="search"></i-feather>
     </a>
-    <form
-      class="app-search position-absolute"
-      [ngClass]="{ 'show-search': showSearch }"
-    >
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search &amp; enter"
-      />
+    <form class="app-search position-absolute" [ngClass]="{ 'show-search': showSearch }">
+      <input type="text" class="form-control" placeholder="Search &amp; enter" />
       <a class="srh-btn" (click)="showSearch = !showSearch">
         <i class="ti-close"></i>
       </a>
     </form>
   </li>
-  
+
   <!-- ============================================================== -->
   <!-- Comment -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a
-      ngbDropdownToggle
-      class="nav-link dropdown-toggle waves-effect waves-dark"
-      href="javascript:void(0)"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      <i-feather name="bell"></i-feather>
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i-feather name="shopping-bag"></i-feather>
     </a>
-    <div
-      class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up"
-      ngbDropdownMenu
-    >
+    <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" ngbDropdownMenu>
       <span class="with-arrow">
         <span class="bg-primary"></span>
       </span>
       <ul class="list-style-none">
         <li>
           <div class="drop-title bg-primary text-white">
-            <h4 class="mb-0 mt-1">4 New</h4>
-            <span class="fw-light">Notifications</span>
+            <h4 class="mb-0 mt-1">Bying Products</h4>
+            <span class="fw-light">List</span>
           </div>
         </li>
         <li>
           <div class="message-center notifications" [perfectScrollbar]="config">
             <!-- Message -->
-            <a
-              href="javascript:void(0)"
-              class="message-item border-bottom d-block text-decoration-none"
-              *ngFor="let notification of notifications"
-            >
+            <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
+              *ngFor="let notification of notifications">
               <!-- <span
                 class="btn btn-circle rounded-circle {{ notification.btn }}"
               >
@@ -172,40 +140,26 @@
   <!-- Messages -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a
-      ngbDropdownToggle
-      class="nav-link dropdown-toggle waves-effect waves-dark"
-      href="javascript:void(0)"
-      id="2"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      <i-feather name="message-square"></i-feather>
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)" id="2"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i-feather name="shopping-cart"></i-feather>
     </a>
-    <div
-      class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up"
-      aria-labelledby="2"
-      ngbDropdownMenu
-    >
+    <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" aria-labelledby="2" ngbDropdownMenu>
       <span class="with-arrow">
         <span class="bg-danger"></span>
       </span>
       <ul class="list-style-none">
         <li>
           <div class="drop-title text-white bg-danger">
-            <h4 class="mb-0 mt-1">5 New</h4>
-            <span class="fw-light">Messages</span>
+            <h4 class="mb-0 mt-1">Totall Cart Product</h4>
+            <span class="fw-light">Cart List</span>
           </div>
         </li>
         <li>
           <div class="message-center message-body" [perfectScrollbar]="config">
             <!-- Message -->
-            <a
-              href="javascript:void(0)"
-              class="message-item border-bottom d-block text-decoration-none"
-              *ngFor="let mymessage of mymessages"
-            >
+            <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
+              *ngFor="let mymessage of mymessages">
               <!-- <span class="user-img position-relative d-inline-block">
                 <img
                   src="{{ mymessage.useravatar }}"
@@ -246,36 +200,20 @@
   <!-- User profile and search -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a
-      ngbDropdownToggle
-      class="
+    <a ngbDropdownToggle class="
         nav-link
         dropdown-toggle
         text-muted
         waves-effect waves-dark
         pro-pic
-      "
-      href="javascript:void(0)"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      <img
-        src="assets/images/users/user1.jpg"
-        alt="user"
-        class="rounded-circle"
-        width="50"
-      />
+      " href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="assets/images/users/user1.jpg" alt="user" class="rounded-circle" width="50" />
     </a>
-    <div
-      class="dropdown-menu dropdown-menu-right user-dd dropdown-menu-animate-up"
-      ngbDropdownMenu
-    >
+    <div class="dropdown-menu dropdown-menu-right user-dd dropdown-menu-animate-up" ngbDropdownMenu>
       <span class="with-arrow">
         <span class="bg-primary"></span>
       </span>
-      <div
-        class="
+      <div class="
           d-flex
           no-block
           align-items-center
@@ -283,15 +221,9 @@
           bg-primary
           text-white
           mb-2
-        "
-      >
+        ">
         <div class="">
-          <img
-            src="assets/images/users/user1.jpg"
-            alt="user"
-            class="img-circle"
-            width="60"
-          />
+          <img src="assets/images/users/user1.jpg" alt="user" class="img-circle" width="60" />
         </div>
         <div class="ms-2">
           <h4 class="mb-0">Eshwar</h4>
@@ -299,28 +231,21 @@
         </div>
       </div>
       <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-user me-2 ms-1"></i> My Profile</a
-      >
+        <i class="ti-user me-2 ms-1"></i> My Profile</a>
       <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-wallet me-2 ms-1"></i> My Balance</a
-      >
+        <i class="ti-wallet me-2 ms-1"></i> My Balance</a>
       <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-email me-2 ms-1"></i> Inbox</a
-      >
+        <i class="ti-email me-2 ms-1"></i> Inbox</a>
       <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-settings me-2 ms-1"></i> Account Setting</a
-      >
+        <i class="ti-settings me-2 ms-1"></i> Account Setting</a>
       <a class="dropdown-item" href="javascript:void(0)" onclick="login()">
-        <i class="fa fa-power-off me-2 ms-1"></i>Login</a
-      >
+        <i class="fa fa-power-off me-2 ms-1"></i>Login</a>
       <div class="ps-4 p-2">
-        <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded"
-          >View Profile</a
-        >
+        <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
       </div>
     </div>
   </li>
-  
+
   <!-- ============================================================== -->
   <!-- User profile and search -->
   <!-- ============================================================== -->

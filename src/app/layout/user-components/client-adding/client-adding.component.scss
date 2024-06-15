@@ -1,0 +1,26 @@
+.btn{
+    float: right;
+    margin: 0px 5px;
+}
+// .client-add-class{
+//     animation: slideLeftToRight 0.3s ease;
+// }
+// @keyframes slideLeftToRight {
+//     0% {
+//       transform: translateX(-100%);
+//     }
+//     100% {
+//       transform: translateX(0);
+//     }
+//   }
+.close-class {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0rem -2rem;
+    i.ki-solid.ki-double-left{
+        font-size: 2.5rem;
+    }
+  }

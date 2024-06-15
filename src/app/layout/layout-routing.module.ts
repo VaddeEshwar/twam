@@ -15,7 +15,11 @@ const routes: Routes = [
     { path: 'bras', loadChildren:()=>import( './user-components/bras/bras.module').then(x => x.BrasModule) },
     { path: 'essentials', loadChildren:()=>import( './user-components/essentials/essentials.module').then(x => x.EssentialsModule) },
     { path: 'swimwear', loadChildren:()=>import( './user-components/swimwear/swimwear.module').then(x => x.SwimwearModule) },
+    { path: 'activewear', loadChildren:()=>import( './user-components/activewear/activewear.module').then(x => x.ActivewearModule) },
 
+    ////View Products-Components///////
+    { path: 'brasview', loadChildren:()=>import( './product-components/bras-view/bras-view.module').then(x => x.BrasviewModule) },
+    
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
     
   ],

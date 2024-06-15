@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit, ViewChild, TemplateRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
-
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ClientAddingComponent} from '../client-adding/client-adding.component';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -8,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
     // animations: [routerTransition()]
 })
 export class HomeComponent implements OnInit {
+    @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
+    modalRef: BsModalRef;
     subtitle: string;
     apiLoaded = false;
-    videoId = 'ttYCyRFLklU';
-    height = 250;
-    width = 465;
-    constructor() {
+    price: string;
+    image1: string = 'assets/images/product/bras.webp';
+    image2: string = 'assets/images/product/bras-02.webp';
+
+    constructor(private modalService: NgbModal) {
     }
 
     ngOnInit() {
@@ -21,6 +26,9 @@ export class HomeComponent implements OnInit {
       
     }
      
-    
+    openModal() {
+        const modalRef = this.modalService.open(ClientAddingComponent,{windowClass: 'modal-xl modal-rounded'});
+        modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
+      }
     
 }

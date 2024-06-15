@@ -11,7 +11,6 @@ import { allIcons } from 'angular-feather/icons';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
 import { LayoutComponent } from './layout.component';
 import { FullComponent } from './full/full.component';
 // import { StarterComponent } from './starter/starter.component';

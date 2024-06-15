@@ -354,7 +354,14 @@ $left-part-width: 260px;
 .footer__widget-body-2 p {
   color: #53545b;
 }
-
+ 
+.browser-brands {
+  display: flex;
+  line-height: 4;
+} 
+.browser-brands img{
+  padding: 0 3px ;
+}
 .footer__social ul li {
   display: inline-block;
 }
@@ -384,7 +391,7 @@ $left-part-width: 260px;
 }
 
 .footer__social ul li a.tw {
-  background: transparent;
+  background: #ff2a2a;
   border-color: #fff;
 }
 
@@ -398,7 +405,7 @@ $left-part-width: 260px;
   border-color: #fff;
 }
 .footer__social ul li a.instagram {
-  background: #d2173f;
+  background: linear-gradient(43deg, #b8c143 0%, #db0869 100%);
   border-color: #fff;
 }
 
@@ -566,8 +573,8 @@ $left-part-width: 260px;
   color: #2b4eff;
 }
 ul.list-style-none li a {
-  color: #fff;
-  padding: 1px 0px;
+  color: #fff !important;
+  padding: 1px 0px !important;
   display: block;
   text-decoration: none;
 }

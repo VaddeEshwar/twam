@@ -7,6 +7,7 @@ import { BrasComponent } from './bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 @NgModule({
     imports: [
         // NgbModal,

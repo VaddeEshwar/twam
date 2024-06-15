@@ -50,9 +50,7 @@ export class HorizontalSidebarComponent {
       left: 0,
       behavior: 'smooth'
     });
-    alert("hello")
     console.log("Eshwar")
   }
-
 
 }

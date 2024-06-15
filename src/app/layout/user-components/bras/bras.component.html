@@ -2,21 +2,15 @@
   <div class="col-lg-3">
     <div class="card">
       <div class="card-header">
-        <h6 class="card-title">Filters</h6>
+        <div class="d-inline-block">
+          <div>
+            <h6 class="card-title">Filters</h6>
+          </div>
+
+        </div>
         <hr />
         <div class="card-body">
-          <ul  class="list-style-none">
-              <li>
-                <div class="drop-title ">
-                  <span class="font-light">Bra</span>
-                </div>
-              </li>
-              <li>
-                <div class="drop-title ">
-                  <span class="font-light">Paintes</span>
-                </div>
-              </li>
-          </ul>
+
         </div>
       </div>
     </div>
@@ -25,7 +19,11 @@
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
@@ -36,7 +34,11 @@
       <!-- assets/images/product/bras.webp -->
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p>Price : {{price}} </p>
@@ -57,7 +59,11 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
 
@@ -81,7 +87,11 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
 
@@ -92,53 +102,11 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
 
@@ -162,7 +130,11 @@
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
 
@@ -184,7 +156,65 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-01.webp" alt="Twam" class="card-img-top">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <p>Rewards : <img [src]="rewardImagePath" alt="Reward Image"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
 

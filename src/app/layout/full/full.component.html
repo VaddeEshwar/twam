@@ -129,18 +129,16 @@
     (mouseover)="Logo()"
     (mouseout)="Logo()">
     <!-- Sidebar scroll-->
-    <div *ngIf="options.layout === 'horizontal' && loginType === 'OPERATOR'">
-      <app-horizontal-sidebar></app-horizontal-sidebar>
-    </div>
+ 
     <!-- <div *ngIf="options.layout === 'horizontal' && loginType === 'STUDENT'">
       <app-student-horizontal-sidebar></app-student-horizontal-sidebar>
     </div> -->
     
-    <div *ngIf="options.layout === 'horizontal'; else vlayout">
+    <!-- <div *ngIf="options.layout === 'horizontal'; else vlayout">
       <app-horizontal-sidebar></app-horizontal-sidebar>
-    </div>
+    </div> -->
     <!-- Horizontal Header -->
-   <ng-template #vlayout>
+   <!-- <ng-template #vlayout>
       <div class="scroll-sidebar" [perfectScrollbar]="config">
         <app-vertical-sidebar
           [showClass]="showMobileMenu"
@@ -148,7 +146,7 @@
         >
         </app-vertical-sidebar>
       </div>
-    </ng-template> 
+    </ng-template>  -->
     <!-- End Sidebar scroll-->
   </aside>
   <!-- ============================================================== -->
@@ -200,6 +198,23 @@
                        </div>
                     </div>
                  </div>
+                 <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                  <div class="footer__widget mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <h3 class="footer__widget-title">Quick Links</h3>
+                     </div>
+                     <div class="footer__widget-body">
+                        <div class="footer__link">
+                           <ul class="list-style-none">
+                              <li><a href="#">About Us</a></li>
+                              <li><a href="#">Careers</a></li>
+                              <li><a href="#">Blog</a></li>
+                              <li><a href="#">Service</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
                  <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
                     <div class="footer__widget mb-50">
                        <div class="footer__widget-head mb-22">
@@ -211,28 +226,16 @@
                                 <li><a href="#">Contact Us</a></li>
                                 <li><a href="#">Returns & Exchanges</a></li>
                                 <li><a href="#">Shipping</a></li>
+                                <li><a href="#">Grievanceredressal</a></li>
                                 <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Privacy-Policy</a></li>
+                                <li><a href="#">Terms&Conditions</a></li>
                              </ul>
                           </div>
                        </div>
                     </div>
                  </div>
-                 <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
-                    <div class="footer__widget mb-50">
-                       <div class="footer__widget-head mb-22">
-                          <h3 class="footer__widget-title">ABOUT US</h3>
-                       </div>
-                       <div class="footer__widget-body">
-                          <div class="footer__link">
-                             <ul class="list-style-none">
-                                <li><a href="#">Story</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Blog</a></li>
-                             </ul>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
+               
                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
                     <div class="footer__widget footer__pl-70 mb-50">
                        <div class="footer__widget-head mb-22">
@@ -258,6 +261,10 @@
                                 </div>
                              </form>
                              <p>Get the latest news and updates right at your inbox.</p>
+                             <div class="browser-brands">
+                             <a href=""><img src="assets/images/browser/apple_store.png" alt="" width="150"></a>
+                             <a href=""><img src="assets/images/browser/google_play.png" alt="" width="150"></a>
+                           </div>
                           </div>
                        </div>
                     </div>
