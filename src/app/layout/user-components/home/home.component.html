@@ -28,30 +28,24 @@
               <div class="cards-wrapper">
                 <div class="card">
                   <div class="image-wrapper">
-                    <!-- <img src="assets/images/product/bras.webp" alt="Twam" class="image1">
-                    <img src="assets/images/product/bras-02.webp" alt="Twam" class="image2"> -->
                     <img [src]="image1" alt="Twam" class="image1">
                     <img [src]="image2" alt="Twam" class="image2">
-
                     <ul class="action">
                       <li> 
                         <i class="fa fa-heart" aria-hidden="true"></i>
                         <span>Add to wishlist</span>
                       </li>
-  
                       <li>
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to cart</span>
                       </li>
-  
                       <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()">                        <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                         </button>
                       </li>
                     </ul>
                   </div>
-                 
                   <div class="card-body">
-                    <p class="card-title">Titel:Bra</p>
+                    <p class="card-title">Titel:{{subtitle}}</p>
                     <p> Price : {{price}} </p>
                     <div class="sci">
                       <li>
@@ -135,7 +129,7 @@
                       </li>
 
                       <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()">                        <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                         </button>
                       </li>
                     </ul>
@@ -368,6 +362,6 @@
   </div>
 </section>
 
-<ng-template #modalTemplate>
+<ng-template #modalTemplate let-modal>
   <app-client-adding></app-client-adding>
 </ng-template>

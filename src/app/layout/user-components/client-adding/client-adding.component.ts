@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild,Input, TemplateRef, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -26,10 +26,7 @@ export class ClientAddingComponent implements OnInit {
   }
   ngOnInit() {
   const modalRef = this.modalService.open(HomeComponent,{size:'lg'});
-  modalRef.componentInstance.product={
-    
-  }
-      
+
   }
   closeModal() {
     this.activeModal.close('Modal closed');

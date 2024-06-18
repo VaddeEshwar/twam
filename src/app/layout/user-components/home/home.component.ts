@@ -3,6 +3,7 @@ import { Component,OnInit, ViewChild, TemplateRef, ViewContainerRef, ComponentFa
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../client-adding/client-adding.component';
+import {Client } from '../../../model/products'
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -19,16 +20,16 @@ export class HomeComponent implements OnInit {
     image2: string = 'assets/images/product/bras-02.webp';
 
     constructor(private modalService: NgbModal) {
+        this.subtitle="Bras";
+
     }
 
     ngOnInit() {
         console.log("Hello Eshwar this working please reslove header");
-      
     }
      
     openModal() {
-        const modalRef = this.modalService.open(ClientAddingComponent,{windowClass: 'modal-xl modal-rounded'});
+        const modalRef = this.modalService.open(ClientAddingComponent,{size: 'modal-xl'});
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
       }
-    
 }
