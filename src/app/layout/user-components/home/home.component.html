@@ -16,7 +16,7 @@
     </div>
   </div>
 </section>
-
+<!---------*ngIf="searchText==='' || categories.name.toLowerCase.includes()"-------->
 <section>
   <div class="container">
     <div class="row">
@@ -31,7 +31,7 @@
                     <img [src]="image1" alt="Twam" class="image1">
                     <img [src]="image2" alt="Twam" class="image2">
                     <ul class="action">
-                      <li> 
+                      <li>
                         <i class="fa fa-heart" aria-hidden="true"></i>
                         <span>Add to wishlist</span>
                       </li>
@@ -39,24 +39,29 @@
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to cart</span>
                       </li>
                       <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"><i
+                            class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                         </button>
                       </li>
                     </ul>
                   </div>
                   <div class="card-body">
                     <p class="card-title">Titel:{{subtitle}}</p>
-                    <p> Price : {{price}} </p>
-                    <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
-                    <p>Rating from{{ratingcount}} Users</p>
-                    <div class="sci">
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <div class="sci pt-2">
                       <li>
-                        <a href="">Add Cart</a>
+                        <a class="btn btn-success" href="">Add Cart</a>
                       </li>
-                  
                     </div>
                   </div>
-                 
+
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -73,19 +78,26 @@
                     </li>
 
                     <li>
-                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()">                        <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
+                          class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                       </button>
                     </li>
                   </ul>
                   <div class="card-body">
-                    <p class="card-title">Titel:Bra</p>
-
-                    <p class="card-text">Price:650</p>
-                  </div>
-                  <div class="sci">
-                    <li>
-                      <a href="">Add Cart</a>
-                    </li>
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                   <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
                   <p>Rating from{{ratingcount}} Users</p> -->
@@ -105,21 +117,29 @@
                     </li>
 
                     <li>
-                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()">                        <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
+                          class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                       </button>
                     </li>
                   </ul>
                   <div class="card-body">
-                    <p class="card-title">Titel:Bra</p>
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
+                  </div>
 
-                    <p class="card-text">Price:650</p>
-                  </div>
-                  <div class="sci">
-                    <li>
-                      <a href="">Add Cart</a>
-                    </li>
-                  </div>
-              
+
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -135,21 +155,29 @@
                       </li>
 
                       <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
+                            class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                         </button>
                       </li>
                     </ul>
                   </div>
                   <div class="card-body">
-                    <p class="card-title">Titel:Bra</p>
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
+                  </div>
 
-                    <p class="card-text">Price:650</p>
-                  </div>
-                  <div class="sci">
-                    <li>
-                      <a href="">Add Cart</a>
-                    </li>
-                  </div>
                   <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
                   <p>Rating from{{ratingcount}} Users</p> -->
                 </div>
@@ -216,7 +244,7 @@
         </button>
       </div>
     </div>
-    <hr/>
+    <hr />
   </div>
 </section>
 
@@ -236,7 +264,11 @@
                   <div class="card-body">
                     <p class="card-title">Titel:Paintes</p>
                     <p class="card-text">Price:650</p>
-                    <a href="#" class="btn ">Go somewhere</a>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                 </div>
                 <div class="card">
@@ -246,7 +278,11 @@
                   <div class="card-body">
                     <p class="card-title">Titel:Bra</p>
                     <p class="card-text">Price:650</p>
-                    <a href="#" class="btn ">Go somewhere</a>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                 </div>
                 <div class="card">
@@ -256,7 +292,11 @@
                   <div class="card-body">
                     <p class="card-title">Titel:Swimsuit</p>
                     <p class="card-text">Price:650</p>
-                    <a href="#" class="btn ">Go somewhere</a>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                 </div>
                 <div class="card">
@@ -266,7 +306,11 @@
                   <div class="card-body">
                     <p class="card-title">Titel:Essentials</p>
                     <p class="card-text">Price:650</p>
-                    <a href="#" class="btn ">Go somewhere</a>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                 </div>
                 <div class="card">
@@ -276,7 +320,11 @@
                   <div class="card-body">
                     <p class="card-title">Titel:Active Wear</p>
                     <p class="card-text">Price:650</p>
-                    <a href="#" class="btn ">Go somewhere</a>
+                    <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div>
                   </div>
                 </div>
               </div>

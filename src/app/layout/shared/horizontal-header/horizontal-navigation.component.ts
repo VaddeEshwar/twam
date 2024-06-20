@@ -19,7 +19,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 
   public isCollapsed = false;
   public showMobileMenu = false;
-
+  enteredSearchValue: string='';
   notifications: Object[] = [
     {
       btn: 'btn-danger',
@@ -130,4 +130,16 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   login(){
     this.router.navigate(['login']);
   }
+  @Output()searchTextchanger:EventEmitter<string>= new EventEmitter<string>();
+  onSearchTextCharged(){
+    this.searchTextchanger.emit(this.enteredSearchValue);
+    console.log(this.searchTextchanger)
+  }
+
+//   searchText:string = '';
+//   onSearchTextCharged(searchValue: string){
+// this.searchText = searchValue;
+// console.log(this.searchText)
+//   }
+
 }

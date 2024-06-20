@@ -1,11 +1,11 @@
 <nav class="sidebar-nav">
     <ul id="sidebarnav">
         <!-- First level menu -->
-        <li class="sidebar-item" [ngClass]="[sidebarnavItem.ddclass]" [class.active]="showMenu === sidebarnavItem.title"
+        <li class="sidebar-item two-column" [ngClass]="[sidebarnavItem.ddclass]" [class.active]="showMenu === sidebarnavItem.title"
             *ngFor="let sidebarnavItem of sidebarnavItems"
             [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
             <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title | translate}}</div>
-            <a class="sidebar-link waves-effect waves-dark"
+            <a class="sidebar-link sidebar-link  waves-effect waves-dark"
                 [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
                 [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
                 (mouseover)="addExpandClass(sidebarnavItem.title)"

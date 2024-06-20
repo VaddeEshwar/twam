@@ -76,7 +76,7 @@
       <i-feather name="search"></i-feather>
     </a>
     <form class="app-search position-absolute" [ngClass]="{ 'show-search': showSearch }">
-      <input type="text" class="form-control" placeholder="Search &amp; enter" />
+      <input type="text" class="form-control" (input)="onSearchTextCharged()" [(ngModel)]="enteredSearchValue" placeholder="Search &amp; enter" />
       <a class="srh-btn" (click)="showSearch = !showSearch">
         <i class="ti-close"></i>
       </a>

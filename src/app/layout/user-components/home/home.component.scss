@@ -69,8 +69,8 @@
 }
 
  .card .sci li a {
-	color: #ec1d1d;
-	font-size: 20px;
+	color: #fff;
+	font-size: 15px;
 }
 
 .image1{
@@ -160,4 +160,8 @@ opacity: 0;
 .action li:hover {
   background: #ff2020;
   color: #fff;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0rem !important;
 }
