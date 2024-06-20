@@ -4,6 +4,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../client-adding/client-adding.component';
 import {Client } from '../../../model/products'
+import { FormControl } from '@angular/forms';
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit {
 
     constructor(private modalService: NgbModal) {
         this.subtitle="Bras";
-
+        this.price = '799.00';
     }
 
     ngOnInit() {
@@ -29,7 +31,21 @@ export class HomeComponent implements OnInit {
     }
      
     openModal() {
-        const modalRef = this.modalService.open(ClientAddingComponent,{size: 'modal-xl'});
+        const modalRef = this.modalService.open(ClientAddingComponent,{windowClass: 'modal-xl modal-rounded'});
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
+        modalRef.componentInstance.subtitle = this.subtitle;
+        modalRef.componentInstance.price = this.price;
+        modalRef.componentInstance.subtitle = this.image1;
+
+      }
+      ratingcount=0;
+      totalrating=0;
+      Finalrating:any;
+  
+      ratingcontrol=new FormControl(0);
+      GetRating(){
+          this.ratingcount++;
+          this.totalrating+=this.ratingcontrol?.value|| 0;
+          this.Finalrating=(this.totalrating/this.ratingcount).toFixed(2)
       }
 }

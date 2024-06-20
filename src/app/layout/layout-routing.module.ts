@@ -19,7 +19,6 @@ const routes: Routes = [
 
     ////View Products-Components///////
     { path: 'brasview', loadChildren:()=>import( './product-components/bras-view/bras-view.module').then(x => x.BrasviewModule) },
-    
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
     
   ],

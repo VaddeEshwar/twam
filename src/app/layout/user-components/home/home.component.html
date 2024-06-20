@@ -47,12 +47,16 @@
                   <div class="card-body">
                     <p class="card-title">Titel:{{subtitle}}</p>
                     <p> Price : {{price}} </p>
+                    <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
+                    <p>Rating from{{ratingcount}} Users</p>
                     <div class="sci">
                       <li>
                         <a href="">Add Cart</a>
                       </li>
+                  
                     </div>
                   </div>
+                 
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -83,6 +87,8 @@
                       <a href="">Add Cart</a>
                     </li>
                   </div>
+                  <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
+                  <p>Rating from{{ratingcount}} Users</p> -->
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -113,7 +119,7 @@
                       <a href="">Add Cart</a>
                     </li>
                   </div>
-
+              
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -144,6 +150,8 @@
                       <a href="">Add Cart</a>
                     </li>
                   </div>
+                  <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
+                  <p>Rating from{{ratingcount}} Users</p> -->
                 </div>
                 <!-- <div class="card">
                   <div class="image-wrapper">

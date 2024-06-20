@@ -21,12 +21,14 @@ export class ClientAddingComponent implements OnInit {
   serverResponse: any;
   showBranchComponent = false;
   modalTitle: string;
+  subtitle: string;
+  price: string;
+  image1:string;
   constructor(private http: HttpClient,private router: Router,public activeModal: NgbActiveModal,private modalService: NgbModal) {
     
   }
   ngOnInit() {
-  const modalRef = this.modalService.open(HomeComponent,{size:'lg'});
-
+console.log("price")
   }
   closeModal() {
     this.activeModal.close('Modal closed');

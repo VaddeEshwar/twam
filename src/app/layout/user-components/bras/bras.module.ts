@@ -7,12 +7,17 @@ import { BrasComponent } from './bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         // NgbModal,
+        NgbRatingModule,
         CommonModule,
         NgbCarouselModule,
+        ReactiveFormsModule,
+        FormsModule,
         NgbAlertModule,
         BrasRoutingModule,
         FeatherModule.pick(allIcons),
