@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject,TemplateRef, } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { ClientAddingComponent} from '../client-adding/client-adding.component';
 
 @Component({
     selector: 'app-bras',
@@ -14,7 +17,9 @@ import { FormControl } from '@angular/forms';
          ],
 })
 export class BrasComponent implements OnInit {
+    private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
+    active = 1;
     rating = 2;
     price: string;
     slides = [
@@ -25,7 +30,7 @@ export class BrasComponent implements OnInit {
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
         this.price = '799.00';
     }
 
@@ -42,5 +47,12 @@ export class BrasComponent implements OnInit {
         this.totalrating+=this.ratingcontrol?.value|| 0;
         this.Finalrating=(this.totalrating/this.ratingcount).toFixed(2)
     }
-    
+    openEnd(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'end' });
+	}
+    openModal() {
+        const modalRef = this.modalService.open(ClientAddingComponent,{windowClass: 'modal-xl modal-rounded'});
+        modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
+
+      }
 }

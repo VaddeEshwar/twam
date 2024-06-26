@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit,ViewChild, EventEmitter, Output,ViewContainerRef } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbPanelChangeEvent, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ declare var $: any;
 })
 export class HorizontalNavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
-
+  @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
   public config: PerfectScrollbarConfigInterface = {};
 
   public showSearch = false;
@@ -141,5 +141,10 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 // this.searchText = searchValue;
 // console.log(this.searchText)
 //   }
+
+openEnd(content: any) {
+  // Implement the method functionality here
+  console.log('Clicked on dropdown toggle');
+}
 
 }

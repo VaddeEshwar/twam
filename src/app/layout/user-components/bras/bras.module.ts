@@ -9,10 +9,11 @@ import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
-        // NgbModal,
+        NgbModule,
         NgbRatingModule,
         CommonModule,
         NgbCarouselModule,

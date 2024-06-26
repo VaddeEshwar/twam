@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject,TemplateRef, } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-activewear',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
     // animations: [routerTransition()]
 })
 export class ActivewearComponent implements OnInit {
+    private offcanvasService = inject(NgbOffcanvas);
     subtitle: string;
     apiLoaded = false;
     videoId = 'ttYCyRFLklU';
@@ -21,6 +23,8 @@ export class ActivewearComponent implements OnInit {
       
     }
      
-    
+    openEnd(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'end' });
+	}
     
 }

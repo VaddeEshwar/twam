@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject,TemplateRef,} from '@angular/core';
 // import { routerTransition } from '../../router.animations';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-essentials',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
     // animations: [routerTransition()]
 })
 export class EssentialsComponent implements OnInit {
+    private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     price: string;
     constructor() {
@@ -19,6 +21,8 @@ export class EssentialsComponent implements OnInit {
       
     }
      
-    
+    openEnd(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'end' });
+	}
     
 }

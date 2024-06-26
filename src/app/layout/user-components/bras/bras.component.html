@@ -1,14 +1,37 @@
 <div class="row">
-  
   <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link active "(click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"(click)="openEnd(content)">Size</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "(click)="openEnd(content)">Style</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "(click)="openEnd(content)">Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "(click)="openEnd(content)">Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "(click)="openEnd(content)">Rating</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "(click)="openEnd(content)">Fabric Family</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
+        <div class="card" (click)="openModal()">
+          <img src="assets/images/product/bras-3.webp" alt="Twam" class="card-img-top">
+
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
@@ -19,12 +42,9 @@
       </div>
       <!-- assets/images/product/bras.webp -->
       <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
+        <div class="card" (click)="openModal()">
+          <img src="assets/images/product/bras-2.webp" alt="Twam" class="card-img-top">
+
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p>Price : {{price}} </p>
@@ -33,7 +53,7 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
+        <div class="card" (click)="openModal()">
           <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
           <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
@@ -44,7 +64,7 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
+        <div class="card" (click)="openModal()">
           <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
             <slide *ngFor="let slide of slides; let index=index">
               <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
@@ -113,6 +133,18 @@
         </div>
       </div>
     </div>
- 
   </div>
 </div>
+
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Cart Order List</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <div class="offcanvas-body">
+   hello
+    <div class="text-end">
+      <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>

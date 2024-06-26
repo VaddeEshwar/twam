@@ -23,7 +23,7 @@ export class ClientAddingComponent implements OnInit {
   modalTitle: string;
   subtitle: string;
   price: string;
-  image1:string;
+  @Input() image1: string;  
   constructor(private http: HttpClient,private router: Router,public activeModal: NgbActiveModal,private modalService: NgbModal) {
     
   }

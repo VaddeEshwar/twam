@@ -153,7 +153,7 @@ export const ROUTES: RouteInfo[] = [
     ],
   }, 
   {
-    path: "",
+    path: "lakeproof",
     title: "Leakproof",
     icon: "",
     class: "",
@@ -197,15 +197,15 @@ export const ROUTES: RouteInfo[] = [
       
     ],
   }, 
-  // {
-  //   path: "brasview",
-  //   title: "",
-  //   icon: "",
-  //   class: "",
-  //   ddclass: "",
-  //   extralink: false,
-  //   submenu: [
+  {
+    path: "product-components/cart",
+    title: "cart",
+    icon: "",
+    class: "",
+    ddclass: "",
+    extralink: false,
+    submenu: [
       
-  //   ],
-  // }, 
+    ],
+  }, 
 ];

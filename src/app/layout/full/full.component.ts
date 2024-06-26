@@ -105,5 +105,5 @@ export class FullComponent implements OnInit {
   handleClick(event: boolean) {
     this.showMobileMenu = event;
   }
- 
+
 }

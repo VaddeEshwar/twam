@@ -1,20 +1,37 @@
 <div class="row">
-<div class="col-lg-3">
+
+<div class="col-lg-12">
   <div class="card">
     <div class="card-header">
-      <h6 class="card-title">Filters</h6>
-      <hr/>
-      <div class="card-body">
-
-      </div>
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="nav-link active "(click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"(click)="openEnd(content)">Size</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "(click)="openEnd(content)">Style</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "(click)="openEnd(content)">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "(click)="openEnd(content)">Sale</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "(click)="openEnd(content)">Rating</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "(click)="openEnd(content)">Fabric Family</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
-<div class="col-lg-9">
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
             <div class="card-body">
               <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
               <p> Price : {{price}} </p>
@@ -24,7 +41,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
             <div class="card-body">
               <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
               <p> Price : {{price}} </p>
@@ -34,7 +51,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
             <div class="card-body">
               <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
               <p> Price : {{price}} </p>
@@ -44,49 +61,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-            <div class="card-body">
-              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-            <div class="card-body">
-              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-            <div class="card-body">
-              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-            <div class="card-body">
-              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
             <div class="card-body">
               <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
               <p> Price : {{price}} </p>
@@ -98,91 +73,49 @@
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <p> Price : {{price}} </p>
+              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <p> Price : {{price}} </p>
+              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <p> Price : {{price}} </p>
+              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
+            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <p> Price : {{price}} </p>
+              <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
               <div class="card-body" >
                     <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
                     <p> Price : {{price}} </p>
@@ -192,7 +125,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
               <div class="card-body" >
                     <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
                     <p> Price : {{price}} </p>
@@ -202,7 +135,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
               <div class="card-body" >
                     <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
                     <p> Price : {{price}} </p>
@@ -212,49 +145,7 @@
         </div>
         <div class="col-lg-3 col-md-4 col-sm-3">
           <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
-              <div class="card-body" >
-                    <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-                    <p> Price : {{price}} </p>
-                    <p>Rewards:  <img [src]="rewardImagePath" alt="Reward Image"></p>
-                  </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-3">
-          <div class="card">
-            <img src="assets/images/product/A017.webp" alt="Twam" class="card-img-top">
+            <img src="assets/images/product/lightly-padded-01.webp" alt="Twam" class="card-img-top">
               <div class="card-body" >
                     <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
                     <p> Price : {{price}} </p>
@@ -266,3 +157,15 @@
 </div>
 </div>
 
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Cart Order List</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <div class="offcanvas-body">
+   hello
+    <div class="text-end">
+      <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>
