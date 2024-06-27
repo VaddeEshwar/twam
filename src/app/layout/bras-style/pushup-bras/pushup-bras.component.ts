@@ -5,19 +5,16 @@ import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
-import { ClientAddingComponent} from '../client-adding/client-adding.component';
+import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    selector: 'app-bras',
-    templateUrl: './bras.component.html',
-    styleUrls: ['./bras.component.scss'],
+    selector: 'app-pushup-bras',
+    templateUrl: './pushup-bras.component.html',
+    styleUrls: ['./pushup-bras.component.scss'],
     // animations: [routerTransition()]
-    providers: [NgbRatingConfig,
-        { provide: CarouselConfig, useValue: { interval: 1500, noPause: false, showIndicators: true } }
-         ],
 })
-export class BrasComponent implements OnInit {
+export class pushupbrasComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
@@ -57,7 +54,7 @@ export class BrasComponent implements OnInit {
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
 
       }
-      
-
+     
+        
     
 }

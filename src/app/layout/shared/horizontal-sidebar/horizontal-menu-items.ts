@@ -21,7 +21,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: "",
+        path: "bras-style/pushupbras",
         title: "Push-Up Bras",
         icon: "mdi mdi-play",
         class: "",

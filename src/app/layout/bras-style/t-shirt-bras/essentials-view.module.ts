@@ -2,25 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { LakeproofRoutingModule } from './lakeproof-routing.module';
-import { LakeproofComponent } from './lakeproof.component';
+import { EssentialsviewRoutingModule } from './essentials-view-routing.module';
+import { EssentialsviewComponent } from './essentials-view.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
     imports: [
-        NgbModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        LakeproofRoutingModule,
+        EssentialsviewRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        LakeproofComponent,
+        EssentialsviewComponent,
     ]
 })
-export class LakeproofModule {}
+export class EssentialsviewModule {}

@@ -1,26 +1,24 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { LakeproofRoutingModule } from './lakeproof-routing.module';
-import { LakeproofComponent } from './lakeproof.component';
+import { CartviewRoutingModule } from './cart-view-routing.module';
+import { CartviewComponent } from './cart-view.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 @NgModule({
     imports: [
-        NgbModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        LakeproofRoutingModule,
+        CartviewRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        LakeproofComponent,
-    ]
+        CartviewComponent,
+    ],
+
 })
-export class LakeproofModule {}
+export class CartviewModule {}

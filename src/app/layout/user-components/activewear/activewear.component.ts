@@ -1,6 +1,7 @@
 import { Component, OnInit,inject,TemplateRef, } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-activewear',
@@ -10,6 +11,7 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ActivewearComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
+    disabled = false;
     subtitle: string;
     apiLoaded = false;
     videoId = 'ttYCyRFLklU';

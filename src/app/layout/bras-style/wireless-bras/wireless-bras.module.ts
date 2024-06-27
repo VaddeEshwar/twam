@@ -2,25 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { LakeproofRoutingModule } from './lakeproof-routing.module';
-import { LakeproofComponent } from './lakeproof.component';
+import { BrasviewRoutingModule } from './bras-view-routing.module';
+import { BrasviewComponent } from './bras-view.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
     imports: [
-        NgbModule,
+        // NgbModal,
+        NgxImageZoomModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        LakeproofRoutingModule,
+        BrasviewRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        LakeproofComponent,
+        BrasviewComponent,
     ]
 })
-export class LakeproofModule {}
+export class BrasviewModule {}

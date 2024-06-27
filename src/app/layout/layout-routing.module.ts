@@ -23,7 +23,9 @@ const routes: Routes = [
     { path: 'product-components/essview', loadChildren:()=>import( './product-components/essentials-view/essentials-view.module').then(x => x.EssentialsviewModule) },
     { path: 'product-components/cart', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule)},
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
-    
+    /////////////////////
+    { path: 'bras-style/pushupbras', loadChildren:()=>import( './bras-style/pushup-bras/pushup-bras.module').then(x => x.pushupbrasModule) },
+
   ],
 },
 
