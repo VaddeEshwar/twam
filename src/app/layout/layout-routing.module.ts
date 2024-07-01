@@ -18,14 +18,16 @@ const routes: Routes = [
     { path: 'lakeproof', loadChildren:()=>import( './user-components/lakeproof/lakeproof.module').then(x => x.LakeproofModule) },
     { path: 'swimwear', loadChildren:()=>import( './user-components/swimwear/swimwear.module').then(x => x.SwimwearModule) },
     { path: 'activewear', loadChildren:()=>import( './user-components/activewear/activewear.module').then(x => x.ActivewearModule) },
-    ////View Products-Components///////
+      ////View Products-Components///////
     { path: 'product-components/brasview', loadChildren:()=>import( './product-components/bras-view/bras-view.module').then(x => x.BrasviewModule) },
     { path: 'product-components/essview', loadChildren:()=>import( './product-components/essentials-view/essentials-view.module').then(x => x.EssentialsviewModule) },
     { path: 'product-components/cart', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule)},
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
-    /////////////////////
+       //////////bras-styles///////////
     { path: 'bras-style/pushupbras', loadChildren:()=>import( './bras-style/pushup-bras/pushup-bras.module').then(x => x.pushupbrasModule) },
+    
 
+       ///////////panties-styles////////////
   ],
 },
 

@@ -1,0 +1,327 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="">Filter:-</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " (click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="openEnd(content)">Size</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Style</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Rating</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
+          </li>
+          <li class="nav-item msn-auto">
+            <select class="form-control nav-link active">
+              <option value="">--Select School--</option>
+              <option value=""> abc</option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+              <option value=""> </option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card" (click)="openModal()">
+          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
+
+          <div class="card-body">
+            <h6 class="card-title">Playalong Women Push-up Heavily Padded Bra Blue Women Balconette Heavily Padded Bra
+            </h6>
+            <p> Price : {{price}} </p>
+            <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
+            <p>Rating from{{ratingcount}} Users</p>
+          </div>
+        </div>
+      </div>
+      <!-- assets/images/product/bras.webp -->
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
+          <div class="d-flex no-block align-items-center">
+            <div class="ms-3">
+              <button type="button"
+                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
+            </div>
+            <div class="ms-3">
+              <button type="button"
+                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
+            </div>
+            <div class="ms-3">
+              <button type="button"
+                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
+            </div>
+            <div class="ms-3">
+              <button type="button"
+                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
+            </div>
+            <div class="ms-3">
+              <button type="button"
+                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
+            </div>
+
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <p>Price : {{price}} </p>
+            <div class="d-flex no-block align-items-center">
+              <div class="ms-3">
+                <ngb-rating [(rate)]="rating" [max]="5"></ngb-rating>
+              </div>
+              <div class="ms-auto pe-3"><button type="button"
+                  class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"><i class="fa fa-eye"
+                    aria-hidden="true"></i></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card" (click)="openModal()">
+          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
+            <slide *ngFor="let slide of slides; let index=index">
+              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <div class="card-body">
+            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+
+            <p> Price : {{price}} </p>
+            <ngb-rating [(rate)]="rating"></ngb-rating>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Filter</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <hr />
+  <div class="offcanvas-body">
+    <ngb-accordion #acc="ngbAccordion">
+      <ngb-panel title="Bra Sizes">
+        <ng-template ngbPanelContent>
+          <ngb-accordion #acc="ngbAccordion">
+            <ngb-panel title="28">
+              <div class="card-body">
+                <h4 class="card-title">Inline Default Checkbox</h4>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                  <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                </div>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="30">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="32">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="34">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="38">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="40">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="42">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+            <ngb-panel title="44">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+            </ngb-panel>
+          </ngb-accordion>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Sizes">
+        <ng-template ngbPanelContent>
+          Sizes
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Style">
+        <ng-template ngbPanelContent>
+          Style
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Collection">
+        <ng-template ngbPanelContent>
+          Collection
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Sale">
+        <ng-template ngbPanelContent>
+          Sale
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Color">
+        <ng-template ngbPanelContent>
+          Color
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Rating">
+        <ng-template ngbPanelContent>
+          Rating
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Fabric Family">
+        <ng-template ngbPanelContent>
+          Fabric Family
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+    <div class="text-end pt-2">
+      <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
+    </div>
+  </div>
+</ng-template>
