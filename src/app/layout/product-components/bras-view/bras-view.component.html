@@ -1,11 +1,21 @@
-<div class="row">
-  <div class="col-lg-7">
-    <lib-ngx-image-zoom
-    [thumbImage]=myThumbnail
-    [fullImage]=myFullresImage
-></lib-ngx-image-zoom>
+
+<section>
+  <div class="container">
+    <div class="image-preview" appGetZoomPosition (appGetZoomPosition)="onZoomImage($event)">
+      <img [src]="selectedImage" alt="Selected Image">
+    </div>
+
+     <ul class="thumbs">
+      <li class="item">
+        <img src="assets/images/gallery/1.jpg" alt="" (click)="onThumClick('1')">
+      </li>
+      <li class="item">
+        <img src="assets/images/gallery/2.jpg" alt="" (click)="onThumClick('2')">
+      </li>
+      <li class="item">
+        <img src="assets/images/gallery/3.jpg" alt="" (click)="onThumClick('3')">
+      </li>
+    </ul>
   </div>
-  <div class="col-lg-5">
-   
-  </div>
-</div>
+</section>
+<app-zoom-image-viewer *ngIf="coordinates"[coordinates]="coordinates" [imageUrl]="selectedImage"></app-zoom-image-viewer>

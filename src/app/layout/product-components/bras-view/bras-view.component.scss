@@ -1,35 +1,44 @@
-.btn-group{
+
+.toolbar{
     display: flex;
-    flex-wrap: wrap;
+    color: #111;
+    font-weight: 600;
+    height:50px ;
+    align-items: center;
 }
-.btn-group > .btn, .btn-group-vertical > .btn {
-    position: relative;
-    flex: 0 1 auto;
+
+.image-preview{
+    display: inline-block;
+    cursor: zoom-in;
+    width: 400px;
+    height: 300px;
+
 }
-.form-check span {
-    height: 1rem;
-    margin-right: 15px;
-    width: 1rem;
-    display: block;
-    background-color: #000;
-    position: relative;
-    border-radius: 50%;
-    z-index: 1;
+.thumbs{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 80px;
+    list-style: none;
+    overflow: hidden;
+    padding: 0 5px;
 }
-.form-check span:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 28px;
-    height: 28px;
-    background-color: transparent;
-    border: 1px solid var(--secondary);
-    border-radius: 50%;
-    opacity: 0.2;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: -1;
+.item img{
+    width: 100px;
+    height: 100px;
 }
-.form-check .form-check-input:checked + span:after {
-    transform: translate(-50%, -50%) scale(1);
+.item{
+    margin: 0 5px;
+    height: 110px;
+    width: 107px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: 3px solid #111;
+}
+app-zoom-image-viewer{
+    position: fixed;
+    right: 35px;
+    top: 50px;
+    left: 500px;
+    bottom: 70px;
+    
 }

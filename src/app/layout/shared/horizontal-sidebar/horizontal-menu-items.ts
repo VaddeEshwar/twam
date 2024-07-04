@@ -150,7 +150,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: "Thongs & V-Strings",
+        path: "product-components/brasview",
         title: "Thongs & V-Strings",
         icon: "mdi mdi-play",
         class: "",

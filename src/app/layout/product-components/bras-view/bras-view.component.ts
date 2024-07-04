@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
+import {ZoomImageViewerComponent} from '../zoom-image-viewer/zoom-image-viewer.component';
 
 @Component({
     selector: 'app-bras-view',
@@ -10,19 +11,24 @@ import { Component, OnInit } from '@angular/core';
 export class BrasviewComponent implements OnInit {
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     price: string;
+    coordinates: any;
     minValue: number = 100;
     maxValue: number = 400;
-    myThumbnail:string = 'assets/images/product/bras-01.webp';
-    myFullresImage:string = 'assets/images/product/bras-01.webp';
+    selectedImage=`assets/images/gallery/1.jpg`
     constructor() {
         this.price = '799.00';
     }
 
     ngOnInit() {
-        console.log("hello eshwar");
+        console.log("hello eshwar this component bras view");
       
     }
      
-        
-    
+       onZoomImage(coordinates:any){
+       console.log(coordinates);
+       this.coordinates = coordinates
+    }
+      onThumClick(index:string){
+        this.selectedImage=`assets/images/gallery/${index}.jpg`
+      }
 }

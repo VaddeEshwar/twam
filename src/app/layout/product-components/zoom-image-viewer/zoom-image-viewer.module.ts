@@ -1,32 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
-import { BrasviewRoutingModule } from './bras-view-routing.module';
-import { BrasviewComponent } from './bras-view.component';
+
+import { ZoomImageViewerComponent } from './zoom-image-viewer.component';
+import { ZoomImageViewerRoutingModule } from './zoom-image-viewer-routing.module';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
-import {ZoomImageViewerComponent} from '../zoom-image-viewer/zoom-image-viewer.component';
-import { GetZoomPositionDirective} from '../directives/get-zoom-position.directive'
+import {GetZoomPositionDirective } from '../directives/get-zoom-position.directive'
+
 @NgModule({
     imports: [
-        // NgbModal,
-        FormsModule,
-        NgxImageZoomModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        BrasviewRoutingModule,
+        ZoomImageViewerRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        BrasviewComponent,
         ZoomImageViewerComponent,
         GetZoomPositionDirective
-        
     ]
 })
-export class BrasviewModule {}
+export class ZoomImageViewerModule {}
