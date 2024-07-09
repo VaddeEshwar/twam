@@ -12,7 +12,7 @@ export class GetZoomPositionDirective {
     this.imgNativeEl = imgEl.nativeElement;
   }
 
-  private getCursorPosition(event: MouseEvent) {
+  private getCursorPosition(event: any) {
     const rect = this.imgNativeEl.getBoundingClientRect();
     const x = event.pageX - rect.left;
     const y = event.pageY - rect.top;
@@ -25,7 +25,7 @@ export class GetZoomPositionDirective {
   }
 
   @HostListener('mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
+  onMouseMove(event: any) {
     const pos = this.getCursorPosition(event);
     this.eOnZoom.emit({ x: (pos.x / pos.width) * 100, y: (pos.y / pos.height) * 100 });
   }
