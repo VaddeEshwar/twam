@@ -11,11 +11,11 @@ import {ZoomImageViewerComponent} from '../zoom-image-viewer/zoom-image-viewer.c
 import { GetZoomPositionDirective} from '../directives/get-zoom-position.directive';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
     imports: [
         // NgModule,
-        // NgbModal,
+        NgbModule,
         NgbRatingModule,
         FormsModule,ReactiveFormsModule,
         NgxImageZoomModule,

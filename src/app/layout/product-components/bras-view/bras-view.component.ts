@@ -13,8 +13,7 @@ export class BrasviewComponent implements OnInit {
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     price: string;
     coordinates: any;
-    // minValue: number = 100;
-    // maxValue: number = 400;
+    active=1;
     selectedImage=`assets/images/gallery/1.jpg`
     slides = `assets/images/product/1.webp`
     constructor() {

@@ -125,12 +125,18 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     this.translate.use(lang.code)
     this.selectedLanguage = lang;
     alert('hello')
-
   }
+
   login(){
     this.router.navigate(['login']);
   }
+  
+  cart(){
+    this.router.navigate(['product-components/cart']);
+  }
+
   @Output()searchTextchanger:EventEmitter<string>= new EventEmitter<string>();
+
   onSearchTextCharged(){
     this.searchTextchanger.emit(this.enteredSearchValue);
     console.log(this.searchTextchanger)
@@ -141,6 +147,8 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 // this.searchText = searchValue;
 // console.log(this.searchText)
 //   }
+
+
 
 openEnd(content: any) {
   // Implement the method functionality here

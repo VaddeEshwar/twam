@@ -191,58 +191,10 @@
   <!-- Messages -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)" id="2"
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" id="2"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-cart"></i-feather>
     </a>
-    <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" aria-labelledby="2" ngbDropdownMenu>
-      <span class="with-arrow">
-        <span class="bg-danger"></span>
-      </span>
-      <ul class="list-style-none">
-        <li>
-          <div class="drop-title text-white bg-danger">
-            <h4 class="mb-0 mt-1">Totall Cart Product</h4>
-            <span class="fw-light">Cart List</span>
-          </div>
-        </li>
-        <li>
-          <div class="message-center message-body" [perfectScrollbar]="config">
-            <!-- Message -->
-            <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
-              *ngFor="let mymessage of mymessages">
-              <!-- <span class="user-img position-relative d-inline-block">
-                <img
-                  src="{{ mymessage.useravatar }}"
-                  alt="user"
-                  class="rounded-circle"
-                />
-                <span
-                  class="profile-status rounded-circle d-inline-block {{
-                    mymessage.status
-                  }} float-end"
-                ></span>
-              </span> -->
-              <!-- <span class="mail-contnet d-inline-block w-75 ps-2 align-middle">
-                <h5 class="message-title">{{ mymessage.from }}</h5>
-                <span class="mail-desc fs-2 d-block text-muted text-truncate">{{
-                  mymessage.subject
-                }}</span>
-                <span class="time fs-2 d-block text-muted text-truncate">{{
-                  mymessage.time
-                }}</span>
-              </span> -->
-            </a>
-          </div>
-        </li>
-        <li>
-          <a class="text-center link" href="javascript:void(0);">
-            <b>See all e-Mails</b>
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
   </li>
   <!-- ============================================================== -->
   <!-- End Messages -->
@@ -289,7 +241,7 @@
         <i class="ti-email me-2 ms-1"></i> Inbox</a>
       <a class="dropdown-item" href="javascript:void(0)">
         <i class="ti-settings me-2 ms-1"></i> Account Setting</a>
-      <a class="dropdown-item" href="javascript:void(0)" onclick="login()">
+      <a class="dropdown-item"  (click)="login()">
         <i class="fa fa-power-off me-2 ms-1"></i>Login</a>
       <div class="ps-4 p-2">
         <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>

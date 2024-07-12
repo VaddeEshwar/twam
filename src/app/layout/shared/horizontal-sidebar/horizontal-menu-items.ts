@@ -288,15 +288,15 @@ export const ROUTES: RouteInfo[] = [
       
     ],
   }, 
-  {
-    path: "product-components/cart",
-    title: "cart",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
+  // {
+  //   path: "product-components/cart",
+  //   title: "cart",
+  //   icon: "",
+  //   class: "",
+  //   ddclass: "",
+  //   extralink: false,
+  //   submenu: [
       
-    ],
-  }, 
+  //   ],
+  // }, 
 ];
