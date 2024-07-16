@@ -1,7 +1,7 @@
 // 
 // Custom layout variables
 // 
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:300,400,600,700,800");
 
 // 
 // Theme Global setting colors
@@ -127,7 +127,7 @@ $colors: (
   "gray": $gray-600,
   "gray-dark": $gray-800,
 );
-
+$success:#D72229 !default;
 $primary: #3699ff !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
@@ -202,7 +202,7 @@ $grid-gutter-width: 20px !default;
 // Typography
 // 
 $font-size-base: 0.875rem;
-$font-family-sans-serif: "Ubuntu", sans-serif !default;
+$font-family-sans-serif: "Plus Jakarta Sans",  !default;
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-medium: 600 !default;
@@ -338,7 +338,7 @@ $form-check-input-border-radius: 4px !default;
 $form-check-input-width: 1.375em !default;
 $form-check-input-height: 1.375em !default;
 $form-check-input-focus-box-shadow: none !default;
-$form-range-track-bg:             $gray-300 !default;
+$form-range-track-bg:$gray-300 !default;
 
 // 
 // Progressbars

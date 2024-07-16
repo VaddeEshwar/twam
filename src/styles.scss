@@ -1,10 +1,15 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "MyFont"; }
 .placeholder{
     color: #eda80b !important;
 }
 a {
     text-decoration: none !important;
+}
+
+@font-face {
+    font-family: "MyFont";
+    src: url('../src/assets/scss/font/PlusJakartaSans-Regular.ttf') format('truetype');
 }
