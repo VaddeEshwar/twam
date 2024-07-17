@@ -15,7 +15,7 @@ export class BrasviewComponent implements OnInit {
     coordinates: any;
     active=1;
     selectedImage=`assets/images/gallery/1.jpg`
-    slides = `assets/images/product/1.webp`
+    slides = `assets/images/users/1.jpg`
     constructor() {
         this.price = '799.00';
     }
@@ -33,7 +33,7 @@ export class BrasviewComponent implements OnInit {
         this.selectedImage=`assets/images/gallery/${index}.jpg`
       }
       onColorClick(index:string){
-        this.slides=`assets/images/product/${index}.jpg`
+        this.selectedImage=`assets/images/users/${index}.jpg`
        console.log(this.slides)
       }
       ratingcount=0;
