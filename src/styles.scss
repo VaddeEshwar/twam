@@ -1,7 +1,7 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: "MyFont"; }
+body { margin: 0; font-family: "MyFont" !important; }
 .placeholder{
     color: #eda80b !important;
 }

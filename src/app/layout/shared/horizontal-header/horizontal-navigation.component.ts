@@ -134,7 +134,9 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   cart(){
     this.router.navigate(['product-components/cart']);
   }
-
+  bag(){
+    this.router.navigate(['product-components/bag']);
+  }
   @Output()searchTextchanger:EventEmitter<string>= new EventEmitter<string>();
 
   onSearchTextCharged(){

@@ -57,7 +57,13 @@ export class BrasComponent implements OnInit {
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
 
       }
-      
-
+  messageText = '';
+  imageSrc = '';
+  imageButtons = [ {src:'', color: 'image-1'}, {src:'', color: 'image-2'}, 
+    {src:'', color: 'image-3'}]
+      onClick(imageNameObject) {
+        this.imageSrc = imageNameObject.src;
+        this.messageText = imageNameObject.color;
+      }
     
 }

@@ -46,4 +46,5 @@ export class BrasviewComponent implements OnInit {
           this.totalrating+=this.ratingcontrol?.value|| 0;
           this.Finalrating=(this.totalrating/this.ratingcount).toFixed(2)
       }
+      
 }

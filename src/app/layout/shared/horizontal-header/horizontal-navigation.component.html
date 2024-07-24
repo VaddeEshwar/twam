@@ -138,51 +138,11 @@
   <!-- Comment -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="bag()"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-bag"></i-feather>
     </a>
-    <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" ngbDropdownMenu>
-      <span class="with-arrow">
-        <span class="bg-primary"></span>
-      </span>
-      <ul class="list-style-none">
-        <li>
-          <div class="drop-title bg-primary text-white">
-            <h4 class="mb-0 mt-1">Bying Products</h4>
-            <span class="fw-light">List</span>
-          </div>
-        </li>
-        <li>
-          <div class="message-center notifications" [perfectScrollbar]="config">
-            <!-- Message -->
-            <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
-              *ngFor="let notification of notifications">
-              <!-- <span
-                class="btn btn-circle rounded-circle {{ notification.btn }}"
-              >
-                <i class="{{ notification.icon }}"></i>
-              </span>
-              <span class="mail-contnet d-inline-block w-75 ps-2 align-middle">
-                <h5 class="message-title">{{ notification.title }}</h5>
-                <span class="mail-desc fs-2 d-block text-muted text-truncate">{{
-                  notification.subject
-                }}</span>
-                <span class="time fs-2 d-block text-muted text-truncate">{{
-                  notification.time
-                }}</span>
-              </span> -->
-            </a>
-          </div>
-        </li>
-        <li>
-          <a class="link text-center mb-1" href="javascript:void(0);">
-            <strong>Check all notifications</strong>
-            <i class="fa fa-angle-right"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
+   
   </li>
   <!-- ============================================================== -->
   <!-- End Comment -->

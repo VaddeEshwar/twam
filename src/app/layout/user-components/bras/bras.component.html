@@ -49,7 +49,10 @@
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
           <img src="assets/images/product/bras-3.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
+          <div class="d-flex ">
+                <button class="btn btn-circle rounded-circle d-flex justify-content-center" *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" >{{i}}</button>
+              </div>
+                <div class="card-body">
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p>{{price}}</p>
           </div>
