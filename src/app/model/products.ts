@@ -1,10 +1,15 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-export class Client {
+export class Product {
 
 
     constructor(
-        public subtitle: string,
-        public image1: string,
-        public Price: number
+        id: number,
+        title: string,
+        price: number,
+        category: string,
+        description: string,
+        image: string,
     ) { }
 }
+
+  

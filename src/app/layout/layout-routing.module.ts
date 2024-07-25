@@ -10,6 +10,7 @@ const routes: Routes = [
   path: '', 
   component: LayoutComponent,
   children: [
+    { path: '', redirectTo: '/dashboard/classic', pathMatch: 'full' },
     { path: 'home', loadChildren:()=>import( './user-components/home/home.module').then(x => x.HomeModule) },
     { path: 'panties', loadChildren:()=>import( './user-components/panties/panties.module').then(x => x.PantiesModule) },
     { path: 'bras', loadChildren:()=>import( './user-components/bras/bras.module').then(x => x.BrasModule) },

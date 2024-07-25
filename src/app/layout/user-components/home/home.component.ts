@@ -3,7 +3,7 @@ import { Component,OnInit, inject,ViewChild, TemplateRef, ViewContainerRef, Comp
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../client-adding/client-adding.component';
-import {Client } from '../../../model/products'
+import {Product } from '../../../model/products'
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
