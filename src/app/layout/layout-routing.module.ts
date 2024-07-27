@@ -27,8 +27,6 @@ const routes: Routes = [
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
        //////////bras-styles///////////
     { path: 'bras-style/pushupbras', loadChildren:()=>import( './bras-style/pushup-bras/pushup-bras.module').then(x => x.pushupbrasModule) },
-    
-
        ///////////panties-styles////////////
   ],
 },
