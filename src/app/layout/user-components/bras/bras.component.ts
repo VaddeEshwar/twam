@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent } from '../client-adding/client-adding.component';
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { BrasviewComponent } from '../../product-components/bras-view/bras-view.component'
 
 @Component({
     selector: 'app-bras',
@@ -19,15 +20,18 @@ import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 })
 export class BrasComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
-    rewardImagePath: string = ' assets/images/rating/star-on.png';
+    rewardImagePath: string = 'assets/images/rating/star-on.png';
     active = 1;
     rating = 2;
     price: string;
-    slides = [
-        { image: 'assets/images/product/bras-01.webp', text: 'First' },
-        { image: 'assets/images/product/bras.webp', text: 'Second' },
-        { image: 'assets/images/product/bras-5.webp', text: 'Third' }
-    ];
+    selectedColor: string = 'sandybrown'; 
+    colors = ['sandybrown', 'wheat', 'white', 'black']; 
+    images = {
+        sandybrown: 'assets/images/product/bras-01.webp',
+        wheat: 'assets/images/product/bras.webp',
+        white: 'assets/images/product/bras-2.webp',
+        black: 'assets/images/product/bras-03.webp'
+    };
     noWrapSlides = false;
     showIndicator = true;
 
@@ -57,13 +61,17 @@ export class BrasComponent implements OnInit {
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
 
     }
-    messageText = '';
-    imageSrc = '';
-    imageButtons = [{ src: '', color: 'image-1' }, { src: '', color: 'image-2' },
-    { src: '', color: 'image-3' }]
-    onClick(imageNameObject) {
-        this.imageSrc = imageNameObject.src;
-        this.messageText = imageNameObject.color;
+    get imageUrl(): string {
+        return this.images[this.selectedColor];
     }
-
+    changeColor(color: string): void {
+        this.selectedColor = color;
+    }
+    productoverview(){
+        const image = this.imageUrl;
+        const price = this.price;
+    }
+    dataview(){
+        alert('hello')
+    }
 }

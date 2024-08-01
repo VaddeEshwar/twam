@@ -36,7 +36,8 @@
                         <span>Add to wishlist</span>
                       </li>
                       <li>
-                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to cart</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                          cart</span>
                       </li>
                       <li>
                         <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"><i
@@ -46,8 +47,8 @@
                     </ul>
                   </div>
                   <div class="card-body">
-                    <p class="card-title">Titel:{{subtitle}}</p>
-                    <p class="card-title"> Price : {{price}} </p>
+                    <p class="card-title" formControlName="subtitle">Titel:{{subtitle}}</p>
+                    <p class="card-title" formControlName="price"> Price : {{price}} </p>
                     <div class="ml-auto d-flex align-items-center">
                       <ul class="list-inline font-12 dl m-r-10">
                         <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
@@ -55,13 +56,7 @@
                         <li class="list-inline-item"> {{ratingcount}} Users</li>
                       </ul>
                     </div>
-                    <div class="sci pt-2">
-                      <li>
-                        <a class="btn btn-success" >Add Cart</a>
-                      </li>
-                    </div>
                   </div>
-
                 </div>
                 <div class="card">
                   <div class="image-wrapper">
@@ -74,7 +69,8 @@
                     </li>
 
                     <li>
-                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to cart</span>
+                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                        cart</span>
                     </li>
 
                     <li>
@@ -93,11 +89,11 @@
                         <li class="list-inline-item"> {{ratingcount}} Users</li>
                       </ul>
                     </div>
-                    <div class="sci pt-2">
+                    <!-- <div class="sci pt-2">
                       <li>
                         <a class="btn btn-success" href="">Add Cart</a>
                       </li>
-                    </div>
+                    </div> -->
                   </div>
                   <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
                   <p>Rating from{{ratingcount}} Users</p> -->
@@ -113,7 +109,8 @@
                     </li>
 
                     <li>
-                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to cart</span>
+                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                        cart</span>
                     </li>
 
                     <li>
@@ -132,11 +129,11 @@
                         <li class="list-inline-item"> {{ratingcount}} Users</li>
                       </ul>
                     </div>
-                    <div class="sci pt-2">
+                    <!-- <div class="sci pt-2">
                       <li>
                         <a class="btn btn-success" href="">Add Cart</a>
                       </li>
-                    </div>
+                    </div> -->
                   </div>
 
 
@@ -151,7 +148,8 @@
                       </li>
 
                       <li>
-                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to cart</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                          cart</span>
                       </li>
 
                       <li>
@@ -171,11 +169,11 @@
                         <li class="list-inline-item"> {{ratingcount}} Users</li>
                       </ul>
                     </div>
-                    <div class="sci pt-2">
+                    <!-- <div class="sci pt-2">
                       <li>
                         <a class="btn btn-success" href="">Add Cart</a>
                       </li>
-                    </div>
+                    </div> -->
                   </div>
 
                   <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
@@ -263,7 +261,7 @@
                   </div>
                   <div class="card-body">
                     <p class="card-title">Paintes</p>
-                    
+
                   </div>
                 </div>
                 <div class="card">
@@ -354,9 +352,9 @@
 <section>
   <div class="container">
     <div class="row">
-  <img src="../../../../assets/images/background/D-cup-Divas-DT-Banner3.webp" alt="">
-</div>
-</div>
+      <img src="../../../../assets/images/background/D-cup-Divas-DT-Banner3.webp" alt="">
+    </div>
+  </div>
 </section>
 <section>
   <div class="container p-4">
@@ -406,29 +404,73 @@
   <div class="offcanvas-body">
     <div class="el-card-item position-relative pb-3">
       <div class="el-card-avatar mb-3 el-overlay-1 overflow-hidden w-100 position-relative text-center">
-          <img src="assets/images/gallery/chair.jpg" alt="user" />
-          <div class="el-overlay overflow-hidden w-100 h-100">
-              <ul class="list-style-none el-info text-decoration-none d-inline-block text-uppercase text-white bg-transparent p-0 m-auto">
-                  <li class="el-item d-inline-block">
-                      <a class="btn default btn-outline el-link border-white text-white" href="javascript:void(0);">
-                          <i class="icon-link"></i>
-                      </a>
-                  </li>
-              </ul>
-          </div>
+        <img src="assets/images/gallery/chair.jpg" alt="user" />
+        <div class="el-overlay overflow-hidden w-100 h-100">
+          <ul
+            class="list-style-none el-info text-decoration-none d-inline-block text-uppercase text-white bg-transparent p-0 m-auto">
+            <li class="el-item d-inline-block">
+              <a class="btn default btn-outline el-link border-white text-white" href="javascript:void(0);">
+                <i class="icon-link"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="d-flex no-block align-items-center">
-          <div class="ms-3">
-              <h4 class="mb-0">Rounded Chair</h4>
-              <span class="text-muted">globe type chair for rest</span>
-          </div>
-          <div class="ms-auto pe-3">
-              <button type="button" class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center">$15</button>
-          </div>
+        <div class="ms-3">
+          <h4 class="mb-0">Rounded Chair</h4>
+          <span class="text-muted">globe type chair for rest</span>
+        </div>
+        <div class="ms-auto pe-3">
+          <button type="button"
+            class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center">$15</button>
+        </div>
       </div>
-  </div>
-    <div class="text-end">
-      <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
     </div>
+    <div class="text-end">
+      <button type="button" class="btn btn-outline-secondary" (click)="modalOpenVC(modalCenter)">Cart</button>
+    </div>
+  </div>
+</ng-template>
+<ng-template #modalCenter let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Shapping Address
+    </h4>
+    <button type="button" class="btn text-danger close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <i-feather name="x"></i-feather>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="mt-3" [formGroup]="shoppningModel.form" novalidate autocomplete="off" (ngSubmit)="onSubmit(modalCenter)">
+      <div class="form-group p-2">
+        <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="username" placeholder="User Name">
+      </div>
+      <div class="form-group p-2">
+        <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="emailid"placeholder="Email id">
+      </div>
+      <div class="form-group p-2">
+        <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="mobileNo" placeholder="Mobile Number">
+      </div>
+      <div class="form-group p-2">
+        <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="city" placeholder="City">
+      </div>
+      <div class="form-group p-2">
+        <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="state" placeholder="State">
+      </div>
+      <div class="form-group p-2">
+        <textarea class="form-control" rows="3" placeholder="Address" formControlName="address"></textarea>
+      </div>
+      <div class="btn_div">
+        <button type="submit" class="btn btn-info waves-effect waves-light">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">
+      Close
+    </button>
   </div>
 </ng-template>

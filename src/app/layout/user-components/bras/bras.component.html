@@ -25,21 +25,6 @@
       <li class="nav-item">
         <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
       </li>
-      <li class="nav-item msn-auto">
-        <select class="form-control nav-link active">
-          <option value="">--Select School--</option>
-          <option value=""> abc</option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-          <option value=""> </option>
-        </select>
-      </li>
     </ul>
   </div>
 </div>
@@ -48,12 +33,14 @@
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-3.webp" alt="Twam" class="card-img-top">
-          <div class="d-flex ">
-                <button class="btn btn-circle rounded-circle d-flex justify-content-center" *ngFor="let imageButton of imageButtons; let i = index" (click)="onClick(imageButton)" >{{i}}</button>
-              </div>
-                <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+          <img [src]="imageUrl" alt="Product Image" class="product-image" />
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <a class="card-title"(click)="productoverview()">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </a>
             <p>{{price}}</p>
           </div>
         </div>
@@ -61,73 +48,46 @@
       <!-- assets/images/product/bras.webp -->
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras-2.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <p class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </p>
             <p> {{price}} </p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
+          <a (click)="dataview()"><img [src]="imageUrl" alt="Twam" class="card-img-top"></a>
           <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <p class="card-title"><a (click)="dataview()">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </a></p>
             <p>{{price}} </p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
+          <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <p class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </p>
             <p>{{price}} </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p>{{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p>{{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p>{{price}} </p>
-          </div>
-        </div>
-      </div>
-  
     </div>
   </div>
 </div>
@@ -138,7 +98,7 @@
     <h4 class="offcanvas-title">Filter</h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
   </div>
-  <hr/>
+  <hr />
   <div class="offcanvas-body">
     <ngb-accordion #acc="ngbAccordion">
       <ngb-panel title="Bra Sizes">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ViewContainerRef } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import {ZoomImageViewerComponent} from '../zoom-image-viewer/zoom-image-viewer.component';
 import { FormControl } from '@angular/forms';
@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms';
     // animations: [routerTransition()]
 })
 export class BrasviewComponent implements OnInit {
+    @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     price: string;
     coordinates: any;

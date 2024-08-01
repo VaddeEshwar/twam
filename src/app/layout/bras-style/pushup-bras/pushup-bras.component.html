@@ -27,162 +27,71 @@
           <li class="nav-item">
             <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
           </li>
-          <li class="nav-item msn-auto">
-            <select class="form-control nav-link active">
-              <option value="">--Select School--</option>
-              <option value=""> abc</option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-              <option value=""> </option>
-            </select>
-          </li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card" >
-          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
-
+        <div class="card">
+          <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
-            <h6 class="card-title">Playalong Women Push-up Heavily Padded Bra Blue Women Balconette Heavily Padded Bra
-            </h6>
-            <p> Price : {{price}} </p>
-            <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
-            <p>Rating from{{ratingcount}} Users</p>
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <p class="card-title">Playalong Women Push-up Heavily Padded Bra Blue Women Balconette Heavily Padded Bra </p>
+            <p>{{price}} </p>
           </div>
         </div>
       </div>
       <!-- assets/images/product/bras.webp -->
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
-          <div class="d-flex no-block align-items-center">
-            <div class="ms-3">
-              <button type="button"
-                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
-            </div>
-            <div class="ms-3">
-              <button type="button"
-                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
-            </div>
-            <div class="ms-3">
-              <button type="button"
-                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
-            </div>
-            <div class="ms-3">
-              <button type="button"
-                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
-            </div>
-            <div class="ms-3">
-              <button type="button"
-                class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"></button>
-            </div>
-
-          </div>
+          <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p>Price : {{price}} </p>
-            <div class="d-flex no-block align-items-center">
-              <div class="ms-3">
-                <ngb-rating [(rate)]="rating" [max]="5"></ngb-rating>
-              </div>
-              <div class="ms-auto pe-3"><button type="button"
-                  class="btn btn-dark btn-circle rounded-circle d-flex justify-content-center"><i class="fa fa-eye"
-                    aria-hidden="true"></i></button></div>
-            </div>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card" (click)="openModal()">
-          <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
             <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
           <div class="image-wrapper">
-            <img src="assets/images/product/shopping.webp" alt="Twam" class="card-img-top">
-          </div>
+            <img [src]="imageUrl" alt="Twam" class="card-img-top">
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
             <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <carousel [noWrap]="noWrapSlides" [showIndicators]="showIndicator">
-            <slide *ngFor="let slide of slides; let index=index">
-              <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
-            </slide>
-          </carousel>
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/bras.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-
-            <p> Price : {{price}} </p>
-            <ngb-rating [(rate)]="rating"></ngb-rating>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
 <ng-template #content let-offcanvas>
   <div class="offcanvas-header">
     <h4 class="offcanvas-title">Filter</h4>

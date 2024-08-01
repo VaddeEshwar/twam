@@ -5,25 +5,25 @@
       <div class="card-header">
         <ul class="nav nav-pills card-header-pills">
           <li class="nav-item">
-            <a class="nav-link active "(click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+            <a class="nav-link active " (click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"(click)="openEnd(content)">Size</a>
+            <a class="nav-link" (click)="openEnd(content)">Size</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "(click)="openEnd(content)">Style</a>
+            <a class="nav-link " (click)="openEnd(content)">Style</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "(click)="openEnd(content)">Collection</a>
+            <a class="nav-link " (click)="openEnd(content)">Collection</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "(click)="openEnd(content)">Sale</a>
+            <a class="nav-link " (click)="openEnd(content)">Sale</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "(click)="openEnd(content)">Rating</a>
+            <a class="nav-link " (click)="openEnd(content)">Rating</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "(click)="openEnd(content)">Fabric Family</a>
+            <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
           </li>
         </ul>
       </div>
@@ -31,8 +31,13 @@
     <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Product Image" class="product-image" />
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
             <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
@@ -41,8 +46,13 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Product Image" class="product-image" />
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
             <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
@@ -51,8 +61,13 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Product Image" class="product-image" />
           <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
             <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
@@ -61,92 +76,13 @@
       </div>
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
+          <img [src]="imageUrl" alt="Product Image" class="product-image" />
           <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
-            <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-            <p> Price : {{price}} </p>
-            <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/images/product/paintes-2.webp" alt="Twam" class="card-img-top">
-          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
             <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
             <p> Price : {{price}} </p>
             <p>Rewards: <img [src]="rewardImagePath" alt="Reward Image"></p>

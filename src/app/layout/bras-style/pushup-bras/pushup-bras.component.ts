@@ -20,11 +20,14 @@ export class pushupbrasComponent implements OnInit {
     active = 1;
     rating = 2;
     price: string;
-    slides = [
-        {image: 'assets/images/product/bras-01.webp', text: 'First'},
-        {image: 'assets/images/product/bras.webp',text: 'Second'},
-        {image: 'assets/images/product/bras-5.webp',text: 'Third'}
-     ];
+    selectedColor: string = 'sandybrown'; 
+    colors = ['sandybrown', 'wheat', 'white', 'black']; 
+    images = {
+        sandybrown: 'assets/images/product/shopping.webp',
+        wheat: 'assets/images/product/bras.webp',
+        white: 'assets/images/product/bras-2.webp',
+        black: 'assets/images/product/bras-03.webp'
+    };
      noWrapSlides = false;
      showIndicator = true;
   
@@ -55,6 +58,11 @@ export class pushupbrasComponent implements OnInit {
 
       }
      
-        
+      get imageUrl(): string {
+        return this.images[this.selectedColor];
+    }
+    changeColor(color: string): void {
+        this.selectedColor = color;
+    }
     
 }
