@@ -2,7 +2,7 @@ import { Component, OnInit,ViewChild,ViewContainerRef } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import {ZoomImageViewerComponent} from '../zoom-image-viewer/zoom-image-viewer.component';
 import { FormControl } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-bras-view',
     templateUrl: './bras-view.component.html',
@@ -17,7 +17,7 @@ export class BrasviewComponent implements OnInit {
     active=1;
     selectedImage=`assets/images/gallery/1.jpg`
     slides = `assets/images/users/1.jpg`
-    constructor() {
+    constructor(public router: Router) {
         this.price = '799.00';
     }
 
@@ -47,5 +47,9 @@ export class BrasviewComponent implements OnInit {
           this.totalrating+=this.ratingcontrol?.value|| 0;
           this.Finalrating=(this.totalrating/this.ratingcount).toFixed(2)
       }
-      
+      placeorder(){
+    this.router.navigate(['product-components/userform']);
+    alert("hello")
+      }
+   
 }
