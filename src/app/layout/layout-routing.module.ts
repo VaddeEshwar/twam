@@ -28,7 +28,11 @@ const routes: Routes = [
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
        //////////bras-styles///////////
     { path: 'bras-style/pushupbras', loadChildren:()=>import( './bras-style/pushup-bras/pushup-bras.module').then(x => x.pushupbrasModule) },
-       ///////////panties-styles////////////
+     
+    /////////User-view/////////////////////////
+    { path: 'user-profile/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
+    { path: 'user-profile/ordertrak', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
+
   ],
 },
 

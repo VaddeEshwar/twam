@@ -157,4 +157,8 @@ openEnd(content: any) {
   console.log('Clicked on dropdown toggle');
 }
 
+
+profile(){
+  this.router.navigate(['user-profile/profile']);
+}
 }

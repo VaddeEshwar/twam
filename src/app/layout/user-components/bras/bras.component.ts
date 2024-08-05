@@ -8,7 +8,7 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent } from '../client-adding/client-adding.component';
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { BrasviewComponent } from '../../product-components/bras-view/bras-view.component'
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-bras',
     templateUrl: './bras.component.html',
@@ -35,7 +35,7 @@ export class BrasComponent implements OnInit {
     noWrapSlides = false;
     showIndicator = true;
 
-    constructor(config: NgbRatingConfig, private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig, private modalService: NgbModal,public router: Router) {
         this.price = '799.00';
     }
 
@@ -72,6 +72,7 @@ export class BrasComponent implements OnInit {
         const price = this.price;
     }
     dataview(){
-        alert('hello')
+        this.router.navigate(['product-components/brasview']);
+         
     }
 }

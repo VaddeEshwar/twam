@@ -1,0 +1,297 @@
+<div class="row">
+  <!-- Column -->
+  <div class="col-lg-3 col-xlg-3 col-md-5">
+    <div class="card">
+      <div class="card-body">
+        <div class="mt-4 text-center">
+          <img src="assets/images/users/user5.jpg" class="rounded-circle" width="100" />
+          <h4 class="card-title mt-2">Eshwar Vadde</h4>
+        </div>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div class="card-body">
+        <div class="d-flex">
+          <ul ngbNav #navVp="ngbNav" [(activeId)]="activev" class="nav-pills" orientation="vertical">
+            <li ngbNavItem="top">
+              <a ngbNavLink>My Order</a>
+              <ng-template ngbNavContent>
+                <nav ngbNav #navAM="ngbNav" class="nav-tabs">
+                  <ng-container ngbNavItem>
+                    <a ngbNavLink>Profile Information</a>
+                    <ng-template ngbNavContent>
+
+                    </ng-template>
+                  </ng-container>
+                  <ng-container ngbNavItem>
+                    <a ngbNavLink>Manage Addresses</a>
+                    <ng-template ngbNavContent>
+                      <p>
+                        Exercitation +1 labore velit, blog sartorial PBR leggings next
+                        level wes anderson artisan four loko farm-to-table craft beer
+                        twee. Qui photo booth letterpress, commodo enim craft beer
+                        mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
+                        nostrud organic, assumenda labore aesthetic magna delectus
+                        mollit. Keytar helvetica VHS salvia yr, vero magna velit
+                        sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                        anderson 8-bit, sustainable jean shorts beard ut DIY ethical
+                        culpa terry richardson biodiesel. Art party scenester stumptown,
+                        tumblr butcher vero sint qui sapiente accusamus tattooed echo
+                        park.
+                      </p>
+                    </ng-template>
+                  </ng-container>
+                  <ng-container ngbNavItem>
+                    <a ngbNavLink>Pan Card Information</a>
+                    <ng-template ngbNavContent>
+                      <p>
+                        Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
+                        eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
+                        ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
+                        eget tincidunt eu, congue et odio. Duis pharetra et nisl at
+                        faucibus. Quisque luctus pulvinar arcu, et molestie lectus
+                        ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
+                        volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+                        nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
+                        bibendum est, eu tincidunt odio. Orci varius natoque penatibus
+                        et magnis dis parturient montes, nascetur ridiculus mus. Mauris
+                        aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
+                        nec tortor vel tellus pulvinar feugiat.
+                      </p>
+                    </ng-template>
+                  </ng-container>
+                </nav>
+                <div [ngbNavOutlet]="navAM" class="mt-2"></div>
+              </ng-template>
+            </li>
+            <li ngbNavItem="2">
+              <a ngbNavLink>Account Setting</a>
+              <ng-template ngbNavContent>
+                <nav ngbNav #navAM="ngbNav" class="nav-tabs">
+                  <ng-container ngbNavItem>
+                    <a ngbNavLink>Profile Information</a>
+                    <ng-template ngbNavContent>
+                      <form class="form-horizontal">
+                        <div class="card-body">
+                          <h4 class="card-title">Personal Information</h4>
+                          <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                              <div class="mb-3 row">
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" value="Eshwar" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                              <div class="mb-3 row">
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" value="Vadde" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mb-3 row">
+                            <label class="col-sm-2  control-label col-form-label">Your Gender</label>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input type="radio" class="form-check-input" id="customControlValidation2"
+                                  name="radio-stacked" required />
+                                <label class="form-check-label" for="customControlValidation2">Female</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="radio" class="form-check-input" id="customControlValidation3"
+                                  name="radio-stacked" required />
+                                <label class="form-check-label" for="customControlValidation3">Male</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div _ngcontent-vbt-c159="" class="col-6">
+                            <div _ngcontent-vbt-c159="" class="mb-3"><label _ngcontent-vbt-c159="" for="cono"
+                                class="control-label col-form-label">Email Address</label>
+                              <input _ngcontent-vbt-c159="" type="text" value="eshwarvadde@gmail.com"
+                                class="form-control">
+                            </div>
+                          </div>
+                          <div _ngcontent-vbt-c159="" class="col-6">
+                            <div _ngcontent-vbt-c159="" class="mb-3"><label _ngcontent-vbt-c159="" for="cono"
+                                class="control-label col-form-label">Mobile Number</label>
+                              <input _ngcontent-vbt-c159="" type="text" value="8500424039" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <h4 class="card-title">FAQs</h4>
+                      <h6>What happens when I update my email address (or mobile number)?</h6>
+                      <p>Your login email id (or mobile number) changes, likewise. You'll receive all your account
+                        related communication on your updated email address (or mobile number).</p>
+                      <h6>When will my Flipkart account be updated with the new email address (or mobile number)?</h6>
+                      <p>It happens as soon as you confirm the verification code sent to your email (or mobile) and save
+                        the changes.</p>
+                      <h6>What happens to my existing Flipkart account when I update my email address (or mobile
+                        number)?</h6>
+                      <p>Updating your email address (or mobile number) doesn't invalidate your account. Your account
+                        remains fully functional. You'll continue seeing your Order history, saved information and
+                        personal details.</p>
+                      <h6>Does my Seller account get affected when I update my email address?</h6>
+                      <p>Flipkart has a 'single sign-on' policy. Any changes will reflect in your Seller account also.
+                      </p>
+                      <div _ngcontent-vbt-c159="" class="p-3 border-top">
+                        <div _ngcontent-vbt-c159="" class="action-form">
+                          <div _ngcontent-vbt-c159="" class="text-end button-group"><button _ngcontent-vbt-c159=""
+                              type="submit" class="btn  rounded-pill px-4 waves-effect waves-light"> Deactivate Account
+                            </button><button _ngcontent-vbt-c159="" type="submit"
+                              class="btn  rounded-pill px-4 waves-effect waves-light"> Delete Account </button></div>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </ng-container>
+                  <ng-container ngbNavItem>
+                    <a ngbNavLink>Manage Addresses</a>
+                    <ng-template ngbNavContent>
+                      <ngb-accordion #acc="ngbAccordion" class="btn-info">
+                        <ngb-panel title="Add New Address" >
+                          <ng-template ngbPanelContent>
+                            <div class="card w-100">
+                              <div class="card-body border-top pb-0">
+                                <h4 class="card-title mb-3">Add New Address</h4>
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="inputfname" class="control-label col-form-label">First Name</label>
+                                      <input type="text" class="form-control" id="inputfname" placeholder="First Name Here" />
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="inputlname2" class="control-label col-form-label">Last Name</label>
+                                      <input type="text" class="form-control" id="inputlname2" placeholder="Last Name Here" />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="uname" class="control-label col-form-label">Username</label>
+                                      <input type="email" class="form-control" id="uname" placeholder="Username Here" />
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="nname" class="control-label col-form-label">Nick Name</label>
+                                      <input type="text" class="form-control" id="nname" placeholder="Nick Name Here" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-body border-top">
+                                <h4 class="card-title">Contact Info &amp; Bio</h4>
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="email1" class="control-label col-form-label">Email</label>
+                                      <input type="email" class="form-control" id="email1" placeholder="Email Here" />
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                      <label for="wen1" class="control-label col-form-label">Website</label>
+                                      <input type="text" class="form-control" id="wen1" placeholder="http://" />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="mb-3">
+                                      <label for="cono" class="control-label col-form-label">Contact No</label>
+                                      <input type="text" class="form-control" id="cono" placeholder="Contact No Here" />
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <div class="mb-3">
+                                      <label class="control-label col-form-label">Bio</label>
+                                      <textarea class="form-control" aria-label="With textarea" placeholder="Bio Here"></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="p-3 border-top">
+                                <div class="action-form">
+                                  <div class="mb-3 mb-0 text-end button-group">
+                                    <button type="submit" class="btn btn-info rounded-pill px-4 waves-effect waves-light">
+                                      Save
+                                    </button>
+                                    <button type="submit" class="btn btn-dark rounded-pill px-4 waves-effect waves-light">
+                                      Cancel
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </ng-template>
+                        </ngb-panel>
+                      </ngb-accordion>
+                    </ng-template>
+                  </ng-container>
+                  <!-- <ng-container ngbNavItem>
+                    <a ngbNavLink>Pan Card Information</a>
+                    <ng-template ngbNavContent>
+                      <p>
+                        Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
+                        eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
+                        ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
+                        eget tincidunt eu, congue et odio. Duis pharetra et nisl at
+                        faucibus. Quisque luctus pulvinar arcu, et molestie lectus
+                        ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
+                        volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
+                        nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
+                        bibendum est, eu tincidunt odio. Orci varius natoque penatibus
+                        et magnis dis parturient montes, nascetur ridiculus mus. Mauris
+                        aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
+                        nec tortor vel tellus pulvinar feugiat.
+                      </p>
+                    </ng-template>
+                  </ng-container> -->
+                </nav>
+                <div [ngbNavOutlet]="navAM" class="mt-2"></div>
+              </ng-template>
+            </li>
+            <li ngbNavItem="3">
+              <a ngbNavLink>Payments </a>
+              <ng-template ngbNavContent>
+                <p>
+                  Sed commodo, leo at suscipit dictum, quam est porttitor
+                  sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec
+                  egestas ligula vitae odio interdum aliquet. Duis lectus
+                  turpis, luctus eget tincidunt eu, congue et odio. Duis
+                  pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et
+                  molestie lectus ultrices et. Sed diam urna, egestas ut ipsum
+                  vel, volutpat volutpat neque. Praesent fringilla tortor arcu.
+                  Vivamus faucibus nisl enim, nec tristique ipsum euismod
+                  facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci
+                  varius natoque penatibus et magnis dis parturient montes,
+                  nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet
+                  ultricies in eget neque. Phasellus nec tortor vel tellus
+                  pulvinar feugiat.
+                </p>
+              </ng-template>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="col-lg-9 col-xlg-9 col-md-7">
+    <div class="card">
+      <div class="card-body">
+        <div [ngbNavOutlet]="navVp" class="ms-4"></div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Column -->
+</div>
