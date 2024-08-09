@@ -1,7 +1,7 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener ,Inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
+import { DOCUMENT } from "@angular/common";
 @Component({
   selector: 'app-full-layout',
   templateUrl: './full.component.html',
@@ -11,7 +11,8 @@ export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   active=2;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,    
+    @Inject(DOCUMENT) private document: Document) { }
 
   tabStatus = 'justified';
 
@@ -42,14 +43,18 @@ export class FullComponent implements OnInit {
 
   ngOnInit() {
     console.log('full component::'+localStorage.getItem('loginType'));
-    this.loginType = localStorage.getItem('loginType')
-    if (!this.loginType) {
-      this.router.navigate(['/home']);
+    if (this.router.url === "/") {
+      this.router.navigate(["/dashboard/classic"]);
     }
     this.defaultSidebar = this.options.sidebartype;
     this.handleSidebar();
+    if(this.options.dir == 'rtl'){
+      this.document.body.classList.add("rtl");
+    }
   }
-
+  rtlToggle() {
+    this.document.body.classList.toggle("rtl");
+  }
   @HostListener('window:resize', ['$event'])
   onResize(event: string) {
     this.handleSidebar();
