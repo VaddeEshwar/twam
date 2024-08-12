@@ -32,7 +32,7 @@ export class WorkComponent implements OnInit {
 
         this.formDataService.setWork(this.workType);
         let firstState = this.workflowService.getFirstInvalidStep(STEPS.work);       
-        this.router.navigate(['address'], { relativeTo: this.route.parent, skipLocationChange: true });
+        this.router.navigate(['result'], { relativeTo: this.route.parent, skipLocationChange: true });
     }
     //Save button event Ends
 

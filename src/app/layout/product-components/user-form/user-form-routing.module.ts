@@ -24,18 +24,19 @@ const routes: Routes = [
                 title: 'Personal'
               }
             },
-            {
-              path: 'work',
-              component: WorkComponent,        
-              data: {
-                title: 'Work'
-              }
-            },  
+          
             {
               path: 'address',
               component: AddressComponent,
               data: {
                 title: 'Address'
+              }
+            },  
+            {
+              path: 'work',
+              component: WorkComponent,        
+              data: {
+                title: 'Work'
               }
             },  
             {

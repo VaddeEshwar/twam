@@ -107,3 +107,15 @@ ngb-rating{
 .nav-link {
     color: #000 !important;
 }
+.input-group-lg>.btn, .input-group-lg>.form-control, .input-group-lg>.form-select, .input-group-lg>.input-group-text {
+    padding: .5rem 1rem;
+    font-size: 0.95rem !important;
+    border-radius: none!important;
+}
+.form-control:focus {
+    color: var(--bs-body-color); 
+    background-color: var(--bs-body-bg); 
+    border-color:none !important;; 
+    outline: 0; 
+    box-shadow: none!important; 
+}

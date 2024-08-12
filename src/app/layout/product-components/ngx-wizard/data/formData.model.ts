@@ -38,4 +38,10 @@ export class Address {
     state: string = '';
     zip: string = '';
 }
+export class card {
+    cardNo: string = '';
+    Expiry: string = '';
+    CVC: string = '';
+    nameCard: string = '';
+}
 //Address tab data class Ends

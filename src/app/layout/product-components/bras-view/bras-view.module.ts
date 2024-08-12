@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
     imports: [
+        CarouselModule,
         // NgModule,
         NgbModule,
         NgbRatingModule,

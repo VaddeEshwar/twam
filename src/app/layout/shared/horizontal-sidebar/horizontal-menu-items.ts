@@ -23,7 +23,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "bras-style/pushupbras",
         title: "Push-Up Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -32,7 +32,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Strapless Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -41,7 +41,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Full Coverage Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -50,7 +50,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Sports Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -59,7 +59,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Wireless Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -68,7 +68,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Lightly Lined Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -77,7 +77,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "T-Shirt Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -86,7 +86,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Unlined Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -95,7 +95,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Bralettes",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -104,7 +104,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Corset Tops",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -113,7 +113,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Balconette Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -122,7 +122,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "DD+ Bras",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -130,17 +130,7 @@ export const ROUTES: RouteInfo[] = [
       },
     ],
   },
-  {
-    path: "essentials",
-    title: "Essentials",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
-     
-    ],
-  },
+  
   {
     path: "panties",
     title: "Panties",
@@ -152,7 +142,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "product-components/brasview",
         title: "Thongs & V-Strings",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -161,7 +151,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Brazilian Panties",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -170,7 +160,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Cheekies & Cheekinis",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -179,7 +169,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Bikinis & Briefs",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -188,7 +178,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Hiphuggers",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -197,7 +187,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "High-Waist & High-Leg",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -206,7 +196,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Boyshorts",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -215,7 +205,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Garters & Hosiery",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -224,7 +214,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Shapewear",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -233,7 +223,7 @@ export const ROUTES: RouteInfo[] = [
       {
         path: "",
         title: "Adaptive Bras & Panties",
-        icon: "mdi mdi-play",
+        icon: "",
         class: "",
         ddclass: "",
         extralink: false,
@@ -243,6 +233,17 @@ export const ROUTES: RouteInfo[] = [
       
     ],
   }, 
+  {
+    path: "essentials",
+    title: "Essentials",
+    icon: "",
+    class: "",
+    ddclass: "",
+    extralink: false,
+    submenu: [
+     
+    ],
+  },
   {
     path: "lakeproof",
     title: "Leakproof",
@@ -266,28 +267,28 @@ export const ROUTES: RouteInfo[] = [
       
     ],
   }, 
-  {
-    path: "swimwear",
-    title: "Swim Wear",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
+  // {
+  //   path: "swimwear",
+  //   title: "Swim Wear",
+  //   icon: "",
+  //   class: "",
+  //   ddclass: "",
+  //   extralink: false,
+  //   submenu: [
       
-    ],
-  }, 
-  {
-    path: "",
-    title: "Special Needs",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
+  //   ],
+  // }, 
+  // {
+  //   path: "",
+  //   title: "Special Needs",
+  //   icon: "",
+  //   class: "",
+  //   ddclass: "",
+  //   extralink: false,
+  //   submenu: [
       
-    ],
-  }, 
+  //   ],
+  // }, 
   // {
   //   path: "product-components/cart",
   //   title: "cart",

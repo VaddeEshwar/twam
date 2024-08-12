@@ -34,10 +34,10 @@ export class PersonalComponent implements OnInit {
         if (this.personal)
             this.formDataService.setPersonal(this.personal);
 
-        let firstState = this.workflowService.getFirstInvalidStep(STEPS.work);
+        let firstState = this.workflowService.getFirstInvalidStep(STEPS.address);
         if (firstState.length > 0) {
         };
-        this.router.navigateByUrl('/product-components/userform/work', { /* Removed unsupported properties by Angular migration: relativeTo. */ skipLocationChange: true });
+        this.router.navigateByUrl('/product-components/userform/address', { /* Removed unsupported properties by Angular migration: relativeTo. */ skipLocationChange: true });
     }
     //Save button event Ends
 }

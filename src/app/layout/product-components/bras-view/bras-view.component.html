@@ -5,7 +5,6 @@
         <div class="image-preview" appGetZoomPosition (appGetZoomPosition)="onZoomImage($event)">
           <img [src]="selectedImage" alt="Selected Image">
         </div>
-
         <ul class="thumbs">
           <li class="item">
             <img src="assets/images/gallery/1.jpg" alt="" (click)="onThumClick('1')">
@@ -30,7 +29,7 @@
           </div>
         </div>
         <div class="d-flex no-block align-items-center mb-3"><span><i class="fas fa-rupee-sign"></i> 5205</span>
-          <div class="ms-auto"><a href="javascript:void(0)" class="link">11230631</a>
+          <div class="ms-auto"><a href="" class="link">11230631</a>
           </div>
         </div>
         <div>
@@ -65,73 +64,231 @@
           <div class="ngb-tp-meridian me-2"><button type="button" class="btn btn-outline-primary">32A</button></div>
           <div class="ngb-tp-meridian me-2"><button type="button" class="btn btn-outline-primary">32A</button></div>
           <div class="ngb-tp-meridian me-2"><button type="button" class="btn btn-outline-primary">30DDD</button></div>
-        </div> 
-        <div class="align-items-center p-4"> 
-          <button type="button" class="btn btn-danger" (click)="placeorder()" > Place Order </button>
+        </div>
+        <div class="align-items-center p-4">
+          <button type="button" class="btn btn-danger" (click)="placeorder()"> Place Order </button>
         </div>
       </div>
     </div>
   </div>
 </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 slider-background">
+        <h4 class="card-title m-b-40">popular Collections</h4>
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="cards-wrapper">
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img [src]="image1" alt="Twam" class="image1">
+                    <img [src]="image2" alt="Twam" class="image2">
+                    <ul class="action">
+                      <li>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>Add to wishlist</span>
+                      </li>
+                      <li>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to
+                          cart</span>
+                      </li>
+                      <li>
+                        <button type="button" class="btn  waves-effect waves-light"><i class="fa fa-eye"
+                            aria-hidden="true"></i><span>View Details</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title" formControlName="subtitle">Titel:{{subtitle}}</p>
+                    <p class="card-title" formControlName="price"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img src="assets/images/product/bras-2.webp" alt="Twam">
+                  </div>
+                  <ul class="action">
+                    <li>
+                      <i class="fa fa-heart" aria-hidden="true"></i>
+                      <span>Add to wishlist</span>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to
+                        cart</span>
+                    </li>
+
+                    <li>
+                      <button type="button" class="btn  waves-effect waves-light"> <i class="fa fa-eye"
+                          aria-hidden="true"></i><span>View Details</span>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <!-- <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div> -->
+                  </div>
+                  <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
+                  <p>Rating from{{ratingcount}} Users</p> -->
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img src="assets/images/product/bras-3.webp" alt="Twam">
+                  </div>
+                  <ul class="action">
+                    <li>
+                      <i class="fa fa-heart" aria-hidden="true"></i>
+                      <span>Add to wishlist</span>
+                    </li>
+
+                    <li>
+                      <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to
+                        cart</span>
+                    </li>
+
+                    <li>
+                      <button type="button" class="btn  waves-effect waves-light"> <i class="fa fa-eye"
+                          aria-hidden="true"></i><span>View Details</span>
+                      </button>
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                    <!-- <div class="sci pt-2">
+                      <li>
+                        <a class="btn btn-success" href="">Add Cart</a>
+                      </li>
+                    </div> -->
+                  </div>
+
+
+                </div>
+                <div class="card">
+                  <div class="image-wrapper">
+                    <img src="assets/images/product/bras-4.webp" alt="Twam">
+                    <ul class="action">
+                      <li>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>Add to wishlist</span>
+                      </li>
+
+                      <li>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Add to
+                          cart</span>
+                      </li>
+
+                      <li>
+                        <button type="button" class="btn  waves-effect waves-light"> <i class="fa fa-eye"
+                            aria-hidden="true"></i><span>View Details</span>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Titel:{{subtitle}}</p>
+                    <p class="card-title"> Price : {{price}} </p>
+                    <div class="ml-auto d-flex align-items-center">
+                      <ul class="list-inline font-12 dl m-r-10">
+                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                        <li class="list-inline-item"> {{ratingcount}} Users</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr />
+  </div>
+</section>
 
 <section>
   <div class="container">
-    <div class="card-body">
-      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-        <li [ngbNavItem]="1">
-          <a ngbNavLink>Description</a>
-          <ng-template ngbNavContent>
-            <p>
-              Raw denim you probably haven't heard of them jean shorts Austin.
-              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              Mustache cliche tempor, williamsburg carles vegan helvetica.
-              Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby
-              sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-              placeat salvia cillum iphone. Seitan aliquip quis cardigan
-              american apparel, butcher voluptate nisi qui.
-            </p>
-          </ng-template>
-        </li>
-        <li [ngbNavItem]="2">
-          <a ngbNavLink>Reviews</a>
-          <ng-template ngbNavContent>
-            <p>
-              Exercitation +1 labore velit, blog sartorial PBR leggings next
-              level wes anderson artisan four loko farm-to-table craft beer
-              twee. Qui photo booth letterpress, commodo enim craft beer
-              mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
-              nostrud organic, assumenda labore aesthetic magna delectus
-              mollit. Keytar helvetica VHS salvia yr, vero magna velit
-              sapiente labore stumptown. Vegan fanny pack odio cillum wes
-              anderson 8-bit, sustainable jean shorts beard ut DIY ethical
-              culpa terry richardson biodiesel. Art party scenester stumptown,
-              tumblr butcher vero sint qui sapiente accusamus tattooed echo
-              park.
-            </p>
-          </ng-template>
-        </li>
-        <li [ngbNavItem]="3">
-          <a ngbNavLink>Three</a>
-          <ng-template ngbNavContent>
-            <p>
-              Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
-              eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
-              ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
-              eget tincidunt eu, congue et odio. Duis pharetra et nisl at
-              faucibus. Quisque luctus pulvinar arcu, et molestie lectus
-              ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
-              volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
-              nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
-              bibendum est, eu tincidunt odio. Orci varius natoque penatibus
-              et magnis dis parturient montes, nascetur ridiculus mus. Mauris
-              aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
-              nec tortor vel tellus pulvinar feugiat.
-            </p>
-          </ng-template>
-        </li>
-      </ul>
-
-      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    <div class="row">
+      <div class="col-12">
+        <h4 class="card-title m-b-40 ">Product Description</h4>
+        <p class="p-4">A product description is a form of marketing copy used to describe and explain the benefits of your product.In
+          other words, it provides all the information and details of your product on your ecommerce site. These product
+          details can be one sentence, a short paragraph or bulleted. They can be serious, funny or quirky.</p>
+      </div>
+      <div class="col-12">
+        <h4 class="card-title m-b-40 ">Product Reviews</h4>
+        <div class="d-flex flex-row comment-row mt-0 d-flex my-2 p-3">
+          <div class="p-2 pe-0">
+            <img
+              src="assets/images/users/user1.jpg"
+              alt="user"
+              width="50"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="comment-text ps-3 w-100 w-100">
+            <h5 class="font-medium mb-0">James Anderson</h5>
+            <span class="mb-3 d-block text-muted"
+              >Lorem Ipsum is simply dummy text of the printing and type setting
+              industry.
+            </span>
+            <div class="comment-footer">
+              <span class="text-muted float-end">April 14, 2016</span>
+              <span class="action-icons">
+                <a href="javascript:void(0)">
+                  <i class="ti-pencil-alt"></i>
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="ti-check"></i>
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="ti-heart"></i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

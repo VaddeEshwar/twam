@@ -35,7 +35,7 @@ export class AddressComponent implements OnInit {
         if (this.address)
             this.formDataService.setAddress(this.address);
         let firstState = this.workflowService.getFirstInvalidStep(STEPS.work);
-        this.router.navigate(['result'], { relativeTo: this.route.parent, skipLocationChange: true });
+        this.router.navigate(['/product-components/userform/work'], { relativeTo: this.route.parent, skipLocationChange: true });
     }
     //Save button event Ends
 
