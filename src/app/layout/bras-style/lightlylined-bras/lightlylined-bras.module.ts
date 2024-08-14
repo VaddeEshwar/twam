@@ -2,8 +2,8 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { CartviewRoutingModule } from './cart-view-routing.module';
-import { CartviewComponent } from './cart-view.component';
+import { LightlylinedbrasRoutingModule } from './lightlylined-bras-routing.module';
+import { LightlylinedbrasComponent } from './lightlylined-bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -12,13 +12,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        CartviewRoutingModule,
+        LightlylinedbrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        CartviewComponent,
+        LightlylinedbrasComponent,
     ],
 
 })
-export class CartviewModule {}
+export class LightlylinedbrasModule {}

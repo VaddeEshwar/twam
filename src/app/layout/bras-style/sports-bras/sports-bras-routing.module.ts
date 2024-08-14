@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SwimwearviewComponent } from './swimwear-view.component';
+import { SportsbrasComponent } from './sports-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: SwimwearviewComponent
+        path: '', component: SportsbrasComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class SwimwearviewRoutingModule {
+export class SportsbrasRoutingModule {
 }

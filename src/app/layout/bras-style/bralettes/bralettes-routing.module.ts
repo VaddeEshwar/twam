@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LakeproofviewComponent } from './lakeproof-view.component';
+import { BralettesComponent } from './bralettes.component';
 
 const routes: Routes = [
     {
-        path: '', component: LakeproofviewComponent
+        path: '', component: BralettesComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class LakeproofviewRoutingModule {
+export class BralettesRoutingModule {
 }

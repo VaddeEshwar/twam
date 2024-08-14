@@ -2,22 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { SwimwearviewRoutingModule } from './swimwear-view-routing.module';
-import { SwimwearviewComponent } from './swimwear-view.component';
+import { SportsbrasRoutingModule } from './sports-bras-routing.module';
+import { SportsbrasComponent } from './sports-bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     imports: [
+        NgbModule,
+        FormsModule, ReactiveFormsModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        SwimwearviewRoutingModule,
+        SportsbrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        SwimwearviewComponent,
+        SportsbrasComponent,
     ]
 })
-export class SwimwearviewModule {}
+export class SportsbrasModule {}

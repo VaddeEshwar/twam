@@ -2,22 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ActivewearviewRoutingModule } from './activewear-view-routing.module';
-import { ActivewearviewComponent } from './activewear-view.component';
+import { FullcoveragebrasRoutingModule } from './fullcoverage-bras-routing.module';
+import { FullcoveragebrasComponent } from './fullcoverage-bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     imports: [
+        NgbModule,
+        FormsModule, ReactiveFormsModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        ActivewearviewRoutingModule,
+        FullcoveragebrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        ActivewearviewComponent,
+        FullcoveragebrasComponent,
     ]
 })
-export class ActivewearModule {}
+export class FullcoveragebrasModule {}

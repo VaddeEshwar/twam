@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BrasviewComponent } from './bras-view.component';
+import { WirelessbrasComponent } from './wireless-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: BrasviewComponent
+        path: '', component: WirelessbrasComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class BrasviewRoutingModule {
+export class WirelessbrasRoutingModule {
 }

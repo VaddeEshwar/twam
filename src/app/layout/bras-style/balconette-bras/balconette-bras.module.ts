@@ -2,22 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { SpecialneedsRoutingModule } from './specialneeds-view-routing.module';
-import { SpecialneedsComponent } from './specialneeds-view.component';
+import { BalconettebrasRoutingModule } from './balconette-bras-routing.module';
+import { BalconettebrasComponent } from './balconette-bras.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     imports: [
+        NgbModule,
+        FormsModule, ReactiveFormsModule,
+        NgxImageZoomModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        SpecialneedsRoutingModule,
+        BalconettebrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        SpecialneedsComponent,
+        BalconettebrasComponent,
     ]
 })
-export class SpecialneedsModule {}
+export class BalconettebrasModule {}

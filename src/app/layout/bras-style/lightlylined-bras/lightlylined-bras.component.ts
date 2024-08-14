@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 
 @Component({
-    selector: 'app-cart-view',
-    templateUrl: './cart-view.component.html',
-    styleUrls: ['./cart-view.component.scss'],
+    selector: 'app-lightlylined-bras',
+    templateUrl: './lightlylined-bras.component.html',
+    styleUrls: ['./lightlylined-bras.component.scss'],
     // animations: [routerTransition()]
 })
-export class CartviewComponent implements OnInit {
+export class LightlylinedbrasComponent implements OnInit {
   
     constructor() {
       

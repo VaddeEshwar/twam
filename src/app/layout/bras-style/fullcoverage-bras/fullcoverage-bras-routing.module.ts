@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ActivewearviewComponent } from './activewear-view.component';
+import { FullcoveragebrasComponent } from './fullcoverage-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: ActivewearviewComponent
+        path: '', component: FullcoveragebrasComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ActivewearviewRoutingModule {
+export class FullcoveragebrasRoutingModule {
 }

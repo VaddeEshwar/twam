@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CartviewComponent } from './cart-view.component';
+import { LightlylinedbrasComponent } from './lightlylined-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: CartviewComponent
+        path: '', component: LightlylinedbrasComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class CartviewRoutingModule {
+export class LightlylinedbrasRoutingModule {
 }

@@ -28,7 +28,12 @@ const routes: Routes = [
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
        //////////bras-styles///////////
     { path: 'bras-style/pushupbras', loadChildren:()=>import( './bras-style/pushup-bras/pushup-bras.module').then(x => x.pushupbrasModule) },
-     
+    { path: 'bras-style/wireless-bras', loadChildren:()=>import( './bras-style/wireless-bras/wireless-bras.module').then(x => x.WirelessbrasModule) },
+    { path: 'bras-style/Bralettes', loadChildren:()=>import( './bras-style/balconette-bras/balconette-bras.module').then(x => x.BalconettebrasModule) },
+    { path: 'bras-style/Plunge-bra', loadChildren:()=>import( './bras-style/bralettes/bralettes.module').then(x => x.BralettesModule) },
+    { path: 'bras-style/T-shirt-bras', loadChildren:()=>import( './bras-style/t-shirt-bras/t-shirt-bras.module').then(x => x.TshirtbrasModule) },
+    { path: 'bras-style/strapless-bras', loadChildren:()=>import( './bras-style/strapless-bras/strapless-bras.module').then(x => x.StraplessbrasModule) },
+
     /////////User-view/////////////////////////
     { path: 'user-profile/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
     { path: 'user-profile/ordertrak', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
