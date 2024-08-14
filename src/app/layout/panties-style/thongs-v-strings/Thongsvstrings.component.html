@@ -1,0 +1,236 @@
+<div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link" href="">Filter:-</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active " (click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="openEnd(content)">Size</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " (click)="openEnd(content)">Style</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " (click)="openEnd(content)">Collection</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " (click)="openEnd(content)">Sale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " (click)="openEnd(content)">Rating</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-3">
+          <div class="card">
+            <img [src]="imageUrl" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <div class="d-flex ">
+                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+                </button>
+              </div>
+              <h6 class="card-title">Smooth Elegance Padded Non-wired T-shirt Bra </h6>
+              <p>Price : {{price}} </p>
+            </div>
+          </div>
+        </div>
+        <!-- assets/images/product/bras.webp -->
+        <div class="col-lg-3 col-md-4 col-sm-3">
+          <div class="card">
+            <img src="assets/images/product/thongs-and-v-strings-1.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <div class="d-flex ">
+                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+                </button>
+              </div>
+              <h6 class="card-title">Satin Edge Padded Non-wired T-shirt Bra</h6>
+              <p>Price : {{price}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-3">
+          <div class="card">
+            <img src="assets/images/product/thongs-and-v-strings-4.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <div class="d-flex ">
+                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+                </button>
+              </div>
+              <h6 class="card-title">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <p> Price : {{price}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-3">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/thongs-and-v-strings-2.webp" alt="Twam" class="card-img-top">
+            <div class="card-body">
+              <div class="d-flex ">
+                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+                </button>
+              </div>
+              <h6 class="card-title">Cotton Casuals Padded Non-Wired T-Shirt Bra </h6>
+              <p> Price : {{price}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">Filter</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <hr />
+    <div class="offcanvas-body">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel title="Bra Sizes">
+          <ng-template ngbPanelContent>
+            <ngb-accordion #acc="ngbAccordion">
+              <ngb-panel title="28">
+                <div class="card-body">
+                  <h4 class="card-title">Inline Default Checkbox</h4>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                  </div>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="30">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="32">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="34">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="38">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="40">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="42">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+              <ngb-panel title="44">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </ngb-panel>
+            </ngb-accordion>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Sizes">
+          <ng-template ngbPanelContent>
+            Sizes
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Style">
+          <ng-template ngbPanelContent>
+            Style
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Collection">
+          <ng-template ngbPanelContent>
+            Collection
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Sale">
+          <ng-template ngbPanelContent>
+            Sale
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Color">
+          <ng-template ngbPanelContent>
+            Color
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Rating">
+          <ng-template ngbPanelContent>
+            Rating
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Fabric Family">
+          <ng-template ngbPanelContent>
+            Fabric Family
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      <div class="text-end pt-2">
+        <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
+      </div>
+    </div>
+  </ng-template>

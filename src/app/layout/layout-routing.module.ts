@@ -34,6 +34,10 @@ const routes: Routes = [
     { path: 'bras-style/T-shirt-bras', loadChildren:()=>import( './bras-style/t-shirt-bras/t-shirt-bras.module').then(x => x.TshirtbrasModule) },
     { path: 'bras-style/strapless-bras', loadChildren:()=>import( './bras-style/strapless-bras/strapless-bras.module').then(x => x.StraplessbrasModule) },
 
+     //////////////Panties-Style Component/////////////////////
+     { path: 'panties-style/strapless-bras', loadChildren:()=>import( './panties-style/thongs-v-strings/Thongsvstrings.module').then(x => x.ThongsvstringsModule) },
+
+
     /////////User-view/////////////////////////
     { path: 'user-profile/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
     { path: 'user-profile/ordertrak', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
