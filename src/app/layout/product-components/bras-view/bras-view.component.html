@@ -3,17 +3,17 @@
     <div class="row">
       <div class="col-6">
         <div class="image-preview" appGetZoomPosition (appGetZoomPosition)="onZoomImage($event)">
-          <img [src]="selectedImage" alt="Selected Image">
+          <img src="assets/images/gallery/{{imageIndex}}.webp" alt="Selected Image">
         </div>
         <ul class="thumbs">
           <li class="item">
-            <img src="assets/images/gallery/1.jpg" alt="" (click)="onThumClick('1')">
+            <img src="assets/images/gallery/31.webp" alt="" (click)="imageIndex = 31">
           </li>
           <li class="item">
-            <img src="assets/images/gallery/2.jpg" alt="" (click)="onThumClick('2')">
+            <img src="assets/images/gallery/30.webp" alt="" (click)="imageIndex = 30">
           </li>
           <li class="item">
-            <img src="assets/images/gallery/3.jpg" alt="" (click)="onThumClick('3')">
+            <img src="assets/images/gallery/28.webp" alt="" (click)="imageIndex = 28">
           </li>
         </ul>
       </div>
@@ -36,21 +36,21 @@
           <h6>Color:</h6>
         </div>
         <div class="d-flex align-items-center">
-          <div class="me-2"><img src="assets/images/users/1.jpg" (click)="onColorClick('1')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/24.webp" (click)="imageIndex = 24" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/2.jpg" (click)="onColorClick('2')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/25.webp" (click)="imageIndex = 25" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/3.jpg" (click)="onColorClick('3')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/26.webp" (click)="imageIndex = 26" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/4.jpg" (click)="onColorClick('4')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/15.webp" (click)="imageIndex = 15" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/5.jpg" (click)="onColorClick('5')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/11.webp" (click)="imageIndex = 11" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/6.jpg" (click)="onColorClick('6')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/6.webp" (click)="imageIndex = 6" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/7.jpg" (click)="onColorClick('7')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/28.webp" (click)="imageIndex = 28" alt="user" width="50"
               class="border"></div>
-          <div class="me-2"><img src="assets/images/users/8.jpg" (click)="onColorClick('8')" alt="user" width="50"
+          <div class="me-2"><img src="assets/images/gallery/29.webp" (click)="imageIndex = 29" alt="user" width="50"
               class="border"></div>
         </div>
         <div>
@@ -83,8 +83,8 @@
               <div class="cards-wrapper">
                 <div class="card">
                   <div class="image-wrapper">
-                    <img [src]="image1" alt="Twam" class="image1">
-                    <img [src]="image2" alt="Twam" class="image2">
+                    <img src="assets/images/product/bras.webp" alt="Twam" class="">
+                  </div>
                     <ul class="action">
                       <li>
                         <i class="fa fa-heart" aria-hidden="true"></i>
@@ -100,7 +100,7 @@
                         </button>
                       </li>
                     </ul>
-                  </div>
+                 
                   <div class="card-body">
                     <p class="card-title" formControlName="subtitle">Titel:{{subtitle}}</p>
                     <p class="card-title" formControlName="price"> Price : {{price}} </p>
@@ -289,4 +289,4 @@
 </section>
 
 <app-zoom-image-viewer *ngIf="coordinates" [coordinates]="coordinates"
-  [imageUrl]="selectedImage"></app-zoom-image-viewer>
+  [imageUrl]="getImageUrl()"></app-zoom-image-viewer>

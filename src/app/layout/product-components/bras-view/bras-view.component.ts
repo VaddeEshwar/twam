@@ -17,7 +17,9 @@ export class BrasviewComponent implements OnInit {
   coordinates: any;
   active = 1;
 
-  selectedImage = `assets/images/gallery/1.jpg`
+  imageIndex:number = 1;
+
+  selectedImage:string= ``;
   slides = `assets/images/users/1.jpg`
   image1: string = 'assets/images/product/bras.webp';
   image2: string = 'assets/images/product/bras-02.webp';
@@ -33,10 +35,10 @@ export class BrasviewComponent implements OnInit {
     this.coordinates = coordinates
   }
   onThumClick(index: string) {
-    this.selectedImage = `assets/images/gallery/${index}.jpg`
+    this.selectedImage = `assets/images/gallery/${index}.webp`
   }
-  onColorClick(index: string) {
-    this.selectedImage = `assets/images/users/${index}.jpg`
+  onColorClick(imageIndex: string) {
+    this.selectedImage = `assets/images/gallery/${imageIndex}.webp`
   }
   ratingcount = 0;
   totalrating = 0;
@@ -49,8 +51,10 @@ export class BrasviewComponent implements OnInit {
     this.Finalrating = (this.totalrating / this.ratingcount).toFixed(2)
   }
   placeorder() {
-    this.router.navigate(['product-components/userform']);
-    alert("hello")
+    this.router.navigate(['product-components/cart']);
+   
   }
-
+  getImageUrl(): string {
+    return `assets/images/gallery/${this.imageIndex}.webp`;
+  }
 }

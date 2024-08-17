@@ -20,6 +20,7 @@ export class ZoomImageViewerComponent {
       this.renderer.setStyle(this.zoomImage.nativeElement, 'backgroundImage', `url(${url})`);
     }
   }
+    
 }
 
 

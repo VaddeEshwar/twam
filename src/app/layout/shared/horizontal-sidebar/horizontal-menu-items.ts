@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/sports-bras",
         title: "Sports Bras",
         icon: "",
         class: "",

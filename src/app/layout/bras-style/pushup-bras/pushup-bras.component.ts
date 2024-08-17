@@ -23,10 +23,10 @@ export class pushupbrasComponent implements OnInit {
     selectedColor: string = 'sandybrown'; 
     colors = ['sandybrown', 'wheat', 'white', 'black']; 
     images = {
-        sandybrown: 'assets/images/product/shopping.webp',
-        wheat: 'assets/images/product/bras.webp',
-        white: 'assets/images/product/bras-2.webp',
-        black: 'assets/images/product/bras-03.webp'
+        sandybrown: 'assets/images/product/BRA10116BLACK__1.webp',
+        wheat: 'assets/images/product/BRA10116BLACK__2.webp',
+        white: 'assets/images/product/BRA10116BLACK__3.webp',
+        black: 'assets/images/product/BRA10116BLACK__4.webp'
     };
      noWrapSlides = false;
      showIndicator = true;
