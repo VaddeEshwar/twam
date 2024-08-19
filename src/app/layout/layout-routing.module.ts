@@ -37,6 +37,7 @@ const routes: Routes = [
 
      //////////////Panties-Style Component/////////////////////
      { path: 'panties-style/strapless-bras', loadChildren:()=>import( './panties-style/thongs-v-strings/Thongsvstrings.module').then(x => x.ThongsvstringsModule) },
+     { path: 'product-components/ngx-wizard', loadChildren:()=>import( './product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
 
 
     /////////User-view/////////////////////////

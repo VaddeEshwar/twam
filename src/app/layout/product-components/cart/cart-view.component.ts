@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-cart-view',
     templateUrl: './cart-view.component.html',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CartviewComponent implements OnInit {
     formData: any;
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute,public router: Router) {
       
     }
 
@@ -19,5 +20,7 @@ export class CartviewComponent implements OnInit {
             console.log('Received data:', this.formData);
         });
     }
-    
+    placetoorder(){
+        this.router.navigate(['product-components/ngx-wizard']);
+    }
 }

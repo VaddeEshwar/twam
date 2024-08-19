@@ -16,10 +16,10 @@ export class BrasviewComponent implements OnInit {
   price: string;
   coordinates: any;
   active = 1;
+  productquantity = 0;
+  imageIndex: number = 1;
 
-  imageIndex:number = 1;
-
-  selectedImage:string= ``;
+  selectedImage: string = ``;
   slides = `assets/images/users/1.jpg`
   image1: string = 'assets/images/product/bras.webp';
   image2: string = 'assets/images/product/bras-02.webp';
@@ -52,9 +52,18 @@ export class BrasviewComponent implements OnInit {
   }
   placeorder() {
     this.router.navigate(['product-components/cart']);
-   
+
   }
   getImageUrl(): string {
     return `assets/images/gallery/${this.imageIndex}.webp`;
+  }
+  changeQuantity(action: 'max' | 'min') {
+    if (action === 'max') {
+      this.productquantity += 1;
+    } else if (action === 'min') {
+      if (this.productquantity > 0) {
+        this.productquantity -= 1;
+      }
+    }
   }
 }
