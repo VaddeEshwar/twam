@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
-
+import { Router} from '@angular/router'
 @Component({
     selector: 'app-shapewear',
     templateUrl: './shapewear.component.html',
@@ -30,10 +30,9 @@ export class ShapewearComponent implements OnInit {
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal,private router:Router) {
         this.price = '799.00';
     }
-
     ngOnInit() {
         console.log("dashboard");
     }
@@ -50,20 +49,19 @@ export class ShapewearComponent implements OnInit {
     openEnd(content: TemplateRef<any>) {
 		this.offcanvasService.open(content, { position: 'end' });
 	}
-  
     openModal() {
         const modalRef = this.modalService.open(ClientAddingComponent,{windowClass: 'modal-xl modal-rounded'});
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
-
       }
-     
       get imageUrl(): string {
         return this.images[this.selectedColor];
     }
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-     
+    dataview() {
+        this.router.navigate(['product-components/brasview'])
+    }
     }
      
         

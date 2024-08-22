@@ -36,13 +36,20 @@ const routes: Routes = [
     { path: 'bras-style/sports-bras', loadChildren:()=>import( './bras-style/sports-bras/sports-bras.module').then(x => x.SportsbrasModule) },
 
      //////////////Panties-Style Component/////////////////////
-     { path: 'panties-style/strapless-bras', loadChildren:()=>import( './panties-style/thongs-v-strings/Thongsvstrings.module').then(x => x.ThongsvstringsModule) },
-     { path: 'product-components/ngx-wizard', loadChildren:()=>import( './product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
+   { path: 'panties-style/boyshorts', loadChildren:()=>import( './panties-style/boyshorts/boyshorts.module').then(x => x.boyshortsModule) },
+   { path: 'panties-style/brazilian-panties', loadChildren:()=>import( './panties-style/brazilian-panties/brazilian-panties.module').then(x => x.BrazilianpantiesModule) },
+   { path: 'panties-style/cheekies', loadChildren:()=>import( './panties-style/cheekies/cheekies.module').then(x => x.CheekiesModule) },
+   { path: 'panties-style/garters', loadChildren:()=>import( './panties-style/garters/garters.module').then(x => x.GartersModule) },
+   { path: 'panties-style/high-waist', loadChildren:()=>import( './panties-style/high-waist/high-waist.module').then(x => x.HighwaistModule) },
+   { path: 'panties-style/hiphuggers', loadChildren:()=>import( './panties-style/hiphuggers/hiphuggers.module').then(x => x.HiphuggersModule) },
+   { path: 'panties-style/shapewear', loadChildren:()=>import( './panties-style/shapewear/shapewear.module').then(x => x.ShapewearModule) },
+   { path: 'panties-style/thongs-v-strings', loadChildren:()=>import( './panties-style/thongs-v-strings/Thongsvstrings.module').then(x => x.ThongsvstringsModule) },
 
 
     /////////User-view/////////////////////////
     { path: 'user-profile/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
     { path: 'user-profile/ordertrak', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
+    { path: 'product-components/ngx-wizard', loadChildren:()=>import( './product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
 
   ],
 },

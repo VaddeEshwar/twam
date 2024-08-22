@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-lightlylined-bras',
@@ -9,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LightlylinedbrasComponent implements OnInit {
   
-    constructor() {
+    constructor(public router: Router) {
       
     }
 
     ngOnInit() {
       
+    }
+    dataview(){
+        this.router.navigate(['product-components/brasview']);
     }
 }

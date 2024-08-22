@@ -6,14 +6,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
-
+import { Router} from '@angular/router'
 @Component({
-    selector: 'app-shapewear',
-    templateUrl: './shapewear.component.html',
-    styleUrls: ['./shapewear.component.scss'],
+    selector: 'app-garters',
+    templateUrl: './garters.component.html',
+    styleUrls: ['./garters.component.scss'],
     // animations: [routerTransition()]
 })
-export class ShapewearComponent implements OnInit {
+export class GartersComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
@@ -30,7 +30,7 @@ export class ShapewearComponent implements OnInit {
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal,private router:Router) {
         this.price = '799.00';
     }
 
@@ -63,7 +63,9 @@ export class ShapewearComponent implements OnInit {
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-     
+    dataview(){
+        this.router.navigate(['product-components/brasview'])
+     }
     }
      
         

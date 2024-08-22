@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ShapewearRoutingModule } from './hiphuggers-routing.module';
-import { ShapewearComponent } from './hiphuggers.component';
+import { HiphuggersRoutingModule } from './hiphuggers-routing.module';
+import { HiphuggersComponent } from './hiphuggers.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -16,12 +16,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        ShapewearRoutingModule,
+        HiphuggersRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        ShapewearComponent,
+        HiphuggersComponent,
     ]
 })
-export class ShapewearModule {}
+export class HiphuggersModule {}

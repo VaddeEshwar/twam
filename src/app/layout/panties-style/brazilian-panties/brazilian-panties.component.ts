@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
-
+import { Router  } from '@angular/router'
 @Component({
     selector: 'app-brazilian-panties',
     templateUrl: './brazilian-panties.component.html',
@@ -22,15 +22,15 @@ export class BrazilianpantiesComponent implements OnInit {
     selectedColor: string = '#d43743'; 
     colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images:{ [key: string]: string } = {
-        '#d43743': 'assets/images/product/boyshorts-panty-3.webp',
-        '#d6a583': 'assets/images/product/boyshorts-panty-1.webp',
-        '#e8e5e9': 'assets/images/product/boyshorts-panty-4.webp',
-        '#030509': 'assets/images/product/boyshorts-panty-2.webp'
+        '#d43743': 'assets/images/product/brazilian-panties-4.webp',
+        '#d6a583': 'assets/images/product/brazilian-panties-3.webp',
+        '#e8e5e9': 'assets/images/product/brazilian-panties-1.webp',
+        '#030509': 'assets/images/product/brazilian-panties-2.webp'
     };
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal,private router:Router) {
         this.price = '799.00';
     }
 
@@ -63,7 +63,9 @@ export class BrazilianpantiesComponent implements OnInit {
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-     
+    dataview(){
+        this.router.navigate(['product-components/brasview']);
+    }
     }
      
         

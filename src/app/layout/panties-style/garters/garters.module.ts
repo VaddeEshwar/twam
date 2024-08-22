@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ShapewearRoutingModule } from './garters-routing.module';
-import { ShapewearComponent } from './garters.component';
+import { GartersRoutingModule } from './garters-routing.module';
+import { GartersComponent } from './garters.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -16,12 +16,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        ShapewearRoutingModule,
+        GartersRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        ShapewearComponent,
+        GartersComponent,
     ]
 })
-export class ShapewearModule {}
+export class GartersModule {}

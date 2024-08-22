@@ -95,16 +95,17 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: "product-components/brasview",
-        title: "Thongs & V-Strings",
+        path: "panties-style/boyshorts",
+        title: "Boyshorts",
         icon: "",
         class: "",
         ddclass: "",
         extralink: false,
         submenu: [],
       },
+   
       {
-        path: "",
+        path: "panties-style/brazilian-panties",
         title: "Brazilian Panties",
         icon: "",
         class: "",
@@ -113,7 +114,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "panties-style/cheekies",
         title: "Cheekies & Cheekinis",
         icon: "",
         class: "",
@@ -131,34 +132,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
-        title: "Hiphuggers",
-        icon: "",
-        class: "",
-        ddclass: "",
-        extralink: false,
-        submenu: [],
-      },
-      {
-        path: "",
-        title: "High-Waist & High-Leg",
-        icon: "",
-        class: "",
-        ddclass: "",
-        extralink: false,
-        submenu: [],
-      },
-      {
-        path: "",
-        title: "Boyshorts",
-        icon: "",
-        class: "",
-        ddclass: "",
-        extralink: false,
-        submenu: [],
-      },
-      {
-        path: "",
+        path: "panties-style/garters",
         title: "Garters & Hosiery",
         icon: "",
         class: "",
@@ -167,7 +141,27 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "panties-style/hiphuggers",
+        title: "Hiphuggers",
+        icon: "",
+        class: "",
+        ddclass: "",
+        extralink: false,
+        submenu: [],
+      },
+      {
+        path: "panties-style/high-waist",
+        title: "High-Waist & High-Leg",
+        icon: "",
+        class: "",
+        ddclass: "",
+        extralink: false,
+        submenu: [],
+      },
+     
+      
+      {
+        path: "panties-style/shapewear",
         title: "Shapewear",
         icon: "",
         class: "",
@@ -176,15 +170,14 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
-        title: "Adaptive Bras & Panties",
+        path: "panties-style/thongs-v-strings",
+        title: "Thongs & V-Strings",
         icon: "",
         class: "",
         ddclass: "",
         extralink: false,
         submenu: [],
       },
-     
       
     ],
   }, 
@@ -199,17 +192,17 @@ export const ROUTES: RouteInfo[] = [
      
     ],
   },
-  {
-    path: "lakeproof",
-    title: "Leakproof",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
+  // {
+  //   path: "lakeproof",
+  //   title: "Leakproof",
+  //   icon: "",
+  //   class: "",
+  //   ddclass: "",
+  //   extralink: false,
+  //   submenu: [
       
-    ],
-  }, 
+  //   ],
+  // }, 
  
   {
     path: "activewear",

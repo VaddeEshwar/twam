@@ -73,6 +73,5 @@ export class BrasComponent implements OnInit {
     }
     dataview(){
         this.router.navigate(['product-components/brasview']);
-         
     }
 }

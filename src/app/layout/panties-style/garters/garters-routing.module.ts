@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ShapewearComponent } from './garters.component';
+import { GartersComponent } from './garters.component';
 
 const routes: Routes = [
     {
-        path: '', component: ShapewearComponent
+        path: '', component: GartersComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ShapewearRoutingModule {
+export class GartersRoutingModule {
 }

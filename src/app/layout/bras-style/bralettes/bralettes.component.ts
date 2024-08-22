@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-bralettes',
     templateUrl: './bralettes.component.html',
@@ -30,7 +30,7 @@ export class BralettesComponent implements OnInit {
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal,public router: Router) {
         this.price = '799.00';
     }
 
@@ -62,6 +62,9 @@ export class BralettesComponent implements OnInit {
     }
     changeColor(color: string): void {
         this.selectedColor = color;
+    }
+    dataview(){
+        this.router.navigate(['product-components/brasview']);
     }
 }
      

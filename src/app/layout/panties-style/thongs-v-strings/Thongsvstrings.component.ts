@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
+import { Router } from "@angular/router";
 @Component({
     selector: 'app-Thongsvstrings',
     templateUrl: './Thongsvstrings.component.html',
@@ -21,15 +22,15 @@ export class ThongsvstringsComponent implements OnInit {
     selectedColor: string = '#d43743'; 
     colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images:{ [key: string]: string } = {
-        '#d43743': 'assets/images/product/thongs-and-v-strings-3.webp',
-        '#d6a583': 'assets/images/product/thongs-and-v-strings-1.webp',
-        '#e8e5e9': 'assets/images/product/thongs-and-v-strings-4.webp',
-        '#030509': 'assets/images/product/thongs-and-v-strings-2.webp'
+        '#d43743': 'assets/images/product/thongs-and-v-strings-3.jpg',
+        '#d6a583': 'assets/images/product/thongs-and-v-strings-1.jpg',
+        '#e8e5e9': 'assets/images/product/thongs-and-v-strings-4.jpg',
+        '#030509': 'assets/images/product/thongs-and-v-strings-2.jpg'
     };
      noWrapSlides = false;
      showIndicator = true;
   
-    constructor(config: NgbRatingConfig,private modalService: NgbModal) {
+    constructor(config: NgbRatingConfig,private modalService: NgbModal,private router:Router) {
         this.price = '799.00';
     }
 
@@ -62,7 +63,9 @@ export class ThongsvstringsComponent implements OnInit {
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-     
+    dataview() {
+        this.router.navigate(['product-components/brasview'])
+    }
     
     
     
