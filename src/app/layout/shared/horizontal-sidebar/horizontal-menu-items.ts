@@ -181,17 +181,17 @@ export const ROUTES: RouteInfo[] = [
       
     ],
   }, 
-  {
-    path: "essentials",
-    title: "Essentials",
-    icon: "",
-    class: "",
-    ddclass: "",
-    extralink: false,
-    submenu: [
+  // {
+  //   path: "essentials",
+  //   title: "Essentials",
+  //   icon: "",
+  //   class: "",
+  //   ddclass: "",
+  //   extralink: false,
+  //   submenu: [
      
-    ],
-  },
+  //   ],
+  // },
   // {
   //   path: "lakeproof",
   //   title: "Leakproof",
