@@ -1,7 +1,0 @@
-{
-    "/*": {
-        "target": "http://103.210.75.43:5004",
-        "secure": false,
-        "logLevel": "debug"
-    }
-}

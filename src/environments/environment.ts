@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  backendURL: 'http://localhost:8080'
+  backendURL: 'https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net//gateway/'
 };
 
 /*

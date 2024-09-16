@@ -1,10 +1,11 @@
 <nav class="sidebar-nav">
     <ul id="sidebarnav">
         <!-- First level menu -->
-        <li class="sidebar-item two-column" [ngClass]="[sidebarnavItem.ddclass]" [class.active]="showMenu === sidebarnavItem.title"
-            *ngFor="let sidebarnavItem of sidebarnavItems"
+        <li class="sidebar-item two-column" [ngClass]="[sidebarnavItem.ddclass]"
+            [class.active]="showMenu === sidebarnavItem.title" *ngFor="let sidebarnavItem of sidebarnavItems"
             [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
-            <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title | translate}}</div>
+            <div class="nav-small-cap" *ngIf="sidebarnavItem.extralink === true">{{sidebarnavItem.title | translate}}
+            </div>
             <a class="sidebar-link sidebar-link  waves-effect waves-dark"
                 [routerLink]="sidebarnavItem.class === '' ? [sidebarnavItem.path] : null"
                 [ngClass]="[sidebarnavItem.class]" *ngIf="!sidebarnavItem.extralink;"
@@ -32,12 +33,11 @@
                     <ul aria-expanded="false" class="collapse second-level" *ngIf="sidebarnavSubItem.submenu.length > 0"
                         [ngClass]="{'in' : showSubMenu === sidebarnavSubItem.title }">
                         <li class="sidebar-item" *ngFor="let sidebarnavSubsubItem of sidebarnavSubItem.submenu"
-                             [ngClass]="[sidebarnavSubsubItem.class]" >
-                            <a class="sidebar-link" 
-                            [routerLinkActive]="sidebarnavSubsubItem.submenu.length != 0 ? '' : ''" 
-                            [routerLink]="sidebarnavSubsubItem.submenu.length > 0 ? null : [sidebarnavSubsubItem.path]"
-                                *ngIf="!sidebarnavSubsubItem.extralink;"
-                                >
+                            [ngClass]="[sidebarnavSubsubItem.class]">
+                            <a class="sidebar-link"
+                                [routerLinkActive]="sidebarnavSubsubItem.submenu.length != 0 ? '' : ''"
+                                [routerLink]="sidebarnavSubsubItem.submenu.length > 0 ? null : [sidebarnavSubsubItem.path]"
+                                *ngIf="!sidebarnavSubsubItem.extralink;">
                                 <i [ngClass]="[sidebarnavSubsubItem.icon]"></i>
                                 <span class="hide-menu">{{sidebarnavSubsubItem.title | translate}}</span>
                             </a>
