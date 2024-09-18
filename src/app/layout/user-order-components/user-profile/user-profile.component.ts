@@ -36,6 +36,7 @@ export class UserprofileComponent implements OnInit {
           next: (data) => {
             this.activityMsg="Data saved successfully!";
             this.startFadeOut();
+            console.log(data)
           },
           error: (e) => console.error(e)
         });

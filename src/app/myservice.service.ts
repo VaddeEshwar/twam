@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'http://103.210.75.43:5004/userlogin/';
+const AUTH_API = '';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }  
   )

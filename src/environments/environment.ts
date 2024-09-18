@@ -4,7 +4,9 @@
 
 export const environment = {
   production: true,
-  backendURL: 'https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net//gateway/'
+  backendURL: 'https://usermanagementapi-djftg9egcxfmbvdf.southindia-01.azurewebsites.net/api',
+  loginbackendURL:'https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net/',
+  
 };
 
 /*
@@ -15,3 +17,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+  

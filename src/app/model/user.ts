@@ -1,10 +1,11 @@
 export class User {
   constructor() {}
-  id: number;
+  // id: number;
   username: string;
   password: string;
-  db_Name:string;
-  clientId:String;
-  createdAt: Date;
-  createdBy: string;
+  strApp:string;
+  // db_Name:string;
+  // clientId:String;
+  // createdAt: Date;
+  // createdBy: string;
  }
