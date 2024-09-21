@@ -4,6 +4,7 @@ import { Registration } from '../../../model/Users/registration'
 import { AdminserviceService } from '../../../services/user-service/user-service.service'
 import { Form } from '@angular/forms'
 import { Router } from '@angular/router';
+import { error } from 'jquery';
 @Component({
     selector: 'app-user-profile',
     templateUrl: './user-profile.component.html',
@@ -37,8 +38,10 @@ export class UserprofileComponent implements OnInit {
             this.activityMsg="Data saved successfully!";
             this.startFadeOut();
             console.log(data)
+            
           },
-          error: (e) => console.error(e)
+          error: (e) => console.error(e),
+      
         });
       }    
       startFadeOut() {

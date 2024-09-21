@@ -7,6 +7,7 @@ import { Address } from '../../model/Address/address';
 import { AddressMap } from '../../model/Address/UserAddressMap'
 import { Registration } from '../../model/Users/registration';
 import { otpValidation } from '../../model/Users/otpValidation';
+import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest'
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 const backEndUrl = environment.backendURL;
 const httpOptions = {
@@ -19,7 +20,7 @@ const httpOptions = {
 const baseUrlForRegister = backEndUrl + "/User/register"; //////post-method
 const baseUrlForLoginn = backEndUrl + "/User/Loginn"; //////post-method
 const baseUrlForLogin = backEndUrl + "/User/login"; //////post-method
-const baseUrlForUserverify = backEndUrl + "/User/verify/{guid}"; //////Get-method
+const baseUrlForUserverify = backEndUrl + "/User/verify"; //////Get-method
 const baseUrlForupdateuserdetails = backEndUrl + "/User/updateuserdetails"; //////Put-method
 const baseUrlForGetping = backEndUrl + "/User/Getping"; //////Get-method
 const baseUrlForGetDbsuccess = backEndUrl + "/User/GetDbsuccess"; //////Get-method
@@ -73,6 +74,21 @@ export class AdminserviceService {
     console.log("hello");
     return this.http.post<otpValidation>(baseUrlForOtpValidation, UserOtpValidationobj, { 'headers': headers })
   }
-
+  //////////////////////////////////////////User verifaction///////////////////////////
+  Getuserverifaction(guid: string) {
+    let gu_id = guid + "";
+    let params: URLSearchParams = new URLSearchParams();
+    const httpOptions = {
+      headers: { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', },
+      params: { 'guid': gu_id }
+    };
+    return this.http.get<[]>(baseUrlForUserverify, httpOptions);
+  }
+  /////////////////////////////////user update address///////////////////////////////
+  SaveupdateAdd(userupdateaddressobj: any) {
+    const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', }
+    return this.http.put<UpdateuserRequest>(baseUrlForupdateuserdetails, JSON.stringify(userupdateaddressobj), { 'headers': headers })
+  }
+  /////////////////////////////////Useractivity///////////////////////////////
 
 }

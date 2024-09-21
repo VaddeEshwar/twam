@@ -19,7 +19,7 @@ export class Registration {
             emalverified: new FormControl('0', [Validators.required]),
             token: new FormControl('', [Validators.required]),
             gender: new FormControl('', [Validators.required]),
-            dateofBirth: new FormControl('2024-09-16T05:16:48.040Z', [Validators.required]),
+            dateofBirth: new FormControl('', [Validators.required]),
             verificationURL: new FormControl('', [Validators.required]),
             strApp: new FormControl('', [Validators.required]),
             userGuid: new FormControl('', [Validators.required]),

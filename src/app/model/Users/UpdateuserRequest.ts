@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 export class UpdateuserRequest {
-  form: FormGroup;
+  form:FormGroup;
 
   constructor() {
     this.form = new FormGroup({
@@ -23,7 +23,7 @@ export class UpdateuserRequest {
       buildingName: new FormControl(''),
       addressLine1: new FormControl('', Validators.required),
       addressLine2: new FormControl(''),
-      cityID: new FormControl(0, Validators.required),
+      cityID: new FormControl('', Validators.required),
       districtID: new FormControl(0),
       stateID: new FormControl(0),
       countrID: new FormControl(0),

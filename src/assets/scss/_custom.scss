@@ -119,3 +119,10 @@ ngb-rating{
     outline: 0; 
     box-shadow: none!important; 
 }
+hr {
+    margin: 0rem 0 !important;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}

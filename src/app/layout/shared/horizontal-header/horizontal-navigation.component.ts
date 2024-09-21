@@ -128,7 +128,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   }
 
   login(){
-    this.router.navigate(['login']);
+    this.router.navigate(['user-profile/profile']);
   }
   
   cart(){

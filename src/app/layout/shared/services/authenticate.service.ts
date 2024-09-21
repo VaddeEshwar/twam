@@ -11,9 +11,9 @@ const httpOptions = {
 
 import { environment } from '../../../../environments/environment'
 
-const loginbackendURL = environment.loginbackendURL;
-const baseUrl = loginbackendURL+'api/User/verify/{guid} ';
-const baseUrlAuth = loginbackendURL+'api/User/login';
+const backendURL = environment.backendURL;
+const baseUrl = backendURL+'/User/verify/{guid} ';
+const baseUrlAuth = backendURL+'/User/login';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +27,5 @@ findByAuth(user:User): Observable<any> {
   console.log("baseUrlAuth::"+baseUrlAuth);
   return this.http.post<User>(baseUrlAuth , JSON.stringify(user), httpOptions,)
 } 
-
-
   
 }

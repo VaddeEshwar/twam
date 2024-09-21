@@ -1,0 +1,17 @@
+.close-class {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0rem -2rem;
+    i.ki-solid.ki-double-left{
+        font-size: 2.5rem;
+    }
+    cursor: pointer;
+  }
+  .nav-pills{
+    background-color: #243873 !important;
+    color: #fff !important;
+    border-bottom: 1px solid;
+}

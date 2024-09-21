@@ -1,6 +1,6 @@
 <p style="color:green;font-size:20px;">{{ activityMsg }}</p>
 <!--------[formGroup]="userRegistrationform.form" novalidate autocomplete="off" (ngSubmit)="onSubmit()"-->
-<form class="form-horizontal" name="form" [formGroup]="UserRegistrationForm.form" novalidate
+<form class="form-horizontal" name="form" [formGroup]="updateaddress.form" novalidate 
 autocomplete="off" (ngSubmit)="onSubmit()">
 <div class="card-body">
   <h4 class="card-title">Personal Information</h4>
@@ -73,35 +73,71 @@ autocomplete="off" (ngSubmit)="onSubmit()">
   </div>
 
   <!---------------->
-  <div class="row">
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3 row">
-        <div class="col-sm-9">
-          <label for="cono" class="control-label col-form-label">Username</label>
-          <input type="text" class="form-control" formControlName="username">
+  <div formArrayName="objAddress">
+    <div *ngFor="let address of updateaddress.form.get('objAddress')?.['controls']; let i = index" [formGroupName]="i">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">House Number</label>
+              <input type="text" class="form-control" formControlName="houseNumber" />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">Building Name</label>
+              <input type="text" class="form-control" formControlName="buildingName" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-12 col-lg-6">
-      <div class="mb-3 row">
-        <div class="col-sm-9">
-          <label for="cono" class="control-label col-form-label">Password</label>
-          <input type="Password" class="form-control" formControlName="password">
+  
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">Address Line 1</label>
+              <input type="text" class="form-control" formControlName="addressLine1" />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">Address Line 2</label>
+              <input type="text" class="form-control" formControlName="addressLine2" />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">City</label>
+              <input type="text" class="form-control" formControlName="cityID" />
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+          <div class="mb-3 row">
+            <div class="col-sm-9">
+              <label for="cono" class="control-label col-form-label">Zip Code</label>
+              <input type="text" class="form-control" formControlName="zipCode" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!------------>
-    <!---------------->
-    <div class="row">
-     
-  
-    </div>
     <!------------>
 
   <div class="col-sm-4 col-md-6 p-1 ">
     <div class="form-group mb-0 text-end p-4">
-      <button type="submit" class="btn btn-info waves-effect waves-light">Login</button>
+      <button type="submit" class="btn btn-info waves-effect waves-light">Update</button>
     </div>
   </div>
 
