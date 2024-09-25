@@ -3,12 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+//////////////////model//////////////////////////////////////
 import { Address } from '../../model/Address/address';
 import { AddressMap } from '../../model/Address/UserAddressMap'
 import { Registration } from '../../model/Users/registration';
 import { otpValidation } from '../../model/Users/otpValidation';
-import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest'
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest';
+import { Country } from '../../model/Common/Countries';
+import { Emailactivity } from '../../model/Users/emailuserid'
+//////////////////model//////////////////////////////////////
+
+
 const backEndUrl = environment.backendURL;
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,6 +22,10 @@ const httpOptions = {
     'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
   })
 };
+/////////////////////////Common///////////////////////////////
+const baseUrlForGetCountries = backEndUrl + "/Common/GetCountries";  //////Get-method
+const baseUrlForGetCities = backEndUrl + "/Common/GetCities";  //////Get-method
+const baseUrlForGetStates = backEndUrl + "/Common/GetStates"; //////post-method
 /////////////////////User-Method/////////////////////////////////////
 const baseUrlForRegister = backEndUrl + "/User/register"; //////post-method
 const baseUrlForLoginn = backEndUrl + "/User/Loginn"; //////post-method
@@ -39,10 +49,10 @@ const baseUrlForgeneratepassword = backEndUrl + "/Password/generate"; //////post
 const baseUrlForGetRoles = backEndUrl + "/Roles/GetRoles"; //////post-method
 
 /////////////////////Useractivity-Method/////////////////////////////////////
-const baseUrlForUseractivityEmailHistory = backEndUrl + "/Useractivity/insertEmailHistory";//////post-method
+// const baseUrlForUseractivityEmailHistory = backEndUrl + "/Useractivity/insertEmailHistory";
 const baseUrlForGetEmailHistorybyUserId = backEndUrl + "/Useractivity/GetEmailHistorybyUserId";//////post-method
 const baseUrlForgetUserActivities = backEndUrl + "/Useractivity/getUserActivities";//////post-method
-const baseUrlForInsertUserActivity = backEndUrl + "/Useractivity/InsertUserActivity";//////post-method
+// const baseUrlForInsertUserActivity = backEndUrl + "/Useractivity/InsertUserActivity";//////post-method
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +60,21 @@ const baseUrlForInsertUserActivity = backEndUrl + "/Useractivity/InsertUserActiv
 export class AdminserviceService {
   constructor(private http: HttpClient, private router: Router) { }
 
+  getAllCountries(): Observable<Country[]> {
+    console.log(Country)
+    return this.http.get<[Country]>(baseUrlForGetCountries)
+  }
+  getAllCity() {
+    return this.http.get(baseUrlForGetCities)
+  }
+
+  saveEmailSetting(emailSetting: Emailactivity): Observable<Emailactivity> {
+
+    console.log("###Before API CALL####");
+    console.log(emailSetting);
+    console.log("###After API CALL####");
+    return this.http.post<Emailactivity>(baseUrlForGetEmailHistorybyUserId, emailSetting, httpOptions)
+  }
   ///////////////////////Address/////////////////////
   SaveAddress(addressmoduleobj: Address) {
     const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true' };
@@ -64,9 +89,11 @@ export class AdminserviceService {
 
   //////////////////////////////Registration//////////////////////////////////////// 
   saveregistration(UserRegistrationobj: Registration) {
-    const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', }
-    console.log("hello");
-    return this.http.post<Registration>(baseUrlForRegister, UserRegistrationobj, { 'headers': headers })
+    console.log("Eshwar hello");
+    console.log("UserRegistrationobj::" + JSON.stringify(UserRegistrationobj));
+    debugger
+    return this.http.post<Registration>(baseUrlForRegister, UserRegistrationobj, httpOptions)
+
   }
   //////////////////////////////OtpValidation////////////////////////////////////////  
   OtpValidation(UserOtpValidationobj: otpValidation) {

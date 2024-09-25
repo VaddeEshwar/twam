@@ -3,10 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  backendURL: 'https://usermanagementapi-djftg9egcxfmbvdf.southindia-01.azurewebsites.net/api',
-  loginbackendURL:'https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net/',
-  
+  production: false,
+  backendURL:'https://usermanagementapi-djftg9egcxfmbvdf.southindia-01.azurewebsites.net/api',
 };
 
 /*

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Registration } from '../../../model/Users/registration'
 import { AdminserviceService } from '../../../services/user-service/user-service.service';
 import { Router } from '@angular/router';
-import { Form } from '@angular/forms'
+import { Form } from '@angular/forms';
+import { Country } from '../../../model/Common/Countries'
 @Component({
     selector: 'app-user-odertrak',
     templateUrl: './user-odertrak.component.html',
@@ -17,25 +18,23 @@ export class UserordertrakComponent implements OnInit {
     active = 1;
     activityMsg: string = '';
     fadeOutActive = false;
-    UserRegistrationForm: Registration;
+    RegistrationModel: Registration;
+    countriesData: any[] = [];
     constructor(private service: AdminserviceService, private router: Router) {
-        this.UserRegistrationForm = new Registration();
+        this.RegistrationModel = new Registration();
     }
     ngOnInit() {
-
-
+        this.getCountries();
     }
 
     onSubmit(): void {
-        const formData = this.UserRegistrationForm.form.value;
-        console.log("fromData::" + JSON.stringify(formData));
-        this.service.saveregistration(formData)
-            .subscribe({
+        const fromData = this.RegistrationModel.form.value;
+        console.log("fromData::" + JSON.stringify(fromData));
+        this.service.saveregistration(fromData).subscribe
+            ({
                 next: (data) => {
-                    this.activityMsg = "Data saved successfully!";
-                    this.router.navigate(['login']);
+                    this.activityMsg = "registration data saved successfully!";
                     this.startFadeOut();
-                    console.log(data)
                 },
                 error: (e) => console.error(e)
             });
@@ -45,9 +44,17 @@ export class UserordertrakComponent implements OnInit {
             this.fadeOutActive = true;
             setTimeout(() => {
                 this.activityMsg = '';
-                this.fadeOutActive = false; // reset for next time
-            }, 1000); // adjust to match the animation-duration
-        }, 2000); // wait 2 seconds before starting the fade-out
+                this.fadeOutActive = false;
+            }, 1000);
+        }, 2000);
     }
-
+    getCountries(){
+        this.service.getAllCountries()
+          .subscribe({
+            next: (data) => {   
+              this.countriesData = data;   
+              console.log("countriesData::"+ JSON.stringify(this.countriesData))
+            }
+        });
+      }
 }

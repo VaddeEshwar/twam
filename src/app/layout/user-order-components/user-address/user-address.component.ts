@@ -6,6 +6,7 @@ import { AdminserviceService } from '../../../services/user-service/user-service
 import { UpdateuserRequest } from '../../../model/Users/UpdateuserRequest';
 import { Router } from '@angular/router';
 import { Form } from '@angular/forms'
+import { Country } from '../../../model/Common/Countries'
 @Component({
   selector: 'app-user-address',
   templateUrl: './user-address.component.html',
@@ -13,16 +14,18 @@ import { Form } from '@angular/forms'
   providers: [NgbActiveModal, NgbModal,]
 })
 export class UseraddressComponent implements OnInit {
+  countriesData: any;
   subtitle: string;
   updateaddress: UpdateuserRequest;
   activityMsg: string = '';
   fadeOutActive = false;
+  Countrymodel: Country
   constructor(private service: AdminserviceService, private router: Router) {
     this.updateaddress = new UpdateuserRequest();
   }
 
   ngOnInit(): void {
-
+    this.getAllCountries();
   }
 
   onSubmit(): void {
@@ -43,12 +46,21 @@ export class UseraddressComponent implements OnInit {
     }
   }
   startFadeOut() {
+    setTimeout(() => {
+      this.fadeOutActive = true;
       setTimeout(() => {
-          this.fadeOutActive = true;
-          setTimeout(() => {
-              this.activityMsg = '';
-              this.fadeOutActive = false; // reset for next time
-          }, 1000); // adjust to match the animation-duration
-      }, 2000); // wait 2 seconds before starting the fade-out
+        this.activityMsg = '';
+        this.fadeOutActive = false; // reset for next time
+      }, 1000); // adjust to match the animation-duration
+    }, 2000); // wait 2 seconds before starting the fade-out
+  }
+
+  getAllCountries() {
+    this.service.getAllCountries().subscribe({
+      next: (data) => {
+        this.countriesData = data;
+        console.log("countriesData::" + JSON.stringify(this.countriesData))
+      }
+    })
   }
 }
