@@ -28,13 +28,14 @@ export class UserordertrakComponent implements OnInit {
     }
 
     onSubmit(): void {
-        const fromData = this.RegistrationModel.form.value;
-        console.log("fromData::" + JSON.stringify(fromData));
-        this.service.saveregistration(fromData).subscribe
-            ({
+        const formData = this.RegistrationModel.form.value;
+        console.log("fromData::" + JSON.stringify(formData));
+        this.service.saveregistration(formData)
+            .subscribe({
                 next: (data) => {
-                    this.activityMsg = "registration data saved successfully!";
+                    this.activityMsg = "Data saved successfully!";
                     this.startFadeOut();
+                    console.log(data)
                 },
                 error: (e) => console.error(e)
             });
@@ -44,17 +45,17 @@ export class UserordertrakComponent implements OnInit {
             this.fadeOutActive = true;
             setTimeout(() => {
                 this.activityMsg = '';
-                this.fadeOutActive = false;
-            }, 1000);
-        }, 2000);
+                this.fadeOutActive = false; // reset for next time
+            }, 1000); // adjust to match the animation-duration
+        }, 2000); // wait 2 seconds before starting the fade-out
     }
-    getCountries(){
+    getCountries() {
         this.service.getAllCountries()
-          .subscribe({
-            next: (data) => {   
-              this.countriesData = data;   
-              console.log("countriesData::"+ JSON.stringify(this.countriesData))
-            }
-        });
-      }
+            .subscribe({
+                next: (data) => {
+                    this.countriesData = data;
+                    console.log("countriesData::" + JSON.stringify(this.countriesData))
+                }
+            });
+    }
 }

@@ -134,85 +134,9 @@
 	  }
 	 minicart_dropdown();
 	
-	/*-----------------------------------------
-	  7. Sticky Header ------------------------
-	  -----------------------------------------*/
-	window.onscroll = function(){ myFunction() };
-    function myFunction() {
-      if($(window).width()>1199) {
-            if($(window).scrollTop()>145){
-              $('.header-wrap').addClass("stickyNav animated fadeInDown");                   
-            } else {
-              $('.header-wrap').removeClass("stickyNav fadeInDown");              
-            }
-       }
-    }
 	
-	/*-----------------------------------------
-	  8. Search Trigger -----------------------
-	  ----------------------------------------- */
-	function search_bar(){
-		$('.search-trigger').on('click', function () {
-			const search = $('.search');
 	
-			if (search.is('.search--opened')) {
-				search.removeClass('search--opened');
-			} else {
-				search.addClass('search--opened');
-				$('.search__input')[0].focus();
-			}
-		});
-	}
-	search_bar();
-	$(document).on('click', function (event) {
-		if (!$(event.target).closest('.search, .search-trigger').length) {
-			$('.search').removeClass('search--opened');
-		}
-	});
 	
-	/*-----------------------------------------
-	  9. Mobile Menu --------------------------
-	  -----------------------------------------*/
-	var selectors = {
-      	body: 'body',
-      	sitenav: '#siteNav',
-      	navLinks: '#siteNav .lvl1 > a',
-      	menuToggle: '.js-mobile-nav-toggle',
-      	mobilenav: '.mobile-nav-wrapper',
-      	menuLinks: '#MobileNav .anm',
-      	closemenu: '.closemobileMenu'
-	};
-     
-  	$(selectors.navLinks).each(function(){
-        if($(this).attr('href') == window.location.pathname) $(this).addClass('active');
-    })
-	
-  	$(selectors.menuToggle).on("click",function(){
-      body: 'body',
-      $(selectors.mobilenav).toggleClass("active");
-      $(selectors.body).toggleClass("menuOn");
-      $(selectors.menuToggle).toggleClass('mobile-nav--open mobile-nav--close');
-    });
-  
-    $(selectors.closemenu).on("click",function(){
-      body: 'body',
-      $(selectors.mobilenav).toggleClass("active");
-      $(selectors.body).toggleClass("menuOn");
-      $(selectors.menuToggle).toggleClass('mobile-nav--open mobile-nav--close');
-    });
-    $("body").on('click', function (event) {
-      var $target = $(event.target);
-      if(!$target.parents().is(selectors.mobilenav) && !$target.parents().is(selectors.menuToggle) && !$target.is(selectors.menuToggle)){
-          $(selectors.mobilenav).removeClass("active");
-          $(selectors.body).removeClass("menuOn");
-          $(selectors.menuToggle).removeClass('mobile-nav--close').addClass('mobile-nav--open');
-      }
-    });
-	$(selectors.menuLinks).on('click', function(e) {
-		e.preventDefault();
-		$(this).toggleClass('anm-plus-l anm-minus-l');
-		$(this).parent().next().slideToggle();
-    });
 	
 	
 	/*-----------------------------------------
@@ -679,27 +603,7 @@
 	});
 	
 	
-	/*-------------------------------
-	  16. Site Animation
-	----------------------------------*/
-	  if($(window).width() < 771) {
-		  $('.wow').removeClass('wow');
-	  }
-	  var wow = new WOW(
-	  {
-		boxClass:     'wow',      // animated element css class (default is wow)
-		animateClass: 'animated', // animation css class (default is animated)
-		offset:       0,          // distance to the element when triggering the animation (default is 0)
-		mobile:       false,       // trigger animations on mobile devices (default is true)
-		live:         true,       // act on asynchronously loaded content (default is true)
-		callback:     function(box) {
-		  // the callback is fired every time an animation is started
-		  // the argument that is passed in is the DOM node being animated
-		},
-		scrollContainer: null // optional scroll container selector, otherwise use window
-	  }
-	);
-	wow.init();
+	
 	
   	/*-------------------------------
 	  17. SHOW HIDE PRODUCT TAG
@@ -973,7 +877,7 @@
     $(".bg-center" ).parent().addClass('b-center');
     $(".bg-left" ).parent().addClass('b-left');
     $(".bg-right" ).parent().addClass('b-right');
-    $(".bg_size_content").parent().addClass('b_size_content');
+    // $(".bg_size_content").parent().addClass('b_size_content');
     $(".bg-img").parent().addClass('bg-size');
     $(".bg-img.blur-up" ).parent().addClass('');
     jQuery('.bg-img').each(function() {

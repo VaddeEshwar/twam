@@ -20,17 +20,7 @@ const routes: Routes = [
                             ]
                           }
                 },
-                {
-                    path: 'UseraddressComponent',
-                    component: UseraddressComponent,
-                    data: {
-                        title: 'UseraddressComponent',
-                        urls: [
-                          { title: 'Dashboard', url: '/dashboard' },
-                          { title: 'List' }
-                        ]
-                      }
-            },
+            
                					
         ]
     }

@@ -29,6 +29,7 @@ export class BrasviewComponent implements OnInit {
   }
   ngOnInit() {
     console.log("hello eshwar this component bras view");
+    
   }
   onZoomImage(coordinates: any) {
     console.log(coordinates);
@@ -66,4 +67,7 @@ export class BrasviewComponent implements OnInit {
       }
     }
   }
+
+  /////////////////////////////////////
+  
 }

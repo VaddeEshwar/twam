@@ -49,7 +49,7 @@ const routes: Routes = [
     /////////User-view/////////////////////////
     { path: 'user-profile/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
     { path: 'product-components/ngx-wizard', loadChildren:()=>import( './product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
-    { path: 'product-components/ordertrak', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
+    { path: 'product-components/registration', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
     { path: 'product-components/updateaddress', loadChildren:()=>import( './user-order-components/user-address/user-address.module').then(x => x.UseraddressModule) },
 
   ],

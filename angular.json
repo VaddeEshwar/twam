@@ -28,23 +28,26 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets",  "src/assets/font"
+              "src/assets",
+              "src/assets/font"
             ],
             "styles": [
-            
               "src/assets/scss/style.scss",
               "src/styles.scss",
               "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css",
               "node_modules/sweetalert2/src/sweetalert2.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-              
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/vendor/plugins.js",
+              "src/assets/vendor/main.js",
+              "src/assets/vendor/jquery-3.3.1.min.js",
+              "src/assets/vendor/wow.min.js"
+            ] 
           },
           "configurations": {
             "production": {

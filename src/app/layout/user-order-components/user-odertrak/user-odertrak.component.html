@@ -1,118 +1,71 @@
 <p style="color:green;font-size:20px;">{{ activityMsg }}</p>
-<!--------[formGroup]="userRegistrationform.form" novalidate autocomplete="off" (ngSubmit)="onSubmit()"-->
-<form class="form-horizontal" name="form" [formGroup]="RegistrationModel.form" novalidate autocomplete="off"
-  (ngSubmit)="onSubmit()">
-  <div class="card-body">
-    <h4 class="card-title">Personal Information</h4>
-    <div class="row">
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Firstname</label>
-            <input type="text" class="form-control" placeholder="Firstname" formControlName="firstName" />
-          </div>
-        </div>
+<!-- style="background:url(assets/images/background/login-register.jpg) no-repeat center center;" -->
+<div class="auth-wrapper d-flex no-block justify-content-center align-items-center">
+  <div class="auth-box m-3 m-md-0">
+    <div>
+      <div class="text-center">
+        <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" width="150" /></span>
+        <h5 class="font-medium mb-4">Sign Up </h5>
       </div>
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Lastname</label>
-            <input type="text" class="form-control" formControlName="lastName" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mb-3 row">
-      <div class="col-sm-12 col-lg-6">
-        <label class="col-sm-2  control-label col-form-label" formControlName="gender">
-          Gender</label>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="customControlValidation2" name="radio-stacked" required
-              formControlName="gender" value="female" />
-            <label class="form-check-label" for="customControlValidation2">Female</label>
-          </div>
-          <div class="form-check">
-            <input type="radio" class="form-check-input" id="customControlValidation3" name="radio-stacked" required
-              formControlName="gender" value="Male" />
-            <label class="form-check-label" for="customControlValidation3">Male</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">dateofBirth</label>
-            <input type="text" class="form-control" formControlName="dateofBirth">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!---------------->
-    <div class="row">
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Email
-              Address</label>
-            <input type="text" class="form-control" formControlName="email">
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Mobile
-              Number</label>
-            <input type="text" class="form-control" formControlName="mobile">
-          </div>
+      <!-- Form -->
+      <div class="row">
+        <div class="col-12">
+          <form class="form-horizontal mt-3" name="form" [formGroup]="RegistrationModel.form" novalidate
+          autocomplete="off" (ngSubmit)="onSubmit()">
+            <div class="mb-3 row ">
+              <div class="col-12 ">
+                <input class="form-control" type="text"  formControlName="firstName"
+                  placeholder="First Name">
+              </div>
+            </div>
+            <div class="mb-3 row ">
+              <div class="col-12 ">
+                <input class="form-control" type="text"  formControlName="lastName" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-12 ">
+                <input class="form-control" type="text"  formControlName="mobile"
+                  placeholder="Mobile Number">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-12 ">
+                <input class="form-control" type="text"  formControlName="username"
+                  placeholder="User Name">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-12 ">
+                <input class="form-control" type="text"  formControlName="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <div class="col-12 ">
+                <input class="form-control" type="password"  formControlName="password"
+                  placeholder="Password">
+              </div>
+            </div>
+            <!-- <div class="mb-3 row">
+              <div class="col-12 ">
+                <input class="form-control" type="password"  formControlName="passwordHash"
+                  placeholder="Confirm Password">
+              </div>
+            </div> -->
+         
+            <div class="mb-3 text-center ">
+              <div class="col-xs-12 mb-4">
+                <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>
+              </div>
+            </div>
+            <div class="mb-3 mb-0 mt-2 ">
+              <div class="col-sm-12 text-center ">
+                Already have an account? <a href="login" class="text-info ms-1 "><b>Sign In</b></a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-
-    <!---------------->
-    <div class="row">
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Username</label>
-            <input type="text" class="form-control" formControlName="username">
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-        <div class="mb-3 row">
-          <div class="col-sm-9">
-            <label for="cono" class="control-label col-form-label">Password</label>
-            <input type="Password" class="form-control" formControlName="password">
-          </div>
-        </div>
-      </div>
-    </div>
-    <!------------>
-    <!---------------->
-    <div class="row">
-
-      <div class="col-md-6 mb-3">
-        <div class="form-group">
-          <label class="control-label col-form-label">Country</label>
-          <select class="form-control form-select" formControlName="country">
-            <option value="" selected disabled>Select Country</option>
-            <option *ngFor="let country of countriesData" [value]="country.countryID">
-              {{country.countryName}}
-            </option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <!------------>
-
-    <div class="col-sm-4 col-md-6 p-1 ">
-      <div class="form-group mb-0 text-end p-4">
-        <button type="submit" class="btn btn-info waves-effect waves-light">Login</button>
-      </div>
-    </div>
-
   </div>
-</form>
+</div>

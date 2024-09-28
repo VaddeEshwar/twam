@@ -1,8 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticateService } from '../layout/shared/services/authenticate.service';
 import { AdminserviceService} from '../services/user-service/user-service.service'
-import { User} from '../model/user'
+import { login} from '../model/Users/Login'
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
@@ -10,69 +10,33 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
   // providers: [MyserviceService]
 })
 export class LoginComponent implements OnInit {
-  msg = '';
-  submitted = false;
-  users?: User[];
-  user?: User;
-  clientId:number;
-  constructor(private service: AuthenticateService, private routes: Router) { }
+  msg: string = '';
+  user: any;
 
-  loginform = true;
-  recoverform = false;
+  constructor(private service: AdminserviceService,private router: Router ) { }
   ngOnInit(): void {
-    localStorage.clear();
-  }
-  showRecoverForm() {
-    this.loginform = !this.loginform;
-    this.recoverform = !this.recoverform;
-  }
-  retrieveUsers(): void {
-    this.service.getAll()
-      .subscribe({
-        next: (data) => {
-          this.users = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
-  }
-  retrieveUsersAuthentication(user:User): void {
-    this.service.findByAuth(user)
-      .subscribe({
-        next: (data) => {
-          this.user = data;
-          console.log(data);
-          localStorage.clear();
-          
-        },
-        error: (e) => console.error(e)
-      });
+   
   }
   check(uname: string, p: string) {
-    let user=new User();
-    user.username=uname;
-    user.password=p;
-    this.service.findByAuth(user).subscribe({next: (response) => {
-        if(response == null) {
-          this.msg = 'Invalid Username or Password null'; 
-          this.routes.navigate(['/login']);
+    let loginData = { username: uname, password: p };
+    this.service.loginRequst(loginData).subscribe({
+      next: (response) => {
+        if (response == null) {
+          this.msg = 'Invalid Username or Password';
+          this.router.navigate(['/login']);
         } else {
           this.user = response.data;
-        console.log("log::"+JSON.stringify(this.user))
-          this.routes.navigate(['/dashboard']);
-        
+          console.log('log::' + JSON.stringify(this.user));
+          this.router.navigate(['/dashboard']);
         }
       },
-      error: (e) => {this.msg = 'Invalid Username or Password error'; 
-      alert("error");  
-        this.routes.navigate(['/login']);
+      error: (e) => {
+        this.msg = 'Invalid Username or Password';
+        alert('Login error');
+        this.router.navigate(['/login']);
         localStorage.clear();
-     }
+      },
     });
   }
-
- 
-
-
-  
 }
+

@@ -11,7 +11,8 @@ import { Registration } from '../../model/Users/registration';
 import { otpValidation } from '../../model/Users/otpValidation';
 import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest';
 import { Country } from '../../model/Common/Countries';
-import { Emailactivity } from '../../model/Users/emailuserid'
+import { Emailactivity } from '../../model/Users/emailuserid';
+import { login } from '../../model/Users/Login'
 //////////////////model//////////////////////////////////////
 
 
@@ -28,7 +29,6 @@ const baseUrlForGetCities = backEndUrl + "/Common/GetCities";  //////Get-method
 const baseUrlForGetStates = backEndUrl + "/Common/GetStates"; //////post-method
 /////////////////////User-Method/////////////////////////////////////
 const baseUrlForRegister = backEndUrl + "/User/register"; //////post-method
-const baseUrlForLoginn = backEndUrl + "/User/Loginn"; //////post-method
 const baseUrlForLogin = backEndUrl + "/User/login"; //////post-method
 const baseUrlForUserverify = backEndUrl + "/User/verify"; //////Get-method
 const baseUrlForupdateuserdetails = backEndUrl + "/User/updateuserdetails"; //////Put-method
@@ -69,11 +69,11 @@ export class AdminserviceService {
   }
 
   saveEmailSetting(emailSetting: Emailactivity): Observable<Emailactivity> {
-
+    const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', };
     console.log("###Before API CALL####");
     console.log(emailSetting);
     console.log("###After API CALL####");
-    return this.http.post<Emailactivity>(baseUrlForGetEmailHistorybyUserId, emailSetting, httpOptions)
+    return this.http.post<Emailactivity>(baseUrlForGetEmailHistorybyUserId, JSON.stringify(Registration), { headers: headers })
   }
   ///////////////////////Address/////////////////////
   SaveAddress(addressmoduleobj: Address) {
@@ -88,13 +88,22 @@ export class AdminserviceService {
   }
 
   //////////////////////////////Registration//////////////////////////////////////// 
-  saveregistration(UserRegistrationobj: Registration) {
+  saveregistration(UserRegistrationobj: Registration): Observable<Registration> {
+    const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', };
     console.log("Eshwar hello");
-    console.log("UserRegistrationobj::" + JSON.stringify(UserRegistrationobj));
+    console.log("User Registration object:", UserRegistrationobj);
     debugger
-    return this.http.post<Registration>(baseUrlForRegister, UserRegistrationobj, httpOptions)
+    return this.http.post<Registration>(baseUrlForRegister, JSON.stringify(Registration), { headers: headers });
+  }
+  //////////////////////////////login//////////////////////////////////////// 
+
+  loginRequst(loginData: any):Observable<any> {
+    const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', };
+    console.log("User Registration object:",loginData);
+    return this.http.post(baseUrlForLogin, JSON.stringify(login), { headers: headers });
 
   }
+
   //////////////////////////////OtpValidation////////////////////////////////////////  
   OtpValidation(UserOtpValidationobj: otpValidation) {
     const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', }
