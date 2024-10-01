@@ -10,49 +10,59 @@
       <!-- Form -->
       <div class="row">
         <div class="col-12">
-          <form class="form-horizontal mt-3" name="form" [formGroup]="RegistrationModel.form" novalidate
-          autocomplete="off" (ngSubmit)="onSubmit()">
+          <form class="form-horizontal mt-3" name="form" [formGroup]="RegistrationForm.form" novalidate
+            autocomplete="off" (ngSubmit)="onSubmit()">
             <div class="mb-3 row ">
               <div class="col-12 ">
-                <input class="form-control" type="text"  formControlName="firstName"
-                  placeholder="First Name">
+                <input class="form-control" type="text" formControlName="firstName" placeholder="First Name">
               </div>
             </div>
             <div class="mb-3 row ">
               <div class="col-12 ">
-                <input class="form-control" type="text"  formControlName="lastName" placeholder="Last Name">
+                <input class="form-control" type="text" formControlName="lastName" placeholder="Last Name">
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
-                <input class="form-control" type="text"  formControlName="mobile"
-                  placeholder="Mobile Number">
+                <label for="gender">Gender</label>
+                <div class="form-check form-check-inline">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="customControlValidation2" name="radio-stacked"
+                      formControlName="gender" value="Female">
+                    <label class="form-check-label" for="customControlValidation2">Female</label>
+                  </div>
+                </div>
+                <div class="form-check form-check-inline">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" id="customControlValidation3" name="radio-stacked"
+                      formControlName="gender" value="Male">
+                    <label class="form-check-label" for="customControlValidation3">Male</label>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
-                <input class="form-control" type="text"  formControlName="username"
-                  placeholder="User Name">
+                <input class="form-control" type="text" formControlName="mobile" placeholder="Mobile Number">
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
-                <input class="form-control" type="text"  formControlName="email" placeholder="Email">
+                <input class="form-control" type="text" formControlName="username" placeholder="User Name">
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
-                <input class="form-control" type="password"  formControlName="password"
-                  placeholder="Password">
+                <input class="form-control" type="text" formControlName="email" placeholder="Email">
               </div>
             </div>
-            <!-- <div class="mb-3 row">
+            <div class="mb-3 row">
               <div class="col-12 ">
-                <input class="form-control" type="password"  formControlName="passwordHash"
-                  placeholder="Confirm Password">
+                <input class="form-control" type="password" formControlName="password" placeholder="Password">
               </div>
-            </div> -->
-         
+            </div>
+
+
             <div class="mb-3 text-center ">
               <div class="col-xs-12 mb-4">
                 <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>

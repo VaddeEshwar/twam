@@ -10,7 +10,7 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("this is layout");
+    // console.log("this is layout");
   }
 
 }

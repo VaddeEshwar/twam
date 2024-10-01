@@ -42,7 +42,7 @@ export class FullComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('full component::'+localStorage.getItem('loginType'));
+    // console.log('full component::'+localStorage.getItem('loginType'));
     if (this.router.url === "/") {
       this.router.navigate(["/dashboard/classic"]);
     }

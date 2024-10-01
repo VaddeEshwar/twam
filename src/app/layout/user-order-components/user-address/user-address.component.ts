@@ -4,9 +4,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AdminserviceService } from '../../../services/user-service/user-service.service';
 import { UpdateuserRequest } from '../../../model/Users/UpdateuserRequest';
+import { Country } from '../../../model/Common/Countries'
 import { Router } from '@angular/router';
 import { Form } from '@angular/forms'
-import { Country } from '../../../model/Common/Countries'
 @Component({
   selector: 'app-user-address',
   templateUrl: './user-address.component.html',
@@ -14,18 +14,20 @@ import { Country } from '../../../model/Common/Countries'
   providers: [NgbActiveModal, NgbModal,]
 })
 export class UseraddressComponent implements OnInit {
-  countriesData: any;
+
   subtitle: string;
   updateaddress: UpdateuserRequest;
   activityMsg: string = '';
   fadeOutActive = false;
-  Countrymodel: Country
+  active = 1;
+  countries: Country[] = [];
   constructor(private service: AdminserviceService, private router: Router) {
     this.updateaddress = new UpdateuserRequest();
+    
   }
 
   ngOnInit(): void {
-    this.getAllCountries();
+    this.getCountries();
   }
 
   onSubmit(): void {
@@ -55,11 +57,13 @@ export class UseraddressComponent implements OnInit {
     }, 2000); // wait 2 seconds before starting the fade-out
   }
 
-  getAllCountries() {
+  getCountries() {
+    debugger
     this.service.getAllCountries().subscribe({
       next: (data) => {
-        this.countriesData = data;
-        console.log("countriesData::" + JSON.stringify(this.countriesData))
+        this.countries = data;
+        alert('countries')
+        console.log("countries::" + JSON.stringify(this.countries))
       }
     })
   }

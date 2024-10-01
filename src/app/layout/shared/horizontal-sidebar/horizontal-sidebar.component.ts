@@ -27,7 +27,7 @@ export class HorizontalSidebarComponent {
         });
       });
       this.addExpandClass(this.path);
-      console.log(this.sidebarnavItems);
+      // console.log(this.sidebarnavItems);
     });
   }
 

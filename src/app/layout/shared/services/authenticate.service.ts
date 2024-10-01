@@ -11,7 +11,7 @@ const httpOptions = {
 
 import { environment } from '../../../../environments/environment'
 
-const backendURL = environment.backendURL;
+const backendURL = environment.backEndUrl;
 const baseUrl = backendURL+'/User/verify/{guid} ';
 const baseUrlAuth = backendURL+'/User/login';
 @Injectable({

@@ -13,8 +13,8 @@
             <div class="left-content-product">
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                  
-              <div class="product-details-img product-single__photos bottom">
+
+                  <div class="product-details-img product-single__photos bottom">
                     <div class="zoompro-wrap product-zoom-right pl-20">
                       <div class="zoompro-span">
                         <img class="blur-up lazyload zoompro"
@@ -24,8 +24,8 @@
                       <div class="product-labels"><span class="lbl on-sale">Sale</span><span
                           class="lbl pr-label1">new</span></div>
                       <div class="product-buttons">
-                        <a href="" class="btn popup-video"
-                          title="View Video"><i class="icon anm anm-play-r" aria-hidden="true"></i></a>
+                        <a href="" class="btn popup-video" title="View Video"><i class="icon anm anm-play-r"
+                            aria-hidden="true"></i></a>
                         <a href="#" class="btn prlightbox" title="Zoom"><i class="icon anm anm-expand-l-arrows"
                             aria-hidden="true"></i></a>
                       </div>
@@ -114,7 +114,8 @@
                       <a href="assets/images/product-detail-page/camelia-reversible-big10.jpg" data-size="731x1024"></a>
                     </div>
 
-                  </div> -->
+                  </div>
+                  
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                   <div class="product-single__meta">
@@ -300,91 +301,131 @@
                       <ng-template ngbNavContent>
                         <div class="spr-container">
                           <div class="spr-header clearfix">
-                              <div class="spr-summary">
-                                  <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span class="spr-summary-actions-togglereviews">Based on 6 reviews456</span></span>
-                                  <span class="spr-summary-actions">
-                                      <a href="#" class="spr-summary-actions-newreview btn">Write a review</a>
-                                  </span>
-                              </div>
+                            <div class="spr-summary">
+                              <span class="product-review"><a class="reviewLink"><i class="font-13 fa fa-star"></i><i
+                                    class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                    class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i> </a><span
+                                  class="spr-summary-actions-togglereviews">Based on 6 reviews456</span></span>
+                              <span class="spr-summary-actions">
+                                <a href="#" class="spr-summary-actions-newreview btn">Write a review</a>
+                              </span>
+                            </div>
                           </div>
                           <div class="spr-content">
-                              <div class="spr-form clearfix">
-                                  <form method="post" action="#" id="new-review-form" class="new-review-form">
-                                      <h3 class="spr-form-title">Write a review</h3>
-                                      <fieldset class="spr-form-contact">
-                                          <div class="spr-form-contact-name">
-                                            <label class="spr-form-label" for="review_author_10508262282">Name</label>
-                                            <input class="spr-form-input spr-form-input-text " id="review_author_10508262282" type="text" name="review[author]" value="" placeholder="Enter your name">
-                                          </div>
-                                          <div class="spr-form-contact-email">
-                                            <label class="spr-form-label" for="review_email_10508262282">Email</label>
-                                            <input class="spr-form-input spr-form-input-email " id="review_email_10508262282" type="email" name="review[email]" value="" placeholder="john.smith@example.com">
-                                          </div>
-                                      </fieldset>
-                                      <fieldset class="spr-form-review">
-                                        <div class="spr-form-review-rating">
-                                          <label class="spr-form-label">Rating</label>
-                                          <div class="spr-form-input spr-starrating">
-                                            <div class="product-review"><a class="reviewLink" href="#"><i class="fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i></a></div>
-                                          </div>
-                                        </div>
-                                  
-                                        <div class="spr-form-review-title">
-                                          <label class="spr-form-label" for="review_title_10508262282">Review Title</label>
-                                          <input class="spr-form-input spr-form-input-text " id="review_title_10508262282" type="text" name="review[title]" value="" placeholder="Give your review a title">
-                                        </div>
-                                  
-                                        <div class="spr-form-review-body">
-                                          <label class="spr-form-label" for="review_body_10508262282">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
-                                          <div class="spr-form-input">
-                                            <textarea class="spr-form-input spr-form-input-textarea " id="review_body_10508262282" data-product-id="10508262282" name="review[body]" rows="10" placeholder="Write your comments here"></textarea>
-                                          </div>
-                                        </div>
-                                      </fieldset>
-                                      <fieldset class="spr-form-actions">
-                                          <input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">
-                                      </fieldset>
-                                  </form>
+                            <div class="spr-form clearfix">
+                              <form method="post" action="#" id="new-review-form" class="new-review-form">
+                                <h3 class="spr-form-title">Write a review</h3>
+                                <fieldset class="spr-form-contact">
+                                  <div class="spr-form-contact-name">
+                                    <label class="spr-form-label" for="review_author_10508262282">Name</label>
+                                    <input class="spr-form-input spr-form-input-text " id="review_author_10508262282"
+                                      type="text" name="review[author]" value="" placeholder="Enter your name">
+                                  </div>
+                                  <div class="spr-form-contact-email">
+                                    <label class="spr-form-label" for="review_email_10508262282">Email</label>
+                                    <input class="spr-form-input spr-form-input-email " id="review_email_10508262282"
+                                      type="email" name="review[email]" value="" placeholder="john.smith@example.com">
+                                  </div>
+                                </fieldset>
+                                <fieldset class="spr-form-review">
+                                  <div class="spr-form-review-rating">
+                                    <label class="spr-form-label">Rating</label>
+                                    <div class="spr-form-input spr-starrating">
+                                      <div class="product-review"><a class="reviewLink" href="#"><i
+                                            class="fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i
+                                            class="font-13 fa fa-star-o"></i><i class="font-13 fa fa-star-o"></i><i
+                                            class="font-13 fa fa-star-o"></i></a></div>
+                                    </div>
+                                  </div>
+
+                                  <div class="spr-form-review-title">
+                                    <label class="spr-form-label" for="review_title_10508262282">Review Title</label>
+                                    <input class="spr-form-input spr-form-input-text " id="review_title_10508262282"
+                                      type="text" name="review[title]" value="" placeholder="Give your review a title">
+                                  </div>
+
+                                  <div class="spr-form-review-body">
+                                    <label class="spr-form-label" for="review_body_10508262282">Body of Review <span
+                                        class="spr-form-review-body-charactersremaining">(1500)</span></label>
+                                    <div class="spr-form-input">
+                                      <textarea class="spr-form-input spr-form-input-textarea "
+                                        id="review_body_10508262282" data-product-id="10508262282" name="review[body]"
+                                        rows="10" placeholder="Write your comments here"></textarea>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                                <fieldset class="spr-form-actions">
+                                  <input type="submit"
+                                    class="spr-button spr-button-primary button button-primary btn btn-primary"
+                                    value="Submit Review">
+                                </fieldset>
+                              </form>
+                            </div>
+                            <div class="spr-reviews">
+                              <div class="spr-review">
+                                <div class="spr-review-header">
+                                  <span class="product-review spr-starratings spr-review-header-starratings"><span
+                                      class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i></span></span>
+                                  <h3 class="spr-review-header-title">Lorem ipsum dolor sit amet</h3>
+                                  <span class="spr-review-header-byline"><strong>dsacc</strong> on <strong>Apr 09,
+                                      2019</strong></span>
+                                </div>
+                                <div class="spr-review-content">
+                                  <p class="spr-review-content-body">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                    commodo consequat.</p>
+                                </div>
                               </div>
-                              <div class="spr-reviews">
-                                  <div class="spr-review">
-                                      <div class="spr-review-header">
-                                          <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                                          <h3 class="spr-review-header-title">Lorem ipsum dolor sit amet</h3>
-                                          <span class="spr-review-header-byline"><strong>dsacc</strong> on <strong>Apr 09, 2019</strong></span>
-                                      </div>
-                                      <div class="spr-review-content">
-                                          <p class="spr-review-content-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                      </div>
-                                  </div>
-                                  <div class="spr-review">
-                                    <div class="spr-review-header">
-                                      <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                                      <h3 class="spr-review-header-title">Lorem Ipsum is simply dummy text of the printing</h3>
-                                      <span class="spr-review-header-byline"><strong>larrydude</strong> on <strong>Dec 30, 2018</strong></span>
-                                    </div>
-                              
-                                    <div class="spr-review-content">
-                                      <p class="spr-review-content-body"><br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.<br><br>
-                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="spr-review">
-                                    <div class="spr-review-header">
-                                      <span class="product-review spr-starratings spr-review-header-starratings"><span class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i></span></span>
-                                      <h3 class="spr-review-header-title">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</h3>
-                                      <span class="spr-review-header-byline"><strong>quoctri1905</strong> on <strong>Dec 30, 2018</strong></span>
-                                    </div>
-                              
-                                    <div class="spr-review-content">
-                                      <p class="spr-review-content-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.<br>
-                                      <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                    </div>
-                                  </div>
+                              <div class="spr-review">
+                                <div class="spr-review-header">
+                                  <span class="product-review spr-starratings spr-review-header-starratings"><span
+                                      class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i></span></span>
+                                  <h3 class="spr-review-header-title">Lorem Ipsum is simply dummy text of the printing
+                                  </h3>
+                                  <span class="spr-review-header-byline"><strong>larrydude</strong> on <strong>Dec 30,
+                                      2018</strong></span>
+                                </div>
+
+                                <div class="spr-review-content">
+                                  <p class="spr-review-content-body"><br><br>Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                    dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled.<br><br>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.<br><br>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.<br>
+                                  </p>
+                                </div>
                               </div>
+                              <div class="spr-review">
+                                <div class="spr-review-header">
+                                  <span class="product-review spr-starratings spr-review-header-starratings"><span
+                                      class="reviewLink"><i class="fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i><i class="font-13 fa fa-star"></i><i
+                                        class="font-13 fa fa-star"></i></span></span>
+                                  <h3 class="spr-review-header-title">Neque porro quisquam est qui dolorem ipsum quia
+                                    dolor sit amet, consectetur, adipisci velit...</h3>
+                                  <span class="spr-review-header-byline"><strong>quoctri1905</strong> on <strong>Dec 30,
+                                      2018</strong></span>
+                                </div>
+
+                                <div class="spr-review-content">
+                                  <p class="spr-review-content-body">Lorem Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                                    ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled.<br>
+                                    <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          </div>
+                        </div>
                       </ng-template>
                       <!-- Shipping &amp; Returns -->
                     </li>

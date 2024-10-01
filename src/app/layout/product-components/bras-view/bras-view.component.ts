@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ZoomImageViewerComponent } from '../zoom-image-viewer/zoom-image-viewer.component';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+declare var myPluginFunction: any; 
 @Component({
   selector: 'app-bras-view',
   templateUrl: './bras-view.component.html',
@@ -69,5 +70,10 @@ export class BrasviewComponent implements OnInit {
   }
 
   /////////////////////////////////////
-  
+   ngAfterViewInit(): void {
+    // Call the function from plugins.js
+    if (typeof myPluginFunction === 'function') {
+      myPluginFunction();
+    }
+  }
 }

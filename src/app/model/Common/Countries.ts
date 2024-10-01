@@ -1,6 +1,13 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class Country {
   form : FormGroup;
+  countryID:string;
+  countryName:string;
+  countryCode:string;
+  dial :string;
+  currency_Name :string;
+  currency :string;
+  isActive :string;
   constructor() {
     this.form = new FormGroup({
         countryID:new FormControl(''),

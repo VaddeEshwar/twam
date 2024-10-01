@@ -159,6 +159,6 @@ openEnd(content: any) {
 
 
 profile(){
-  this.router.navigate(['user-profile/profile']);
+  this.router.navigate(['product-components/profile']);
 }
 }

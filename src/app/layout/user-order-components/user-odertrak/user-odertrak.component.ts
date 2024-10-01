@@ -5,6 +5,7 @@ import { AdminserviceService } from '../../../services/user-service/user-service
 import { Router } from '@angular/router';
 import { Form } from '@angular/forms';
 import { Country } from '../../../model/Common/Countries'
+
 @Component({
     selector: 'app-user-odertrak',
     templateUrl: './user-odertrak.component.html',
@@ -18,27 +19,29 @@ export class UserordertrakComponent implements OnInit {
     active = 1;
     activityMsg: string = '';
     fadeOutActive = false;
-    RegistrationModel: Registration;
-    countriesData: any[] = [];
+    RegistrationForm: Registration;
+    countries: Country[] = [];
+    Country:any;
     constructor(private service: AdminserviceService, private router: Router) {
-        this.RegistrationModel = new Registration();
+        this.RegistrationForm = new Registration();
+        // this.countries = new Country();
     }
     ngOnInit() {
         this.getCountries();
     }
 
     onSubmit(): void {
-        const formData = this.RegistrationModel.form.value;
-        console.log("fromData::" + JSON.stringify(formData));
-        this.service.saveregistration(formData)
-            .subscribe({
-                next: (data) => {
-                    this.activityMsg = "Data saved successfully!";
-                    this.startFadeOut();
-                    console.log(data)
-                },
-                error: (e) => console.error(e)
-            });
+        const fromData = this.RegistrationForm.form.value;
+        console.log("fromData::"+JSON.stringify(fromData));
+        this.service.saveregistration(fromData)
+        .subscribe({
+            next: (data) => {
+              this.activityMsg=" data saved successfully!";
+            //   this.router.navigate(['admin/settings/modulesetting']);
+              this.startFadeOut();
+            },
+            error: (e) => console.error(e)
+          });
     }
     startFadeOut() {
         setTimeout(() => {
@@ -50,12 +53,12 @@ export class UserordertrakComponent implements OnInit {
         }, 2000); // wait 2 seconds before starting the fade-out
     }
     getCountries() {
-        this.service.getAllCountries()
-            .subscribe({
-                next: (data) => {
-                    this.countriesData = data;
-                    console.log("countriesData::" + JSON.stringify(this.countriesData))
-                }
-            });
-    }
+        this.service.getAllCountries().subscribe({
+          next: (data) => {
+            this.countries = data;
+            alert('countries')
+            console.log("countries::" + JSON.stringify(this.countries))
+          }
+        })
+      }
 }
