@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  backEndUrl:'https://usermanagementapi-djftg9egcxfmbvdf.southindia-01.azurewebsites.net/api',
+  backEndUrl:'https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net/gateway',
 
 };

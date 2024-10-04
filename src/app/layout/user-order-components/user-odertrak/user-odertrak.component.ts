@@ -33,11 +33,13 @@ export class UserordertrakComponent implements OnInit {
     onSubmit(): void {
         const fromData = this.RegistrationForm.form.value;
         console.log("fromData::"+JSON.stringify(fromData));
+        debugger
         this.service.saveregistration(fromData)
         .subscribe({
             next: (data) => {
+              debugger
               this.activityMsg=" data saved successfully!";
-            //   this.router.navigate(['admin/settings/modulesetting']);
+              this.router.navigate(['login']);
               this.startFadeOut();
             },
             error: (e) => console.error(e)

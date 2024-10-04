@@ -20,26 +20,33 @@
         <div class="divider align-items-center my-4">
           <p class="text-center fw-bold mx-3 mb-0">-----------Or-----------</p>
         </div>
-        <form id="loginform">
-          <!-- Email input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">User Name</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid Mobile Number" #u1 />
+        <form class="form-horizontal mt-3" name="form" [formGroup]="userobj.form" novalidate
+        autocomplete="off" (ngSubmit)="onSubmit()">
+        <div class="mb-3 row ">
+          <div class="col-12 ">
+            <input class="form-control" type="text" formControlName="firstName" placeholder="First Name">
           </div>
-          <div data-mdb-input-init class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">Password</label>
-            <input type="Password" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid Mobile Number" #p2 />
+        </div>
+    
+        
+        <div class="mb-3 row">
+          <div class="col-12 ">
+            <input class="form-control" type="password" formControlName="password" placeholder="Password">
           </div>
+        </div>
 
-          <div class="text-center text-lg-start  pt-2">
-            <button class="btn d-block w-100 btn-lg btn-info" type="button" (click)="check(u1.value, p2.value)">CONTINUE </button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="product-components/registration" class="link-danger">Register</a>
-            </p>
-          </div>
 
-        </form>
+        <div class="mb-3 text-center ">
+          <div class="col-xs-12 mb-4">
+            <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>
+          </div>
+        </div>
+        <div class="mb-3 mb-0 mt-2 ">
+          <div class="col-sm-12 text-center ">
+            Already have an account? <a href="login" class="text-info ms-1 "><b>Sign In</b></a>
+          </div>
+        </div>
+      </form>
       </div>
     </div>
   </div>

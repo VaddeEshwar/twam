@@ -1,6 +1,6 @@
 {
-    "/": {
-        "target": "https://usermanagementapi-djftg9egcxfmbvdf.southindia-01.azurewebsites.net/api",
+    "/api": {
+        "target": "https://rndtechiesservices-gme3bhgcb3bsa8cz.southindia-01.azurewebsites.net/gateway/",
         "secure": false,
         "logLevel": "debug"
     }

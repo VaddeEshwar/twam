@@ -572,18 +572,7 @@
 	}
 	color_swacthes();
 
-	/*-----------------------------------
-	  15. Footer links for mobiles
-	-------------------------------------*/
-	function footer_dropdown() {
-		$(".footer-links .h4").on('click', function () {
-			if ($(window).width() < 766) {
-				$(this).next().slideToggle();
-				$(this).toggleClass("active");
-			}
-		});
-	}
-	footer_dropdown();
+
 
 	//Resize Function 
 	var resizeTimer;

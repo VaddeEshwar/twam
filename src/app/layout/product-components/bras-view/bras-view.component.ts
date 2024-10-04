@@ -4,6 +4,7 @@ import { ZoomImageViewerComponent } from '../zoom-image-viewer/zoom-image-viewer
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 declare var myPluginFunction: any; 
+declare var $: any;
 @Component({
   selector: 'app-bras-view',
   templateUrl: './bras-view.component.html',
@@ -34,7 +35,7 @@ export class BrasviewComponent implements OnInit {
   }
   onZoomImage(coordinates: any) {
     console.log(coordinates);
-    this.coordinates = coordinates
+    this.coordinates = coordinates;
   }
   onThumClick(index: string) {
     this.selectedImage = `assets/images/gallery/${index}.webp`
@@ -72,8 +73,15 @@ export class BrasviewComponent implements OnInit {
   /////////////////////////////////////
    ngAfterViewInit(): void {
     // Call the function from plugins.js
-    if (typeof myPluginFunction === 'function') {
-      myPluginFunction();
+    function product_thumb1() {
+      $('.product-dec-slider-1').slick({
+        infinite: true,
+        slidesToShow: 6,
+        stageMargin: 5,
+        slidesToScroll: 1
+      });
     }
+    product_thumb1();
+    
   }
 }
