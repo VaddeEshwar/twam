@@ -3,6 +3,9 @@ import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ZoomImageViewerComponent } from '../zoom-image-viewer/zoom-image-viewer.component';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CartService } from '../../../services/product-service/cart.service';
+import { CartItem,Cart  } from '../../../model/cart';
+// import { title } from 'process';
 declare var myPluginFunction: any; 
 declare var $: any;
 @Component({
@@ -25,7 +28,9 @@ export class BrasviewComponent implements OnInit {
   slides = `assets/images/users/1.jpg`
   image1: string = 'assets/images/product/bras.webp';
   image2: string = 'assets/images/product/bras-02.webp';
-  constructor(public router: Router) {
+  
+  element: any;
+  constructor(public router: Router,private cartService: CartService) {
     this.price = '799.00';
     this.subtitle = "Bras";
   }
@@ -84,4 +89,89 @@ export class BrasviewComponent implements OnInit {
     product_thumb1();
     
   }
+
+productArray = [
+  {
+    prodId:1,
+    title:'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
+    Image:'',
+    orgmat:'$900.00',
+    amt:'$700.00',
+    qut: 1,
+    color:[
+      { name: 'Black', value: 'black', bgColor: 'black' },
+      { name: 'Maroon', value: 'maroon', bgColor: 'maroon' },
+      { name: 'Blue', value: 'blue', bgColor: 'blue' },
+      { name: 'Dark Green', value: 'dark-green', bgColor: 'darkgreen' },
+      { name: 'Aqua', value: 'aqua', bgColor: 'aqua' }
+    ] ,
+    selectedColor: 'Red',
+    size: [
+      { name: 'XS', value: 'xs' },
+      { name: 'S', value: 's' },
+      { name: 'M', value: 'm' },
+      { name: 'L', value: 'l' },
+      { name: 'XL', value: 'xl' }
+    ],
+     selectedSize: 'XS'
+  }
+]
+
+inc(prod){
+if(prod.qut != 10){
+  prod.qut +=1
+}
+}
+dec(prod){
+  if(prod.qut != 1){
+    prod.qut -= 1
+  }
+}
+
+onColorChange(prod: any, color: any) {
+  prod.selectedColor = color.name;
+  console.log('Selected color for product:', prod.prodId, 'is:', prod.selectedColor);
+}
+onSizeChange(prod: any, size: any) {
+  prod.selectedSize = size.name;
+  console.log('Selected size for product:', prod.prodId, 'is:', prod.selectedSize);
+}
+itemCart:any=[]
+addCart(category){
+  const cartItem = {
+    prodId: category.prodId,
+    selectedColor: category.selectedColor,
+    selectedSize: category.selectedSize,
+    qut: category.qut,
+    amt: category.amt,
+    orgmat: category.orgmat,
+    title: category.title,
+    Image: category.Image
+  };
+console.log(cartItem)
+let cartDataNull = localStorage.getItem('localcart');
+if(cartDataNull== null){
+  let storeDataGet: any = [];
+  storeDataGet.push(cartItem);
+  localStorage.setItem('localcart',JSON.stringify(storeDataGet))
+}
+else{
+  var id = cartItem.prodId;
+  let index:number= -1;
+  // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
+  for(let i=0;i<this.itemCart.length;i++){
+    if(parseInt(id)===parseInt(this.itemCart[i].prodId)){
+      this.itemCart[i].qut = cartItem.qut;
+      index = i;
+      break;  
+    }
+  }
+  if(index== -1){
+    this.itemCart.push(cartItem);
+    localStorage.setItem('localcart',JSON.stringify(this.itemCart))
+  }else{
+    localStorage.setItem('localcart',JSON.stringify(this.itemCart))
+  }
+}
+}
 }

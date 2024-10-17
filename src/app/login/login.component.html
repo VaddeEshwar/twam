@@ -1,54 +1,65 @@
 <section class="vh-100" style="background: url('assets/images/background/cart.avif') no-repeat ;">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
+      <div class="col-md-9 col-lg-6 col-xl-5" >
         <img src="assets/images/logos/TWAM.png" class="img-fluid" alt="Sample image" style="mix-blend-mode: darken;">
       </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" id="login-container" [ngClass]="{'d-none': recoverform}">
+        <!-- Login Form -->
         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
           <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-          <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
-          </button>
-          <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
-            <i class="fab fa-linkedin-in"></i>
-          </button>
+          <!-- Social Buttons -->
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-facebook-f"></i></button>
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-twitter"></i></button>
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-linkedin-in"></i></button>
         </div>
         <div class="divider align-items-center my-4">
           <p class="text-center fw-bold mx-3 mb-0">-----------Or-----------</p>
         </div>
-        <form class="form-horizontal mt-3" name="form" [formGroup]="userobj.form" novalidate
-        autocomplete="off" (ngSubmit)="onSubmit()">
-        <div class="mb-3 row ">
-          <div class="col-12 ">
-            <input class="form-control" type="text" formControlName="firstName" placeholder="First Name">
+        <form [formGroup]="userobj.form" (ngSubmit)="onSubmit()" novalidate>
+          <!-- Username and Password Inputs -->
+          <div class="mb-3 row">
+            <input class="form-control" type="text" formControlName="username" placeholder="Username">
           </div>
-        </div>
-    
-        
-        <div class="mb-3 row">
-          <div class="col-12 ">
+          <div class="mb-3 row">
             <input class="form-control" type="password" formControlName="password" placeholder="Password">
           </div>
-        </div>
-
-
-        <div class="mb-3 text-center ">
-          <div class="col-xs-12 mb-4">
-            <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>
+          <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>
+          <div class="text-center mt-2">
+            Already have an account? <a href="login" class="text-info">Sign In</a>&nbsp;&nbsp;
+            <a (click)="showRecoverForm()" href="javascript:void(0)" class="text-dark ms-auto"><i class="fa fa-lock me-2"></i>Forgot pwd?</a>
           </div>
-        </div>
-        <div class="mb-3 mb-0 mt-2 ">
-          <div class="col-sm-12 text-center ">
-            Already have an account? <a href="login" class="text-info ms-1 "><b>Sign In</b></a>
-          </div>
-        </div>
-      </form>
+        </form>
       </div>
+      
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" id="recover-container" [ngClass]="{'d-none': !recoverform}">
+        <!-- Recovery Form -->
+        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+          <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+          <!-- Social Buttons -->
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-facebook-f"></i></button>
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-twitter"></i></button>
+          <button type="button" class="btn btn-primary btn-floating mx-1"><i class="fab fa-linkedin-in"></i></button>
+        </div>
+        <div class="divider align-items-center my-4">
+          <p class="text-center fw-bold mx-3 mb-0">-----------Or-----------</p>
+        </div>
+        <form [formGroup]="Otpupdateobj.form" (ngSubmit)="onRecoverSubmit()" novalidate>
+          <!-- Username and Password Inputs -->
+          <div class="mb-3 row">
+            <input class="form-control" type="text" formControlName="email" placeholder="Email id">
+          </div>
+          <div class="mb-3 row">
+            <input class="form-control" type="password" formControlName="newPassword" placeholder="New Password">
+          </div>
+          <button class="btn d-block w-100 btn-lg btn-danger" type="submit">Reset</button>
+        </form>
+      </div>
+      
+
+   
     </div>
   </div>
 
 </section>
+

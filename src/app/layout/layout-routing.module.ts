@@ -23,8 +23,8 @@ const routes: Routes = [
       ////View Products-Components///////
     { path: 'product-components/brasview', loadChildren:()=>import( './product-components/bras-view/bras-view.module').then(x => x.BrasviewModule) },
     { path: 'product-components/essview', loadChildren:()=>import( './product-components/essentials-view/essentials-view.module').then(x => x.EssentialsviewModule) },
-    { path: 'product-components/cart', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule),canActivate:[AuthGuard]},
-    { path: 'product-components/bag', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule),canActivate:[AuthGuard]},
+    { path: 'product-components/cart', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule)},///,canActivate:[AuthGuard]
+    { path: 'product-components/bag', loadChildren:()=>import('./product-components/cart/cart-view.module').then(x=>x.CartviewModule)},///,canActivate:[AuthGuard]
     { path: 'product-components/userform', loadChildren:()=>import( './product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
     { path: 'login', loadChildren:()=>import( '../login/login.module').then(x => x.LoginModule) },
        //////////bras-styles///////////
@@ -53,6 +53,7 @@ const routes: Routes = [
     { path: 'product-components/registration', loadChildren:()=>import( './user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
     { path: 'product-components/updateaddress', loadChildren:()=>import( './user-order-components/user-address/user-address.module').then(x => x.UseraddressModule) },
     { path: 'product-components/profile', loadChildren:()=>import( './user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
+    { path: 'product-components/Changepassword', loadChildren:()=>import( './user-order-components/change-password/change-password.module').then(x => x.ChangepasswordModule) },
 
 
   ],

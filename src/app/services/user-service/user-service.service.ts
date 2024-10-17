@@ -14,8 +14,10 @@ import { Registration } from '../../model/Users/registration';
 import { otpValidation } from '../../model/Users/otpValidation';
 import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest';
 import { Country } from '../../model/Common/Countries';
+import { City} from '../../model/Common/Cities';
 import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
+import { Getping } from '../../model/Users/Getping';
 //////////////////model//////////////////////////////////////
 @Injectable({
   providedIn: 'root'
@@ -24,40 +26,40 @@ import { User } from '../../model/user'
 export class AdminserviceService {
   private backendURL = environment.backEndUrl;
 
-/////////////////////////Common///////////////////////////////
-private baseUrlForGetCountries = this.backendURL + "/Common/GetCountries";  //////Get-method
-private baseUrlForGetCities =this.backendURL + "/Common/GetCities";  //////Get-method
-private baseUrlForGetStates =this.backendURL + "/Common/GetStates"; //////post-method
-private baseUrlForGetRoles =this.backendURL + "/Common/GetRoles"; //////Get-method
-/////////////////////User-Method/////////////////////////////////////
-private baseUrlForRegister =this.backendURL + "/User/register"; //////post-method
-private baseUrlForLogin = this.backendURL + "/User/login"; //////post-method
-private baseUrlForUserverify = this.backendURL + "/User/verify"; //////Get-method
-private baseUrlForupdateuserdetails = this.backendURL + "/User/updateuserdetails"; //////Put-method
-private baseUrlForGetping = this.backendURL + "/User/Getping"; //////Get-method
-private baseUrlForGetDbsuccess = this.backendURL + "/User/GetDbsuccess"; //////Get-method
-private baseUrlForOtpValidation = this.backendURL + "/User/OtpValidation"; //////Get-method
-////////////////////Address/////////////////////////////
-private baseUrlForAddress = this.backendURL + "/Address/addAddress"; //////post-method
-private baseUrlForUserAddressMap = this.backendURL + "/Address/UserAddressMap"; //////post-method
-////////////////////Authentication/////////////////
-private baseUrlForAuthenticationrefresh = this.backendURL + "/Auth/refresh"; //////post-method
-private baseUrlForAuthenticationrefresh_token = this.backendURL + "/Auth/refresh-token"; /////Get-method
-private baseUrlForGetUserIdFromRefreshTokenAsync = this.backendURL + "/Auth/GetUserIdFromRefreshTokenAsync"; //////post-method
-/////////////////////Password/////////////////////////////////////
-private baseUrlForchangepassword = this.backendURL + "/Password/change-password"; //////post-method
-private baseUrlForgeneratepassword = this.backendURL + "/Password/generate"; //////post-method
-// const baseUrlForUseractivityEmailHistory = backendURL + "/Useractivity/insertEmailHistory";
-private baseUrlForGetEmailHistorybyUserId = this.backendURL + "/Useractivity/GetEmailHistorybyUserId";//////post-method
-private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserActivities";//////post-method
-// const baseUrlForInsertUserActivity = backendURL + "/Useractivity/InsertUserActivity";//////post-method
+  /////////////////////////Common///////////////////////////////
+  private baseUrlForGetCountries = this.backendURL + "/Common/GetCountries";  //////Get-method
+  private baseUrlForGetCities = this.backendURL + "/Common/GetCities";  //////Get-method
+  private baseUrlForGetStates = this.backendURL + "/Common/GetStates"; //////post-method
+  private baseUrlForGetRoles = this.backendURL + "/Common/GetRoles"; //////Get-method
+  /////////////////////User-Method/////////////////////////////////////
+  private baseUrlForRegister = this.backendURL + "/User/register"; //////post-method
+  private baseUrlForLogin = this.backendURL + "/User/login"; //////post-method
+  private baseUrlForUserverify = this.backendURL + "/User/verify"; //////Get-method
+  private baseUrlForupdateuserdetails = this.backendURL + "/User/updateuserdetails"; //////Put-method
+  private baseUrlForGetping = this.backendURL + "/User/Getping"; //////Get-method
+  private baseUrlForGetDbsuccess = this.backendURL + "/User/GetDbsuccess"; //////Get-method
+
+  ////////////////////Address/////////////////////////////
+  private baseUrlForAddress = this.backendURL + "/Address/addAddress"; //////post-method
+  private baseUrlForUserAddressMap = this.backendURL + "/Address/UserAddressMap"; //////post-method
+  ////////////////////Authentication/////////////////
+  private baseUrlForAuthenticationrefresh = this.backendURL + "/Auth/refresh"; //////post-method
+  private baseUrlForAuthenticationrefresh_token = this.backendURL + "/Auth/refresh-token"; /////Get-method
+  private baseUrlForGetUserIdFromRefreshTokenAsync = this.backendURL + "/Auth/GetUserIdFromRefreshTokenAsync"; //////post-method
+  /////////////////////Password/////////////////////////////////////
+  private baseUrlForchangepassword = this.backendURL + "/Password/change-password"; //////post-method
+  private baseUrlForgeneratepassword = this.backendURL + "/Password/generate"; //////post-method
+  // const baseUrlForUseractivityEmailHistory = backendURL + "/Useractivity/insertEmailHistory";
+  private baseUrlForGetEmailHistorybyUserId = this.backendURL + "/Useractivity/GetEmailHistorybyUserId";//////post-method
+  private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserActivities";//////post-method
+  // const baseUrlForInsertUserActivity = backendURL + "/Useractivity/InsertUserActivity";//////post-method
 
   refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
-        
+
       })
     };
     const body = {
@@ -65,11 +67,11 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
       refreshToken: refreshToken,
       expiryDate: expiryDate
     };
-    debugger
-    return this.http.post<any>(this.baseUrlForAuthenticationrefresh, body,  httpOptions );
+
+    return this.http.post<any>(this.baseUrlForAuthenticationrefresh, body, httpOptions);
   }
   constructor(private http: HttpClient, private router: Router) { }
- 
+
   //////////////////////////HttpErrorResponse//////////////////////////////////
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
@@ -82,12 +84,14 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
     return throwError(() => new Error(errorMessage));
   }
   ////////////////////////////GetRoles /////////////////////////////////
+
+
   getUserRoles(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
     });
-   
+
     return this.http.get<any>(this.baseUrlForGetRoles, { headers })
       .pipe(
         tap(response => {
@@ -106,17 +110,33 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
     localStorage.removeItem('userRoles');
   }
   //////////////////////////HttpErrorResponse//////////////////////////////////
-  getAllCountries(): Observable<Country[]> {
+  Getping(): Observable<Getping[]> {
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
     debugger
     console.log("###Before API CALL####");
-    console.log(Country)
-    console.log("Country::" + Country);
-    return this.http.get<[Country]>(this.baseUrlForGetCountries).pipe(
+    console.log(Getping)
+    console.log("Getping::" + Getping);
+    return this.http.get<[Getping]>(this.baseUrlForGetping, { 'headers': headers }).pipe(
       catchError(this.handleError)
     );
   }
-  getAllCity() {
-    return this.http.get(this.baseUrlForGetCities)
+  getAllCountries(): Observable<any> {
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
+    console.log("###Before API CALL####");
+    console.log(Country)
+    console.log("Country::" + Country);
+    return this.http.get<any>(this.baseUrlForGetCountries, { 'headers': headers }).pipe(
+      tap((data) => console.log('API response:', data)),
+      catchError(this.handleError)
+    );
+  }
+  getAllCity():Observable<any> {
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
+    console.log(City)
+    return this.http.get<any>(this.baseUrlForGetCities, { 'headers': headers }).pipe(
+      tap((data) => console.log('API response:', data)),
+      catchError(this.handleError)
+    );
   }
 
   saveEmailSetting(emailSetting: Emailactivity): Observable<Emailactivity> {
@@ -148,20 +168,21 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
     const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', };
     console.log("Eshwar hello");
     console.log("User Registration object:", UserRegistrationobj);
-    debugger
+
     return this.http.post<Registration>(this.baseUrlForRegister, UserRegistrationobj, { headers: headers }).pipe(
-     
+
       catchError(this.handleError)
     );
   }
   //////////////////////////////login//////////////////////////////////////// 
   loginRequst(userobj: User): Observable<User> {
-    const headers = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', };
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
     console.log("User login object:", userobj);
-    debugger
     return this.http.post(this.baseUrlForLogin, userobj, { headers: headers }).pipe(
       map((response: any) => {
+        console.log("Full API Response:", response);
         const user = new User();
+
         user.populateFormData(response.data);
         return user;
       })
@@ -171,10 +192,9 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
     return localStorage.getItem('token') != null
   }
   GetToken() {
-    debugger
     return localStorage.getItem('token') || ''
   }
-  Logedout(){
+  Logedout() {
     localStorage.clear();
     this.router.navigateByUrl('home')
   }
@@ -182,7 +202,7 @@ private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserAc
   OtpValidation(UserOtpValidationobj: otpValidation) {
     const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', }
     console.log("hello");
-    return this.http.post<otpValidation>(this.baseUrlForOtpValidation, UserOtpValidationobj, { 'headers': headers })
+    return this.http.post<otpValidation>(this.baseUrlForchangepassword, UserOtpValidationobj, { 'headers': headers })
   }
   //////////////////////////////////////////User verifaction///////////////////////////
   Getuserverifaction(guid: string) {

@@ -3,6 +3,7 @@ import { Router, NavigationStart, NavigationEnd, NavigationError, NavigationCanc
 import { Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { AdminserviceService} from '../app/services/user-service/user-service.service';
+import { Getping} from './model/Users/Getping';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,13 +34,13 @@ export class AppComponent implements OnInit{
         console.log('Roles fetched successfully');
       },
       error => {
-        debugger
+        
         console.error('Error fetching roles', error);
       }
     );
-    const userGUID = '';
+    const userGUID = '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2';
     const refreshToken = '';
-    const expiryDate = '';
+    const expiryDate = '2024-10-05T10:28:59.958Z';
     this.service.refreshToken(userGUID, refreshToken, expiryDate)
     .subscribe(
       (response) => {
@@ -49,7 +50,19 @@ export class AppComponent implements OnInit{
       },
       (error) => {
         console.error('Error refreshing token:', error);
-        // Handle error (e.g., logout user if refresh fails)
+        console.log(error.response);
+       
+      }
+    );
+
+
+    this.service.Getping().subscribe(
+      (data: Getping[]) => {
+        debugger
+        console.log("API Data:", data);
+      },
+      (error) => {
+        console.error("Error fetching data:", error);
       }
     );
 }

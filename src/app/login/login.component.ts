@@ -2,7 +2,7 @@ import { Component, inject, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { AuthenticateService } from '../layout/shared/services/authenticate.service';
 import { AdminserviceService } from '../services/user-service/user-service.service'
-// import { login } from '../model/Users/Login'
+import {  otpValidation } from '../model/Users/otpValidation'
 import { User } from '../model/user';
 @Component({
   selector: 'app-login',
@@ -13,50 +13,43 @@ export class LoginComponent implements OnInit {
   msg: string = '';
   // user: any;
   userobj: User;
-  responsedata: any;
+  Otpupdateobj:otpValidation;
   router = inject(Router)
-
+  activityMsg: string = '';
   constructor(private service: AdminserviceService) { }
   ngOnInit(): void {
     this.userobj = new User();
+    this.Otpupdateobj = new otpValidation();
   }
-  // check(uname: string, p: string) {
-  //   let loginData = { username: uname, password: p };
-  //   this.service.loginRequst(loginData).subscribe({
-  //     next: (response) => {
-  //       if (response == null) {
-  //         this.msg = 'Invalid Username or Password';
-  //         this.router.navigate(['/login']);
-  //       } else {
-  //         this.user = response.data;
-  //         console.log('log::' + JSON.stringify(this.user));
-  //         this.router.navigate(['/dashboard']);
-  //       }
-  //     },
-  //     error: (e) => {
-  //       this.msg = 'Invalid Username or Password';
-  //       alert('Login error');
-  //       this.router.navigate(['/login']);
-  //       localStorage.clear();
-  //     },
-  //   });
-  // }
-
+ ///////////////loginRequst////////////
   onSubmit() {
-    debugger
-    this.service.loginRequst(this.userobj).subscribe((res: any) => {
-      if (res.result) {
-        this.responsedata = res;
-        localStorage.setItem('angular', this.responsedata.jwtToken);
-        this.router.navigateByUrl('home')
-      } else {
-        alert(res.message)
-      }
-
-    }, error => {
-      alert("eswar")
-    })
+   const fromData = this.userobj.form.value;
+   console.log("fromData::"+JSON.stringify(fromData));
+   debugger
+   this.service.loginRequst(fromData).subscribe({
+    next:(data)=>{
+      this.activityMsg=" data saved successfully!";
+      this.router.navigate(['home']);
+    }
+   })
   }
-
+   ///////////////loginRequst////////////
+   onRecoverSubmit() {
+    debugger
+    const fromData = this.Otpupdateobj.form.value;
+    console.log("fromData::"+JSON.stringify(fromData));
+    debugger
+    this.service.OtpValidation(fromData).subscribe({
+     next:(data)=>{
+       this.activityMsg=" data saved successfully!";
+       this.router.navigate(['login']);
+     }
+    })
+   }
+  ////////////recoverform////////////////
+  recoverform = false;
+  showRecoverForm() {
+    this.recoverform = !this.recoverform;
+  }
 }
 

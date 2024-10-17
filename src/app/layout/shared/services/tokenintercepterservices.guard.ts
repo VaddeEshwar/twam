@@ -12,21 +12,24 @@ export class TokenintercepterservicesGuard implements HttpInterceptor {
 
  }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    debugger
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
+        debugger
         if (error.status === 401) {
           // Unauthorized error, refresh the token
-          const userGUID = ''; 
+          const userGUID = '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2'; 
           const refreshToken = ''; 
-          const expiryDate = '';
+          const expiryDate = '2024-10-05T10:28:59.958Z';
 
           return this.service.refreshToken(userGUID, refreshToken, expiryDate).pipe(
             switchMap((response) => {
               // Update the token in local storage and retry the failed request
               const newToken = response.accessToken;
+              debugger
               localStorage.setItem('accessToken', newToken);
               
-              // Clone the original request and add the new token
+            
               const clonedRequest = req.clone({
                 setHeaders: {
                   Authorization: `Bearer ${newToken}`

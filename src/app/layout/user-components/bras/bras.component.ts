@@ -34,11 +34,9 @@ export class BrasComponent implements OnInit {
     };
     noWrapSlides = false;
     showIndicator = true;
-
     constructor(config: NgbRatingConfig, private modalService: NgbModal,public router: Router) {
         this.price = '799.00';
     }
-
     ngOnInit() {
         console.log("dashboard");
     }
@@ -55,7 +53,6 @@ export class BrasComponent implements OnInit {
     openEnd(content: TemplateRef<any>) {
         this.offcanvasService.open(content, { position: 'end' });
     }
-
     openModal() {
         const modalRef = this.modalService.open(ClientAddingComponent, { windowClass: 'modal-xl modal-rounded' });
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
