@@ -24,8 +24,8 @@ export class BrasComponent implements OnInit {
     active = 1;
     rating = 2;
     price: string;
-    selectedColor: string = 'sandybrown'; 
-    colors = ['sandybrown', 'wheat', 'white', 'black']; 
+    selectedColor: string = 'sandybrown';
+    colors = ['sandybrown', 'wheat', 'white', 'black'];
     images = {
         sandybrown: 'assets/images/product/bras-01.webp',
         wheat: 'assets/images/product/bras.webp',
@@ -34,11 +34,12 @@ export class BrasComponent implements OnInit {
     };
     noWrapSlides = false;
     showIndicator = true;
-    constructor(config: NgbRatingConfig, private modalService: NgbModal,public router: Router) {
-        this.price = '799.00';
+    constructor(config: NgbRatingConfig, private modalService: NgbModal, public router: Router) {
+
     }
     ngOnInit() {
         console.log("dashboard");
+        this.GetRating()
     }
     ratingcount = 0;
     totalrating = 0;
@@ -64,11 +65,106 @@ export class BrasComponent implements OnInit {
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-    productoverview(){
+    productoverview() {
         const image = this.imageUrl;
         const price = this.price;
     }
-    dataview(){
-        this.router.navigate(['product-components/brasview']);
+
+    prodExportArray = [
+        {
+            prodId: 1,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '580.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+        },
+        {
+            prodId: 2,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A036',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '600.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+        },
+        {
+            prodId: 3,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A037',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '600.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+        },
+        {
+            prodId: 4,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A035',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '500.00',
+            oldprice: '600.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+        },
+    ]
+    itemCart:any=[]
+    dataview(category) {
+        const selectedImg = category.images[category.selectedColor];
+        const cartItem = {
+            prodId: category.prodId,
+            price: category.price,
+            oldprice: category.oldprice,
+            title: category.title,
+            images: selectedImg,
+        };
+        console.log(cartItem)
+        let cartDataNull = localStorage.getItem('localcart');
+        if (cartDataNull == null) {
+            let storeDataGet: any = [];
+            storeDataGet.push(cartItem);
+            localStorage.setItem('localcart', JSON.stringify(storeDataGet))
+        }
+        else{
+            var id = cartItem.prodId;
+            let index:number= -1;
+            // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
+            for(let i=0;i<this.itemCart.length;i++){
+              if(parseInt(id)===parseInt(this.itemCart[i].prodId)){
+                this.itemCart[i].prodId = cartItem.prodId;
+                index = i;
+                break;  
+              }
+            }
+            if(index== -1){
+              this.itemCart.push(cartItem);
+            }
+            localStorage.setItem('localcart',JSON.stringify(this.itemCart))
+            this.router.navigate(['product-components/brasview']);
+          }
     }
 }

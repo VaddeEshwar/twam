@@ -112,7 +112,6 @@ export class AdminserviceService {
   //////////////////////////HttpErrorResponse//////////////////////////////////
   Getping(): Observable<Getping[]> {
     const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
-    debugger
     console.log("###Before API CALL####");
     console.log(Getping)
     console.log("Getping::" + Getping);
@@ -132,7 +131,7 @@ export class AdminserviceService {
   }
   getAllCity():Observable<any> {
     const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
-    console.log(City)
+    console.log("Country::" +Country)
     return this.http.get<any>(this.baseUrlForGetCities, { 'headers': headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)

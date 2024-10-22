@@ -10,7 +10,7 @@
         <!--#ProductSection-product-template-->
         <div class="product-single product-single-1">
           <div class="left-content-product">
-            <div class="row" *ngFor="let prod of productArray">
+            <div class="row" *ngFor="let prod of getCartDetails">
               <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="image-preview" appGetZoomPosition (appGetZoomPosition)="onZoomImage($event)">
                   <img [src]="selectedImage" alt="Selected Image">
@@ -44,15 +44,17 @@
                   </div>
                   <p class="product-single__price product-single__price-product-template">
                     <span class="visually-hidden">Regular price</span>
-                    <s id="ComparePrice-product-template"><span class="money">{{prod.orgmat}}</span></s>
+                    <s id="ComparePrice-product-template"><span class="money"><i class="fas fa-rupee-sign"></i>
+                        {{prod.oldprice}}</span></s>
                     <span
                       class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                      <span id="ProductPrice-product-template"><span class="money">{{prod.amt}}</span></span>
+                      <span id="ProductPrice-product-template"><span class="money"><i class="fas fa-rupee-sign"></i>
+                          {{prod.price}}</span></span>
                     </span>
                     <span class="discount-badge"> <span class="devider">|</span>&nbsp;
                       <span>You Save</span>
                       <span id="SaveAmount-product-template" class="product-single__save-amount">
-                        <span class="money">$100.00</span>
+                        <span class="money"><i class="fas fa-rupee-sign"></i> 100.00</span>
                       </span>
                       <span class="off">(<span>16</span>%)</span>
                     </span>
@@ -66,7 +68,7 @@
                     </ul>
                   </div>
                   <div id="quantity_message">Hurry! Only <span class="items">4</span> left in stock.</div>
-                  <div class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
+                  <div class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data" *ngFor="let prod of productArray">
                     <div class="swatch clearfix swatch-0 option1" data-option-index="0">
                       <div class="product-form__item">
                         <label class="header">Color: <span class="slVariant">{{ prod.selectedColor }}</span></label>
@@ -110,12 +112,14 @@
                         </div>
                       </div>
                       <div class="product-form__item--submit">
-                        <button type="button" name="add" class="btn product-form__cart-submit" (click)="addCart(prod)" >
+                        <button type="button" name="add" class="btn product-form__cart-submit" (click)="addCart(prod)">
                           <span>Add to cart</span>
                         </button>
                       </div>
                       <div class="shopify-payment-button" data-shopify="payment-button">
-                        <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy it now</button>
+                        <button type="button"
+                          class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy it
+                          now</button>
                       </div>
                     </div>
                     <!-- End Product Action -->

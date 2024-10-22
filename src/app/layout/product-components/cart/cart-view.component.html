@@ -1,89 +1,73 @@
 <div class="row">
-    <!-- Column -->
-    <div class="col-md-9 col-lg-9">
-      <div class="card">
-        <div class="card-header bg-info">
-          <h5 class="mb-0 text-white">Your Cart (4 items)</h5>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table product-overview">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Product info</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th style="text-align: center">Total</th>
-                  <!-- <th style="text-align: center">Action</th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td width="150">
-                    <img
-                      src="assets/images/gallery/1.webp"
-                      alt="iMac"
-                      width="80"
-                    />
-                  </td>
-                  <td width="550">
-                    <h5 class="font-500">Bras</h5>
-                    <p>
-                      Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised
-                      words which don't look
-                    </p>
-                  </td>
-                  <td><i class="fas fa-rupee-sign"></i>153</td>
-                  <td width="70">
-                    <input type="text" class="form-control" placeholder="1" />
-                  </td>
-                  <td width="150" align="center" class="font-500">153</td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- <hr /> -->
-          </div>
-        </div>
-      </div> 
-    </div>
-    <!-- Column -->
-    <div class="col-md-3 col-lg-3">
-    
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">CART SUMMARY</h5>
-          <hr />
-          <small>Total Price</small>
-          <h2>153</h2>
-          <hr />
-          <div class="button-group">
-            <button class="btn btn-success" (click)="placetoorder()">Place Order</button>
-            <button class="btn btn-secondary btn-outline">Cancel</button>
-          </div>
-        </div>
+  <!-- Column -->
+  <div class="col-md-9 col-lg-9">
+    <div class="card">
+      <div class="card-header bg-info">
+        <h5 class="mb-0 text-white">Your Cart (4 items)</h5>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Profile Details</h5>
-          <div class="button-group">
-            <button class="btn btn-success">Checkout</button>
-            <button class="btn btn-secondary btn-outline">Cancel</button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">For Any Support</h5>
-          <hr />
-          <h4><i class="ti-mobile"></i> 9998979695 (Toll Free)</h4>
-          <small
-            >Please contact with us if you have any questions. We are avalible
-            24h.</small
-          >
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table product-overview">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product info</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th style="text-align: center">Total</th>
+                <!-- <th style="text-align: center">Action</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let getCartDetail of getCartDetails">
+                <td><img [src]="getCartDetail.image" width="80" /></td>
+                <td>{{ getCartDetail.title }}</td>
+                <td>{{ getCartDetail.amt }}</td>
+                <td>{{ getCartDetail.qut }}</td>
+                <td>{{ (getCartDetail.qut) * ( getCartDetail.amt) | number }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <!-- <div>Total Amount: {{ totalAmount }}</div> -->
+            </tfoot>
+          </table>
+          <!-- <hr /> -->
         </div>
       </div>
     </div>
   </div>
+  <!-- Column -->
+  <div class="col-md-3 col-lg-3">
 
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">CART SUMMARY</h5>
+        <hr/>
+        <small>Total Price</small>
+        <h2 *ngFor="let getCartDetail of getCartDetails">{{ (getCartDetail.qut) * ( getCartDetail.amt) | number }}</h2>
+        <hr/>
+        <div class="button-group p-2">
+          <button class="btn btn-success" (click)="placetoorder()">Place Order</button>
+          <button class="btn btn-secondary btn-outline">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Profile Details</h5>
+        <div class="button-group">
+          <button class="btn btn-success">Checkout</button>
+          <button class="btn btn-secondary btn-outline">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">For Any Support</h5>
+        <hr />
+        <h4><i class="ti-mobile"></i> 9998979695 (Toll Free)</h4>
+        <small>Please contact with us if you have any questions. We are avalible 24h.</small>
+      </div>
+    </div>
+  </div>
+</div>

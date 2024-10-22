@@ -166,7 +166,7 @@ Table of Content:
 .grid-products .item .product-image { position:relative; overflow:hidden; margin:0 auto 15px; }
 .grid-products .item .product-image > a { display:block; white-space:nowrap; opacity:1; }
 .grid-products .item .product-image img { display:inline-block; width:100%; margin:0 auto; vertical-align:middle; -ms-transition:all ease-out 0.4s; -webkit-transition:all ease-out 0.4s; transition:all ease-out 0.4s; }
-.grid-products .item .product-image .hover { visibility:hidden; opacity:0; left:50%; top:50%; position:absolute; -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); }
+.grid-products .item .product-image .hover { visibility:hidden; opacity:0; left:40%; top:40%; position:absolute; -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); }
 .grid-products .item .product-image:hover .primary { opacity:0; }
 .grid-products .item .product-image:hover .hover:not(.variantImg) { opacity:1; visibility:visible; }
 .grid-view_image:hover .primary { opacity:0; visibility:hidden; }

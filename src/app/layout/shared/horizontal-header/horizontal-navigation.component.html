@@ -147,9 +147,10 @@
   <!-- Messages -->
   <!-- ============================================================== -->
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" id="2"
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" 
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-cart"></i-feather>
+      <span class="badge bg-danger badge-pill">{{cartItem}}</span>
     </a>
   </li>
   <!-- ============================================================== -->

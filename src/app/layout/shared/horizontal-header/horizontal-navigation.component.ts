@@ -1,8 +1,9 @@
-import { Component, AfterViewInit,ViewChild, EventEmitter, Output,ViewContainerRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, EventEmitter, Output, ViewContainerRef } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbPanelChangeEvent, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { HttpClientJsonpModule } from '@angular/common/http';
 
 declare var $: any;
 
@@ -19,7 +20,8 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 
   public isCollapsed = false;
   public showMobileMenu = false;
-  enteredSearchValue: string='';
+  enteredSearchValue: string = '';
+  cartItem: number = 0;
   notifications: Object[] = [
     {
       btn: 'btn-danger',
@@ -113,7 +115,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService,public router: Router){
+  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router) {
 
     translate.setDefaultLang('en');
 
@@ -127,38 +129,51 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     alert('hello')
   }
 
-  login(){
+  login() {
     this.router.navigate(['product-components/registration']);
   }
-  
-  cart(){
+
+  cart() {
     this.router.navigate(['product-components/cart']);
   }
-  bag(){
+  bag() {
     this.router.navigate(['product-components/bag']);
   }
-  @Output()searchTextchanger:EventEmitter<string>= new EventEmitter<string>();
+  @Output() searchTextchanger: EventEmitter<string> = new EventEmitter<string>();
 
-  onSearchTextCharged(){
+  onSearchTextCharged() {
     this.searchTextchanger.emit(this.enteredSearchValue);
     console.log(this.searchTextchanger)
   }
 
-//   searchText:string = '';
-//   onSearchTextCharged(searchValue: string){
-// this.searchText = searchValue;
-// console.log(this.searchText)
-//   }
+  //   searchText:string = '';
+  //   onSearchTextCharged(searchValue: string){
+  // this.searchText = searchValue;
+  // console.log(this.searchText)
+  //   }
 
 
 
-openEnd(content: any) {
-  // Implement the method functionality here
-  console.log('Clicked on dropdown toggle');
-}
+  openEnd(content: any) {
+    // Implement the method functionality here
+    console.log('Clicked on dropdown toggle');
+  }
 
 
-profile(){
-  this.router.navigate(['product-components/profile']);
-}
+  profile() {
+    this.router.navigate(['product-components/profile']);
+  }
+
+  ngOnInit() {
+    // this.cartItemFun()
+  }
+
+  // cartItemFun() {
+  //   const localCart = localStorage.getItem('localcart');
+  //   if (localCart !== null) {
+  //     const cartCount = JSON.parse(localCart);
+  //     console.log(cartCount);
+  //     this.cartItem=cartCount.length;
+  //   }
+  // }
 }

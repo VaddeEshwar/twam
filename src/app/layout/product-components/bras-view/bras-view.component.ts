@@ -36,7 +36,7 @@ export class BrasviewComponent implements OnInit {
   }
   ngOnInit() {
     console.log("hello eshwar this component bras view");
-    
+    this.productView();
   }
   onZoomImage(coordinates: any) {
     console.log(coordinates);
@@ -95,25 +95,25 @@ productArray = [
     prodId:1,
     title:'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
     Image:'',
-    orgmat:'$900.00',
-    amt:'$700.00',
+    orgmat:'900.00',
+    amt:'700.00',
     qut: 1,
     color:[
-      { name: 'Black', value: 'black', bgColor: 'black' },
-      { name: 'Maroon', value: 'maroon', bgColor: 'maroon' },
+      { name: 'sandybrown', value: 'sandybrown', bgColor: 'sandybrown' },
+      { name: 'wheat', value: 'wheat', bgColor: 'wheat' },
       { name: 'Blue', value: 'blue', bgColor: 'blue' },
-      { name: 'Dark Green', value: 'dark-green', bgColor: 'darkgreen' },
-      { name: 'Aqua', value: 'aqua', bgColor: 'aqua' }
+      { name: 'white', value: 'white', bgColor: 'white' },
+      { name: 'black', value: 'black', bgColor: 'black' }
     ] ,
-    selectedColor: 'Red',
+    selectedColor: 'sandybrown',
     size: [
-      { name: 'XS', value: 'xs' },
-      { name: 'S', value: 's' },
-      { name: 'M', value: 'm' },
-      { name: 'L', value: 'l' },
-      { name: 'XL', value: 'xl' }
+      { name: '32A', value: '32A' },
+      { name: '32B', value: '32B' },
+      { name: '32C', value: '32C' },
+      { name: '32D', value: '32D' },
+      { name: '32DD', value: '32DD' }
     ],
-     selectedSize: 'XS'
+     selectedSize: '32A'
   }
 ]
 
@@ -138,40 +138,16 @@ onSizeChange(prod: any, size: any) {
 }
 itemCart:any=[]
 addCart(category){
-  const cartItem = {
-    prodId: category.prodId,
-    selectedColor: category.selectedColor,
-    selectedSize: category.selectedSize,
-    qut: category.qut,
-    amt: category.amt,
-    orgmat: category.orgmat,
-    title: category.title,
-    Image: category.Image
-  };
-console.log(cartItem)
-let cartDataNull = localStorage.getItem('localcart');
-if(cartDataNull== null){
-  let storeDataGet: any = [];
-  storeDataGet.push(cartItem);
-  localStorage.setItem('localcart',JSON.stringify(storeDataGet))
+ 
 }
-else{
-  var id = cartItem.prodId;
-  let index:number= -1;
-  // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
-  for(let i=0;i<this.itemCart.length;i++){
-    if(parseInt(id)===parseInt(this.itemCart[i].prodId)){
-      this.itemCart[i].qut = cartItem.qut;
-      index = i;
-      break;  
+/////////////////////////////
+getCartDetails:any[]=[];
+
+    productView(){
+        const localCart = localStorage.getItem('localcart');
+        if (localCart !== null) {
+            this.getCartDetails = JSON.parse(localCart);
+            console.log(this.getCartDetails);
+          }
     }
-  }
-  if(index== -1){
-    this.itemCart.push(cartItem);
-    localStorage.setItem('localcart',JSON.stringify(this.itemCart))
-  }else{
-    localStorage.setItem('localcart',JSON.stringify(this.itemCart))
-  }
-}
-}
 }
