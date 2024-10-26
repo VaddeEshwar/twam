@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 import { catchError, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { HttpClient, HttpClientModule, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 //////////////////model//////////////////////////////////////
 import { Address } from '../../model/Address/address';
 import { AddressMap } from '../../model/Address/UserAddressMap'
@@ -14,10 +14,11 @@ import { Registration } from '../../model/Users/registration';
 import { otpValidation } from '../../model/Users/otpValidation';
 import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest';
 import { Country } from '../../model/Common/Countries';
-import { City} from '../../model/Common/Cities';
+import { City } from '../../model/Common/Cities';
 import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
 import { Getping } from '../../model/Users/Getping';
+import { RefreshPayload } from '../../model/authentication/refresh';
 //////////////////model//////////////////////////////////////
 @Injectable({
   providedIn: 'root'
@@ -54,21 +55,26 @@ export class AdminserviceService {
   private baseUrlForgetUserActivities = this.backendURL + "/Useractivity/getUserActivities";//////post-method
   // const baseUrlForInsertUserActivity = backendURL + "/Useractivity/InsertUserActivity";//////post-method
 
-  refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
+  // refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
 
-      })
-    };
-    const body = {
-      userGUID: userGUID,
-      refreshToken: refreshToken,
-      expiryDate: expiryDate
-    };
+  //     })
+  //   };
+  //   const body = {
+  //     userGUID: userGUID,
+  //     refreshToken: refreshToken,
+  //     expiryDate: expiryDate
+  //   };
 
-    return this.http.post<any>(this.baseUrlForAuthenticationrefresh, body, httpOptions);
+  //   return this.http.post<any>(this.baseUrlForAuthenticationrefresh, body, httpOptions);
+  // }
+
+  refreshToken(payload: RefreshPayload ): Observable<any> {
+    const url = `${this.baseUrlForAuthenticationrefresh}/api/Auth/refresh`;
+    return this.http.post<any>(url, payload);
   }
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -84,8 +90,6 @@ export class AdminserviceService {
     return throwError(() => new Error(errorMessage));
   }
   ////////////////////////////GetRoles /////////////////////////////////
-
-
   getUserRoles(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -110,33 +114,57 @@ export class AdminserviceService {
     localStorage.removeItem('userRoles');
   }
   //////////////////////////HttpErrorResponse//////////////////////////////////
-  Getping(): Observable<Getping[]> {
-    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
-    console.log("###Before API CALL####");
-    console.log(Getping)
-    console.log("Getping::" + Getping);
-    return this.http.get<[Getping]>(this.baseUrlForGetping, { 'headers': headers }).pipe(
+  Getping(dateTime: string): Observable<Getping[]> {
+    const token = localStorage.getItem('authToken');
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5','Authorization': `Bearer ${token}` };
+    const params = new HttpParams().set('dateTime', dateTime);
+    return this.http.get<Getping[]>(this.baseUrlForGetping, { 'headers': headers, params }).pipe(
       catchError(this.handleError)
     );
   }
+
+  //////////////////////////////////User/GetDbsuccess
+  GetDbsuccess(): Observable<any> {
+    debugger
+    const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
+    const token = localStorage.getItem('authToken');
+   
+    return this.http.get<any>(this.baseUrlForGetDbsuccess, { 'headers': headers }).pipe(
+      tap((data) => console.log('API response:', data)),
+      catchError(this.handleError)
+    );
+  }
+
   getAllCountries(): Observable<any> {
     const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
-    console.log("###Before API CALL####");
-    console.log(Country)
-    console.log("Country::" + Country);
     return this.http.get<any>(this.baseUrlForGetCountries, { 'headers': headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)
     );
   }
-  getAllCity():Observable<any> {
+  // getAllCity(stateID: number): Observable<City[]> {
+  //   debugger
+  //   const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2' };
+  //   console.log('API response:', stateID)
+  //   return this.http.get<City[]>(this.baseUrlForGetCities, { 'headers': headers}).pipe(
+  //     tap((data) => console.log('API response:', data)),
+  //     catchError(this.handleError)
+  //   );
+  // }
+  getAllCity(stateId: number): Observable<any> {
+    // const state_Id = stateId+"";
     const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2', 'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5', 'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5' };
-    console.log("Country::" +Country)
-    return this.http.get<any>(this.baseUrlForGetCities, { 'headers': headers }).pipe(
+    // const params = { 'stateId': state_Id }
+    console.log("###Before API CALL####");
+    console.log(stateId)
+    console.log("stateId::" + stateId);
+    debugger
+    return this.http.get<City[]>(this.baseUrlForGetCities, { 'headers': headers, }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)
     );
   }
+
 
   saveEmailSetting(emailSetting: Emailactivity): Observable<Emailactivity> {
     const headers = {

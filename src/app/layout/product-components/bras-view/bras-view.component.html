@@ -10,6 +10,7 @@
         <!--#ProductSection-product-template-->
         <div class="product-single product-single-1">
           <div class="left-content-product">
+            <form action="">
             <div class="row" *ngFor="let prod of getCartDetails">
               <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="image-preview" appGetZoomPosition (appGetZoomPosition)="onZoomImage($event)">
@@ -159,6 +160,8 @@
                   </div>
                 </div>
               </div>
+              </div>
+            </form>
               <!--Product Tabs-->
               <div class="col-12">
 
@@ -837,10 +840,7 @@
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
 
 
 <app-zoom-image-viewer *ngIf="coordinates" [coordinates]="coordinates"

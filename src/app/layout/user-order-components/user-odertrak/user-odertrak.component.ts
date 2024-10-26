@@ -66,11 +66,13 @@ export class UserordertrakComponent implements OnInit {
       }
     })
   }
+  stateId:number;
   getCity() {
-    this.service.getAllCity().subscribe({
+    this.service.getAllCity(this.stateId).subscribe({
       next: (data) => {
-        this.cities = data;
-        console.log("City::" + JSON.stringify(this.cities))
+        this.stateId = data;
+        debugger
+        console.log("stateId::" + JSON.stringify(this.stateId))
       }
     })
   }

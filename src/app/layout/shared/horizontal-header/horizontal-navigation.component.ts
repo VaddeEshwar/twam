@@ -165,15 +165,15 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    // this.cartItemFun()
+    this.cartItemFun()
   }
 
-  // cartItemFun() {
-  //   const localCart = localStorage.getItem('localcart');
-  //   if (localCart !== null) {
-  //     const cartCount = JSON.parse(localCart);
-  //     console.log(cartCount);
-  //     this.cartItem=cartCount.length;
-  //   }
-  // }
+  cartItemFun() {
+    const localCart = localStorage.getItem('localcart');
+    if (localCart !== null) {
+      const cartCount = JSON.parse(localCart);
+      console.log(cartCount);
+      this.cartItem=cartCount.length;
+    }
+  }
 }

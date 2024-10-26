@@ -3,12 +3,12 @@ export class City {
   form : FormGroup;
   cityID:string;
   cityName:string;
-  stateID:string;
+  stateId:number;
   constructor() {
     this.form = new FormGroup({
         cityID:new FormControl('0'),
         cityName:new FormControl(''),
-        stateID:new FormControl('0'),
+        stateId:new FormControl(''),
     })
   }
   populateFormData(City: any) {

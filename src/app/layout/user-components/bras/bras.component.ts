@@ -38,7 +38,6 @@ export class BrasComponent implements OnInit {
 
     }
     ngOnInit() {
-        console.log("dashboard");
         this.GetRating()
     }
     ratingcount = 0;
@@ -85,6 +84,7 @@ export class BrasComponent implements OnInit {
             oldprice: '700.00',
             colors: ['sandybrown', 'wheat', 'white', 'black'],
             selectedColor: 'sandybrown',
+            qut:1
         },
         {
             prodId: 2,
@@ -100,6 +100,7 @@ export class BrasComponent implements OnInit {
             oldprice: '700.00',
             colors: ['sandybrown', 'wheat', 'white', 'black'],
             selectedColor: 'sandybrown',
+            qut:1
         },
         {
             prodId: 3,
@@ -111,10 +112,11 @@ export class BrasComponent implements OnInit {
                 black: 'assets/images/product/bras-03.webp'
             },
             selectedImg: 'sandybrown',
-            price: '600.00',
+            price: '620.00',
             oldprice: '700.00',
             colors: ['sandybrown', 'wheat', 'white', 'black'],
             selectedColor: 'sandybrown',
+            qut:1
         },
         {
             prodId: 4,
@@ -130,6 +132,7 @@ export class BrasComponent implements OnInit {
             oldprice: '600.00',
             colors: ['sandybrown', 'wheat', 'white', 'black'],
             selectedColor: 'sandybrown',
+            qut:1
         },
     ]
     itemCart:any=[]
@@ -141,6 +144,7 @@ export class BrasComponent implements OnInit {
             oldprice: category.oldprice,
             title: category.title,
             images: selectedImg,
+            qut:category.qut,
         };
         console.log(cartItem)
         let cartDataNull = localStorage.getItem('localcart');
@@ -150,12 +154,12 @@ export class BrasComponent implements OnInit {
             localStorage.setItem('localcart', JSON.stringify(storeDataGet))
         }
         else{
-            var id = cartItem.prodId;
+            var id = cartItem.qut;
             let index:number= -1;
             // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
             for(let i=0;i<this.itemCart.length;i++){
               if(parseInt(id)===parseInt(this.itemCart[i].prodId)){
-                this.itemCart[i].prodId = cartItem.prodId;
+                this.itemCart[i].qut = cartItem.qut;
                 index = i;
                 break;  
               }

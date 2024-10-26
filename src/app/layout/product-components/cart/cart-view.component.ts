@@ -19,21 +19,21 @@ export class CartviewComponent implements OnInit {
             this.formData = params;
             console.log('Received data:', this.formData);
         });
-        // this.CartDetails()
+        this.CartDetails()
     }
     placetoorder(){
-        this.router.navigate(['product-components/ngx-wizard']);
+        this.router.navigate(['product-components/registration']);
     }
 /////////////////////////////////
 getCartDetails:any[]=[];
-cartDetails 
-    // CartDetails(){
-    //     const localCart = localStorage.getItem('localcart');
-    //     if (localCart !== null) {
-    //         this.getCartDetails = JSON.parse(localCart);
-    //         console.log(this.getCartDetails);
-    //       }
-    // }
+cartDetails :any;
+    CartDetails(){
+        const localCart = localStorage.getItem('localcart');
+        if (localCart !== null) {
+            this.getCartDetails = JSON.parse(localCart);
+            console.log(this.getCartDetails);
+          }
+    }
     
     gettotalAmount() {
         console.log(this.cartDetails);

@@ -93,10 +93,8 @@ export class BrasviewComponent implements OnInit {
 productArray = [
   {
     prodId:1,
-    title:'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
+    title:'{{prod.title}}',
     Image:'',
-    orgmat:'900.00',
-    amt:'700.00',
     qut: 1,
     color:[
       { name: 'sandybrown', value: 'sandybrown', bgColor: 'sandybrown' },
@@ -130,15 +128,13 @@ dec(prod){
 
 onColorChange(prod: any, color: any) {
   prod.selectedColor = color.name;
-  console.log('Selected color for product:', prod.prodId, 'is:', prod.selectedColor);
 }
 onSizeChange(prod: any, size: any) {
   prod.selectedSize = size.name;
-  console.log('Selected size for product:', prod.prodId, 'is:', prod.selectedSize);
 }
 itemCart:any=[]
 addCart(category){
- 
+  
 }
 /////////////////////////////
 getCartDetails:any[]=[];
