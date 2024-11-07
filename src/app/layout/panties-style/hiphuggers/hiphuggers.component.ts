@@ -22,7 +22,7 @@ export class HiphuggersComponent implements OnInit {
     selectedColor: string = '#d43743';
     colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images: { [key: string]: string } = {
-        '#d43743': 'assets/images/product/hiphuggers-3.webp',
+        '#d43743': 'assets/images/product/hiphuggers-3.jpg',
         '#d6a583': 'assets/images/product/hiphuggers-1.webp',
         '#e8e5e9': 'assets/images/product/hiphuggers-4.webp',
         '#030509': 'assets/images/product/hiphuggers-2.webp'
@@ -31,7 +31,7 @@ export class HiphuggersComponent implements OnInit {
     showIndicator = true;
 
     constructor(config: NgbRatingConfig, private modalService: NgbModal, private router: Router) {
-        this.price = '799.00';
+        this.price = '699.00';
     }
 
     ngOnInit() {

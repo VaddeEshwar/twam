@@ -1,7 +1,7 @@
 import { Component, OnInit,inject,TemplateRef,} from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-panties',
     templateUrl: './panties.component.html',
@@ -20,8 +20,8 @@ export class PantiesComponent implements OnInit {
         white: 'assets/images/product/paintes-2.webp',
         black: 'assets/images/product/paintes-2.webp'
     };
-    constructor() {
-        this.price = '799.00';
+    constructor( public router: Router) {
+        this.price = '599.00';
     }
 
     ngOnInit() {

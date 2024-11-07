@@ -12,9 +12,18 @@
   }
   .card-title {
     position: relative;
-    // font-weight: 700;
     margin-bottom: 10px;
     cursor: pointer;
+    color: #535766;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    display: block;
   }
   .card-actions {
     float: $rgt;

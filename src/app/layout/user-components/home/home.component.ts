@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     shoppningForm:shoppning;
     private offcanvasService = inject(NgbOffcanvas);
     constructor(private modalService: NgbModal,public router: Router) {
-        this.subtitle = "Bras";
+        this.subtitle = "Triaction Hybrid Lite P-BLACK";
         this.price = '799.00';
         this.shoppningForm = new shoppning();
         this.shoppningModel = new shoppning();
@@ -42,12 +42,10 @@ export class HomeComponent implements OnInit {
         modalRef.componentInstance.subtitle = this.subtitle;
         modalRef.componentInstance.price = this.price;
         modalRef.componentInstance.image = this.image1;
-
     }
     ratingcount = 0;
     totalrating = 0;
     Finalrating: any;
-
     ratingcontrol = new FormControl(0);
     GetRating() {
         this.ratingcount++;

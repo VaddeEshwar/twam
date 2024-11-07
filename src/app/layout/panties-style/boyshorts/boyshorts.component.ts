@@ -63,10 +63,111 @@ export class BoyshortsComponent implements OnInit {
     changeColor(color: string): void {
         this.selectedColor = color;
     }
-    dataview(){
-        this.router.navigate(['product-components/brasview']);
+    // dataview(){
+    //     this.router.navigate(['product-components/brasview']);
+    // }
+    prodExportArray = [
+        {
+            prodId: 1,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '580.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 2,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A036',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '600.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 3,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A037',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '620.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 4,
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A035',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '500.00',
+            oldprice: '600.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+    ]
+    itemCart:any=[]
+    dataview(category) {
+        const selectedImg = category.images[category.selectedColor];
+        const cartItem = {
+            prodId: category.prodId,
+            price: category.price,
+            oldprice: category.oldprice,
+            title: category.title,
+            images: selectedImg,
+            qut:category.qut,
+        };
+        console.log(cartItem)
+        let cartDataNull = localStorage.getItem('localcart');
+        if (cartDataNull == null) {
+            let storeDataGet: any = [];
+            storeDataGet.push(cartItem);
+            localStorage.setItem('localcart', JSON.stringify(storeDataGet))
+        }
+        else{
+            var id = cartItem.qut;
+            let index:number= -1;
+            // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
+            for(let i=0;i<this.itemCart.length;i++){
+              if(parseInt(id)===parseInt(this.itemCart[i].prodId)){
+                this.itemCart[i].qut = cartItem.qut;
+                index = i;
+                break;  
+              }
+            }
+            if(index== -1){
+              this.itemCart.push(cartItem);
+            }
+            localStorage.setItem('localcart',JSON.stringify(this.itemCart))
+            this.router.navigate(['product-components/brasview']);
+          }
     }
-
     }
      
         

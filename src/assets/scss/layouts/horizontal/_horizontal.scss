@@ -11,6 +11,11 @@ $sidebarheight: 54px;
           > .sidebar-link {
             .hide-menu {
               max-width: fit-content;
+              text-transform: uppercase;
+              font-weight: 600;
+              font-size: 13px;
+              color: #282c3f;
+              letter-spacing: 1px;
             }
           }
         }
@@ -184,7 +189,7 @@ $sidebarheight: 54px;
           }
         }
         > .sidebar-item:hover {
-          background: rgba(0, 0, 0, 0.025);
+          // background: rgba(0, 0, 0, 0.025);
         }
         > .sidebar-item:hover ul.first-level,
         > .sidebar-item:hover ul.first-level.collapse {
@@ -192,7 +197,7 @@ $sidebarheight: 54px;
           &:after {
             position: absolute;
             content: "";
-            background: rgba(0, 0, 0, 0.025);
+            // background: rgba(0, 0, 0, 0.025);
             top: 0;
             height: 100%;
             width: 100%;

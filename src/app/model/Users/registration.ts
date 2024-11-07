@@ -1,9 +1,9 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class Registration {
     form: FormGroup;
-       constructor() {
+       constructor() { 
         this.form = new FormGroup({
-            firstName: new FormControl('', [Validators.required]),
+            firstName: new FormControl('', Validators.compose([Validators.required,Validators.maxLength(10)])),
             lastName: new FormControl('', [Validators.required]),
             mobile: new FormControl('', [Validators.required,Validators.minLength(10)]),
             countryCode: new FormControl('', [Validators.required]),

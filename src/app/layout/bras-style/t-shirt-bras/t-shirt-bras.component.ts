@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class TshirtbrasComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
-    rewardImagePath: string = ' assets/images/rating/star-on.png';
+    rewardImagePath: string = 'assets/images/rating/star-on.png';
     active = 1;
     rating = 2;
     price: string;
