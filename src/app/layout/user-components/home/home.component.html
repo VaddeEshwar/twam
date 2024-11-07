@@ -75,8 +75,13 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    <p class="card-title" formControlName="subtitle">{{subtitle}}</p>
-                    <p class="card-title" formControlName="price"> {{price}} </p>
+                    <div class="product-name">
+                      <span href="">{{subtitle}}</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">{{oldprice}}</span>
+                      <span class="price">{{price}}</span>
+                    </div>
                     <div class="ml-auto d-flex align-items-center">
                       <ul class="list-inline font-12 dl m-r-10">
                         <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
@@ -86,7 +91,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/bras-2.webp" alt="Twam">
@@ -109,8 +114,13 @@
                     </li>
                   </ul>
                   <div class="card-body">
-                    <p class="card-title">{{subtitle}}</p>
-                    <p class="card-title"> {{price}} </p>
+                    <div class="product-name">
+                      <span href="">{{subtitle}}</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">{{oldprice}}</span>
+                      <span class="price">{{price}}</span>
+                    </div>
                     <div class="ml-auto d-flex align-items-center">
                       <ul class="list-inline font-12 dl m-r-10">
                         <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
@@ -149,8 +159,13 @@
                     </li>
                   </ul>
                   <div class="card-body">
-                    <p class="card-title">{{subtitle}}</p>
-                    <p class="card-title"> {{price}} </p>
+                    <div class="product-name">
+                      <span href="">{{subtitle}}</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">{{oldprice}}</span>
+                      <span class="price">{{price}}</span>
+                    </div>
                     <div class="ml-auto d-flex align-items-center">
                       <ul class="list-inline font-12 dl m-r-10">
                         <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
@@ -189,8 +204,13 @@
                     </ul>
                   </div>
                   <div class="card-body">
-                    <p class="card-title">{{subtitle}}</p>
-                    <p class="card-title"> {{price}} </p>
+                    <div class="product-name">
+                      <span href="">{{subtitle}}</span>
+                    </div>
+                    <div class="product-price">
+                      <span class="old-price">{{oldprice}}</span>
+                      <span class="price">{{price}}</span>
+                    </div>
                     <div class="ml-auto d-flex align-items-center">
                       <ul class="list-inline font-12 dl m-r-10">
                         <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
@@ -219,7 +239,6 @@
     <hr />
   </div>
 </section>
-
 <section>
   <div class="container">
     <div class="row">

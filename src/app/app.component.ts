@@ -53,7 +53,6 @@ refreshToken(): void {
   };
   this.service.refreshToken(payload).subscribe(
     (response) => {
-      debugger
       console.log('Token refreshed successfully:', response);
     },
     (error) => {

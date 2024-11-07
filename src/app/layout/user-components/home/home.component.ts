@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     subtitle: string;
     apiLoaded = false;
     price: string;
+    oldprice:string;
     image1: string = 'assets/images/product/bras.webp';
     image2: string = 'assets/images/product/bras-02.webp';
     shoppningModel:shoppning;    
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
     constructor(private modalService: NgbModal,public router: Router) {
         this.subtitle = "Triaction Hybrid Lite P-BLACK";
         this.price = '799.00';
+        this.oldprice='659.00'
         this.shoppningForm = new shoppning();
         this.shoppningModel = new shoppning();
     }
