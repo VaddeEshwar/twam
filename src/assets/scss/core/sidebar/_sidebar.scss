@@ -45,7 +45,8 @@ sidebar navigation
         display: flex;
         white-space: nowrap;
         align-items: center;
-        line-height: 25px;
+        line-height: 18px;
+        font-size: 14px;
         // font-weight: 500; 
         // opacity: 0.6;
         // i-feather {
@@ -76,6 +77,8 @@ sidebar navigation
         &.active,
         &:hover {
           opacity: 1;
+          font-weight: 600;
+          color: #282c3f;
           .feather {
             color: $white;
           }

@@ -25,7 +25,7 @@ $sidebarheight: 54px;
 
   @media (min-width: 992px) {
     .sidebar-nav ul .sidebar-item .sidebar-link {
-      padding: 14px 0;
+      padding: 10px 0;
     }
   }
 
@@ -158,7 +158,7 @@ $sidebarheight: 54px;
           }
           &.two-column {
             .first-level {
-              width: 445px;
+              width: 400px;
               > .sidebar-item {
                 float: $lft;
                 width: 50%;
