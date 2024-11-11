@@ -20,6 +20,7 @@ import { User } from '../../model/user'
 import { Getping } from '../../model/Users/Getping';
 import { RefreshPayload } from '../../model/authentication/refresh';
 const backEndUrl = environment.backEndUrl;
+
 /////////////////////////Common///////////////////////////////
 const baseUrlForGetCountries = backEndUrl + "/Common/GetCountries";  //////Get-method
 const baseUrlForGetCities = backEndUrl + "/Common/GetCities";  //////Get-method
@@ -61,26 +62,30 @@ const headers = new HttpHeaders({
 })
 
 export class AdminserviceService {
-  // refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
+  private tokenKey = 'token';
+  refreshToken(payload: { userGUID: string, refreshToken: string, expiryDate: string }): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
+        'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
+        'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
+        'guid': 'd3eb4796-8585-4313-8edd-b78879100a22',
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`
+      })
+    };
+    const body = {
+      userGUID: payload.userGUID,
+      refreshToken: payload.refreshToken,
+      expiryDate: payload.expiryDate
+    };
 
-  //     })
-  //   };
-  //   const body = {
-  //     userGUID: userGUID,
-  //     refreshToken: refreshToken,
-  //     expiryDate: expiryDate
-  //   };
-
-  //   return this.http.post<any>(this.baseUrlForAuthenticationrefresh, body, httpOptions);
-  // }
-
-  refreshToken(payload: any): Observable<any> {
-    return this.http.post<any>(baseUrlForAuthenticationrefresh, payload);
+    return this.http.post<any>(baseUrlForAuthenticationrefresh, body, httpOptions);
   }
+
+  // refreshToken(payload: any): Observable<any> {
+  //   return this.http.post<any>(baseUrlForAuthenticationrefresh, payload);
+  // }
   constructor(private http: HttpClient, private router: Router) { }
 
   //////////////////////////HttpErrorResponse//////////////////////////////////
@@ -108,7 +113,7 @@ export class AdminserviceService {
 
 
 
-  
+
   getUserRoles(): Observable<any> {
     return this.http.get<any>(baseUrlForGetRoles, { headers })
       .pipe(
@@ -116,7 +121,7 @@ export class AdminserviceService {
           // Save roles to localStorage for later use
           if (response && response.roles) {
             localStorage.setItem('userRoles', JSON.stringify(response.roles));
-          }                                                         
+          }
         })
       );
   }
@@ -198,33 +203,19 @@ export class AdminserviceService {
     );
   }
   //////////////////////////////login//////////////////////////////////////// 
-  loginRequst(credentials: { username: string, password: string }): Observable<any> {
-    return this.http.post<any>(baseUrlForLogin, credentials).pipe(
-      tap(response => {
-        // Store tokens in localStorage or a service after successful login
-        localStorage.setItem('accessToken', response.accessToken);
-        localStorage.setItem('refreshToken', response.refreshToken);
+
+
+  loginRequst(userobj: User): Observable<User> {
+    console.log("User login object:", userobj);
+    return this.http.post(baseUrlForLogin, userobj, { headers }).pipe(
+      map((response: any) => {
+        if (response.isSuccess) {
+          localStorage.setItem(this.tokenKey,response.token)
+        }
+        return response;
       })
     );
   }
-
-  // Method to retrieve refreshToken from storage
-  getRefreshToken(): string | null {
-    return localStorage.getItem('refreshToken');
-  }
-
-
-  // loginRequst(userobj: User): Observable<User> {
-  //   console.log("User login object:", userobj);
-  //   return this.http.post(baseUrlForLogin, userobj, { headers }).pipe(
-  //     map((response: any) => {
-  //       console.log("Full API Response:", response);
-  //       const user = new User();
-  //       user.populateFormData(response.data);
-  //       return user;
-  //     })
-  //   );
-  // }
   IsLoggedIn() {
     return localStorage.getItem('token') != null
   }

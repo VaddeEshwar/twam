@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
    console.log("fromData::"+JSON.stringify(fromData));
    debugger
    this.service.loginRequst(fromData).subscribe({
-    next:(res :any)=>{
-      console.log("Login response:", res); 
-      localStorage.setItem('token',res.token)   
+    next:(response :any)=>{
+      console.log("Login response:", response); 
+      localStorage.setItem('token',response.token)   
       this.activityMsg=" data saved successfully!";
       this.router.navigate(['home']);
     },
@@ -62,6 +62,12 @@ export class LoginComponent implements OnInit {
   recoverform = false;
   showRecoverForm() {
     this.recoverform = !this.recoverform;
+  }
+
+  fieldTextType: boolean;
+
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
   }
 }
 
