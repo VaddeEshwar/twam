@@ -73,4 +73,99 @@ export class HomeComponent implements OnInit {
             centered: true,
         });
       }
+
+      prodExportArray = [
+        {
+            prodId: 1,
+            brand:'Triumph',
+            title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '580.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 2,
+            brand:'Enamor',
+            title: 'FB12-BRA-NPNW-P1, BUFF, 42C',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '600.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 3,
+            brand:'Amante',
+            title: 'Sandalwood_32B',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '620.00',
+            oldprice: '700.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1,
+        },
+        {
+            prodId: 4,
+            brand:'Blossom',
+            title: 'BRA-BLOSSOM-NA-MIXED-34C',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '500.00',
+            oldprice: '600.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+        {
+            prodId: 5,
+            brand:'SOIE',
+            title: 'BRA-SOIE-CB-132-BARK-32B',
+            images: {
+                sandybrown: 'assets/images/product/bras-01.webp',
+                wheat: 'assets/images/product/bras.webp',
+                white: 'assets/images/product/bras-2.webp',
+                black: 'assets/images/product/bras-03.webp'
+            },
+            selectedImg: 'sandybrown',
+            price: '500.00',
+            oldprice: '600.00',
+            colors: ['sandybrown', 'wheat', 'white', 'black'],
+            selectedColor: 'sandybrown',
+            qut:1
+        },
+    ]
+    chunkArray<T>(array: T[], chunkSize: number): T[][] {
+        const result: T[][] = [];
+        for (let i = 0; i < array.length; i += chunkSize) {
+          result.push(array.slice(i, i + chunkSize));
+        }
+        return result;
+      }
 }

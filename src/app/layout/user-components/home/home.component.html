@@ -41,6 +41,9 @@
   </div>
 </section>
 <!---------*ngIf="searchText==='' || categories.name.toLowerCase().includes(searchText)"-------->
+
+
+
 <section>
   <div class="container">
     <div class="row">
@@ -63,11 +66,10 @@
                         <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
                           cart</span>
                       </li>
-                      <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"><i
-                            class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                        </button>
-                      </li>
+                  
+                        <li  (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                        </li>
+                     
                     </ul>
                     <!-- Start product button -->
                     <div class="variants add" action="#" onclick="window.location.href='cart.html'" method="post">
@@ -91,7 +93,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/bras-2.webp" alt="Twam">
@@ -101,12 +102,10 @@
                       <i class="fa fa-heart" aria-hidden="true"></i>
                       <span>Add to wishlist</span>
                     </li>
-
                     <li>
                       <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
                         cart</span>
                     </li>
-
                     <li>
                       <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
                           class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
@@ -146,16 +145,12 @@
                       <i class="fa fa-heart" aria-hidden="true"></i>
                       <span>Add to wishlist</span>
                     </li>
-
                     <li>
                       <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
                         cart</span>
                     </li>
 
-                    <li>
-                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
-                          class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                      </button>
+                    <li  (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                     </li>
                   </ul>
                   <div class="card-body">

@@ -21,7 +21,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: "bras-style/pushupbras",
+        path: "bras-style/seamless",
         title: "Seamless",
         icon: "",
         class: "",
@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "bras-style/sports-bras",
+        path: "bras-style/T-shirt-bras",
         title: "T-Shirt Bra",
         icon: "",
         class: "",
