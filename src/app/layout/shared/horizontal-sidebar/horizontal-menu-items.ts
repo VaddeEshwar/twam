@@ -57,7 +57,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "bras-style/T-shirt-bras",
+        path: "bras-style/pushupbra",
         title: "Push up Bras",
         icon: "",
         class: "",
@@ -75,8 +75,8 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "bras-style/Bralettes",
-        title: "Bandeau",
+        path: "bras-style/bandeaubra",
+        title: "Bandeau bra",
         icon: "",
         class: "",
         ddclass: "",
@@ -84,7 +84,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/Balconette",
         title: "Balconette Bra",
         icon: "",
         class: "",
@@ -93,7 +93,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/straplessbra",
         title: "Strapless Bra",
         icon: "",
         class: "",
@@ -102,7 +102,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/nursingbra",
         title: "Nursing Bra",
         icon: "",
         class: "",
@@ -111,7 +111,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/cottonbra",
         title: "Cotton Bra",
         icon: "",
         class: "",
@@ -120,7 +120,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/MastectomyBra",
         title: "Mastectomy Bra",
         icon: "",
         class: "",
@@ -129,7 +129,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "",
+        path: "bras-style/bridalsets",
         title: "Bridal Sets",
         icon: "",
         class: "",

@@ -1,211 +1,355 @@
 <div class="row">
-    <!-- Column -->
-    <div class="col-md-9 col-lg-9">
-      <div class="card">
-        <div class="card-header bg-info">
-          <h5 class="mb-0 text-white">Your Cart (4 items)</h5>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table product-overview">
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Product info</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th style="text-align: center">Total</th>
-                  <th style="text-align: center">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td width="150">
-                    <img
-                      src="assets/images/gallery/chair.jpg"
-                      alt="iMac"
-                      width="80"
-                    />
-                  </td>
-                  <td width="550">
-                    <h5 class="font-500">Bras</h5>
-                    <p>
-                      Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised
-                      words which don't look
-                    </p>
-                  </td>
-                  <td>$153</td>
-                  <td width="70">
-                    <input type="text" class="form-control" placeholder="1" />
-                  </td>
-                  <td width="150" align="center" class="font-500">$153</td>
-                  <td align="center">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-inverse"
-                      title=""
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i-feather
-                        name="trash-2"
-                        class="feather-sm text-danger"
-                      ></i-feather>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/images/gallery/chair.jpg"
-                      alt="iMac"
-                      width="80"
-                    />
-                  </td>
-                  <td>
-                    <h5 class="font-500">Bras</h5>
-                    <p>
-                      Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised
-                      words which don't look
-                    </p>
-                  </td>
-                  <td>$153</td>
-                  <td>
-                    <input type="text" class="form-control" placeholder="1" />
-                  </td>
-                  <td class="font-500" align="center">$153</td>
-                  <td align="center">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-inverse"
-                      title=""
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i-feather
-                        name="trash-2"
-                        class="feather-sm text-danger"
-                      ></i-feather>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/images/gallery/chair.jpg"
-                      alt="iMac"
-                      width="80"
-                    />
-                  </td>
-                  <td>
-                    <h5 class="font-500">Bras</h5>
-                    <p>
-                      Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised
-                      words which don't look
-                    </p>
-                  </td>
-                  <td>$153</td>
-                  <td>
-                    <input type="text" class="form-control" placeholder="1" />
-                  </td>
-                  <td class="font-500" align="center">$153</td>
-                  <td align="center">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-inverse"
-                      title=""
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i-feather
-                        name="trash-2"
-                        class="feather-sm text-danger"
-                      ></i-feather>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      src="assets/images/gallery/chair.jpg"
-                      alt="iMac"
-                      width="80"
-                    />
-                  </td>
-                  <td>
-                    <h5 class="font-500">Bras</h5>
-                    <p>
-                      Lorem Ipsum available, but the majority have suffered
-                      alteration in some form, by injected humour, or randomised
-                      words which don't look
-                    </p>
-                  </td>
-                  <td>$153</td>
-                  <td>
-                    <input type="text" class="form-control" placeholder="1" />
-                  </td>
-                  <td class="font-500" align="center">$153</td>
-                  <td align="center">
-                    <a
-                      href="javascript:void(0)"
-                      class="text-inverse"
-                      title=""
-                      data-toggle="tooltip"
-                      data-original-title="Delete"
-                    >
-                      <i-feather
-                        name="trash-2"
-                        class="feather-sm text-danger"
-                      ></i-feather>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <hr />
-            <div class="d-flex no-block align-items-center">
-              <button class="btn btn-dark btn-outline">
-                <i class="fas fa-arrow-left"></i> Continue shopping
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="">Filter:-</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active " (click)="openEnd(content)"><i class="me-2 mdi mdi-tune"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="openEnd(content)">Size</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Style</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Collection</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Rating</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " (click)="openEnd(content)">Fabric Family</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
               </button>
-              <div class="ms-auto">
-                <button class="btn btn-danger">
-                  <i class="fa fa fa-shopping-cart"></i> Checkout
+            </div>
+            <h6 class="card-title" (click)="dataview()">Smooth Elegance Padded Non-wired T-shirt Bra </h6>
+            <p>Price : {{price}} </p>
+          </div>
+        </div>
+      </div>
+      <!-- assets/images/product/bras.webp -->
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/Product/Amante/Bras/MinimizerBra/NonPadded/002.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <h6 class="card-title" (click)="dataview()">Satin Edge Padded Non-wired T-shirt Bra</h6>
+            <p>Price : {{price}} </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/Product/Amante/Bras/MinimizerBra/NonPadded/003.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <h6 class="card-title" (click)="dataview()">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <p> Price : {{price}} </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-3">
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/Product/Amante/Bras/MinimizerBra/NonPadded/004.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+            <div class="card-body">
+              <div class="d-flex ">
+                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}"
+                  (click)="changeColor(color)"
+                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
                 </button>
               </div>
+              <h6 class="card-title" (click)="dataview()">Energize High Impact Bra</h6>
+              <p> Price : {{price}} </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Column -->
-    <div class="col-md-3 col-lg-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">CART SUMMARY</h5>
-          <hr />
-          <small>Total Price</small>
-          <h2>$612</h2>
-          <hr />
-          <div class="button-group">
-            <button class="btn btn-success">Checkout</button>
-            <button class="btn btn-secondary btn-outline">Cancel</button>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">For Any Support</h5>
-          <hr />
-          <h4><i class="ti-mobile"></i> 9998979695 (Toll Free)</h4>
-          <small
-            >Please contact with us if you have any questions. We are avalible
-            24h.</small
-          >
-        </div>
+  </div>
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">Filter</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <hr />
+    <div class="offcanvas-body">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel title="Bra Sizes">
+          <ng-template ngbPanelContent>
+            <ngb-accordion #acc="ngbAccordion">
+              <ngb-panel title="32">
+                <ng-template ngbPanelContent>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">32A</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">32B</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">32C</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">32D</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">32DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">32DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">32DDD</label>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="34">
+                <ng-template ngbPanelContent>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">34A</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">34B</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">34C</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">34D</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">34DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">34DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">34DDD</label>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="36">
+                <ng-template ngbPanelContent>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">36A</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">36B</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">36C</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">36D</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">36DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">36DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">36DDD</label>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel title="38">
+                <ng-template ngbPanelContent>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">38A</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">38B</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">38C</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">38D</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">38DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">38DD</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">36DDD</label>
+                  </div>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Sizes">
+          <ng-template ngbPanelContent>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">L</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">XL</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+              <label class="form-check-label" for="inlineCheckbox4">XS</label>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Style">
+          <ng-template ngbPanelContent>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Bralettes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Demi Bras</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Plunge Bras</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+              <label class="form-check-label" for="inlineCheckbox4">Strapless Bras</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+              <label class="form-check-label" for="inlineCheckbox5">Teddies</label>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Collection">
+          <ng-template ngbPanelContent>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+              <label class="form-check-label" for="inlineCheckbox5">Blossom</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+              <label class="form-check-label" for="inlineCheckbox5">Amante</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">jokey</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Enamor</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Triumph </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+              <label class="form-check-label" for="inlineCheckbox4">Soie </label>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Color">
+          <ng-template ngbPanelContent>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Beige</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Black</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Blue</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+              <label class="form-check-label" for="inlineCheckbox4">Brown</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+              <label class="form-check-label" for="inlineCheckbox5">Green</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+              <label class="form-check-label" for="inlineCheckbox6">Pink</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+              <label class="form-check-label" for="inlineCheckbox7">Purple</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+              <label class="form-check-label" for="inlineCheckbox8">Red</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
+              <label class="form-check-label" for="inlineCheckbox9">White</label>
+            </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+      <div class="text-end pt-2">
+        <button type="button" class="btn btn-outline-secondary" (click)="offcanvas.close('Close click')">Close</button>
       </div>
     </div>
-  </div>
-
+  </ng-template>

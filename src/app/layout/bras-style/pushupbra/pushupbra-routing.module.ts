@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BandeaubraComponent } from './bandeaubra.component';
+import { PushupbraComponent } from './pushupbra.component';
 
 const routes: Routes = [
     {
-        path: '', component: BandeaubraComponent
+        path: '', component: PushupbraComponent
     }
 ];
 
@@ -12,5 +12,5 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class  BandeaubraRoutingModule {
+export class PushupbraRoutingModule {
 }

@@ -35,8 +35,19 @@ const routes: Routes = [
     { path: 'bras-style/T-shirt-bras', loadChildren:()=>import( './bras-style/t-shirt-bras/t-shirt-bras.module').then(x => x.TshirtbrasModule) },
     { path: 'bras-style/strapless-bras', loadChildren:()=>import( './bras-style/strapless-bras/strapless-bras.module').then(x => x.StraplessbrasModule) },
     { path: 'bras-style/sports-bras', loadChildren:()=>import( './bras-style/sports-bras/sports-bras.module').then(x => x.SportsbrasModule) },
+    { path: 'bras-style/bridalsets', loadChildren:()=>import( './bras-style/bridalsets/bridalsets.module').then(x => x.BridalsetsModule) },
+    { path: 'bras-style/cottonbra', loadChildren:()=>import( './bras-style/cottonbra/cottonbra.module').then(x => x.CottonbraModule) },
+    { path: 'bras-style/bandeaubra', loadChildren:()=>import( './bras-style/bandeaubra/bandeaubra.module').then(x => x.BandeaubraModule) },
+    { path: 'bras-style/seamless-bras', loadChildren:()=>import( './bras-style/seamless-bras/seamless-bras.module').then(x => x.seamlessbrasModule) },
+    { path: 'bras-style/pushupbra', loadChildren:()=>import( './bras-style/pushupbra/pushupbra.module').then(x => x.PushupbraModule) },
+    { path: 'bras-style/straplessbra', loadChildren:()=>import( './bras-style/straplessbra/straplessbra.module').then(x => x.StraplessbraModule) },
+    { path: 'bras-style/bridalsets', loadChildren:()=>import( './bras-style/bridalsets/bridalsets.module').then(x => x.BridalsetsModule) },
+    { path: 'bras-style/Balconette', loadChildren:()=>import( './bras-style/fullcoverage-bras/fullcoverage-bras.module').then(x => x.FullcoveragebrasModule) },
+    { path: 'bras-style/nursingbra', loadChildren:()=>import( './bras-style/nursingbra/nursingbra.module').then(x => x.NursingbraModule) },
+    { path: 'bras-style/MastectomyBra', loadChildren:()=>import( './bras-style/lightlylined-bras/lightlylined-bras.module').then(x => x.LightlylinedbrasModule) },
 
-     //////////////Panties-Style Component/////////////////////
+   
+    //////////////Panties-Style Component/////////////////////
    { path: 'panties-style/boyshorts', loadChildren:()=>import( './panties-style/boyshorts/boyshorts.module').then(x => x.boyshortsModule) },
    { path: 'panties-style/brazilian-panties', loadChildren:()=>import( './panties-style/brazilian-panties/brazilian-panties.module').then(x => x.BrazilianpantiesModule) },
    { path: 'panties-style/cheekies', loadChildren:()=>import( './panties-style/cheekies/cheekies.module').then(x => x.CheekiesModule) },

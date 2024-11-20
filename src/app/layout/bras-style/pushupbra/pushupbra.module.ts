@@ -2,8 +2,8 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { BandeaubraRoutingModule } from './bandeaubra-routing.module'
-import { BandeaubraComponent } from './bandeaubra.component';
+import { PushupbraRoutingModule } from './pushupbra-routing.module'
+import { PushupbraComponent } from './pushupbra.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -18,13 +18,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        BandeaubraRoutingModule,
+        PushupbraRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
     ],
     declarations: [
-        BandeaubraComponent,
+        PushupbraComponent,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class BandeaubraModule {}
+export class PushupbraModule {}

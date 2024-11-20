@@ -22,10 +22,10 @@ export class NursingbraComponent implements OnInit {
     selectedColor: string = '#d43743'; 
     colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images:{ [key: string]: string } = {
-        '#d43743': 'assets/images/product/plunge-bra1.webp',
-        '#d6a583': 'assets/images/product/plunge-bra2.webp',
-        '#e8e5e9': 'assets/images/product/plunge-bra3.webp',
-        '#030509': 'assets/images/product/plunge-bra4.webp'
+        '#d43743': 'assets/Product/Amante/Bras/NursingBra/NonPadded/001.webp',
+        '#d6a583': 'assets/Product/Amante/Bras/NursingBra/NonPadded/002.webp',
+        '#e8e5e9': 'assets/Product/Amante/Bras/NursingBra/NonPadded/003.webp',
+        '#030509': 'assets/Product/Amante/Bras/NursingBra/NonPadded/004.webp'
     };
      noWrapSlides = false;
      showIndicator = true;

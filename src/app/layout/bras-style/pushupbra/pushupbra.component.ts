@@ -8,24 +8,24 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
 import { Router } from '@angular/router';
 @Component({
-    selector: 'app-straplessbra',
-    templateUrl: './straplessbra.component.html',
-    styleUrls: ['./straplessbra.component.scss'],
+    selector: 'app-pushupbra',
+    templateUrl: './pushupbra.component.html',
+    styleUrls: ['./pushupbra.component.scss'],
     // animations: [routerTransition()]
 })
-export class StraplessbraComponent implements OnInit {
+export class PushupbraComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
     rating = 2;
     price: string;
     selectedColor: string = '#d43743'; 
-    colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#00000'];
+    colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images:{ [key: string]: string } = {
-        '#d43743': 'assets/Product/Amante/Bras/StraplessBra/NonPadded/001.webp',
-        '#d6a583': 'assets/Product/Amante/Bras/StraplessBra/NonPadded/002.webp',
-        '#e8e5e9': 'assets/Product/Amante/Bras/StraplessBra/NonPadded/003.webp',
-        '#030509': 'assets/Product/Amante/Bras/StraplessBra/NonPadded/004.webp'
+        '#d43743': 'assets/Product/Amante/Bras/PushupBra/NonPadded/001.webp',
+        '#d6a583': 'assets/Product/Amante/Bras/PushupBra/NonPadded/002.webp',
+        '#e8e5e9': 'assets/Product/Amante/Bras/PushupBra/NonPadded/003webp',
+        '#030509': 'assets/Product/Amante/Bras/PushupBra/NonPadded/004.webp'
     };
      noWrapSlides = false;
      showIndicator = true;
