@@ -13,7 +13,7 @@ export const ROUTES: RouteInfo[] = [
     ],
   },
   {
-    path: "bras",
+    path: "",
     title: "Bras",
     icon: "",
     class: "",
@@ -142,7 +142,7 @@ export const ROUTES: RouteInfo[] = [
   },
   
   {
-    path: "panties",
+    path: "",
     title: "Panties",
     icon: "",
     class: "",

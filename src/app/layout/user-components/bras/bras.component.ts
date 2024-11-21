@@ -27,10 +27,10 @@ export class BrasComponent implements OnInit {
     selectedColor: string = 'sandybrown';
     colors = ['sandybrown', 'wheat', 'white', 'black'];
     images = {
-        sandybrown: 'assets/images/product/bras-01.webp',
-        wheat: 'assets/images/product/bras.webp',
-        white: 'assets/images/product/bras-2.webp',
-        black: 'assets/images/product/bras-03.webp'
+        sandybrown: 'assets/Product/Amante/Bras/PushupBra/NonPadded/001.webp',
+        wheat: 'assets/Product/Amante/Bras/PushupBra/NonPadded/002.webp',
+        white: 'assets/Product/Amante/Bras/PushupBra/NonPadded/003.webp',
+        black: 'assets/Product/Amante/Bras/PushupBra/NonPadded/004.webp'
     };
     noWrapSlides = false;
     showIndicator = true;
@@ -74,7 +74,7 @@ export class BrasComponent implements OnInit {
             prodId: 1,
             title: 'Perfect Coverage Supima Cotton T-Shirt Bra | A039',
             images: {
-                sandybrown: 'assets/images/product/bras-01.webp',
+                sandybrown: 'assets/Product/Amante/Bras/PushupBra/NonPadded/001.webp',
                 wheat: 'assets/images/product/bras.webp',
                 white: 'assets/images/product/bras-2.webp',
                 black: 'assets/images/product/bras-03.webp'

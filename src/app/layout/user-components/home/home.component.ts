@@ -7,7 +7,8 @@ import { Product } from '../../../model/products'
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { shoppning} from '../../../model/shopping-add'
+import { shoppning} from '../../../model/shopping-add';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -168,4 +169,22 @@ export class HomeComponent implements OnInit {
         }
         return result;
       }
+
+      cards = [
+        {
+          image: 'assets/images/logo/brandlogo1.png',
+        },
+        {
+          image: 'assets/images/logo/brandlogo2.png',
+        },
+        {
+          image: 'assets/images/logo/brandlogo3.png',
+        },
+        {
+          image: 'assets/images/logo/brandlogo4.png',
+        },
+        {
+          image: 'assets/images/logo/brandlogo5.png',
+        }
+      ];
 }

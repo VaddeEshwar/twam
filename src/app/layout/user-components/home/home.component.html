@@ -66,10 +66,10 @@
                         <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
                           cart</span>
                       </li>
-                  
-                        <li  (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                        </li>
-                     
+
+                      <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                      </li>
+
                     </ul>
                     <!-- Start product button -->
                     <div class="variants add" action="#" onclick="window.location.href='cart.html'" method="post">
@@ -150,7 +150,7 @@
                         cart</span>
                     </li>
 
-                    <li  (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                    <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
                     </li>
                   </ul>
                   <div class="card-body">
@@ -370,49 +370,20 @@
     </div>
   </div>
 </section>
-<section>
+<!-- <section>
   <div class="container">
-    <div class="row">
-      <img src="../../../../assets/images/background/D-cup-Divas-DT-Banner3.webp" alt="">
-    </div>
+    <carousel [itemsPerSlide]="4" [interval]="3000" [noPause]="false" [showIndicators]="true"
+      [singleSlideOffset]="false">
+      <slide *ngFor="let card of cards" style="width: 12%;">
+        <div class="card mx-2" style="width: 10rem;">
+          <img class="card-img-top" [src]="card.image" alt="Card image cap">
+        </div>
+      </slide>
+    </carousel>
   </div>
-</section>
-<section>
-  <div class="container p-4">
-    <div class="row">
-      <div class="col-lg-4 col-md-8 col-sm-6">
-        <div class="card home_pro text-center">
-          <div class="card-body">
-            <span class="store-icon">
-              <i class="fa fa-truck fa-3x" aria-hidden="true"></i>
-            </span>
-            <h4 class="card-title">FREE SHIPPING</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-8 col-sm-6">
-        <div class="card home_pro text-center">
-          <div class="card-body">
-            <span class="store-icon">
-              <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
-            </span>
-            <h4 class="card-title">INTERNATIONAL SHIPPING</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-8 col-sm-6">
-        <div class="card home_pro text-center">
-          <div class="card-body">
-            <span class="store-icon">
-              <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
-            </span>
-            <h4 class="card-title">DISCREET PACKAGING</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</section> -->
+
+
 
 <ng-template #modalTemplate let-modal>
   <app-client-adding></app-client-adding>

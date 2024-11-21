@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Form } from '@angular/forms';
 import { Country } from '../../../model/Common/Countries';
 import { City } from '../../../model/Common/Cities';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-odertrak',
@@ -35,28 +36,41 @@ export class UserordertrakComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.RegistrationForm.form.invalid) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please fill in all required fields.',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      });
+      return;
+    }
+  
     const fromData = this.RegistrationForm.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
-    debugger
+    debugger;
+  
     this.service.saveregistration(fromData)
       .subscribe({
         next: (data) => {
-          debugger
-          this.activityMsg = " data saved successfully!";
+          debugger;
+          this.activityMsg = "Data saved successfully!";
           this.router.navigate(['login']);
-          this.startFadeOut();
+          Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Registration successful!',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+          });
         },
-        error: (e) => console.error(e)
+        error: (e) => console.error(e),
       });
-  }
-  startFadeOut() {
-    setTimeout(() => {
-      this.fadeOutActive = true;
-      setTimeout(() => {
-        this.activityMsg = '';
-        this.fadeOutActive = false; // reset for next time
-      }, 1000); // adjust to match the animation-duration
-    }, 2000); // wait 2 seconds before starting the fade-out
   }
   getCountries() {
     this.service.getAllCountries().subscribe({

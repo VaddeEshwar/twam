@@ -6,6 +6,7 @@ import {  otpValidation } from '../model/Users/otpValidation'
 import { User } from '../model/user';
 import { ToastService } from "src/app/layout/shared/toast/toast.service";
 import { HeaderFilterCellComp } from 'ag-grid-community';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,6 +27,18 @@ export class LoginComponent implements OnInit {
   }
  ///////////////loginRequst////////////
   onSubmit() {
+    if (this.userobj.form.invalid) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please fill in all required fields.',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      });
+      return;
+    }
    const fromData = this.userobj.form.value;
    console.log("fromData::"+JSON.stringify(fromData));
    debugger
@@ -47,10 +60,10 @@ export class LoginComponent implements OnInit {
   }
    ///////////////loginRequst////////////
    onRecoverSubmit() {
-    debugger
+  
     const fromData = this.Otpupdateobj.form.value;
     console.log("fromData::"+JSON.stringify(fromData));
-    debugger
+    
     this.service.OtpValidation(fromData).subscribe({
      next:(data)=>{
        this.activityMsg=" data saved successfully!";

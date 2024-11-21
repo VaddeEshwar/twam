@@ -16,14 +16,20 @@
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="firstName" placeholder="First Name" required="">
               </div>
+              <div *ngIf="RegistrationForm.form.get('firstName')?.touched && RegistrationForm.form.get('firstName')?.errors?.['required']">
+                <small class="text-danger">First Name is required.</small>
+              </div>
             </div>
             <div class="mb-3 row ">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="lastName" placeholder="Last Name" required="">
               </div>
+              <div *ngIf="RegistrationForm.form.get('lastName')?.touched && RegistrationForm.form.get('lastName')?.errors?.['required']">
+                <small class="text-danger">Last Name is required.</small>
+              </div>
             </div>
             <div class="mb-3 row">
-              <div class="col-12 ">
+              <div class="col-12">
                 <label for="gender">Gender</label>
                 <div class="form-check form-check-inline">
                   <div class="form-check">
@@ -39,31 +45,48 @@
                     <label class="form-check-label" for="customControlValidation3">Male</label>
                   </div>
                 </div>
+            
+                <!-- Validation Error for Gender -->
+                <div *ngIf="RegistrationForm.form.get('gender')?.touched && RegistrationForm.form.get('gender')?.errors?.['required']">
+                  <small class="text-danger">Gender is required.</small>
+                </div>
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="mobile" placeholder="Mobile Number" required="">
               </div>
+              <div *ngIf="RegistrationForm.form.get('mobile')?.touched && RegistrationForm.form.get('mobile')?.errors?.['required']">
+                <small class="text-danger">mobile is required.</small>
+              </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="username" placeholder="User Name" required="">
+              </div>
+              <div *ngIf="RegistrationForm.form.get('username')?.touched && RegistrationForm.form.get('username')?.errors?.['required']">
+                <small class="text-danger">Username is required.</small>
               </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="email" placeholder="Email" required="">
               </div>
+              <div *ngIf="RegistrationForm.form.get('email')?.touched && RegistrationForm.form.get('email')?.errors?.['required']">
+                <small class="text-danger">Email is required.</small>
+              </div>
             </div>
             <div class="mb-3 row">
               <div class="col-12 ">
                 <input class="form-control" type="password" formControlName="password" placeholder="Password" required="">
               </div>
+              <div *ngIf="RegistrationForm.form.get('password')?.touched && RegistrationForm.form.get('password')?.errors?.['required']">
+                <small class="text-danger">Password is required.</small>
+              </div>
             </div>
             <div class="mb-3 text-center ">
               <div class="col-xs-12 mb-4">
-                <button class="btn d-block w-100 btn-lg btn-info" type="submit">SIGN UP</button>
+                <button class="btn d-block w-100 btn-lg btn-info" type="submit">Sing Up</button>
               </div>
             </div>
             <div class="mb-3 mb-0 mt-2 ">

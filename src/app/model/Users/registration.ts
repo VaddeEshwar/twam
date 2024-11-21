@@ -5,7 +5,7 @@ export class Registration {
         this.form = new FormGroup({
             firstName: new FormControl('', Validators.compose([Validators.required,Validators.maxLength(10)])),
             lastName: new FormControl('', [Validators.required]),
-            mobile: new FormControl('', [Validators.required,Validators.minLength(10)]),
+            mobile:  new FormControl ('', [Validators.required, Validators.pattern(/^\d{10}$/)]),
             countryCode: new FormControl('', [Validators.required]),
             username: new FormControl('', [Validators.required]),
             password: new FormControl('', [Validators.required,Validators.minLength(10)]),
