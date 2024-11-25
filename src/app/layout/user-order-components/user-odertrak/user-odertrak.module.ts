@@ -9,6 +9,7 @@ import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import { SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2'
 @NgModule({
     imports: [
         FormsModule,
@@ -20,6 +21,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
         UserordertrakRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
+        SweetAlert2Module.forRoot()
     ],
     declarations: [
         UserordertrakComponent,

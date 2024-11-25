@@ -68,31 +68,29 @@
   <div class="auth-box m-3 m-md-0">
       <div id="loginform" [ngClass]="{'d-none': recoverform}">
           <div class="text-center">
-              <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" width="150"/></span>
-              <h5 class="font-medium mb-4">Sign In </h5>
+            <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" height="100"/></span>
+              <!-- <h5 class="font-medium mb-4">Sign In </h5> -->
           </div>
           <div class="row">
               <div class="col-12">
                   <form class="form-horizontal mt-3"  [formGroup]="userobj.form" autocomplete="off" (ngSubmit)="onSubmit()" novalidate>
-                    <div class="mb-3 row">
-                    <div class="input-group mb-3"> 
+                    <div class="input-group mb-2"> 
                           <input type="text" class="form-control" formControlName="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                          <div *ngIf="userobj.form.get('username')?.touched && userobj.form.get('username')?.errors?.['required']">
-                            <small class="text-danger">username is required.</small>
-                          </div>
                         </div>
-                      </div>
-                      <div class="input-group mb-3"> 
+                        <div *ngIf="userobj.form.get('username')?.touched && userobj.form.get('username')?.errors?.['required']">
+                          <small class="text-danger">username is required.</small>
+                        </div>
+                      <div class="input-group "> 
                           <input type="text" class="form-control" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
-                          <div *ngIf="userobj.form.get('password')?.touched && userobj.form.get('password')?.errors?.['required']">
-                            <small class="text-danger">Password is required.</small>
-                          </div>
+                        </div>
+                        <div *ngIf="userobj.form.get('password')?.touched && userobj.form.get('password')?.errors?.['required']">
+                          <small class="text-danger">Password is required.</small>
                         </div>
                       <div class="form-group row">
                           <div class="col-md-12">
                               <div class="form-check d-flex">
                                   <input type="checkbox" class="form-check-input" id="customCheck1">
-                                  <label class="form-check-label  ms-2" for="customCheck1">Remember me</label>
+                                  <label class="form-check-label  ms-2" for="customCheck1" formControlName="rememberMe">Remember me</label>
                                   <a (click)="showRecoverForm()" href="javascript:void(0)" id="to-recover" class="text-dark ms-auto"><i class="fa fa-lock me-2"></i> Forgot pwd?</a>
                               </div>
                           </div>

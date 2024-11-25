@@ -19,6 +19,7 @@ export class User {
     this.form = new FormGroup({
       username:new FormControl('',[Validators.required]),
       password:new FormControl('',[Validators.required]),
+      // rememberMe: new FormControl (false, Validators.requiredTrue)
     })
   }
   populateFormData(User: any) {

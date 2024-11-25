@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  providers: [ToastService]
+  
 })
 export class LoginComponent implements OnInit {
   @ViewChild('dangerTpl', { static: true }) dangerTpl!: TemplateRef<any>;
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   Otpupdateobj:otpValidation;
   router = inject(Router)
   activityMsg: string = '';
+  rememberMe: boolean = false;
   constructor(private service: AdminserviceService,public toastService: ToastService) { }
   ngOnInit(): void {
     this.userobj = new User();
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
  ///////////////loginRequst////////////
   onSubmit() {
-    if (this.userobj.form.invalid) {
+    if (this.userobj.form.invalid ) {
       Swal.fire({
         toast: true,
         position: 'top-end',
@@ -44,17 +45,23 @@ export class LoginComponent implements OnInit {
    debugger
    this.service.loginRequst(fromData).subscribe({
     next:(response :any)=>{
+      debugger
       console.log("Login response:", response); 
       localStorage.setItem('token',response.token)   
       this.activityMsg=" data saved successfully!";
       this.router.navigate(['home']);
     },
     error: err =>{
-      if(err.status==400)
-        this.toastService.show(this.dangerTpl, { classname: 'bg-danger text-light', delay: 15000 });
-      else
-      alert("hello")
-      this.toastService.show(this.dangerTpl, { classname: 'bg-danger text-light', delay: 15000 });    }
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Registration successful!',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      });
+         }
 
    })
   }

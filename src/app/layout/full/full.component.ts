@@ -1,5 +1,5 @@
-import { Component, OnInit, HostListener ,Inject} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener ,Inject,ChangeDetectorRef} from '@angular/core';
+import { Router,NavigationEnd } from '@angular/router';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { DOCUMENT } from "@angular/common";
 @Component({
@@ -10,9 +10,19 @@ import { DOCUMENT } from "@angular/common";
 export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   active=2;
-
+  hideFooter = false;
   constructor(public router: Router,    
-    @Inject(DOCUMENT) private document: Document) { }
+    @Inject(DOCUMENT) private document: Document, private cdr: ChangeDetectorRef) {
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          console.log('Current URL:', this.router.url); 
+          const noFooterRoutes = ['/login', '/product-components/registration'];
+          this.hideFooter = noFooterRoutes.some(route => this.router.url.startsWith(route));
+          this.cdr.detectChanges();
+        }
+      });
+
+     }
 
   tabStatus = 'justified';
 
@@ -51,6 +61,7 @@ export class FullComponent implements OnInit {
     if(this.options.dir == 'rtl'){
       this.document.body.classList.add("rtl");
     }
+    
   }
   rtlToggle() {
     this.document.body.classList.toggle("rtl");

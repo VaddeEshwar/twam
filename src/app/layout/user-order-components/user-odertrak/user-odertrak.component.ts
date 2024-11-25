@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Form } from '@angular/forms';
 import { Country } from '../../../model/Common/Countries';
 import { City } from '../../../model/Common/Cities';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-user-odertrak',
@@ -48,15 +48,11 @@ export class UserordertrakComponent implements OnInit {
       });
       return;
     }
-  
     const fromData = this.RegistrationForm.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
-    debugger;
-  
     this.service.saveregistration(fromData)
       .subscribe({
         next: (data) => {
-          debugger;
           this.activityMsg = "Data saved successfully!";
           this.router.navigate(['login']);
           Swal.fire({
@@ -85,7 +81,6 @@ export class UserordertrakComponent implements OnInit {
     this.service.getAllCity(this.stateId).subscribe({
       next: (data) => {
         this.stateId = data;
-        debugger
         console.log("stateId::" + JSON.stringify(this.stateId))
       }
     })

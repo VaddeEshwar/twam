@@ -130,7 +130,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   }
 
   login() {
-    this.router.navigate(['product-components/registration']);
+    this.router.navigate(['login']);
   }
 
   cart() {

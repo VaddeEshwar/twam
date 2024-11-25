@@ -8,7 +8,8 @@ import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { shoppning} from '../../../model/shopping-add';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { NgbCarouselConfig, NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -16,23 +17,37 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
     // animations: [routerTransition()]
 })
 export class HomeComponent implements OnInit {
+    showNavigationArrows = false;
+	showNavigationIndicators = false;
+	paused = false;
+	unpauseOnArrow = false;
+	pauseOnIndicator = false;
+	pauseOnHover = true;
+	pauseOnFocus = true;
     @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
+    @ViewChild('carousel', { static: true }) carousel: NgbCarousel = Object.create(null);
     modalRef: BsModalRef;
     subtitle: string;
     apiLoaded = false;
     price: string;
     oldprice:string;
-    image1: string = 'assets/images/product/bras.webp';
-    image2: string = 'assets/images/product/bras-02.webp';
+    image1: string = 'assets/images/ourbrand/002.webp';
+    image2: string = 'assets/images/ourbrand/004.webp';
     shoppningModel:shoppning;    
     shoppningForm:shoppning;
+    images = [1,2,3].map((n) => `assets/images/background/${n}.webp`);
     private offcanvasService = inject(NgbOffcanvas);
-    constructor(private modalService: NgbModal,public router: Router) {
+    constructor(private modalService: NgbModal,public router: Router,config: NgbCarouselConfig) {
         this.subtitle = "Triaction Hybrid Lite P-BLACK";
         this.price = '799.00';
         this.oldprice='659.00'
         this.shoppningForm = new shoppning();
         this.shoppningModel = new shoppning();
+
+        config.interval = 10000;
+		config.keyboard = false;
+		config.showNavigationArrows = false;
+		config.showNavigationIndicators = true;
     }
 
     ngOnInit() {
@@ -170,21 +185,22 @@ export class HomeComponent implements OnInit {
         return result;
       }
 
-      cards = [
-        {
-          image: 'assets/images/logo/brandlogo1.png',
-        },
-        {
-          image: 'assets/images/logo/brandlogo2.png',
-        },
-        {
-          image: 'assets/images/logo/brandlogo3.png',
-        },
-        {
-          image: 'assets/images/logo/brandlogo4.png',
-        },
-        {
-          image: 'assets/images/logo/brandlogo5.png',
-        }
-      ];
+    
+      togglePaused() {
+		if (this.paused) {
+			this.carousel.cycle();
+		} else {
+			this.carousel.pause();
+		}
+		this.paused = !this.paused;
+	}
+      onSlide(slideEvent: NgbSlideEvent) {
+		if (this.unpauseOnArrow && slideEvent.paused &&
+			(slideEvent.source === NgbSlideEventSource.ARROW_LEFT || slideEvent.source === NgbSlideEventSource.ARROW_RIGHT)) {
+			this.togglePaused();
+		}
+		if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
+			this.togglePaused();
+		}
+	}
 }

@@ -25,7 +25,7 @@
           <b class="logo-icon">
             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
             <!-- Dark Logo icon -->
-            <img src="assets/images/logos/logo.jpeg" alt="homepage" class="dark-logo" />
+            <!-- <img src="assets/images/logos/logo.png" alt="homepage" class="dark-logo" /> -->
             <!-- Light Logo icon -->
             <!-- <img
               src="assets/images/logos/logo.jpg"
@@ -136,12 +136,12 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center">
+    <footer class="footer text-center" *ngIf="!hideFooter">
       <div class="footer__area footer-bg">
         <div class="footer__top pt-90 pb-40">
           <div class="container">
             <div class="row">
-              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="col-lg-3 col-mg-6 col-sm-6">
                 <div class="footer__widget mb-50">
                   <div class="footer__widget-head mb-22">
                     <div class="footer__logo">
@@ -150,16 +150,38 @@
                       </a> -->
                     </div>
                   </div>
-                  <div class="footer__widget-body">
+                  <div class="footer__widget-body footer__widget-title">
                     <p>We are Only TWAM, a multibrand plaform where women have a wide variety
                       of lingerie brands, that can help them pick their most comfortable fit based
                       on their daily needs</p>
-
-
+                  </div>
+                  <div class="footer__widget mb-50">
+                   <div class="footer__widget-head mb-22">
+                    <h3 class="footer__widget-title">Our Items</h3>
+                  </div>
+                  <div class="footer__widget-body">
+                    <div class="footer__link">
+                      <ul class="list-style-none">
+                        <li><a href="">Seamless</a></li>
+                        <li><a href="">Beginners Bra/Camisole Bra</a></li>
+                        <li><a href="">T-Shirt Bra</a></li>
+                        <li><a href="">Minimizer Bras</a></li>
+                        <li><a href="">Push up Bras</a></li>
+                        <li><a href="">Seamless</a></li>
+                        <li><a href="">Bandeau bra</a></li>
+                        <li><a href="">Balconette Bra</a></li>
+                        <li><a href="">Strapless Bra</a></li>
+                        <li><a href="">Nursing Bra</a></li>
+                        <li><a href="">Cotton Bra</a></li>
+                        <li><a href="">Mastectomy Bra</a></li>
+                        <li><a href="">Bridal Sets</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
+                </div>
               </div>
-              <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+              <div class="col-lg-2 offset-1 col-mg-6 col-sm-6">
                 <div class="footer__widget mb-50">
                   <div class="footer__widget-head mb-22">
                     <h3 class="footer__widget-title">Quick Links</h3>
@@ -177,10 +199,10 @@
                 </div>
               </div>
               <div
-                class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
+                class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1 ">
                 <div class="footer__widget mb-50">
                   <div class="footer__widget-head mb-22">
-                    <h3 class="footer__widget-title">CUSTOMER CARE</h3>
+                    <h3 class="footer__widget-title">Customer Care</h3>
                   </div>
                   <div class="footer__widget-body">
                     <div class="footer__link">
@@ -197,8 +219,7 @@
                   </div>
                 </div>
               </div>
-
-              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
+              <div class="col-lg-3 col-mg-6 col-sm-6">
                 <div class="footer__widget footer__pl-70 mb-50">
                   <div class="footer__widget-head mb-22">
                     <h3 class="footer__widget-title">Subscribe</h3>
@@ -206,13 +227,17 @@
                   <div class="footer__widget-body">
                     <div class="footer__social">
                       <ul class="list-style-none">
-                        <li><a href="#"><i-feather name="facebook"></i-feather></a></li>
-                        <li><a href="#" class="tw"><i-feather name="youtube"></i-feather></a></li>
-                        <li><a href="#" class="pin"><i-feather name="twitter"></i-feather></a></li>
-                        <li><a href="#" class="instagram"><i-feather name="instagram"></i-feather></a></li>
+                        <li><a href="#"><img src="assets/images/tooltip/facebook-1-svgrepo-com.svg" alt="onlytwam"
+                              width="22"></a></li>
+                        <li><a href="#"><img src="assets/images/tooltip/youtube-you-tube-video-svgrepo-com.svg"
+                              alt="onlytwam" width="22"></a></li>
+                        <li><a href="#"><img src="assets/images/tooltip/whatsapp-whats-app-svgrepo-com.svg"
+                              alt="onlytwam" width="22"></a></li>
+                        <li><a href="#"><img src="assets/images/tooltip/instagram-1-svgrepo-com.svg" alt="onlytwam"
+                              width="22"></a></li>
                       </ul>
                     </div>
-                    <div class="footer__subscribe">
+                    <!-- <div class="footer__subscribe">
                       <form action="#">
                         <div class="footer__subscribe-input mb-15">
                           <input type="email" placeholder="Your email address">
@@ -227,7 +252,7 @@
                         <a href=""><img src="assets/images/browser/apple_store.png" alt="" width="150"></a>
                         <a href=""><img src="assets/images/browser/google_play.png" alt="" width="150"></a>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -239,7 +264,7 @@
             <div class="row">
               <div class="col-xxl-12">
                 <div class="footer__copyright text-center">
-                  <p>All Rights Reserved by Twam <a href="index.html">Designed and Developed by Twam</a></p>
+                  <p>All Rights Reserved by Twam <a href="">Designed and Developed by Twam</a></p>
                 </div>
               </div>
             </div>

@@ -9,14 +9,17 @@ import { AdminserviceService } from '../../../services/user-service/user-service
 export class AuthGuard implements CanActivate {
   constructor(private service: AdminserviceService,private router: Router) { }
 
-  canActivate( ) {
-    if(this.service.IsLoggedIn()){
-      return true;
-    }else {
-      this.router.navigate(['login'])
+  canActivate(): boolean {
+    const isAuthenticated = this.checkAuthentication();
+    if (!isAuthenticated) {
+      this.router.navigate(['/login']); 
       return false;
     }
- 
+    return true;
   }
-  
+
+  private checkAuthentication(): boolean {
+    const token = localStorage.getItem('authToken'); 
+    return !!token;
+  }
 }

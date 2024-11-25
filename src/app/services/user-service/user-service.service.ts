@@ -62,6 +62,10 @@ const headers = new HttpHeaders({
 })
 
 export class AdminserviceService {
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('authToken'); 
+    return !!token; 
+  }
   private tokenKey = 'token';
   refreshToken(payload: { userGUID: string, refreshToken: string, expiryDate: string }): Observable<any> {
     const httpOptions = {
@@ -157,7 +161,7 @@ export class AdminserviceService {
     );
   }
   // getAllCity(stateID: number): Observable<City[]> {
-  //   debugger
+  //   
   //   const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2' };
   //   console.log('API response:', stateID)
   //   return this.http.get<City[]>(this.baseUrlForGetCities, { 'headers': headers}).pipe(
@@ -171,7 +175,7 @@ export class AdminserviceService {
     console.log("###Before API CALL####");
     console.log(stateId)
     console.log("stateId::" + stateId);
-    debugger
+    
     return this.http.get<City[]>(baseUrlForGetCities, { headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)

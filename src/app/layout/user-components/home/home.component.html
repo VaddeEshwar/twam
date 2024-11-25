@@ -1,235 +1,330 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 co-sm-6">
-        <img src="assets/images/logos/TWAM.png" alt="" width="350">
-      </div>
-      <div class="col-lg-8 col-md-8 col-sm-6">
-        <carousel>
-          <slide>
-            <div class="text-center  text-white">
-              <img src="assets/images/big/banner-1.png" alt="onlytwam" srcset="assets/images/big/banner-1.png">
-            </div>
-          </slide>
-          <slide>
-            <div class="text-center  text-white">
-              <img src="assets/images/background/banner_bliss_collection.webp" alt="onlytwam"
-                srcset="assets/images/background/banner_bliss_collection.webp" height="280" width="743">
-            </div>
-          </slide>
-          <slide>
-            <div class="text-center  text-white">
-              <img src="assets/images/background/website_banner.webp" alt="onlytwam"
-                srcset="assets/images/background/website_banner.webp" height="280" width="743">
-            </div>
-          </slide>
-          <slide>
-            <div class="text-center  text-white">
-              <img src="assets/images/background/website_banner.webp" alt="onlytwam"
-                srcset="assets/images/background/website_banner.webp" height="280" width="743">
-            </div>
-          </slide>
-          <slide>
-            <div class="text-center  text-white">
-              <img src="assets/images/background/image_465_1.webp" alt="onlytwam"
-                srcset="assets/images/background/image_465_1.webp" height="280" width="743">
-            </div>
-          </slide>
-        </carousel>
-      </div>
-    </div>
-  </div>
-</section>
+
 <!---------*ngIf="searchText==='' || categories.name.toLowerCase().includes(searchText)"-------->
 
-
-
+<section>
+  <div class="card-body border-top">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[0]" alt="Random first slide" width="1400" height="400" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[1]" alt="Random second slide" width="1400" height="400" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="images[2]" alt="Random third slide" width="1400" height="400" />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</section>
 <section>
   <div class="container">
-    <div class="row">
       <div class="col-12 slider-background">
-        <h4 class="card-title m-b-40">Best Collections</h4>
-        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="cards-wrapper ">
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img [src]="image1" alt="Twam" class="image1">
-                    <img [src]="image2" alt="Twam" class="image2">
-                    <ul class="action">
-                      <li>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <span>Add to wishlist</span>
-                      </li>
-                      <li>
-                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
-                          cart</span>
-                      </li>
+        <h4 class="card-title m-b-40 text-center p-4">Best Collections</h4>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img [src]="image1" alt="Twam" class="image1">
+              <img [src]="image2" alt="Twam" class="image2">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <!-- <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/001.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <!-- <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/005.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
 
-                      <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                      </li>
-
-                    </ul>
-                    <!-- Start product button -->
-                    <div class="variants add" action="#" onclick="window.location.href='cart.html'" method="post">
-                      <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Cart</button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="product-name">
-                      <span href="">{{subtitle}}</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="old-price">{{oldprice}}</span>
-                      <span class="price">{{price}}</span>
-                    </div>
-                    <div class="ml-auto d-flex align-items-center">
-                      <ul class="list-inline font-12 dl m-r-10">
-                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                        <li class="list-inline-item"> {{ratingcount}} Users</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img src="assets/images/product/bras-2.webp" alt="Twam">
-                  </div>
-                  <ul class="action">
-                    <li>
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      <span>Add to wishlist</span>
-                    </li>
-                    <li>
-                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
-                        cart</span>
-                    </li>
-                    <li>
-                      <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
-                          class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                      </button>
-                    </li>
-                  </ul>
-                  <div class="card-body">
-                    <div class="product-name">
-                      <span href="">{{subtitle}}</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="old-price">{{oldprice}}</span>
-                      <span class="price">{{price}}</span>
-                    </div>
-                    <div class="ml-auto d-flex align-items-center">
-                      <ul class="list-inline font-12 dl m-r-10">
-                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                        <li class="list-inline-item"> {{ratingcount}} Users</li>
-                      </ul>
-                    </div>
-                    <!-- <div class="sci pt-2">
-                      <li>
-                        <a class="btn btn-success" href="">Add Cart</a>
-                      </li>
-                    </div> -->
-                  </div>
-                  <!-- <ngb-rating [max]="5" [formControl]="ratingcontrol" (click)="GetRating()" [rate]="Finalrating"></ngb-rating>
-                  <p>Rating from{{ratingcount}} Users</p> -->
-                </div>
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img src="assets/images/product/bras-3.webp" alt="Twam">
-                  </div>
-                  <ul class="action">
-                    <li>
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      <span>Add to wishlist</span>
-                    </li>
-                    <li>
-                      <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
-                        cart</span>
-                    </li>
-
-                    <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                    </li>
-                  </ul>
-                  <div class="card-body">
-                    <div class="product-name">
-                      <span href="">{{subtitle}}</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="old-price">{{oldprice}}</span>
-                      <span class="price">{{price}}</span>
-                    </div>
-                    <div class="ml-auto d-flex align-items-center">
-                      <ul class="list-inline font-12 dl m-r-10">
-                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                        <li class="list-inline-item"> {{ratingcount}} Users</li>
-                      </ul>
-                    </div>
-                    <!-- <div class="sci pt-2">
-                      <li>
-                        <a class="btn btn-success" href="">Add Cart</a>
-                      </li>
-                    </div> -->
-                  </div>
-
-
-                </div>
-                <div class="card">
-                  <div class="image-wrapper">
-                    <img src="assets/images/product/bras-4.webp" alt="Twam">
-                    <ul class="action">
-                      <li>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <span>Add to wishlist</span>
-                      </li>
-
-                      <li>
-                        <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
-                          cart</span>
-                      </li>
-
-                      <li>
-                        <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
-                            class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="card-body">
-                    <div class="product-name">
-                      <span href="">{{subtitle}}</span>
-                    </div>
-                    <div class="product-price">
-                      <span class="old-price">{{oldprice}}</span>
-                      <span class="price">{{price}}</span>
-                    </div>
-                    <div class="ml-auto d-flex align-items-center">
-                      <ul class="list-inline font-12 dl m-r-10">
-                        <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                            (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                        <li class="list-inline-item"> {{ratingcount}} Users</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <!-- <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} </li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/003.webp" alt="Twam">
+             
+            </div>
+            <div class="card-body">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li>
+                  <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
+                      class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                  </button>
+                </li>
+              </ul>
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <!-- <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-02.webp" alt="Twam">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Triumph-Softy Panties for Women-Plain </span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-2.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Soie-Seamless Multicolor Net Panties</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <!-- <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-1.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Blossom-5-pack lace hipster briefs</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/panties.webp" alt="Twam">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li>
+                  <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i
+                      class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Amante-New Lace Bandeau Tanga-Fourth Coverage</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+              <div class="ml-auto d-flex align-items-center">
+                <ul class="list-inline font-12 dl m-r-10">
+                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
+                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
+                  <li class="list-inline-item"> {{ratingcount}} Users</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+   
     </div>
     <hr />
   </div>
@@ -268,23 +363,20 @@
 </section>
 
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h4 class="card-title m-b-40">Shop By Category</h4>
-        <div id="carouselExampleControls1 " class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="cards-wrapper">
+  <div class="container p-4">
+        <h4 class="card-title m-b-40 p-4">Shop By Category</h4>
+        <div class="row">
+               <div class="col-lg-2 col-md-4 offset-1">
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/paintes.webp" alt="Twam">
                   </div>
                   <div class="card-body">
                     <p class="card-title">Paintes</p>
-
                   </div>
                 </div>
+              </div>
+              <div class="col-lg-2 col-md-4">
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/bras-5.webp" alt="Twam">
@@ -293,6 +385,8 @@
                     <p class="card-title">Bra</p>
                   </div>
                 </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/swimsuit-01.jpg" alt="Twam">
@@ -301,6 +395,8 @@
                     <p class="card-title">Swimsuit</p>
                   </div>
                 </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/trial13.PNG" alt="Twam">
@@ -309,6 +405,8 @@
                     <p class="card-title">Essentials</p>
                   </div>
                 </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
                 <div class="card">
                   <div class="image-wrapper">
                     <img src="assets/images/product/activewear-01.jpg" alt="Twam">
@@ -316,24 +414,10 @@
                   <div class="card-body">
                     <p class="card-title">Active Wear</p>
                   </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+               </div>
+             
         </div>
-      </div>
-    </div>
-    <hr />
   </div>
 </section>
 
@@ -355,7 +439,7 @@
         </div>
       </div>
       <div class="col-lg-6 col-md-4 col-sm-3">
-        <img src="assets/images/product/paintes-01.webp" alt="Twam" class="card-img-top">
+        <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
         <div class="d-flex border">
           <div class="p-2">At Twam, we associate with premium
             brands to display a wide range of

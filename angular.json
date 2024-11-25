@@ -39,7 +39,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
-        
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -51,6 +50,9 @@
               "src/assets/vendor/sparkline.js",
               "src/assets/vendor/jquery-3.3.1.min.js",
               "src/assets/vendor/bootstrap.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
             ]
           },
           "configurations": {
@@ -112,6 +114,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
+           
             "assets": [
               "src/favicon.ico",
               "src/assets"
