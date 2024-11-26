@@ -51,6 +51,7 @@
     "ngx-owl-carousel-o": "^18.0.0",
     "ngx-perfect-scrollbar": "^10.1.1",
     "ngx-sweetalert2": "^0.2.7",
+    "ngx-swiper-wrapper": "^10.0.0",
     "ngx-toastr": "^19.0.0",
     "pm2": "^5.3.0",
     "primeng": "^17.18.11",
@@ -59,6 +60,7 @@
     "rxjs-compat": "^6.6.7",
     "sass": "^1.52.3",
     "sweetalert2": "^11.14.5",
+    "swiper": "^11.1.15",
     "tslib": "1.10.0",
     "zone.js": "^0.11.5"
   },

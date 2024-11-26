@@ -22,10 +22,10 @@ export class HiphuggersComponent implements OnInit {
     selectedColor: string = '#d43743';
     colors: string[] = ['#d43743', '#d6a583', '#e8e5e9', '#030509'];
     images: { [key: string]: string } = {
-        '#d43743': 'assets/images/product/hiphuggers-3.jpg',
-        '#d6a583': 'assets/images/product/hiphuggers-1.webp',
-        '#e8e5e9': 'assets/images/product/hiphuggers-4.webp',
-        '#030509': 'assets/images/product/hiphuggers-2.webp'
+        '#d43743': 'assets/Product/Amante/Panties/boysshorts/001.webp',
+        '#d6a583': 'assets/Product/Amante/Panties/boysshorts/002.webp',
+        '#e8e5e9': 'assets/Product/Amante/Panties/boysshorts/003.webp',
+        '#030509': 'assets/Product/Amante/Panties/boysshorts/004.webp'
     };
     noWrapSlides = false;
     showIndicator = true;

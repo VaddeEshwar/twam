@@ -3,10 +3,13 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { register as registerSwiperElement} from 'swiper/element/bundle';
 
 if (environment.production) {
   enableProdMode();
 }
+
+registerSwiperElement();
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   // Ensure Angular destroys itself on hot reloads.

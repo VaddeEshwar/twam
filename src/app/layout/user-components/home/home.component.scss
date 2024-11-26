@@ -3,6 +3,12 @@
 //   border-radius: 0;
 //   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 // }
+.Logos img{
+width: 65%;
+aspect-ratio: 3/4;
+object-fit: contain;
+mix-blend-mode: color-burn;
+}
 .carousel-inner {
   padding: 1em;
 }

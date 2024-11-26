@@ -27,44 +27,59 @@ export class LoginComponent implements OnInit {
     this.Otpupdateobj = new otpValidation();
   }
  ///////////////loginRequst////////////
-  onSubmit() {
-    if (this.userobj.form.invalid ) {
+ onSubmit() {
+  if (this.userobj.form.invalid) {
+    console.log("Form is invalid:", this.userobj.form.errors);
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      icon: 'error',
+      title: 'Please fill in all required fields.',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+    });
+    return;
+  }
+
+  const fromData = this.userobj.form.value;
+  console.log("Form data:", JSON.stringify(fromData));
+
+  this.service.loginRequst(fromData).subscribe({
+    next: (response: any) => {
+      console.log("Login response:", response);
+      if (response.isSuccess) {
+        debugger
+        localStorage.setItem('token', response.token);  
+        this.activityMsg = "Login saved successfully!";
+        console.log('token', response.token)
+        this.router.navigate(['home']);
+      } else {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'error',
+          title: 'Login failed. Please try again.',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+      }
+    },
+    error: err => {
+      console.error('Login error:', err);
       Swal.fire({
         toast: true,
         position: 'top-end',
         icon: 'error',
-        title: 'Please fill in all required fields.',
+        title: 'An error occurred. Please try again.',
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
       });
-      return;
     }
-   const fromData = this.userobj.form.value;
-   console.log("fromData::"+JSON.stringify(fromData));
-   debugger
-   this.service.loginRequst(fromData).subscribe({
-    next:(response :any)=>{
-      debugger
-      console.log("Login response:", response); 
-      localStorage.setItem('token',response.token)   
-      this.activityMsg=" data saved successfully!";
-      this.router.navigate(['home']);
-    },
-    error: err =>{
-      Swal.fire({
-        toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Registration successful!',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-      });
-         }
-
-   })
-  }
+  });
+}
    ///////////////loginRequst////////////
    onRecoverSubmit() {
   

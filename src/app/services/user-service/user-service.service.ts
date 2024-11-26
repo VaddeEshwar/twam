@@ -207,16 +207,17 @@ export class AdminserviceService {
     );
   }
   //////////////////////////////login//////////////////////////////////////// 
-
-
   loginRequst(userobj: User): Observable<User> {
     console.log("User login object:", userobj);
     return this.http.post(baseUrlForLogin, userobj, { headers }).pipe(
       map((response: any) => {
         if (response.isSuccess) {
+          debugger
           localStorage.setItem(this.tokenKey,response.token)
+
         }
         return response;
+        
       })
     );
   }
