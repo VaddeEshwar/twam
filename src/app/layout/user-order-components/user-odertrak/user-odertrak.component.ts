@@ -36,7 +36,7 @@ export class UserordertrakComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.RegistrationForm.form.invalid) {
+    if (this.RegistrationForm.form.valid) {
       Swal.fire({
         toast: true,
         position: 'top-end',

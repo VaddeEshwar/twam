@@ -4,6 +4,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { HttpClientJsonpModule } from '@angular/common/http';
+import {AuthGuard } from '../services/auth.guard'
 
 declare var $: any;
 
@@ -115,7 +116,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router) {
+  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router,private authService: AuthGuard) {
 
     translate.setDefaultLang('en');
 
@@ -129,9 +130,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     alert('hello')
   }
 
-  login() {
-    this.router.navigate(['login']);
-  }
+
 
   cart() {
     this.router.navigate(['product-components/cart']);
@@ -176,4 +175,16 @@ export class HorizontalNavigationComponent implements AfterViewInit {
       this.cartItem=cartCount.length;
     }
   }
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+  login() {
+    this.router.navigate(['login']);
+    this.authService.login();
+  }
+  
+  logout(): void {
+    this.authService.logout();
+  }
+   
 }

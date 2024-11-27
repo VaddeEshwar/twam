@@ -11,21 +11,24 @@
 //  }
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class User {
+
   form : FormGroup;
    username: string;
    password: string;
   
   constructor() {
     this.form = new FormGroup({
-      username:new FormControl('',[Validators.required]),
-      password:new FormControl('',[Validators.required]),
-      // rememberMe: new FormControl (false, Validators.requiredTrue)
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('',[Validators.required, Validators.pattern(/^\d{10}$/)]),
     })
   }
   populateFormData(User: any) {
     this.form.patchValue(User);
 }
-
+reset() {
+  this.username = '';
+  this.password = '';
+}
   }
   
 

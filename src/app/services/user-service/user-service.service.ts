@@ -19,6 +19,7 @@ import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
 import { Getping } from '../../model/Users/Getping';
 import { RefreshPayload } from '../../model/authentication/refresh';
+import { AuthGuard} from '../../layout/shared/services/auth.guard'
 const backEndUrl = environment.backEndUrl;
 
 /////////////////////////Common///////////////////////////////
@@ -62,10 +63,8 @@ const headers = new HttpHeaders({
 })
 
 export class AdminserviceService {
-  isAuthenticated(): boolean {
-    const token = localStorage.getItem('authToken'); 
-    return !!token; 
-  }
+
+
   private tokenKey = 'token';
   refreshToken(payload: { userGUID: string, refreshToken: string, expiryDate: string }): Observable<any> {
     const httpOptions = {
@@ -175,7 +174,7 @@ export class AdminserviceService {
     console.log("###Before API CALL####");
     console.log(stateId)
     console.log("stateId::" + stateId);
-    
+
     return this.http.get<City[]>(baseUrlForGetCities, { headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)
@@ -213,19 +212,20 @@ export class AdminserviceService {
       map((response: any) => {
         if (response.isSuccess) {
           debugger
-          localStorage.setItem(this.tokenKey,response.token)
+          localStorage.setItem(this.tokenKey, response.token)
 
         }
         return response;
-        
+
       })
     );
   }
   IsLoggedIn() {
-    return localStorage.getItem('token') != null
+    return !!localStorage.getItem('token') 
   }
-  GetToken() {
-    return localStorage.getItem('token') || ''
+
+  storeToken(tokenValue: string) {
+    localStorage.setItem('token', tokenValue)
   }
   Logedout() {
     localStorage.clear();

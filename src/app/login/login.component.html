@@ -80,8 +80,11 @@
                         <div *ngIf="userobj.form.get('username')?.touched && userobj.form.get('username')?.errors?.['required']">
                           <small class="text-danger">username is required.</small>
                         </div>
-                      <div class="input-group "> 
-                          <input type="text" class="form-control" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                        <div class="input-group">
+                          <input [type]="type" class="form-control" formControlName="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                          <span (click)="hideShowpass()" class="input-group-text background-none">
+                            <i class="fa {{eyeIcon}}"></i>
+                          </span>
                         </div>
                         <div *ngIf="userobj.form.get('password')?.touched && userobj.form.get('password')?.errors?.['required']">
                           <small class="text-danger">Password is required.</small>

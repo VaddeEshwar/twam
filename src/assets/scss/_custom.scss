@@ -132,3 +132,18 @@ hr {
     border-top: var(--bs-border-width) solid;
     opacity: .25;
 }
+@keyframes slideDownToTop {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply Animation to SweetAlert2 Toast */
+  .swal2-toast {
+    animation: slideDownToTop 0.5s ease-out;
+  }

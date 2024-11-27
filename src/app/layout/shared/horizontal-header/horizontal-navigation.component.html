@@ -83,9 +83,17 @@
 
 
   <!--------========================love symbol=================-->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
+  <li class="nav-item dropdown" *ngIf="isLoggedIn" ngbDropdown placement="bottom-end">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" 
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i-feather name="shopping-cart"></i-feather>
+      <span class="badge bg-danger badge-pill">{{cartItem}}</span>
+    </a>
+  </li>
+  
+  <li class="nav-item dropdown" *ngIf="isLoggedIn" ngbDropdown placement="bottom-end">
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="heart"></i-feather>
     </a>
     <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" ngbDropdownMenu>
@@ -101,23 +109,8 @@
         </li>
         <li>
           <div class="message-center notifications" [perfectScrollbar]="config">
-            <!-- Message -->
             <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
-              *ngFor="let notification of notifications">
-              <!-- <span
-              class="btn btn-circle rounded-circle {{ notification.btn }}"
-            >
-              <i class="{{ notification.icon }}"></i>
-            </span>
-            <span class="mail-contnet d-inline-block w-75 ps-2 align-middle">
-              <h5 class="message-title">{{ notification.title }}</h5>
-              <span class="mail-desc fs-2 d-block text-muted text-truncate">{{
-                notification.subject
-              }}</span>
-              <span class="time fs-2 d-block text-muted text-truncate">{{
-                notification.time
-              }}</span>
-            </span> -->
+               *ngFor="let notification of notifications">
             </a>
           </div>
         </li>
@@ -129,31 +122,6 @@
         </li>
       </ul>
     </div>
-  </li>
-
-  <!--------========================love symbol=================-->
-  <!-- ============================================================== -->
-  <!-- Comment -->
-  <!-- ============================================================== -->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="bag()" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      <i-feather name="shopping-bag"></i-feather>
-    </a>
-
-  </li>
-  <!-- ============================================================== -->
-  <!-- End Comment -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Messages -->
-  <!-- ============================================================== -->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" 
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i-feather name="shopping-cart"></i-feather>
-      <span class="badge bg-danger badge-pill">{{cartItem}}</span>
-    </a>
   </li>
   <!-- ============================================================== -->
   <!-- End Messages -->
@@ -188,8 +156,8 @@
           <img src="assets/images/users/user1.jpg" alt="user" class="img-circle" width="60" />
         </div>
         <div class="ms-2">
-          <h4 class="mb-0">Eshwar</h4>
-          <p class="mb-0">Eshwar@gmail.com</p>
+          <h4 class="mb-0">Only Twam</h4>
+          <p class="mb-0">onlytwam@gmail.com</p>
         </div>
       </div>
       <a class="dropdown-item" (click)="login()">
