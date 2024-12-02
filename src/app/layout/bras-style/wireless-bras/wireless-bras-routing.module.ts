@@ -4,7 +4,23 @@ import { WirelessbrasComponent } from './wireless-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: WirelessbrasComponent
+        path: '', component: WirelessbrasComponent,
+        children: [
+            { path: '', redirectTo: 'WirelessbrasComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: WirelessbrasComponent,
+        data: {
+          title: 'Wireless Bras',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Wireless Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

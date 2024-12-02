@@ -14,3 +14,18 @@ export class login {
         this.form.patchValue(login);
     }
 }
+export class resetPassword {
+    form: FormGroup;
+    username:string;
+    password:string;
+       constructor() {
+        this.form = new FormGroup({
+            username: new FormControl('', [Validators.required]),
+            password: new FormControl('', [Validators.required]),
+           
+        });
+    }
+    populateFormData(resetPassword: any) {
+        this.form.patchValue(resetPassword);
+    }
+}

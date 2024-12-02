@@ -30,68 +30,7 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">Women Wirefree Padded Micro Touch Nylon Elastane Bandeau Bra </h6>
-            <p>Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <!-- assets/images/product/bras.webp -->
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/005.jfif" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">Seamless Non Wired Bandeau Bra | A039 </h6>
-            <p>Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/002.webp" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">Lace Bandeau Bra Strapless Bras for Women Wireless Padded Bandeau Bralette Push Up Tube Top Bra </h6>
-            <p> Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/003.webp" alt="Twam" class="card-img-top" (click)="dataview()">
-            <div class="card-body">
-              <div class="d-flex ">
-                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}"
-                  (click)="changeColor(color)"
-                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-                </button>
-              </div>
-              <h6 class="card-title" (click)="dataview()">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
@@ -353,3 +292,66 @@
       </div>
     </div>
   </ng-template>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">Women Wirefree Padded Micro Touch Nylon Elastane Bandeau Bra </h6>
+          <p>Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+    <!-- assets/images/product/bras.webp -->
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/005.jfif" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">Seamless Non Wired Bandeau Bra | A039 </h6>
+          <p>Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/002.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">Lace Bandeau Bra Strapless Bras for Women Wireless Padded Bandeau Bralette Push Up Tube Top Bra </h6>
+          <p> Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="assets/Product/Amante/Bras/Bandeau/NonPadded/003.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}"
+                (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <h6 class="card-title" (click)="dataview()">Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+            <p> Price : {{price}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

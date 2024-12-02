@@ -8,8 +8,6 @@ import { filter, map, mergeMap } from 'rxjs/operators';
   templateUrl: './breadcrumb.component.html'
 })
 export class BreadcrumbComponent implements OnInit {
-
-
   pageInfo: Data = Object.create(null);
   constructor(
     private router: Router,
@@ -29,10 +27,17 @@ export class BreadcrumbComponent implements OnInit {
       )
       .pipe(filter(route => route.outlet === 'primary'))
       .pipe(mergeMap(route => route.data))
-      .subscribe(event => {
-        this.titleService.setTitle(event['title']);
-        this.pageInfo = event;
+      .subscribe(data => {
+        const defaultTitle = document.title; 
+        const dynamicTitle = data['title'] || 'Default Title';
+        const fullTitle = dynamicTitle ? `${dynamicTitle} | ${defaultTitle}` : defaultTitle;
+        this.titleService.setTitle(fullTitle); 
+        this.pageInfo = data; 
       });
   }
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log('Hello Eshwar Page Info:', this.pageInfo)
+    
+  }
+  
 }

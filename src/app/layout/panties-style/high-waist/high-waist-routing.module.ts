@@ -4,7 +4,8 @@ import { HighwaistComponent } from './high-waist.component';
 
 const routes: Routes = [
     {
-        path: '', component: HighwaistComponent
+        path: '', component: HighwaistComponent,
+        
     }
 ];
 

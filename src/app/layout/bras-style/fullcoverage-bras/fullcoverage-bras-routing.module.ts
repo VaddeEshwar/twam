@@ -4,7 +4,23 @@ import { FullcoveragebrasComponent } from './fullcoverage-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: FullcoveragebrasComponent
+        path: '', component: FullcoveragebrasComponent,
+        children: [
+            { path: '', redirectTo: 'FullcoveragebrasComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: FullcoveragebrasComponent,
+        data: {
+          title: 'Balconette Bras',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Balconette Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

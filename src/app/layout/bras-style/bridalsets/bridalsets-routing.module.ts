@@ -4,7 +4,23 @@ import { BridalsetsComponent } from './bridalsets.component';
 
 const routes: Routes = [
     {
-        path: '', component: BridalsetsComponent
+        path: '', component: BridalsetsComponent,
+        children: [
+            { path: '', redirectTo: 'BridalsetsComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: BridalsetsComponent,
+        data: {
+          title: 'Bridalsets Bras',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Bridalsets Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

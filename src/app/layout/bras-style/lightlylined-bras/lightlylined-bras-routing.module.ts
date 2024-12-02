@@ -4,7 +4,23 @@ import { LightlylinedbrasComponent } from './lightlylined-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: LightlylinedbrasComponent
+        path: '', component: LightlylinedbrasComponent,
+        children: [
+            { path: '', redirectTo: 'LightlylinedbrasComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: LightlylinedbrasComponent,
+        data: {
+          title: 'Mastectomy Bras',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Mastectomy Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

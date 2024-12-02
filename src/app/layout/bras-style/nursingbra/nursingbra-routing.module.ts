@@ -4,7 +4,23 @@ import { NursingbraComponent } from './nursingbra.component';
 
 const routes: Routes = [
     {
-        path: '', component: NursingbraComponent
+        path: '', component: NursingbraComponent,
+        children: [
+            { path: '', redirectTo: 'NursingbraComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: NursingbraComponent,
+        data: {
+          title: 'Nursing Bras',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Nursing Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

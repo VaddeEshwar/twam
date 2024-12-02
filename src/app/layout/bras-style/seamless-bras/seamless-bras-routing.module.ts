@@ -4,7 +4,22 @@ import { seamlessbrasComponent } from './seamless-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: seamlessbrasComponent
+        path: '', component: seamlessbrasComponent,
+        children: [
+            { path: '', redirectTo: 'seamlessbrasComponent', pathMatch: 'full' },
+            {
+                path: '',
+                component: seamlessbrasComponent,
+                data: {
+                    title: 'Seamless Bras',
+                    urls: [
+                        { title: 'Home', url: '/home' },
+                        { title: 'Bras Style', url: '/bras-style' },
+                        { title: 'Seamless Bras', }
+                    ]
+                }
+            },
+        ]
     }
 ];
 

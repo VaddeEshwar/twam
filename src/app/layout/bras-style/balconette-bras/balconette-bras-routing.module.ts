@@ -4,7 +4,21 @@ import { BalconettebrasComponent } from './balconette-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: BalconettebrasComponent
+        path: '', component: BalconettebrasComponent,
+        children: [
+            {
+                path: '',
+                component: BalconettebrasComponent,
+                data: {
+                    title: 'Balconette Bras',
+                    urls: [
+                        { title: 'Home', url: '/home' },
+                        { title: 'Bras Style', url: '/bras-style' },
+                        { title: 'Balconette Bras', }
+                    ]
+                }
+            },
+        ]
     }
 ];
 

@@ -15,7 +15,7 @@ export class FullComponent implements OnInit {
     @Inject(DOCUMENT) private document: Document, private cdr: ChangeDetectorRef) {
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          console.log('Current URL:', this.router.url); 
+          // console.log('Current URL:', this.router.url); 
           const noFooterRoutes = ['/login', '/product-components/registration'];
           this.hideFooter = noFooterRoutes.some(route => this.router.url.startsWith(route));
           this.cdr.detectChanges();

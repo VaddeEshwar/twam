@@ -4,7 +4,23 @@ import { BrazilianpantiesComponent } from './brazilian-panties.component';
 
 const routes: Routes = [
     {
-        path: '', component: BrazilianpantiesComponent
+        path: '', component: BrazilianpantiesComponent,
+        children: [
+            { path: '', redirectTo: 'BrazilianpantiesComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: BrazilianpantiesComponent,
+        data: {
+          title: 'Brazilian',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'panties', url: '/panties-style' },
+            { title: 'Brazilian', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

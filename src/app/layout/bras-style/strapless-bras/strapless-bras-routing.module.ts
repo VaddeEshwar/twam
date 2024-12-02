@@ -4,7 +4,21 @@ import { StraplessbrasComponent } from './strapless-bras.component';
 
 const routes: Routes = [
     {
-        path: '', component: StraplessbrasComponent
+        path: '', component: StraplessbrasComponent,
+        children: [
+            {
+                path: '',
+                component: StraplessbrasComponent,
+                data: {
+                    title: '',
+                    urls: [
+                        { title: 'Home', url: '/home' },
+                        { title: 'Bras Style', url: '/bras-style' },
+                        { title: 'Strapless Bras', }
+                    ]
+                }
+            },
+        ]
     }
 ];
 

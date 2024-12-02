@@ -17,6 +17,7 @@ import { Country } from '../../model/Common/Countries';
 import { City } from '../../model/Common/Cities';
 import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
+import { resetPassword} from '../../model/Users/resetpass'
 import { Getping } from '../../model/Users/Getping';
 import { RefreshPayload } from '../../model/authentication/refresh';
 import { AuthGuard} from '../../layout/shared/services/auth.guard'
@@ -232,10 +233,16 @@ export class AdminserviceService {
     this.router.navigateByUrl('home')
   }
   //////////////////////////////OtpValidation////////////////////////////////////////  
-  OtpValidation(UserOtpValidationobj: otpValidation) {
+  OtpValidation(UserOtpValidationobj: resetPassword) {
     console.log("hello");
-    return this.http.post<otpValidation>(baseUrlForchangepassword, UserOtpValidationobj, { headers })
+    return this.http.post<resetPassword>(baseUrlForchangepassword, UserOtpValidationobj, { headers })
   }
+
+  //////////////////////////////OtpValidation////////////////////////////////////////  
+  // OtpValidation(UserOtpValidationobj: otpValidation) {
+  //   console.log("hello");
+  //   return this.http.post<otpValidation>(baseUrlForchangepassword, UserOtpValidationobj, { headers })
+  // }
   //////////////////////////////////////////User verifaction///////////////////////////
   Getuserverifaction(guid: string) {
     let gu_id = guid + "";

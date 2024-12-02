@@ -4,7 +4,23 @@ import { BoyshortsComponent } from './boyshorts.component';
 
 const routes: Routes = [
     {
-        path: '', component: BoyshortsComponent
+        path: '', component: BoyshortsComponent,
+        children: [
+            { path: '', redirectTo: 'BoyshortsComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: BoyshortsComponent,
+        data: {
+          title: 'Boyshorts',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'panties', url: '/panties-style' },
+            { title: 'Boyshorts', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

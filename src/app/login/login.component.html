@@ -124,23 +124,52 @@
         <div class="text-center">
           <div class="logo">
               <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" width="150" /></span></div>
-              <h6 class="font-medium mb-4">Recover Password</h6>
+              <h6 class="font-medium mb-4">Reset Password</h6>
               <span>Enter your Email and instructions will be sent to you!</span>
           </div>
           
           <div class="row mt-3">
               <!-- Form -->
-              <form class="col-12">
-                  <!-- email -->
+              <form class="form-horizontal mt-3"  [formGroup]="resetObj.form" autocomplete="off" (ngSubmit)="onRecoverSubmit()" novalidate>
+                <div class="input-group mb-2"> 
+                      <input type="text" class="form-control" formControlName="email" placeholder="Gmail" aria-label="email" aria-describedby="basic-addon1">
+                    </div>
+                    <div *ngIf="resetObj.form.get('email')?.touched && resetObj.form.get('email')?.errors?.['required']">
+                      <small class="text-danger">email is required.</small>
+                    </div>
+                    <div class="input-group">
+                      <input [type]="type" class="form-control" formControlName="newPassword" placeholder="New Password" aria-label="newPassword" aria-describedby="basic-addon1">
+                      <span (click)="hideShowpass()" class="input-group-text background-none">
+                        <i class="fa {{eyeIcon}}"></i>
+                      </span>
+                    </div>
+                    <div *ngIf="resetObj.form.get('newPassword')?.touched && resetObj.form.get('newPassword')?.errors?.['required']">
+                      <small class="text-danger">Update Password is required.</small>
+                    </div>
                   <div class="form-group row">
-                      <div class="col-12">
-                          <input class="form-control form-control-lg" type="email" required="" placeholder="Username">
+                      <div class="col-md-12">
+                          <div class="form-check d-flex">
+                              <input type="checkbox" class="form-check-input" id="customCheck1">
+                              <label class="form-check-label  ms-2" for="customCheck1" formControlName="rememberMe">Remember me</label>
+                          </div>
                       </div>
                   </div>
-                  <!-- pwd -->
-                  <div class="row mt-3">
-                      <div class="col-12">
-                          <button class="btn d-block w-100 btn-lg btn-danger" type="submit" name="action">Reset</button>
+                  <div class="form-group text-center mt-3">
+                      <div class="col-xs-12">
+                          <button class="btn d-block w-100 btn-lg btn-info" type="submit">Submit</button>
+                      </div>
+                  </div>
+                  <div class="row mt-4">
+                      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 text-center">
+                          <div class="social">
+                              <a href="javascript:void(0)" class="btn btn-primary me-2" data-toggle="tooltip" title="" data-original-title="Login with Facebook"> <i aria-hidden="true" class="fab fa-facebook-f"></i> </a>
+                              <a href="javascript:void(0)" class="btn btn-danger" data-toggle="tooltip" title="" data-original-title="Login with Google"> <i aria-hidden="true" class="fab fa-google-plus-g"></i> </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group mb-0 mt-2">
+                      <div class="col-sm-12 text-center">
+                          Don't have an account? <a href="product-components/registration" class="text-info ms-1"><b>Sign Up</b></a>
                       </div>
                   </div>
               </form>

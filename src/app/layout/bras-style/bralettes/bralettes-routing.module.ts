@@ -4,7 +4,23 @@ import { BralettesComponent } from './bralettes.component';
 
 const routes: Routes = [
     {
-        path: '', component: BralettesComponent
+        path: '', component: BralettesComponent,
+        children: [
+            { path: '', redirectTo: 'BralettesComponent', pathMatch: 'full'},
+            {
+    
+        path: '',
+        component: BralettesComponent,
+        data: {
+          title: 'Bralettes',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Bralettes', }
+          ]
+        }
+      },
+    ]
     }
 ];
 

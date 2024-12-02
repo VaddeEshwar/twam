@@ -175,13 +175,6 @@
                 <span class="old-price">{{oldprice}}</span>
                 <span class="price">{{price}}</span>
               </div>
-              <div class="ml-auto d-flex align-items-center">
-                <ul class="list-inline font-12 dl m-r-10">
-                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                  <li class="list-inline-item"> {{ratingcount}} Users</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -243,13 +236,6 @@
                 <span class="old-price">{{oldprice}}</span>
                 <span class="price">{{price}}</span>
               </div>
-              <div class="ml-auto d-flex align-items-center">
-                <ul class="list-inline font-12 dl m-r-10">
-                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                  <li class="list-inline-item"> {{ratingcount}} Users</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -281,13 +267,7 @@
                 <span class="old-price">{{oldprice}}</span>
                 <span class="price">{{price}}</span>
               </div>
-              <div class="ml-auto d-flex align-items-center">
-                <ul class="list-inline font-12 dl m-r-10">
-                  <li class="list-inline-item"> <ngb-rating [max]="5" [formControl]="ratingcontrol"
-                      (click)="GetRating()" [rate]="Finalrating"></ngb-rating></li>
-                  <li class="list-inline-item"> {{ratingcount}} Users</li>
-                </ul>
-              </div>
+          
             </div>
           </div>
         </div>
@@ -330,62 +310,17 @@
   </div>
 </section>
 
-<section>
+<section style="background: url('../../../../assets/images/background/different-kinds-of-bra.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
   <div class="container p-4">
     <h4 class="card-title m-b-40 p-4">Shop By Category</h4>
-    <div class="row">
-      <div class="col-lg-2 col-md-4 offset-1">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/images/product/paintes.webp" alt="Twam">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Paintes</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/images/product/bras-5.webp" alt="Twam">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Bra</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/images/product/swimsuit-01.jpg" alt="Twam">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Swimsuit</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/images/product/trial13.PNG" alt="Twam">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Essentials</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/images/product/activewear-01.jpg" alt="Twam">
-          </div>
-          <div class="card-body">
-            <p class="card-title">Active Wear</p>
-          </div>
-        </div>
-      </div>
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" centered-slides="true" pagination-clickable="true" slides-per-view="4"
+    centered-slides="true"  space-between="50"  grab-cursor="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide><img src="assets/images/product/paintes.webp" alt=""></swiper-slide>
+    <swiper-slide><img src="assets/images/product/bras-5.webp" alt=""></swiper-slide>
+    <swiper-slide><img src="assets/images/product/swimsuit-01.jpg" alt=""></swiper-slide>
+    <swiper-slide><img src="assets/images/product/trial13.PNG" alt=""></swiper-slide>
 
-    </div>
+  </swiper-container>
   </div>
 </section>
 
@@ -427,7 +362,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-6">
           <div class="m-auto">
-            <h3>Our Brands </h3>
+            <img src="assets/images/logos/TWAM.png" alt="" width="250">
           </div>
       
       </div>
@@ -458,7 +393,130 @@
   </div>
 </section> -->
 
-
+        <!--Image Banners-->
+        <!-- <div class="section imgBanners pb-0">
+        	<div class="imgBnrOuter">
+            	<div class="container-fluid">
+                	<div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="section-header text-center">
+                                <h2 class="h2">SHOP BY Category</h2>
+                                <p>Shop the Nicest Deals on Best Prices in all category</p>
+                            </div>
+                        </div>
+                    </div>    
+                	<div class="row img-grid-banner1">
+                    	<div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
+                        	<div class="inner topright">
+                            	<a href="#">	
+                               		<img data-src="assets/images/collection/typesofbras.webp" src="assets/images/collection/typesofbras.webp" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
+                                    <div class="ttl">
+                                    	Shop <h5>Halloween Look</h5>
+                                    </div>
+                                </a>
+                             </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
+                        	<div class="row">
+                            	<div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
+                                	<div class="inner topright">
+                                        <a href="#">	
+                                            <img data-src="assets/images/collection/shopping.webp" src="assets/images/collection/shopping.webp" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
+                                            <div class="ttl">
+                                                Shop <h5>OnlyTWAM-Woman Lingerie Store in GSM Mall in Hyderabad</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                            	</div>
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                                	<div class="inner btmleft">
+                                        <a href="#">	
+                                            <img data-src="assets/images/collection/home11-grid-sm-banner3.jpg" src="assets/images/collection/home11-grid-sm-banner3.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
+                                            <div class="ttl">
+                                                Shop Cool <h5>Caps</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                            	</div>   
+                            </div>
+                            <div class="row">
+                            	<div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
+                                	<div class="inner center">
+                                        <a href="#">	
+                                            <img data-src="assets/images/collection/home11-grid-sm-banner4.jpg" src="assets/images/collection/home11-grid-sm-banner4.jpg" alt="Sun Glasses, Shoes and more" title="Sun Glasses, Shoes and more" class="blur-up lazyload" />
+                                            <div class="ttl">
+                                                Hot Summer Collection <h5>Sun Glasses, Shoes and more</h5>
+                                            </div>
+                                        </a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row img-grid-banner2">
+                    	<div class="col-12 col-sm-12 col-md-12 col-lg-5">
+                            <div class="inner topleft">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner5.jpg" src="assets/images/collection/home11-grid-sm-banner5.jpg" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
+                                    <div class="ttl">
+                                        All the Shiniest <h5>Shop Jewelry</h5>
+                                    </div>
+                                </a>
+                             </div>
+                         
+                            <div class="inner topright">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner6.jpg" src="assets/images/collection/home11-grid-sm-banner6.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
+                                    <div class="ttl">
+                                        Every Little Things <h5>Shop Cosmetics</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 image-banner-2">
+                            <div class="inner topleft">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner7.jpg" src="assets/images/collection/home11-grid-sm-banner7.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
+                                    <div class="ttl">
+                                        Elevate Every Look <h5>Shop Men's Clothing</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row img-grid-banner3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
+                            <div class="inner center">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/fashion.jpg" src="assets/images/collection/fashion.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
+                                    <div class="ttl text-center">
+                                        Shape Your look <h5>Shop Now</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                            <div class="inner center">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner9.jpg" src="assets/images/collection/home11-grid-sm-banner9.jpg" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
+                                    <div class="ttl">Shop Kids</div>
+                                </a>
+                             </div>
+                         
+                            <div class="inner topright">
+                                <a href="#">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner10.jpg" src="assets/images/collection/home11-grid-sm-banner10.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
+                                    <div class="ttl">
+                                        Shop <h5>Kids Accessories</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--End Image Banners-->
 
 <ng-template #modalTemplate let-modal>
   <app-client-adding></app-client-adding>

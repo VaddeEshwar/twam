@@ -36,7 +36,7 @@ export class seamlessbrasComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log("dashboard");
+        
     }
     ratingcount=0;
     totalrating=0;

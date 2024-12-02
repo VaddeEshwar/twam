@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AdminserviceService } from '../services/user-service/user-service.service'
 import { otpValidation } from '../model/Users/otpValidation'
 import { User } from '../model/user';
+import { resetPassword } from  '../model/Users/resetpass'
 import { ToastService } from "src/app/layout/shared/toast/toast.service";
 import { HeaderFilterCellComp } from 'ag-grid-community';
 import Swal from 'sweetalert2';
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   msg: string = '';
   // user: any;
   userobj: User;
+  resetObj:resetPassword;
   Otpupdateobj: otpValidation;
   router = inject(Router)
   activityMsg: string = '';
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.userobj = new User();
     this.Otpupdateobj = new otpValidation();
+    this.resetObj = new resetPassword();
   }
   ///////////////loginRequst////////////
   onSubmit() {
@@ -79,7 +82,7 @@ export class LoginComponent implements OnInit {
   ///////////////loginRequst////////////
   onRecoverSubmit() {
 
-    const fromData = this.Otpupdateobj.form.value;
+    const fromData = this.resetObj.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
 
     this.service.OtpValidation(fromData).subscribe({

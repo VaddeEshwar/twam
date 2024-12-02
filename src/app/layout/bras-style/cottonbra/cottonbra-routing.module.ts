@@ -4,7 +4,23 @@ import { CottonbraComponent } from './cottonbra.component';
 
 const routes: Routes = [
     {
-        path: '', component: CottonbraComponent
+        path: '', component: CottonbraComponent,
+        children: [
+            { path: '', redirectTo: 'CottonbraComponent', pathMatch: 'full'},
+            {
+    
+        path: 'CottonbraComponent',
+        component: CottonbraComponent,
+        data: {
+          title: 'Cotton',
+          urls: [
+            { title: 'Home', url: '/home' },
+            { title: 'Bras Style', url: '/bras-style' },
+            { title: 'Cotton Bras', }
+          ]
+        }
+      },
+    ]
     }
 ];
 
