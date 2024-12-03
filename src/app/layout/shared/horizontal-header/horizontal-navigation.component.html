@@ -84,7 +84,7 @@
   </li>
 
   <!--------========================love symbol=================-->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" *ngIf="isLoggedIn">
     <!----------------*ngIf="isLoggedIn"  *ngIf="isLoggedIn"-------------->
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,7 +92,7 @@
       <span class="badge bg-danger badge-pill">{{cartItem}}</span>
     </a>
   </li>
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" *ngIf="isLoggedIn">
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="heart"></i-feather>
