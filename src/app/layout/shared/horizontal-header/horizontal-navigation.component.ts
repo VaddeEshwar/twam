@@ -164,9 +164,10 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    this.cartItemFun()
+    this.cartItemFun();
+    this.CartDetails()
   }
-
+  getCartDetails:any[]=[];
   cartItemFun() {
     const localCart = localStorage.getItem('localcart');
     if (localCart !== null) {
@@ -186,5 +187,11 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   logout(): void {
     this.authService.logout();
   }
-   
+  CartDetails(){
+    const localCart = localStorage.getItem('localcart');
+    if (localCart !== null) {
+        this.getCartDetails = JSON.parse(localCart);
+        console.log(this.getCartDetails);
+      }
+}
 }

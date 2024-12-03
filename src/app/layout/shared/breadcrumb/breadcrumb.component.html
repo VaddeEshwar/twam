@@ -4,7 +4,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 align-self-center">
-          <h6 class="page-title">{{ pageInfo['title'] }}</h6>
+          <h4 class="page-title">{{ pageInfo['title'] }}</h4>
           <div class="d-flex align-items-center">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
@@ -12,7 +12,7 @@
                   <li class="breadcrumb-item" *ngIf="!last" [routerLink]="url.url">
                     <a href="javascript:void(0)">{{ url.title }}</a>
                   </li>
-                  <li class="breadcrumb-item active" *ngIf="last">{{ url.title }}</li>
+                  <li class="breadcrumb-item active" *ngIf="last"><a href="javascript:void(0)">{{ url.title }}</a></li>
                 </ng-template>
               </ol>
             </nav>

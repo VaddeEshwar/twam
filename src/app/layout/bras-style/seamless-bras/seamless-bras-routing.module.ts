@@ -6,7 +6,6 @@ const routes: Routes = [
     {
         path: '', component: seamlessbrasComponent,
         children: [
-            { path: '', redirectTo: 'seamlessbrasComponent', pathMatch: 'full' },
             {
                 path: '',
                 component: seamlessbrasComponent,
@@ -14,8 +13,8 @@ const routes: Routes = [
                     title: 'Seamless Bras',
                     urls: [
                         { title: 'Home', url: '/home' },
-                        { title: 'Bras Style', url: '/bras-style' },
-                        { title: 'Seamless Bras', }
+                        // { title: 'Bras Style', url: '/bras-style' },
+                        { title: 'Seamless Bras', url:'bras-style/seamless' }
                     ]
                 }
             },

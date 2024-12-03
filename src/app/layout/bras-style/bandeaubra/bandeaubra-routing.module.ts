@@ -13,7 +13,7 @@ const routes: Routes = [
                     title: 'Bandeau Bras',
                     urls: [
                         { title: 'Home', url: '/home' },
-                        { title: 'Bras Style', url: '/bras-style' },
+                        // { title: 'Bras Style', url: '/bras-style' },
                         { title: 'Bandeau Bras', }
                     ]
                 }

@@ -63,7 +63,7 @@
 
 <!-- Navbar Header for horizontal only -->
 <ul class="navbar-nav float-inherit">
-<img src="assets/images/logos/TWAM.png" height="100" class="p-2">
+  <img src="assets/images/logos/TWAM.png" height="100" class="p-2">
 </ul>
 
 <!-- ============================================================== -->
@@ -76,24 +76,25 @@
   <li class="nav-item search-box">
     <form class="mt-3">
       <div class="input-group input-group-lg mb-3">
-        <input type="text" placeholder="Search by Email" aria-label=""
-          class="form-control" (input)="onSearchTextCharged()" [(ngModel)]="enteredSearchValue"><button type="button"  (click)="showSearch = !showSearch" class="btn btn-light"><i class="ti-search"></i></button></div>
+        <input type="text" placeholder="Search by Email" aria-label="" class="form-control"
+          (input)="onSearchTextCharged()" [(ngModel)]="enteredSearchValue"><button type="button"
+          (click)="showSearch = !showSearch" class="btn btn-light"><i class="ti-search"></i></button>
+      </div>
     </form>
   </li>
 
-
   <!--------========================love symbol=================-->
-  <li class="nav-item dropdown" *ngIf="isLoggedIn" ngbDropdown placement="bottom-end">
-    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()" 
-       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
+    <!----------------*ngIf="isLoggedIn"  *ngIf="isLoggedIn"-------------->
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-cart"></i-feather>
       <span class="badge bg-danger badge-pill">{{cartItem}}</span>
     </a>
   </li>
-  
-  <li class="nav-item dropdown" *ngIf="isLoggedIn" ngbDropdown placement="bottom-end">
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
-       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="heart"></i-feather>
     </a>
     <div class="dropdown-menu dropdown-menu-right mailbox dropdown-menu-animate-up" ngbDropdownMenu>
@@ -108,15 +109,26 @@
           </div>
         </li>
         <li>
-          <div class="message-center notifications" [perfectScrollbar]="config">
+
+          <div class="message-center notifications">
+            <!-- Message -->
             <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
-               *ngFor="let notification of notifications">
+              *ngFor="let getCartDetail of getCartDetails">
+
+              <span>
+                <img [src]="getCartDetail.images" alt="Product Image" width="80" />
+              </span>
+              <span class="mail-contnet d-inline-block w-75 ps-2 align-middle">
+                <h6 class="message-title">{{getCartDetail.title }}</h6>
+                <span class="mail-desc  d-block text-muted text-truncate">{{getCartDetail.price}} <i
+                    class="fas fa-rupee-sign"></i></span>
+              </span>
             </a>
           </div>
         </li>
         <li>
           <a class="link text-center mb-1" href="javascript:void(0);">
-            <strong>Check all notifications</strong>
+            <strong> Check all notifications </strong>
             <i class="fa fa-angle-right"></i>
           </a>
         </li>

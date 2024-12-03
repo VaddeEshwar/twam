@@ -48,7 +48,7 @@ export const ROUTES: RouteInfo[] = [
         submenu: [],
       },
       {
-        path: "bras-style/wireless-bras",
+        path: "bras-style/minimizer-Bras",
         title: "Minimizer Bras",
         icon: "",
         class: "",

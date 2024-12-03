@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: 'login', loadChildren: () => import('../login/login.module').then(x => x.LoginModule) },
       //////////bras-styles///////////
       { path: 'bras-style/seamless', loadChildren: () => import('./bras-style/seamless-bras/seamless-bras.module').then(x => x.seamlessbrasModule) },
-      { path: 'bras-style/wireless-bras', loadChildren: () => import('./bras-style/wireless-bras/wireless-bras.module').then(x => x.WirelessbrasModule) },
+      { path: 'bras-style/minimizer-Bras', loadChildren: () => import('./bras-style/wireless-bras/wireless-bras.module').then(x => x.WirelessbrasModule) },
       { path: 'bras-style/Bralettes', loadChildren: () => import('./bras-style/balconette-bras/balconette-bras.module').then(x => x.BalconettebrasModule) },
       { path: 'bras-style/Plunge-bra', loadChildren: () => import('./bras-style/bralettes/bralettes.module').then(x => x.BralettesModule) },
       { path: 'bras-style/T-shirt-bras', loadChildren: () => import('./bras-style/t-shirt-bras/t-shirt-bras.module').then(x => x.TshirtbrasModule) },

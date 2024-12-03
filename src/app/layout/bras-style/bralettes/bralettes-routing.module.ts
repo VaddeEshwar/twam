@@ -15,7 +15,7 @@ const routes: Routes = [
           title: 'Bralettes',
           urls: [
             { title: 'Home', url: '/home' },
-            { title: 'Bras Style', url: '/bras-style' },
+            // { title: 'Bras Style', url: '/bras-style' },
             { title: 'Bralettes', }
           ]
         }

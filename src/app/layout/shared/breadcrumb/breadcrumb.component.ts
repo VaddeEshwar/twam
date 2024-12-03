@@ -29,7 +29,7 @@ export class BreadcrumbComponent implements OnInit {
       .pipe(mergeMap(route => route.data))
       .subscribe(data => {
         const defaultTitle = document.title; 
-        const dynamicTitle = data['title'] || 'Default Title';
+        const dynamicTitle = data['title'] || '';
         const fullTitle = dynamicTitle ? `${dynamicTitle} | ${defaultTitle}` : defaultTitle;
         this.titleService.setTitle(fullTitle); 
         this.pageInfo = data; 
