@@ -1,25 +1,11 @@
 <!---------*ngIf="searchText==='' || categories.name.toLowerCase().includes(searchText)"-------->
-
 <section>
-  <div class="card-body border-top">
-    <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[0]" alt="Random first slide" width="1400" height="400" />
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[1]" alt="Random second slide" width="1400" height="400" />
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[2]" alt="Random third slide" width="1400" height="400" />
-        </div>
-      </ng-template>
-    </ngb-carousel>
-  </div>
+  <swiper-container class="mySwiper" centered-slides="true" pagination-clickable="true" centered-slides="true"
+    space-between="50" grab-cursor="true" autoplay-delay="3500" pagination-type="progressbar" autoplay-disable-on-interaction="false">
+    <swiper-slide><img [src]="images[0]" alt="Random first slide" /></swiper-slide>
+    <swiper-slide><img [src]="images[1]" alt="Random second slide" /></swiper-slide>
+    <swiper-slide><img [src]="images[2]" alt="Random third slide" /></swiper-slide>
+  </swiper-container>
 </section>
 
 <section>
@@ -313,7 +299,6 @@
 <section
   style="background: url('../../../../assets/images/background/different-kinds-of-bra.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
   <div class="container p-4">
-    <!-- <h4 class="card-title m-b-40 p-4 text-white">Shop By Category</h4> -->
     <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" centered-slides="true"
       pagination-clickable="true" slides-per-view="3" centered-slides="true" space-between="50" grab-cursor="true"
       autoplay-delay="2500" autoplay-disable-on-interaction="false">
@@ -329,7 +314,8 @@
                 <span class="text-muted">Padded Wired</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"class="btn btn-dark  d-flex justify-content-center">725<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">725<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -347,8 +333,8 @@
                 <span class="text-muted">Padded Wired</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">615<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">615<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -366,8 +352,8 @@
                 <span class="text-muted">Wireless Non Padded</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">569<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">569<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -385,14 +371,14 @@
                 <span class="text-muted">Wireless Padded</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">715<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">715<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
         </div>
       </swiper-slide>
-     
+
       <swiper-slide>
         <div class="card">
           <div class="el-card-item position-relative pb-3">
@@ -405,8 +391,8 @@
                 <span class="text-muted">Wireless PaddedEssential</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">579<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">579<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -424,8 +410,8 @@
                 <span class="text-muted">Wireless Non Padded</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">695<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">695<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -443,8 +429,8 @@
                 <span class="text-muted">Midnight Garden Midi</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">679<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">679<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -462,8 +448,8 @@
                 <span class="text-muted">Seamless Essential -Full Coverage</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">625<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">625<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -481,8 +467,8 @@
                 <span class="text-muted">Lift Smart Maxi</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">659<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">659<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -500,8 +486,8 @@
                 <span class="text-muted"> Medium Coverage</span>
               </div>
               <div class="ms-auto pe-3">
-                <button type="button"
-                  class="btn btn-dark  d-flex justify-content-center">859<i class="fas fa-rupee-sign"></i></button>
+                <button type="button" class="btn btn-dark  d-flex justify-content-center">859<i
+                    class="fas fa-rupee-sign"></i></button>
               </div>
             </div>
           </div>
@@ -513,31 +499,47 @@
 
 <section>
   <div class="container">
-    <h4 class="card-title m-b-40">TWAM’S FIT FOR GROWTH</h4>
+    <h4 class="card-title m-b-40 p-4 ">TWAM’S FIT FOR GROWTH</h4>
     <div class="row py-2">
-      <div class="col-lg-6 col-md-4 col-sm-3">
-        <img src="assets/images/product/bra_guide.webp" alt="Twam" class="card-img-top">
-        <div class="d-flex border">
-          <div class="p-2">At Twam, we associate with premium
-            brands to display a wide range of
-            products for women</div>
-          <div class="p-2">
-            <button type="submit" class="btn btn-outline-secondary waves-effect waves-light float-right">
-              ShopNow
-            </button>
+      <div class="col-lg-4 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/bra_guide.webp" alt="Twam" class="card-img-top">
+          <div class="card-img-overlay">
+            <div class="text-muted">
+              <p class="fs-3 mb-0">Bras</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="fw-normal">Elegant and comfortable bras designed to enhance confidence and support</p>
+            <button class="btn btn-outline-success btn-rounded  waves-effect waves-light mt-3 border-none">Shop Now</button>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 col-md-4 col-sm-3">
-        <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
-        <div class="d-flex border">
-          <div class="p-2">At Twam, we associate with premium
-            brands to display a wide range of
-            products for women</div>
-          <div class="p-2">
-            <button type="submit" class="btn btn-outline-secondary waves-effect waves-light float-right">
-              ShopNow
-            </button>
+      <div class="col-lg-4 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/paintes.webp" alt="Twam" class="card-img-top">
+          <div class="card-img-overlay">
+            <div class="text-white">
+              <p class="fs-3 mb-0">Paintes</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="fw-normal">A woman painting, capturing her essence through fluid, graceful brushstrokes</p>
+            <button class="btn btn-outline-success btn-rounded  waves-effect waves-light mt-3">Shop Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-3">
+        <div class="card">
+          <img src="assets/images/product/theory-activewear-clothing-line.webp" alt="Twam" class="card-img-top">
+          <div class="card-img-overlay">
+            <div class="text-white">
+              <p class="fs-3 mb-0">Activewear</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="fw-normal">Stylish, comfortable, and functional activewear for every workout and beyond</p>
+            <button class="btn btn-outline-success btn-rounded  waves-effect waves-light mt-3">Shop Now</button>
           </div>
         </div>
       </div>
@@ -568,143 +570,6 @@
     </div>
   </div>
 </section>
-<!-- <section>
-  <div class="container">
-    <carousel [itemsPerSlide]="4" [interval]="3000" [noPause]="false" [showIndicators]="true"
-      [singleSlideOffset]="false">
-      <slide *ngFor="let card of cards" style="width: 12%;">
-        <div class="card mx-2" style="width: 10rem;">
-          <img class="card-img-top" [src]="card.image" alt="Card image cap">
-        </div>
-      </slide>
-    </carousel>
-  </div>
-</section> -->
-
-<!--Image Banners-->
-<!-- <div class="section imgBanners pb-0">
-        	<div class="imgBnrOuter">
-            	<div class="container-fluid">
-                	<div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="section-header text-center">
-                                <h2 class="h2">SHOP BY Category</h2>
-                                <p>Shop the Nicest Deals on Best Prices in all category</p>
-                            </div>
-                        </div>
-                    </div>    
-                	<div class="row img-grid-banner1">
-                    	<div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
-                        	<div class="inner topright">
-                            	<a href="#">	
-                               		<img data-src="assets/images/collection/typesofbras.webp" src="assets/images/collection/typesofbras.webp" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
-                                    <div class="ttl">
-                                    	Shop <h5>Halloween Look</h5>
-                                    </div>
-                                </a>
-                             </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
-                        	<div class="row">
-                            	<div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
-                                	<div class="inner topright">
-                                        <a href="#">	
-                                            <img data-src="assets/images/collection/shopping.webp" src="assets/images/collection/shopping.webp" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                            <div class="ttl">
-                                                Shop <h5>OnlyTWAM-Woman Lingerie Store in GSM Mall in Hyderabad</h5>
-                                            </div>
-                                        </a>
-                                    </div>
-                            	</div>
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                                	<div class="inner btmleft">
-                                        <a href="#">	
-                                            <img data-src="assets/images/collection/home11-grid-sm-banner3.jpg" src="assets/images/collection/home11-grid-sm-banner3.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                            <div class="ttl">
-                                                Shop Cool <h5>Caps</h5>
-                                            </div>
-                                        </a>
-                                    </div>
-                            	</div>   
-                            </div>
-                            <div class="row">
-                            	<div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
-                                	<div class="inner center">
-                                        <a href="#">	
-                                            <img data-src="assets/images/collection/home11-grid-sm-banner4.jpg" src="assets/images/collection/home11-grid-sm-banner4.jpg" alt="Sun Glasses, Shoes and more" title="Sun Glasses, Shoes and more" class="blur-up lazyload" />
-                                            <div class="ttl">
-                                                Hot Summer Collection <h5>Sun Glasses, Shoes and more</h5>
-                                            </div>
-                                        </a>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row img-grid-banner2">
-                    	<div class="col-12 col-sm-12 col-md-12 col-lg-5">
-                            <div class="inner topleft">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/home11-grid-sm-banner5.jpg" src="assets/images/collection/home11-grid-sm-banner5.jpg" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
-                                    <div class="ttl">
-                                        All the Shiniest <h5>Shop Jewelry</h5>
-                                    </div>
-                                </a>
-                             </div>
-                         
-                            <div class="inner topright">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/home11-grid-sm-banner6.jpg" src="assets/images/collection/home11-grid-sm-banner6.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                    <div class="ttl">
-                                        Every Little Things <h5>Shop Cosmetics</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 image-banner-2">
-                            <div class="inner topleft">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/home11-grid-sm-banner7.jpg" src="assets/images/collection/home11-grid-sm-banner7.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                    <div class="ttl">
-                                        Elevate Every Look <h5>Shop Men's Clothing</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row img-grid-banner3">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-2">
-                            <div class="inner center">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/fashion.jpg" src="assets/images/collection/fashion.jpg" alt="Caps" title="Caps" class="blur-up lazyload" />
-                                    <div class="ttl text-center">
-                                        Shape Your look <h5>Shop Now</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-                            <div class="inner center">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/home11-grid-sm-banner9.jpg" src="assets/images/collection/home11-grid-sm-banner9.jpg" alt="Shop Jewelry" title="Shop Jewelry" class="blur-up lazyload" />
-                                    <div class="ttl">Shop Kids</div>
-                                </a>
-                             </div>
-                         
-                            <div class="inner topright">
-                                <a href="#">	
-                                    <img data-src="assets/images/collection/home11-grid-sm-banner10.jpg" src="assets/images/collection/home11-grid-sm-banner10.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
-                                    <div class="ttl">
-                                        Shop <h5>Kids Accessories</h5>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-<!--End Image Banners-->
 
 <ng-template #modalTemplate let-modal>
   <app-client-adding></app-client-adding>
@@ -735,7 +600,8 @@
           <span class="text-muted">Triaction Hybrid Lite P-BLACK</span>
         </div>
         <div class="ms-auto pe-3">
-          <button type="button" class="btn btn-dark  d-flex justify-content-center">759<i class="fas fa-rupee-sign"></i></button>
+          <button type="button" class="btn btn-dark  d-flex justify-content-center">759<i
+              class="fas fa-rupee-sign"></i></button>
         </div>
       </div>
     </div>
