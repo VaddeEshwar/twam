@@ -81,15 +81,49 @@ export class LoginComponent implements OnInit {
   }
   ///////////////loginRequst////////////
   onRecoverSubmit() {
-
+    if (this.resetObj.form.invalid) {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please fill in all required fields.',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+      });
+      return;
+    }
     const fromData = this.resetObj.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
-
-    this.service.OtpValidation(fromData).subscribe({
-      next: (data) => {
-        this.activityMsg = " data saved successfully!";
-        this.router.navigate(['login']);
+    debugger
+    this.service.resetPassword(fromData).subscribe({
+      next: (response: any) => {
+        debugger
+        console.log("Login response:", response);
+        localStorage.setItem('token', response.token)
+           Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'success',
+          title: 'Reset Password successful!',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
+        this.router.navigate(['home']);
+      },
+      error: err => {
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'error',
+          title: 'Reset Password failed!',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        });
       }
+
     })
   }
   ////////////recoverform////////////////

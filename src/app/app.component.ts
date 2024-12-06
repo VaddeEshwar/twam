@@ -71,6 +71,7 @@ getDbSuccessData(): void {
     }
   );
 }
+
 getPingResult(): void {
   const dateTime = new Date().toISOString(); 
   this.service.Getping(dateTime).subscribe(

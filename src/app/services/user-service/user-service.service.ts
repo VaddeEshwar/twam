@@ -56,7 +56,8 @@ const headers = new HttpHeaders({
   'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
   'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
   'guid': 'd3eb4796-8585-4313-8edd-b78879100a22',
-  'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+  'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
+  "refreshtoken": "5a19c8e3-f0da-4a97-af4f-1f4812758e8d"
 });
 
 @Injectable({
@@ -64,8 +65,6 @@ const headers = new HttpHeaders({
 })
 
 export class AdminserviceService {
-
-
   private tokenKey = 'token';
   refreshToken(payload: { userGUID: string, refreshToken: string, expiryDate: string }): Observable<any> {
     const httpOptions = {
@@ -75,7 +74,8 @@ export class AdminserviceService {
         'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
         'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
         'guid': 'd3eb4796-8585-4313-8edd-b78879100a22',
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
+     "refreshtoken": "5a19c8e3-f0da-4a97-af4f-1f4812758e8d"
       })
     };
     const body = {
@@ -114,9 +114,6 @@ export class AdminserviceService {
     );
   }
   ////////////////////////////GetRoles /////////////////////////////////
-
-
-
 
   getUserRoles(): Observable<any> {
     return this.http.get<any>(baseUrlForGetRoles, { headers })
@@ -214,10 +211,8 @@ export class AdminserviceService {
         if (response.isSuccess) {
           debugger
           localStorage.setItem(this.tokenKey, response.token)
-
         }
         return response;
-
       })
     );
   }
@@ -233,9 +228,11 @@ export class AdminserviceService {
     this.router.navigateByUrl('home')
   }
   //////////////////////////////OtpValidation////////////////////////////////////////  
-  OtpValidation(UserOtpValidationobj: resetPassword) {
+  resetPassword(UserOtpValidationobj: resetPassword) {
     console.log("hello");
-    return this.http.post<resetPassword>(baseUrlForchangepassword, UserOtpValidationobj, { headers })
+    return this.http.post<resetPassword>(baseUrlForchangepassword, UserOtpValidationobj, { headers }).pipe(
+      catchError(this.handleError)
+    );
   }
 
   //////////////////////////////OtpValidation////////////////////////////////////////  

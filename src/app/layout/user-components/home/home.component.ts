@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     image2: string = 'assets/images/ourbrand/004.webp';
     shoppningModel:shoppning;    
     shoppningForm:shoppning;
-    images = [1,2,3].map((n) => `assets/images/background/${n}.webp`);
+    images = [1,2,3,4,5].map((n) => `assets/images/background/${n}.webp`);
     private offcanvasService = inject(NgbOffcanvas);
     constructor(private modalService: NgbModal,public router: Router,config: NgbCarouselConfig) {
         this.subtitle = "Triaction Hybrid Lite P-BLACK";
@@ -177,13 +177,7 @@ export class HomeComponent implements OnInit {
             qut:1
         },
     ]
-    chunkArray<T>(array: T[], chunkSize: number): T[][] {
-        const result: T[][] = [];
-        for (let i = 0; i < array.length; i += chunkSize) {
-          result.push(array.slice(i, i + chunkSize));
-        }
-        return result;
-      }
+   
 
     
       togglePaused() {
