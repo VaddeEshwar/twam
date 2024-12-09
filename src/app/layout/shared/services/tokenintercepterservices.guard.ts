@@ -1,48 +1,50 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
-import { AdminserviceService} from '../../../services/user-service/user-service.service';
+import { AdminserviceService } from '../../../services/user-service/user-service.service';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenintercepterservicesGuard implements HttpInterceptor {
- constructor(private service:AdminserviceService){
+  constructor(private service: AdminserviceService) {}
 
- }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    debugger
-    return next.handle(req).pipe(
+    const token = localStorage.getItem('token');
+    const clonedReq = token
+      ? req.clone({
+          headers: req.headers.set('Authorization', `Bearer ${token}`),
+        })
+      : req;
+
+    return next.handle(clonedReq).pipe(
       catchError((error: HttpErrorResponse) => {
-        debugger
         if (error.status === 401) {
-          // Unauthorized error, refresh the token
-          const userGUID = '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2'; 
-          const refreshToken = ''; 
-          const expiryDate = '2024-10-05T10:28:59.958Z';
+          const userGUID = localStorage.getItem('userGUID');
+          const refreshToken = localStorage.getItem('refreshToken');
+          const expiryDate = localStorage.getItem('expiryDate');
 
-          return this.service.refreshToken(userGUID, refreshToken, expiryDate).pipe(
-            switchMap((response) => {
-              // Update the token in local storage and retry the failed request
-              const newToken = response.accessToken;
-              debugger
-              localStorage.setItem('accessToken', newToken);
-              
-            
-              const clonedRequest = req.clone({
-                setHeaders: {
-                  Authorization: `Bearer ${newToken}`
-                }
-              });
-
-              return next.handle(clonedRequest);
-            })
-          );
+          if (userGUID && refreshToken && expiryDate) {
+            return this.service.refreshToken(userGUID, refreshToken, expiryDate).pipe(
+              switchMap((response: any) => {
+                console.log('New Token Received:', response.newToken);
+                localStorage.setItem('token', response.newToken);
+                const newClonedReq = req.clone({
+                  headers: req.headers.set('Authorization', `Bearer ${response.newToken}`),
+                });
+                return next.handle(newClonedReq);
+              }),
+              catchError((refreshError) => {
+                console.error('Token refresh failed:', refreshError);
+                return throwError(refreshError);
+              })
+            );
+          }
         }
-
         return throwError(error);
       })
     );
   }
 }
+

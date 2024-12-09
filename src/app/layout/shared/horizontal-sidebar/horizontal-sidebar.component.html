@@ -12,7 +12,7 @@
                 (mouseover)="addExpandClass(sidebarnavItem.title)"
                 [routerLinkActive]="sidebarnavItem.submenu.length != 0 ? '' : 'active'">
                 <!-- <i [ngClass]="[sidebarnavItem.icon]"></i> -->
-                <i-feather [name]="sidebarnavItem.icon" [ngClass]="[sidebarnavItem.icon]"></i-feather>
+                <!-- <i-feather [name]="sidebarnavItem.icon" [ngClass]="[sidebarnavItem.icon]"></i-feather> -->
                 <span class="hide-menu">{{sidebarnavItem.title | translate}}</span>
             </a>
             <!-- Second level menu -->

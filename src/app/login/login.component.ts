@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   type: string = "password"
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash'
+  validUser: boolean = false;
   constructor(private service: AdminserviceService, public toastService: ToastService) { }
   ngOnInit(): void {
     this.userobj = new User();
@@ -52,8 +53,9 @@ export class LoginComponent implements OnInit {
     this.service.loginRequst(fromData).subscribe({
       next: (response: any) => {
         debugger
+        this.validUser = true;
         console.log("Login response:", response);
-        localStorage.setItem('token', response.token)
+        localStorage.setItem('token', response.jwttoken)
            Swal.fire({
           toast: true,
           position: 'top-end',

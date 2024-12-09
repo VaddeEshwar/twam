@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { HttpClientJsonpModule } from '@angular/common/http';
 import {AuthGuard } from '../services/auth.guard'
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -13,6 +14,7 @@ declare var $: any;
   templateUrl: './horizontal-navigation.component.html'
 })
 export class HorizontalNavigationComponent implements AfterViewInit {
+  validUser: boolean = false;
   @Output() toggleSidebar = new EventEmitter<void>();
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
   public config: PerfectScrollbarConfigInterface = {};
@@ -180,18 +182,33 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     return this.authService.isLoggedIn();
   }
   login() {
+  
     this.router.navigate(['login']);
-    this.authService.login();
+    // this.authService.login();
   }
   
-  logout(): void {
-    this.authService.logout();
-  }
+  // logout(): void {
+  //   this.authService.logout();
+  // }
   CartDetails(){
     const localCart = localStorage.getItem('localcart');
     if (localCart !== null) {
         this.getCartDetails = JSON.parse(localCart);
         console.log(this.getCartDetails);
       }
+}
+logout() {
+  localStorage.clear();
+  this.validUser = false;
+  window.location.href = '/home'
+  Swal.fire({
+    toast: true,
+    position: 'top-end',
+    icon: 'success',
+    title: 'User Successfully logged out!',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+  });
 }
 }

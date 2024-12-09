@@ -30,7 +30,7 @@
         </ul>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
           <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
@@ -45,7 +45,6 @@
           </div>
         </div>
       </div>
-      <!-- assets/images/product/bras.webp -->
       <div class="col-lg-3 col-md-4 col-sm-3">
         <div class="card">
           <img src="assets/images/product/w-bra2.webp" alt="Twam" class="card-img-top" (click)="dataview()">
@@ -85,13 +84,13 @@
                   class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
                 </button>
               </div>
-              <h6 class="card-title" (click)="dataview()">Trimuph-Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
+              <h6 class="card-title" (click)="dataview(prod)">Trimuph-Perfect Coverage Supima Cotton T-Shirt Bra | A039 </h6>
               <p> Price : {{price}} </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
@@ -353,3 +352,24 @@
       </div>
     </div>
   </ng-template>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-3" *ngFor="let prod of prodExportArray">
+      <div class="card">
+        <img [src]="prod.imageUrl" alt="Product Image" class="product-image" (click)="dataview(prod)" />
+        <div class="card-body">
+          <div class="d-flex">
+            <button *ngFor="let color of prod.colors" [style.backgroundColor]="color"
+              (click)="selectColor(prod.prodId, color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <a class="card-title" (click)="productoverview()">{{ prod.title }} </a>
+          <div class="product-price">
+            <span class="old-price">{{ prod.oldprice }}</span>
+            <span class="price">{{ prod.price }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -17,10 +17,10 @@ import { Country } from '../../model/Common/Countries';
 import { City } from '../../model/Common/Cities';
 import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
-import { resetPassword} from '../../model/Users/resetpass'
+import { resetPassword } from '../../model/Users/resetpass'
 import { Getping } from '../../model/Users/Getping';
 import { RefreshPayload } from '../../model/authentication/refresh';
-import { AuthGuard} from '../../layout/shared/services/auth.guard'
+import { AuthGuard } from '../../layout/shared/services/auth.guard'
 const backEndUrl = environment.backEndUrl;
 
 /////////////////////////Common///////////////////////////////
@@ -55,7 +55,7 @@ const headers = new HttpHeaders({
   'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
   'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
   'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
-  'guid': 'd3eb4796-8585-4313-8edd-b78879100a22',
+  'userGUID': 'd3eb4796-8585-4313-8edd-b78879100a22',
   'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
   "refreshtoken": "5a19c8e3-f0da-4a97-af4f-1f4812758e8d"
 });
@@ -63,33 +63,24 @@ const headers = new HttpHeaders({
 @Injectable({
   providedIn: 'root'
 })
-
+///////raki2830@gmail.com pass:rnarra
 export class AdminserviceService {
   private tokenKey = 'token';
-  refreshToken(payload: { userGUID: string, refreshToken: string, expiryDate: string }): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
-        'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
-        'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
-        'guid': 'd3eb4796-8585-4313-8edd-b78879100a22',
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
-     "refreshtoken": "5a19c8e3-f0da-4a97-af4f-1f4812758e8d"
-      })
-    };
-    const body = {
-      userGUID: payload.userGUID,
-      refreshToken: payload.refreshToken,
-      expiryDate: payload.expiryDate
-    };
-
-    return this.http.post<any>(baseUrlForAuthenticationrefresh, body, httpOptions);
+  refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
+    const payload = { userGUID, refreshToken, expiryDate };
+    console.log('Payload for token refresh:', payload);
+    return this.http.post(baseUrlForAuthenticationrefresh, payload).pipe(
+      tap(response => console.log('Token refresh response:', response))
+    );
   }
-
-  // refreshToken(payload: any): Observable<any> {
-  //   return this.http.post<any>(baseUrlForAuthenticationrefresh, payload);
-  // }
+  getRefreshToken(): Observable<any> {
+    const headers = {
+      'content-type': 'application/json',
+      'userGUID': 'd3eb4796-8585-4313-8edd-b78879100a22',
+    }
+    debugger
+    return this.http.get<any>(baseUrlForAuthenticationrefresh_token, { headers });
+  }
   constructor(private http: HttpClient, private router: Router) { }
 
   //////////////////////////HttpErrorResponse//////////////////////////////////
@@ -134,17 +125,23 @@ export class AdminserviceService {
     localStorage.removeItem('userRoles');
   }
   //////////////////////////HttpErrorResponse//////////////////////////////////
-  Getping(dateTime: string): Observable<Getping[]> {
-    const token = localStorage.getItem('authToken');
-    const params = new HttpParams().set('dateTime', dateTime);
-    return this.http.get<Getping[]>(baseUrlForGetping, { headers }).pipe(
-      catchError(this.handleError)
-    );
-  }
+  // Getping(dateTime: string): Observable<Getping[]> {
 
+  //   const url = `${baseUrlForGetping}`;
+  //   return this.http.get<any>(url, { params: { dateTime } });
+  // }
+  getPing(dateTime: string): Observable<any> {
+    const url = `${baseUrlForGetping}`;
+    const token = localStorage.getItem('token')
+    const headers = new HttpHeaders({
+      Authorization: `Bearer {token}`,
+    });
+
+    return this.http.get<any>(url, { headers, params: { dateTime } });
+  }
   //////////////////////////////////User/GetDbsuccess
   GetDbsuccess(): Observable<any> {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     return this.http.get<any>(baseUrlForGetDbsuccess, { headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)
@@ -187,7 +184,6 @@ export class AdminserviceService {
   ///////////////////////Address/////////////////////
   SaveAddress(addressmoduleobj: Address) {
     const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'true' };
-    console.log("hello");
     return this.http.post<Address>(baseUrlForAddress, addressmoduleobj, { 'headers': headers })
   }
   saveUserAddressMap(UserAddressMapobj: AddressMap) {
@@ -197,7 +193,6 @@ export class AdminserviceService {
   }
   //////////////////////////////Registration//////////////////////////////////////// 
   saveregistration(UserRegistrationobj: Registration): Observable<Registration> {
-    console.log("Eshwar hello");
     console.log("User Registration object:", UserRegistrationobj);
     return this.http.post<Registration>(baseUrlForRegister, UserRegistrationobj, { headers }).pipe(
       catchError(this.handleError)
@@ -217,20 +212,20 @@ export class AdminserviceService {
     );
   }
   IsLoggedIn() {
-    return !!localStorage.getItem('token') 
+    return localStorage.getItem('token') != null;
   }
 
-  storeToken(tokenValue: string) {
-    localStorage.setItem('token', tokenValue)
+  GetToken(): string {
+    return localStorage.getItem('authToken') || '';
   }
   Logedout() {
     localStorage.clear();
     this.router.navigateByUrl('home')
   }
   //////////////////////////////OtpValidation////////////////////////////////////////  
-  resetPassword(UserOtpValidationobj: resetPassword) {
+  resetPassword(UserresetPasswordobj: resetPassword) {
     console.log("hello");
-    return this.http.post<resetPassword>(baseUrlForchangepassword, UserOtpValidationobj, { headers }).pipe(
+    return this.http.post<resetPassword>(baseUrlForchangepassword, UserresetPasswordobj, { headers }).pipe(
       catchError(this.handleError)
     );
   }
@@ -240,12 +235,8 @@ export class AdminserviceService {
   //   console.log("hello");
   //   return this.http.post<otpValidation>(baseUrlForchangepassword, UserOtpValidationobj, { headers })
   // }
-  //////////////////////////////////////////User verifaction///////////////////////////
-  Getuserverifaction(guid: string) {
-    let gu_id = guid + "";
-    let params: URLSearchParams = new URLSearchParams();
-    return this.http.get<[]>(baseUrlForUserverify, { headers });
-  }
+
+
   /////////////////////////////////user update address///////////////////////////////
   SaveupdateAdd(userupdateaddressobj: any) {
     return this.http.put<UpdateuserRequest>(baseUrlForupdateuserdetails, JSON.stringify(userupdateaddressobj), { headers })

@@ -30,68 +30,7 @@
         </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">AMANTE - Push up Bra Heavy Padded Underwired Designer Bra </h6>
-            <p>Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <!-- assets/images/product/bras.webp -->
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/002.webp" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">BLOSSOM-Push up Bra Heavy Padded Underwired Designer Bra for Women and Girls| A039 </h6>
-            <p>Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/003.webp" alt="Twam" class="card-img-top" (click)="dataview()">
-          <div class="card-body">
-            <div class="d-flex ">
-              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
-                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-              </button>
-            </div>
-            <h6 class="card-title" (click)="dataview()">ENAMOR-Women's Push Up Bra Front Fastening Bras | A039 </h6>
-            <p> Price : {{price}} </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-3">
-        <div class="card">
-          <div class="image-wrapper">
-            <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/004.webp" alt="Twam" class="card-img-top" (click)="dataview()">
-            <div class="card-body">
-              <div class="d-flex ">
-                <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}"
-                  (click)="changeColor(color)"
-                  class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
-                </button>
-              </div>
-              <h6 class="card-title" (click)="dataview()">Triumph-Women's Essentiel Fit 3D Spacer Plunge Bra | A039 </h6>
-              <p> Price : {{price}} </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
@@ -353,3 +292,86 @@
       </div>
     </div>
   </ng-template>
+  <!-- <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img [src]="imageUrl" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">AMANTE - Push up Bra Heavy Padded Underwired Designer Bra </h6>
+          <p>Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/002.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">BLOSSOM-Push up Bra Heavy Padded Underwired Designer Bra for Women and Girls| A039 </h6>
+          <p>Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/003.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+        <div class="card-body">
+          <div class="d-flex ">
+            <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}" (click)="changeColor(color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <h6 class="card-title" (click)="dataview()">ENAMOR-Women's Push Up Bra Front Fastening Bras | A039 </h6>
+          <p> Price : {{price}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-3">
+      <div class="card">
+        <div class="image-wrapper">
+          <img src="assets/Product/Amante/Bras/PushupBra/NonPadded/004.webp" alt="Twam" class="card-img-top" (click)="dataview()">
+          <div class="card-body">
+            <div class="d-flex ">
+              <button *ngFor="let color of colors" [ngStyle]="{'background-color': color}"
+                (click)="changeColor(color)"
+                class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+              </button>
+            </div>
+            <h6 class="card-title" (click)="dataview()">Triumph-Women's Essentiel Fit 3D Spacer Plunge Bra | A039 </h6>
+            <p> Price : {{price}} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-3" *ngFor="let prod of prodExportArray">
+      <div class="card">
+        <img [src]="prod.imageUrl" alt="Product Image" class="product-image" (click)="dataview(prod)" />
+        <div class="card-body">
+          <div class="d-flex">
+            <button *ngFor="let color of prod.colors" [style.backgroundColor]="color"
+              (click)="selectColor(prod.prodId, color)"
+              class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            </button>
+          </div>
+          <a class="card-title" (click)="productoverview()">{{ prod.title }} </a>
+          <div class="product-price">
+            <span class="old-price">{{ prod.oldprice }}</span>
+            <span class="price">{{ prod.price }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
