@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'bras-style/Bralettes', loadChildren: () => import('./bras-style/balconette-bras/balconette-bras.module').then(x => x.BalconettebrasModule) },
       { path: 'bras-style/Plunge-bra', loadChildren: () => import('./bras-style/bralettes/bralettes.module').then(x => x.BralettesModule) },
       { path: 'bras-style/T-shirt-bras', loadChildren: () => import('./bras-style/t-shirt-bras/t-shirt-bras.module').then(x => x.TshirtbrasModule) },
-      { path: 'bras-style/strapless-bras', loadChildren: () => import('./bras-style/strapless-bras/strapless-bras.module').then(x => x.StraplessbrasModule) },
+      // { path: 'bras-style/strapless-bras', loadChildren: () => import('./bras-style/strapless-bras/strapless-bras.module').then(x => x.StraplessbrasModule) },
       { path: 'bras-style/sports-bras', loadChildren: () => import('./bras-style/sports-bras/sports-bras.module').then(x => x.SportsbrasModule) },
       { path: 'bras-style/bridalsets', loadChildren: () => import('./bras-style/bridalsets/bridalsets.module').then(x => x.BridalsetsModule) },
       { path: 'bras-style/cottonbra', loadChildren: () => import('./bras-style/cottonbra/cottonbra.module').then(x => x.CottonbraModule) },

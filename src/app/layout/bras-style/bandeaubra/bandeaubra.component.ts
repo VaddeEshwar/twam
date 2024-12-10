@@ -125,6 +125,7 @@ export class BandeaubraComponent implements OnInit {
     }
 
     dataview(category) {
+         const allImages = Object.values(category.images);
         const selectedImg = category.images[category.selectedColor];
         const cartItem = {
             prodId: category.prodId,
@@ -132,7 +133,9 @@ export class BandeaubraComponent implements OnInit {
             oldprice: category.oldprice,
             title: category.title,
             images: selectedImg,
+            allImages: allImages,
             qut: category.qut,
+            color:category.selectedColor,
         };
         console.log(cartItem)
         let cartDataNull = localStorage.getItem('localcart');
@@ -155,7 +158,7 @@ export class BandeaubraComponent implements OnInit {
                 this.itemCart.push(cartItem);
             }
             localStorage.setItem('localcart', JSON.stringify(this.itemCart))
-            this.router.navigate(['product-components/brasview']);
+            this.router.navigate(['product-components/brasview'],{ state: { cartItem: cartItem } });
         }
     }
     productoverview() {

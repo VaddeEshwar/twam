@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService } from '../../../services/product-service/cart.service';
 import { CartItem,Cart  } from '../../../model/cart';
+import { Location  } from '@angular/common';
 // import { title } from 'process';
 declare var myPluginFunction: any; 
 declare var $: any;
@@ -23,23 +24,29 @@ export class BrasviewComponent implements OnInit {
   active = 1;
   productquantity = 0;
   imageIndex: number = 1;
-
-  selectedImage: string = ``;
+  cartItem: any;
+  selectedImage: string;
+  allImages: string[] = []; 
   slides = `assets/images/users/1.jpg`
   image1: string = 'assets/images/product/bras.webp';
   image2: string = 'assets/images/product/bras-02.webp';
   
   element: any;
-  constructor(public router: Router,private cartService: CartService) {
+  constructor(public router: Router,private cartService: CartService,private location: Location) {
     this.price = '799.00';
     this.subtitle = "Bras";
   }
   ngOnInit() {
-    console.log("hello eshwar this component bras view");
-    this.productView();
+    const navigationState = this.location.getState() as { cartItem: any };
+    if (navigationState && navigationState.cartItem) {
+      this.cartItem = navigationState.cartItem;
+      this.selectedImage = this.cartItem.images;
+      this.allImages = Object.values(this.cartItem.images);
+    }
   }
+  
+  
   onZoomImage(coordinates: any) {
-    console.log(coordinates);
     this.coordinates = coordinates;
   }
   onThumClick(index: string) {
@@ -137,8 +144,13 @@ addCart(category){
   
 }
 /////////////////////////////
-getCartDetails:any[]=[];
+// getCartDetails:any[]=[];
+getCartDetails() {
+  console.log(this.cartItem.images)
+  console.log(this.cartItem);
+  return [this.cartItem];
 
+}
     productView(){
         const localCart = localStorage.getItem('localcart');
         if (localCart !== null) {
