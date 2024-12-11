@@ -52,6 +52,28 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         console.log("Hello Eshwar this working please reslove header");
+        const swiper4El = document.querySelector(".mySwiper4") as HTMLElement;
+
+        if (swiper4El) {
+          Object.assign(swiper4El, {
+            grabCursor: true,
+            effect: "creative",
+            creativeEffect: {
+              prev: {
+                shadow: true,
+                translate: [0, 0, -800],
+                rotate: [180, 0, 0],
+              },
+              next: {
+                shadow: true,
+                translate: [0, 0, -800],
+                rotate: [-180, 0, 0],
+              },
+            },
+          });
+        
+          (swiper4El as any).initialize();
+        }
     }
 
     openModal() {
@@ -197,4 +219,6 @@ export class HomeComponent implements OnInit {
 			this.togglePaused();
 		}
 	}
+    private swiper4El: HTMLElement | null = null;
+   
 }

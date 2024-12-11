@@ -3,12 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { CottonbraComponent } from './cottonbra.component';
 
 const routes: Routes = [
-    {
-        path: '', component: CottonbraComponent,
-        children: [
-            { path: '', redirectTo: 'CottonbraComponent', pathMatch: 'full'},
-            {
-    
+  {
+    path: '', component: CottonbraComponent,
+    children: [
+      {
         path: 'CottonbraComponent',
         component: CottonbraComponent,
         data: {
@@ -21,12 +19,12 @@ const routes: Routes = [
         }
       },
     ]
-    }
+  }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class CottonbraRoutingModule {
 }

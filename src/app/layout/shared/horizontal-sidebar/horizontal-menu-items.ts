@@ -9,8 +9,9 @@ export const ROUTES: RouteInfo[] = [
     ddclass: "",
     extralink: false,
     submenu: [
-      
     ],
+    
+    
   },
   {
     path: "",
@@ -19,6 +20,7 @@ export const ROUTES: RouteInfo[] = [
     class: "",
     ddclass: "",
     extralink: false,
+    image:"assets/images/rating/bra.webp",
     submenu: [
       {
         path: "bras-style/seamless",
@@ -148,6 +150,7 @@ export const ROUTES: RouteInfo[] = [
     class: "",
     ddclass: "",
     extralink: false,
+    image:"assets/images/rating/panty_2.webp",
     submenu: [
       {
         path: "panties-style/boyshorts",
@@ -265,6 +268,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "",
     class: "",
     ddclass: "",
+    image:"assets/images/rating/active.webp",
     extralink: false,
     submenu: [
       

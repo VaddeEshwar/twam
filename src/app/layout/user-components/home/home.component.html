@@ -1,7 +1,8 @@
 <!---------*ngIf="searchText==='' || categories.name.toLowerCase().includes(searchText)"-------->
 <section>
   <swiper-container class="mySwiper" centered-slides="true" pagination-clickable="true" centered-slides="true"
-    space-between="50" grab-cursor="true" autoplay-delay="3500" pagination-type="progressbar" autoplay-disable-on-interaction="false">
+    space-between="50" grab-cursor="true" autoplay-delay="3500" pagination-type="progressbar"
+    autoplay-disable-on-interaction="false">
     <swiper-slide><img [src]="images[0]" alt="Random first slide" /></swiper-slide>
     <swiper-slide><img [src]="images[1]" alt="Random second slide" /></swiper-slide>
     <swiper-slide><img [src]="images[2]" alt="Random third slide" /></swiper-slide>
@@ -11,6 +12,258 @@
 </section>
 
 <section>
+  <div class="container">
+    <h4 class="card-title m-b-40 text-center p-4">Best Collections</h4>
+    <swiper-container class="mySwiper" pagination="true" autoplay-delay="3500" pagination-clickable="true"
+      slides-per-view="4" grid-rows="1" space-between="30">
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img [src]="image1" alt="Twam" class="image1">
+            <img [src]="image2" alt="Twam" class="image2">
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">{{subtitle}}</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/ourbrand/001.webp" alt="Twam">
+          </div>
+          <ul class="action">
+            <li>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <span>Add to wishlist</span>
+            </li>
+            <li>
+              <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                cart</span>
+            </li>
+            <li>
+              <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                  aria-hidden="true"></i><span>View Details</span>
+              </button>
+            </li>
+          </ul>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">{{subtitle}}</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/ourbrand/005.webp" alt="Twam">
+          </div>
+          <ul class="action">
+            <li>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <span>Add to wishlist</span>
+            </li>
+            <li>
+              <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                cart</span>
+            </li>
+
+            <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+            </li>
+          </ul>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">{{subtitle}}</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/ourbrand/003.webp" alt="Twam">
+          </div>
+          <div class="card-body">
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+            <div class="product-name">
+              <span href="">{{subtitle}}</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/product/paintes-02.webp" alt="Twam">
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">Triumph-Softy Panties for Women-Plain </span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/product/paintes-2.webp" alt="Twam">
+          </div>
+          <ul class="action">
+            <li>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <span>Add to wishlist</span>
+            </li>
+            <li>
+              <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                cart</span>
+            </li>
+            <li>
+              <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                  aria-hidden="true"></i><span>View Details</span>
+              </button>
+            </li>
+          </ul>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">Soie-Seamless Multicolor Net Panties</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/product/paintes-1.webp" alt="Twam">
+          </div>
+          <ul class="action">
+            <li>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <span>Add to wishlist</span>
+            </li>
+            <li>
+              <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                cart</span>
+            </li>
+
+            <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+            </li>
+          </ul>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">Blossom-5-pack lace hipster briefs</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="card">
+          <div class="image-wrapper">
+            <img src="assets/images/product/panties.webp" alt="Twam">
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="product-name">
+              <span href="">Amante-New Lace Bandeau Tanga-Fourth Coverage</span>
+            </div>
+            <div class="product-price">
+              <span class="old-price">{{oldprice}}</span>
+              <span class="price">{{price}}</span>
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</section>
+
+
+<!-- <section>
   <div class="container">
     <div class="col-12 slider-background">
       <h4 class="card-title m-b-40 text-center p-4">Best Collections</h4>
@@ -260,11 +513,14 @@
           </div>
         </div>
       </div>
-
     </div>
     <hr />
   </div>
-</section>
+</section> -->
+
+
+
+
 <section>
   <div class="container">
     <div class="row">
@@ -277,18 +533,24 @@
           their life. </p>
       </div>
       <div class="col-lg-6 col-md-8 col-sm-6">
-        <carousel>
-          <slide>
-            <div class="text-center py-5  text-white">
+        <swiper-container init="false" class="mySwiper4" autoplay-delay="4500" pagination="true"
+          pagination-clickable="true" centered-slides="true">
+          <swiper-slide>
+            <div class="card">
+            <div class="el-card-avatar mb-3 el-overlay-1 overflow-hidden w-100 position-relative text-center">
               <img src="assets/images/product/bras-3.webp" alt="onlytwam" srcset="assets/images/product/bras-3.webp">
             </div>
-          </slide>
-          <slide>
-            <div class="text-center py-5  text-white">
-              <img src="assets/images/product/bras-02.webp" alt="onlytwam" srcset="assets/images/product/bras-02.webp">
-            </div>
-          </slide>
-        </carousel>
+          </div>
+          </swiper-slide>
+          <swiper-slide>
+            <div class="card">
+              <div class="el-card-avatar mb-3 el-overlay-1 overflow-hidden w-100 position-relative text-center">
+            <img src="assets/images/product/bras-02.webp" alt="onlytwam" srcset="assets/images/product/bras-02.webp">
+         </div>
+         </div>
+          </swiper-slide>
+        </swiper-container>
+
         <!-- <button type="submit" class="btn btn-outline-secondary waves-effect waves-light float-right">
           Shop Now
         </button> -->
@@ -513,7 +775,8 @@
           </div>
           <div class="card-body">
             <p class="fw-normal">Elegant and comfortable bras designed to enhance confidence and support</p>
-            <button class="btn btn-outline-success btn-rounded  waves-effect waves-light mt-3 border-none">Shop Now</button>
+            <button class="btn btn-outline-success btn-rounded  waves-effect waves-light mt-3 border-none">Shop
+              Now</button>
           </div>
         </div>
       </div>

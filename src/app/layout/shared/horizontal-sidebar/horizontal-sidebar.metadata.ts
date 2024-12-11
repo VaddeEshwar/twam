@@ -7,4 +7,5 @@ export interface RouteInfo {
   ddclass: string;
   extralink: boolean;
   submenu: RouteInfo[];
+  image?: string;
 }
