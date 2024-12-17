@@ -8,6 +8,7 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ['./full.component.scss']
 })
 export class FullComponent implements OnInit {
+  validUser: boolean = false;
   public config: PerfectScrollbarConfigInterface = {};
   active=2;
   hideFooter = false;
@@ -21,7 +22,7 @@ export class FullComponent implements OnInit {
           this.cdr.detectChanges();
         }
       });
-
+      this.validUser = JSON.parse(localStorage.getItem('validUser') || 'false');
      }
 
   tabStatus = 'justified';

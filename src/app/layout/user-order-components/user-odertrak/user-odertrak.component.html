@@ -4,15 +4,15 @@
   <div class="auth-box m-3 m-md-0" style="width: 30rem;">
     <div>
       <div class="text-center">
-        <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" width="150" /></span>
+        <!-- <span class="db"><img src="assets/images/logos/TWAM.png" alt="logo" width="150" /></span> -->
         <h5 class="font-medium mb-4">Sign Up </h5>
       </div>
       <!-- Form -->
       <div class="row">
         <div class="col-12">
-          <form class="form-horizontal mt-3" name="form" [formGroup]="RegistrationForm.form" novalidate
+          <form class="form-horizontal" name="form" [formGroup]="RegistrationForm.form" novalidate
             autocomplete="off" (ngSubmit)="onSubmit()">
-            <div class="mb-3 row ">
+            <div class="mb-1 row ">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="firstName" placeholder="First Name" required="">
               </div>
@@ -20,7 +20,7 @@
                 <small class="text-danger">First Name is required.</small>
               </div>
             </div>
-            <div class="mb-3 row ">
+            <div class="mb-1 row ">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="lastName" placeholder="Last Name" required="">
               </div>
@@ -28,7 +28,7 @@
                 <small class="text-danger">Last Name is required.</small>
               </div>
             </div>
-            <div class="mb-3 row">
+            <div class="mb-1 row">
               <div class="col-12">
                 <label for="gender">Gender</label>
                 <div class="form-check form-check-inline">
@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-            <div class="mb-3 row">
+            <div class="mb-1 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="mobile" placeholder="Mobile Number" required="">
               </div>
@@ -60,7 +60,7 @@
                 <small class="text-danger">mobile is required.</small>
               </div>
             </div>
-            <div class="mb-3 row">
+            <div class="mb-1 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="username" placeholder="User Name" required="">
               </div>
@@ -68,7 +68,7 @@
                 <small class="text-danger">Username is required.</small>
               </div>
             </div>
-            <div class="mb-3 row">
+            <div class="mb-1 row">
               <div class="col-12 ">
                 <input class="form-control" type="text" formControlName="email" placeholder="Email" required="">
               </div>
@@ -76,7 +76,7 @@
                 <small class="text-danger">Email is required.</small>
               </div>
             </div>
-            <div class="mb-3 row">
+            <div class="mb-1 row">
               <div class="col-12 ">
                 <input class="form-control" type="password" formControlName="password" placeholder="Password" required="">
               </div>
@@ -84,12 +84,12 @@
                 <small class="text-danger">Password is required.</small>
               </div>
             </div>
-            <div class="mb-3 text-center ">
+            <div class="mb-1 text-center ">
               <div class="col-xs-12 mb-4">
                 <button class="btn d-block w-100 btn-lg btn-info" type="submit">Sign Up</button>
               </div>
             </div>
-            <div class="mb-3 mb-0 mt-2 ">
+            <div class="mb-1 mb-0 mt-1 ">
               <div class="col-sm-12 text-center ">
                 Already have an account? <a href="login" class="text-info ms-1 "><b>Sign In</b></a>
               </div>

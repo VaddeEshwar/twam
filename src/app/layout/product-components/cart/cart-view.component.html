@@ -2,8 +2,8 @@
   <!-- Column -->
   <div class="col-md-9 col-lg-9">
     <div class="card">
-      <div class="card-header bg-info">
-        <h5 class="mb-0 text-white">Your Cart (4 items)</h5>
+      <div class="card-header bg-info" >
+        <h5 class="mb-0 text-white">Your Cart </h5>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -19,12 +19,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let getCartDetail of getCartDetails">
+              <tr *ngFor="let getCartDetail of getCartDetails"> 
                 <td><img [src]="getCartDetail.images" width="80" /></td>
                 <td>{{ getCartDetail.title }}</td>
-                <td>{{ getCartDetail.price }}</td>
+                <td>{{ getCartDetail.price }}<i class="fas fa-rupee-sign"></i></td>
                 <td>{{ getCartDetail.qut }}</td>
-                <td>{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}</td>
+                <td>{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}<i class="fas fa-rupee-sign"></i></td>
+                <!-- <td>eshwar</td> -->
               </tr>
             </tbody>
             <tfoot>
@@ -38,23 +39,22 @@
   </div>
   <!-- Column -->
   <div class="col-md-3 col-lg-3">
-
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">CART SUMMARY</h5>
+        <h5 class="card-title py-2">CART SUMMARY</h5>
         <hr/>
         <small>Total Price</small>
-        <h2 *ngFor="let getCartDetail of getCartDetails">{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}</h2>
+        <h2  *ngFor="let getCartDetail of getCartDetails">{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}<small><i class="fas fa-rupee-sign"></i></small> </h2>
         <hr/>
         <div class="button-group p-2">
-          <button class="btn btn-success" (click)="placetoorder()">Place Order</button>
+          <button class="btn btn-success" (click)="placeOrder()">Place Order</button>
           <button class="btn btn-secondary btn-outline">Cancel</button>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Profile Details</h5>
+        <h5 class="card-title py-2">Profile Details</h5>
         <div class="button-group">
           <button class="btn btn-success">Checkout</button>
           <button class="btn btn-secondary btn-outline">Cancel</button>
@@ -63,9 +63,9 @@
     </div>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">For Any Support</h5>
+        <h5 class="card-title py-2">For Any Support</h5>
         <hr />
-        <h4><i class="ti-mobile"></i> 9998979695 (Toll Free)</h4>
+        <h4><i class="ti-mobile"></i> +91 703654449 (Toll Free)</h4>
         <small>Please contact with us if you have any questions. We are avalible 24h.</small>
       </div>
     </div>

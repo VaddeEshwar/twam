@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   @ViewChild('dangerTpl', { static: true }) dangerTpl!: TemplateRef<any>;
   msg: string = '';
-  // user: any;
+  cartItem: number = 0;
   userobj: User;
   resetObj:resetPassword;
   Otpupdateobj: otpValidation;
@@ -49,13 +49,12 @@ export class LoginComponent implements OnInit {
     }
     const fromData = this.userobj.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
-    debugger
     this.service.loginRequst(fromData).subscribe({
       next: (response: any) => {
         debugger
         this.validUser = true;
         console.log("Login response:", response);
-        localStorage.setItem('token', response.jwttoken)
+        localStorage.setItem('token', response.token)
            Swal.fire({
           toast: true,
           position: 'top-end',
@@ -65,7 +64,8 @@ export class LoginComponent implements OnInit {
           timer: 3000,
           timerProgressBar: true,
         });
-        this.router.navigate(['home']);
+        debugger
+        this.router.navigate(['product-components/cart']);
       },
       error: err => {
         Swal.fire({
@@ -143,6 +143,17 @@ export class LoginComponent implements OnInit {
     this.isText = !this.isText;
     this.eyeIcon = this.isText ? "fa-eye" : "fa-eye-slash";
     this.type = this.isText ? "text" : "password";
+  }
+  cartItemFun(): void {
+    const localCart = localStorage.getItem('localcart');
+    if (localCart) {
+      const cartCount = JSON.parse(localCart);
+      this.cartItem = cartCount.length;
+      console.log('Cart count:', this.cartItem);
+    } else {
+      this.cartItem = 0;
+      console.log('No items in the cart.');
+    }
   }
 }
 

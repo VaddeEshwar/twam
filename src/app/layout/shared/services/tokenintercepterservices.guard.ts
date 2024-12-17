@@ -11,6 +11,7 @@ export class TokenintercepterservicesGuard implements HttpInterceptor {
   constructor(private service: AdminserviceService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    debugger;
     const token = localStorage.getItem('token');
     const clonedReq = token
       ? req.clone({

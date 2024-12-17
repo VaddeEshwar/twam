@@ -49,7 +49,7 @@ export class seamlessbrasComponent implements OnInit {
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
 
     }
-  
+
     prodExportArray = [
         {
             prodId: 1,
@@ -131,6 +131,8 @@ export class seamlessbrasComponent implements OnInit {
     }
 
     dataview(category) {
+        const allImages = Object.values(category.images);
+        const AllColor = Object.values(category.colors);
         const selectedImg = category.images[category.selectedColor];
         const cartItem = {
             prodId: category.prodId,
@@ -138,7 +140,10 @@ export class seamlessbrasComponent implements OnInit {
             oldprice: category.oldprice,
             title: category.title,
             images: selectedImg,
+            allImages: allImages,
+            AllColor:AllColor,
             qut: category.qut,
+            color: category.selectedColor,
         };
         console.log(cartItem)
         let cartDataNull = localStorage.getItem('localcart');
@@ -150,7 +155,6 @@ export class seamlessbrasComponent implements OnInit {
         else {
             var id = cartItem.qut;
             let index: number = -1;
-            // this.itemCart = JSON.parse(localStorage.setItem('localcart')); 
             for (let i = 0; i < this.itemCart.length; i++) {
                 if (parseInt(id) === parseInt(this.itemCart[i].prodId)) {
                     this.itemCart[i].qut = cartItem.qut;
@@ -162,11 +166,12 @@ export class seamlessbrasComponent implements OnInit {
                 this.itemCart.push(cartItem);
             }
             localStorage.setItem('localcart', JSON.stringify(this.itemCart))
-            this.router.navigate(['product-components/brasview']);
+            this.router.navigate(['product-components/brasview'], { state: { cartItem: cartItem } });
         }
     }
     productoverview() {
         const image = this.imageUrl;
         const price = this.price;
     }
+
 }

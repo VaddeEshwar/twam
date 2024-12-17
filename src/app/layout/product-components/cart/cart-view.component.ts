@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthGuard} from '../../shared/services/auth.guard'
 @Component({
     selector: 'app-cart-view',
     templateUrl: './cart-view.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CartviewComponent implements OnInit {
     formData: any;
-    constructor(private route: ActivatedRoute,public router: Router) {
+    constructor(private route: ActivatedRoute,public router: Router,private authService: AuthGuard) {
       
     }
 
@@ -21,9 +22,22 @@ export class CartviewComponent implements OnInit {
         });
         this.CartDetails()
     }
-    placetoorder(){
-        this.router.navigate(['product-components/registration']);
-    }
+    // placeOrder(){
+    //     this.router.navigate(['product-components/registration']);
+    // }
+    placeOrder() {
+        if (this.authService.isLoggedIn()) {
+          if (this.authService.isFirstTimeLogin()) {
+            this.router.navigate(['product-components/registration']);
+            this.authService.setFirstTimeLogin(); 
+          } else {
+            this.router.navigate(['/payment']);
+          }
+        } else {
+          this.router.navigate(['/signin']);
+        }
+      }
+
 /////////////////////////////////
 getCartDetails:any[]=[];
 cartDetails :any;

@@ -15,6 +15,7 @@ import { otpValidation } from '../../model/Users/otpValidation';
 import { UpdateuserRequest } from '../../model/Users/UpdateuserRequest';
 import { Country } from '../../model/Common/Countries';
 import { City } from '../../model/Common/Cities';
+import { states } from '../../model/Common/states';
 import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
 import { resetPassword } from '../../model/Users/resetpass'
@@ -50,14 +51,17 @@ const baseUrlForGetEmailHistorybyUserId = backEndUrl + "/Useractivity/GetEmailHi
 const baseUrlForgetUserActivities = backEndUrl + "/Useractivity/getUserActivities";//////post-method
 // const baseUrlForInsertUserActivity = backEndUrl + "/Useractivity/InsertUserActivity";//////post-method
 
+const expiryDate = new Date();
+expiryDate.setHours(expiryDate.getHours() + 1);
+const expiryDateString = expiryDate.toISOString();
 const headers = new HttpHeaders({
   'Content-Type': 'application/json',
   'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
   'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
   'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
-  'userGUID': 'BBBA11D3-9E70-4BCF-AF20-5805ECB8BAQ7',
-  'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
-  "refreshtoken": "5a19c8e3-f0da-4a97-af4f-1f4812758e8d"
+  'userGUID': 'BBBA11D3-9E70-4BCF-AF20-5805ECB8BA07',
+  'refreshToken': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
+  "expiryDate": expiryDateString
 });
 
 @Injectable({
@@ -70,6 +74,7 @@ export class AdminserviceService {
     const payload = { userGUID, refreshToken, expiryDate };
     console.log('Payload for token refresh:', payload);
     return this.http.post(baseUrlForAuthenticationrefresh, payload).pipe(
+      
       tap(response => console.log('Token refresh response:', response))
     );
   }
@@ -136,17 +141,29 @@ export class AdminserviceService {
     const headers = new HttpHeaders({
       Authorization: `Bearer {token}`,
     });
-
     return this.http.get<any>(url, { headers, params: { dateTime } });
   }
   //////////////////////////////////User/GetDbsuccess
   GetDbsuccess(): Observable<any> {
     const token = localStorage.getItem('token');
+    if (!token) {
+        console.error('No token found in localStorage');
+        return throwError('No token provided');
+    }
+
+    const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+    });
+
     return this.http.get<any>(baseUrlForGetDbsuccess, { headers }).pipe(
-      tap((data) => console.log('API response:', data)),
-      catchError(this.handleError)
+        tap((data) => console.log('API response:', data)),
+        catchError((error) => {
+            console.error('Error occurred:', error);
+            return throwError(error);
+        })
     );
-  }
+}
+
 
   getAllCountries(): Observable<any> {
     return this.http.get<any>(baseUrlForGetCountries, { headers }).pipe(
@@ -154,8 +171,15 @@ export class AdminserviceService {
       catchError(this.handleError)
     );
   }
+  getStates(statesObj:states): Observable<any>{
+    debugger
+    return this.http.post<any>(baseUrlForGetStates,statesObj,{headers}).pipe(
+      tap((data) => console.log('API response:', data)),
+      catchError(this.handleError)
+    );
+  }
   // getAllCity(stateID: number): Observable<City[]> {
-  //   
+    
   //   const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2' };
   //   console.log('API response:', stateID)
   //   return this.http.get<City[]>(this.baseUrlForGetCities, { 'headers': headers}).pipe(
@@ -169,7 +193,6 @@ export class AdminserviceService {
     console.log("###Before API CALL####");
     console.log(stateId)
     console.log("stateId::" + stateId);
-
     return this.http.get<City[]>(baseUrlForGetCities, { headers }).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)

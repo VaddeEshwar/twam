@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
 import { Form } from '@angular/forms';
 import { Country } from '../../../model/Common/Countries';
 import { City } from '../../../model/Common/Cities';
+import { states } from '../../../model/Common/states'
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { AuthGuard } from '../../shared/services/auth.guard';
 
 @Component({
   selector: 'app-user-odertrak',
@@ -24,9 +26,11 @@ export class UserordertrakComponent implements OnInit {
   RegistrationForm: Registration;
   countries: Country[] = [];
   cities: City[] = [];
-  City:any;
+
+
+  City: any;
   Country: any;
-  constructor(private service: AdminserviceService, private router: Router) {
+  constructor(private service: AdminserviceService, private router: Router, private authService: AuthGuard) {
     this.RegistrationForm = new Registration();
     // this.countries = new Country();
   }
@@ -54,7 +58,8 @@ export class UserordertrakComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.activityMsg = "Data saved successfully!";
-          this.router.navigate(['login']);
+          this.authService.setRegistered(true); 
+          this.router.navigate(['product-components/profile']);
           Swal.fire({
             toast: true,
             position: 'top-end',
@@ -76,7 +81,7 @@ export class UserordertrakComponent implements OnInit {
       }
     })
   }
-  stateId:number;
+  stateId: number;
   getCity() {
     this.service.getAllCity(this.stateId).subscribe({
       next: (data) => {

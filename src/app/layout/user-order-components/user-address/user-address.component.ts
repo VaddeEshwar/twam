@@ -14,7 +14,8 @@ import { Form } from '@angular/forms'
   providers: [NgbActiveModal, NgbModal,]
 })
 export class UseraddressComponent implements OnInit {
-
+  
+  activev= "2";
   subtitle: string;
   updateaddress: UpdateuserRequest;
   activityMsg: string = '';
@@ -23,7 +24,6 @@ export class UseraddressComponent implements OnInit {
   countries: Country[] = [];
   constructor(private service: AdminserviceService, private router: Router) {
     this.updateaddress = new UpdateuserRequest();
-    
   }
 
   ngOnInit(): void {
@@ -58,11 +58,9 @@ export class UseraddressComponent implements OnInit {
   }
 
   getCountries() {
-    debugger
     this.service.getAllCountries().subscribe({
       next: (data) => {
         this.countries = data;
-        alert('countries')
         console.log("countries::" + JSON.stringify(this.countries))
       }
     })

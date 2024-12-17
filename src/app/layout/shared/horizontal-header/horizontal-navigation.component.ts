@@ -4,7 +4,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { HttpClientJsonpModule } from '@angular/common/http';
-import {AuthGuard } from '../services/auth.guard'
+import { AuthGuard } from '../services/auth.guard'
 import Swal from 'sweetalert2';
 
 declare var $: any;
@@ -14,6 +14,8 @@ declare var $: any;
   templateUrl: './horizontal-navigation.component.html'
 })
 export class HorizontalNavigationComponent implements AfterViewInit {
+  userImage: string = '';
+  isRegistered = false;
   validUser: boolean = false;
   @Output() toggleSidebar = new EventEmitter<void>();
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
@@ -118,7 +120,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router,private authService: AuthGuard) {
+  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router, private authService: AuthGuard) {
 
     translate.setDefaultLang('en');
 
@@ -162,53 +164,70 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 
 
   profile() {
-    this.router.navigate(['product-components/profile']);
+    if (this.isRegistered) {
+      this.router.navigate(['product-components/updateaddress']);
+    } else {
+      Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Please register before accessing your profile.',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+      });
+    }
   }
+
 
   ngOnInit() {
     this.cartItemFun();
-    this.CartDetails()
+    this.CartDetails();
+    this.isRegistered = this.authService.getRegistered();
+    this.validUser = this.authService.isLoggedIn();
   }
-  getCartDetails:any[]=[];
+  getCartDetails: any[] = [];
   cartItemFun() {
     const localCart = localStorage.getItem('localcart');
     if (localCart !== null) {
       const cartCount = JSON.parse(localCart);
       console.log(cartCount);
-      this.cartItem=cartCount.length;
+      this.cartItem = cartCount.length;
+    } else {
+      this.cartItem = 0;
     }
+
   }
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
   login() {
-  
+    debugger
+    this.authService.login();
+    this.validUser = true;
+    this.userImage = 'assets/images/logos/TWAM.png';
     this.router.navigate(['login']);
-    // this.authService.login();
   }
-  
-  // logout(): void {
-  //   this.authService.logout();
-  // }
-  CartDetails(){
+
+  logout(): void {
+    this.authService.logout();
+    this.validUser = false;
+    this.userImage = 'assets/images/users/user1.jpg';
+    debugger;
+    console.log('User logged out, validUser:', this.validUser);
+    this.router.navigate(['home']);
+  }
+  CartDetails() {
     const localCart = localStorage.getItem('localcart');
     if (localCart !== null) {
-        this.getCartDetails = JSON.parse(localCart);
-        console.log(this.getCartDetails);
-      }
-}
-logout() {
-  localStorage.clear();
-  this.validUser = false;
-  window.location.href = '/home'
-  Swal.fire({
-    toast: true,
-    position: 'top-end',
-    icon: 'success',
-    title: 'User Successfully logged out!',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-  });
-}
+      this.getCartDetails = JSON.parse(localCart);
+      console.log(this.getCartDetails);
+    }
+  }
+
+
+  afterLogin(): void {
+    this.cartItemFun();
+  }
+
 }

@@ -16,9 +16,11 @@ export class AppComponent implements OnInit {
   pingResult: Getping[] = [];
   title = 'Twam';
   dbSuccessData: any;
-  loading$ = new BehaviorSubject<boolean>(false); // Use BehaviorSubject
+  apiResponse: any;
+  loading$ = new BehaviorSubject<boolean>(false); 
   constructor(private router: Router, private service: AdminserviceService) {}
   ngOnInit() {
+    this.getDbSuccessData();
     // Handle router events
     this.router.events.pipe(
       filter(
@@ -56,6 +58,19 @@ export class AppComponent implements OnInit {
           console.error('Unauthorized: Please check your token.');
         }
         this.loading$.next(false); 
+      },
+    });
+  }
+
+
+  getDbSuccessData() {
+    this.service.GetDbsuccess().subscribe({
+      next: (response) => {
+        console.log('API Response:', response);
+        this.apiResponse = response; 
+      },
+      error: (error) => {
+        console.error('Error fetching data:', error);
       },
     });
   }

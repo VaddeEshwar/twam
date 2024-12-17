@@ -30,14 +30,13 @@ export class AuthGuard implements CanActivate {
   }
 
   private checkAuthentication(): boolean {
-    const token = localStorage.getItem('authToken'); 
+    debugger;
+    const token = localStorage.getItem('token'); 
     return !!token;
   }
   private loggedIn: boolean = false;
 
-  isLoggedIn(): boolean {
-    return this.loggedIn;
-  }
+ 
 
   login(): void {
     this.loggedIn = true;
@@ -45,5 +44,31 @@ export class AuthGuard implements CanActivate {
 
   logout(): void {
     this.loggedIn = false;
+  }
+
+   isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return this.loggedIn;
+  }
+
+  isFirstTimeLogin(): boolean {
+    const firstTime = localStorage.getItem('firstTime');
+    return firstTime === null; 
+  }
+
+  setFirstTimeLogin(): void {
+    localStorage.setItem('firstTime', 'false');
+  }
+
+
+  private isRegistered = false; 
+
+
+  setRegistered(status: boolean) {
+    this.isRegistered = status;
+  }
+
+  getRegistered(): boolean {
+    return this.isRegistered;
   }
 }

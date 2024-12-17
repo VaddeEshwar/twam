@@ -89,7 +89,7 @@
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-cart"></i-feather>
-      <span class="badge bg-danger badge-pill" *ngIf="isLoggedIn" >{{cartItem}}</span>
+      <span class="badge bg-danger badge-pill "*ngIf="isLoggedIn">{{cartItem}}</span>
     </a>
   </li>
   <li class="nav-item dropdown" ngbDropdown placement="bottom-end" >
@@ -109,12 +109,10 @@
           </div>
         </li>
         <li>
-
           <div class="message-center notifications">
             <!-- Message -->
             <a href="javascript:void(0)" class="message-item border-bottom d-block text-decoration-none"
               *ngFor="let getCartDetail of getCartDetails">
-
               <span>
                 <img [src]="getCartDetail.images" alt="Product Image" width="80" />
               </span>
@@ -149,8 +147,19 @@
         waves-effect waves-dark
         pro-pic
       " href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img src="assets/images/users/user1.jpg" alt="user" class="rounded-circle" width="50" />
-    </a>
+      <div>
+        <!-- Show default or empty image before login -->
+        <div *ngIf="!validUser">
+          <img src="assets/images/users/user1.jpg" alt="default user"   class="rounded-circle"
+          width="31" />
+        </div>
+      
+        <!-- Show user image after login -->
+        <div *ngIf="validUser">
+          <img [src]="userImage" alt="user"   class="rounded-circle"
+          width="31" />
+        </div>
+      </div>    </a>
     <div class="dropdown-menu dropdown-menu-right user-dd dropdown-menu-animate-up" ngbDropdownMenu>
       <span class="with-arrow">
         <span class="bg-primary"></span>
@@ -164,30 +173,30 @@
           text-white
           mb-2
         ">
-        <div class="">
-          <img src="assets/images/users/user1.jpg" alt="user" class="img-circle" width="60" />
-        </div>
+            <img src="assets/images/users/user1.jpg" alt="default user" *ngIf="!validUser" class="img-circle" width="60" />
+       
+            <img [src]="userImage" alt="user" class="img-circle" *ngIf="validUser" width="60" />
+        
         <div class="ms-2">
           <h4 class="mb-0">Only Twam</h4>
           <p class="mb-0">onlytwam@gmail.com</p>
         </div>
       </div>
-      <a class="dropdown-item" (click)="login()">
+      <a class="dropdown-item" (click)="profile()">
         <i class="ti-user me-2 ms-1"></i> My Profile</a>
-      <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-wallet me-2 ms-1"></i> My Balance</a>
-      <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-email me-2 ms-1"></i> Inbox</a>
-      <a class="dropdown-item" href="javascript:void(0)">
-        <i class="ti-settings me-2 ms-1"></i> Account Setting</a>
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-wallet me-2 ms-1"></i> My Balance</a> -->
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-email me-2 ms-1"></i> Inbox</a> -->
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-settings me-2 ms-1"></i> Account Setting</a> -->
       <a class="dropdown-item" (click)="login()" *ngIf="!validUser">
         <i class="fa fa-power-off me-2 ms-1"></i>Sign Up</a>
-
         <a class="dropdown-item" (click)="logout()"*ngIf="validUser">
           <i class="fa fa-power-off me-2 ms-1"></i>Sign Out</a>
-      <div class="ps-4 p-2">
+      <!-- <div class="ps-4 p-2">
         <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
-      </div>
+      </div> -->
     </div>
   </li>
 
