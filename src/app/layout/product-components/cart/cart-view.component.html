@@ -15,24 +15,32 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th style="text-align: center">Total</th>
-                <!-- <th style="text-align: center">Action</th> -->
+                <th style="text-align: center">Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let getCartDetail of getCartDetails"> 
+              <tr *ngFor="let getCartDetail of getCartDetails;let i = index"> 
                 <td><img [src]="getCartDetail.images" width="80" /></td>
                 <td>{{ getCartDetail.title }}</td>
                 <td>{{ getCartDetail.price }}<i class="fas fa-rupee-sign"></i></td>
                 <td>{{ getCartDetail.qut }}</td>
-                <td>{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}<i class="fas fa-rupee-sign"></i></td>
-                <!-- <td>eshwar</td> -->
+                <td>{{ (getCartDetail.qut) * ( getCartDetail.price) | number }}.00<i class="fas fa-rupee-sign"></i></td>
+                <td>
+                  <i-feather name="trash-2" class="feather-sm text-danger pointer" (click)="deleteItem(i)" ></i-feather> 
+                </td>
               </tr>
             </tbody>
             <tfoot>
-              <!-- <div>Total Amount: {{ totalAmount }}</div> -->
+              <tr>
+                <td colspan="4" class="text-right"><strong>Total:</strong></td>
+                <td>
+                  {{ calculateTotal() | number }}.00 <i class="fas fa-rupee-sign"></i>
+                </td>
+                <td></td>
+              </tr>
             </tfoot>
           </table>
-          <!-- <hr /> -->
+      
         </div>
       </div>
     </div>

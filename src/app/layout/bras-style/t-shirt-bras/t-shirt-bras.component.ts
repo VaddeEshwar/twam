@@ -145,11 +145,11 @@ export class TshirtbrasComponent implements OnInit {
             color:category.selectedColor,
         };
         console.log(cartItem)
-        let cartDataNull = localStorage.getItem('localcart');
+        let cartDataNull = localStorage.getItem('cartItem');
         if (cartDataNull == null) {
             let storeDataGet: any = [];
             storeDataGet.push(cartItem);
-            localStorage.setItem('localcart', JSON.stringify(storeDataGet))
+            localStorage.setItem('cartItem', JSON.stringify(storeDataGet))
         }
         else {
             var id = cartItem.qut;

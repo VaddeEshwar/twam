@@ -1,64 +1,12 @@
 <!-- ============================================================== -->
 <!-- <div class="navbar-header d-none d-lg-flex justify-content-center">
- 
-  <a
-    (click)="showMobileMenu = !showMobileMenu"
-    class="nav-toggler waves-effect waves-light d-block d-lg-none"
-    href="javascript:void(0)"
-  >
-    <i [ngClass]="showMobileMenu ? 'ti-close' : 'ti-menu'"></i>
-  </a>
- 
-  <a class="navbar-brand" href="/">
-   
-    <b class="logo-icon">
-   
-      <img
-        src="assets/images/logos/xtreme-dark-icon.svg"
-        alt="homepage"
-        class="dark-logo"
-      />
-  
-      <img
-        src="assets/images/logos/xtreme-dark-icon.svg"
-        alt="homepage"
-        class="light-logo"
-      />
-    </b>
- 
-    <span class="logo-text">
-      <img
-        src="assets/images/logos/xtreme-dark-text.svg"
-        alt="homepage"
-        class="dark-logo"
-      />
-     
-      <img
-        src="assets/images/logos/xtreme-dark-text.svg"
-        class="light-logo"
-        alt="homepage"
-      />
-    </span>
-  </a>
-
-  <a
-    class="topbartoggler d-block d-lg-none waves-effect waves-light"
-    href="javascript:void(0)"
-    (click)="isCollapsed = !isCollapsed"
-    [attr.aria-expanded]="!isCollapsed"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-  >
-    <i class="ti-more"></i>
-  </a>
+  <app-horizontal-sidebar></app-horizontal-sidebar>
 </div> -->
 <!-- toggle and nav items -->
 <!-- ============================================================== -->
+
 <ul class="navbar-nav float-start">
-
   <app-horizontal-sidebar></app-horizontal-sidebar>
-
-
 </ul>
 
 <!-- Navbar Header for horizontal only -->
@@ -84,15 +32,15 @@
   </li>
 
   <!--------========================love symbol=================-->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" >
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
     <!----------------*ngIf="isLoggedIn"  *ngIf="isLoggedIn"-------------->
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" (click)="cart()"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="shopping-cart"></i-feather>
-      <span class="badge bg-danger badge-pill "*ngIf="isLoggedIn">{{cartItem}}</span>
+      <span class="badge bg-danger badge-pill " *ngIf="isLoggedIn">{{cartItem}}</span>
     </a>
   </li>
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" >
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
     <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i-feather name="heart"></i-feather>
@@ -150,16 +98,19 @@
       <div>
         <!-- Show default or empty image before login -->
         <div *ngIf="!validUser">
-          <img src="assets/images/users/user1.jpg" alt="default user"   class="rounded-circle"
-          width="31" />
+          <!-- https://feathericons.dev/?search=user&iconset=feather -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
         </div>
-      
         <!-- Show user image after login -->
         <div *ngIf="validUser">
-          <img [src]="userImage" alt="user"   class="rounded-circle"
-          width="31" />
+          <img [src]="userImage" alt="user" class="rounded-circle" width="31" />
         </div>
-      </div>    </a>
+      </div>
+    </a>
     <div class="dropdown-menu dropdown-menu-right user-dd dropdown-menu-animate-up" ngbDropdownMenu>
       <span class="with-arrow">
         <span class="bg-primary"></span>
@@ -173,10 +124,15 @@
           text-white
           mb-2
         ">
-            <img src="assets/images/users/user1.jpg" alt="default user" *ngIf="!validUser" class="img-circle" width="60" />
-       
-            <img [src]="userImage" alt="user" class="img-circle" *ngIf="validUser" width="60" />
-        
+
+        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="!validUser" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+
+        <img [src]="userImage" alt="user" class="img-circle" *ngIf="validUser" width="60" />
+
         <div class="ms-2">
           <h4 class="mb-0">Only Twam</h4>
           <p class="mb-0">onlytwam@gmail.com</p>
@@ -192,8 +148,8 @@
         <i class="ti-settings me-2 ms-1"></i> Account Setting</a> -->
       <a class="dropdown-item" (click)="login()" *ngIf="!validUser">
         <i class="fa fa-power-off me-2 ms-1"></i>Sign Up</a>
-        <a class="dropdown-item" (click)="logout()"*ngIf="validUser">
-          <i class="fa fa-power-off me-2 ms-1"></i>Sign Out</a>
+      <a class="dropdown-item" (click)="logout()" *ngIf="validUser">
+        <i class="fa fa-power-off me-2 ms-1"></i>Sign Out</a>
       <!-- <div class="ps-4 p-2">
         <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
       </div> -->

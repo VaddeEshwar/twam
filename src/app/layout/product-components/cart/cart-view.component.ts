@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { AuthGuard} from '../../shared/services/auth.guard'
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
     selector: 'app-cart-view',
     templateUrl: './cart-view.component.html',
@@ -16,6 +17,7 @@ export class CartviewComponent implements OnInit {
     }
 
     ngOnInit() {
+    
         this.route.queryParams.subscribe(params => {
             this.formData = params;
             console.log('Received data:', this.formData);
@@ -37,14 +39,34 @@ export class CartviewComponent implements OnInit {
           this.router.navigate(['/signin']);
         }
       }
-
+      deleteItem(index: number): void {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: 'Do you want to remove this item from the cart?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, delete it!',
+          cancelButtonText: 'No, keep it'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.getCartDetails.splice(index, 1);
+            localStorage.setItem('cartItem', JSON.stringify(this.getCartDetails));
+            Swal.fire('Deleted!', 'Your item has been removed.', 'success');
+          }
+        });
+      }
+      calculateTotal(): number {
+        return this.getCartDetails.reduce((total, item) => {
+          return total + item.qut * item.price; 
+        }, 0); 
+      }
 /////////////////////////////////
 getCartDetails:any[]=[];
 cartDetails :any;
     CartDetails(){
-        const localCart = localStorage.getItem('localcart');
-        if (localCart !== null) {
-            this.getCartDetails = JSON.parse(localCart);
+        const cartItem = localStorage.getItem('cartItem');
+        if (cartItem !== null) {
+            this.getCartDetails = JSON.parse(cartItem);
             console.log(this.getCartDetails);
           }
     }

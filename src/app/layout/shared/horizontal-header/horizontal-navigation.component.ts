@@ -164,6 +164,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 
 
   profile() {
+    console.log('isRegistered:', this.isRegistered); // Debugging
     if (this.isRegistered) {
       this.router.navigate(['product-components/updateaddress']);
     } else {
@@ -179,18 +180,21 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     }
   }
 
-
+  getRegistered(): boolean {
+    return localStorage.getItem('isRegistered') === 'true'; 
+  }
   ngOnInit() {
     this.cartItemFun();
     this.CartDetails();
     this.isRegistered = this.authService.getRegistered();
     this.validUser = this.authService.isLoggedIn();
+  
   }
   getCartDetails: any[] = [];
   cartItemFun() {
-    const localCart = localStorage.getItem('localcart');
-    if (localCart !== null) {
-      const cartCount = JSON.parse(localCart);
+    const cartItem = localStorage.getItem('cartItem');
+    if (cartItem !== null) {
+      const cartCount = JSON.parse(cartItem);
       console.log(cartCount);
       this.cartItem = cartCount.length;
     } else {
@@ -205,6 +209,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     debugger
     this.authService.login();
     this.validUser = true;
+    this.isRegistered = true;
     this.userImage = 'assets/images/logos/TWAM.png';
     this.router.navigate(['login']);
   }
@@ -218,9 +223,9 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     this.router.navigate(['home']);
   }
   CartDetails() {
-    const localCart = localStorage.getItem('localcart');
-    if (localCart !== null) {
-      this.getCartDetails = JSON.parse(localCart);
+    const cartItem = localStorage.getItem('cartItem');
+    if (cartItem !== null) {
+      this.getCartDetails = JSON.parse(cartItem);
       console.log(this.getCartDetails);
     }
   }

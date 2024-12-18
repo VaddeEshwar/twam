@@ -69,8 +69,11 @@
         [ngbCollapse]="!isCollapsed">
         <!-- Horizontal Header -->
         <div *ngIf="options.layout === 'horizontal'; else vheader" class="w-100">
+          <app-vertical-navigation class="w-100 d-flex align-items-center justify-content-between bg-secondary text-white">
+          </app-vertical-navigation>
           <app-horizontal-navigation class="w-100 d-flex align-items-center justify-content-between">
           </app-horizontal-navigation>
+        
         </div>
 
         <!-- Vertical Header -->

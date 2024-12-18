@@ -27,7 +27,7 @@ export class BrasviewComponent implements OnInit {
   cartItem: any;
   selectedImage: string;
   allImages: string[] = [];
-  AllColor:string[]=[];
+  AllColor: string[] = [];
   slides = `assets/images/users/1.jpg`
   image1: string = 'assets/images/product/bras.webp';
   image2: string = 'assets/images/product/bras-02.webp';
@@ -38,7 +38,6 @@ export class BrasviewComponent implements OnInit {
     this.subtitle = "Bras";
   }
   ngOnInit() {
-
     const navigationState = this.location.getState() as { cartItem: any };
     if (navigationState && navigationState.cartItem) {
       this.cartItem = navigationState.cartItem;
@@ -157,16 +156,13 @@ export class BrasviewComponent implements OnInit {
   }
   itemCart: any = []
   addCart(prod: any) {
-    const cartData = {
-      productId: prod.prodId,
-      title: prod.title,
-      price: prod.price,
-      selectedImage: this.selectedImage,
-      selectedColor: prod.selectedColor,
-      selectedSize: prod.selectedSize,
-      quantity: prod.qut,
-    };
-    console.log('Cart Data:', cartData);
+    alert('hello')
+    let cartDataNull = localStorage.getItem('cartItem');
+    if (cartDataNull == null) {
+      let storeDataGet: any = [];
+      storeDataGet.push(prod);
+      alert(prod)
+    }
   }
   /////////////////////////////
   // getCartDetails:any[]=[];
@@ -177,12 +173,12 @@ export class BrasviewComponent implements OnInit {
 
   }
   productView() {
-    const localCart = localStorage.getItem('localcart');
-    if (localCart !== null) {
-      this.getCartDetails = JSON.parse(localCart);
+    const cartItem = localStorage.getItem('cartItem');
+    if (cartItem !== null) {
+      this.getCartDetails = JSON.parse(cartItem);
     }
   }
   selectColor(productId: number, color: string): void {
-  
-}
+
+  }
 }
