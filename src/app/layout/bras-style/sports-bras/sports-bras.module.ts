@@ -9,6 +9,8 @@ import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BagviewModule} from '../../product-components/bag/bag-view.module'
+
 @NgModule({
     imports: [
         NgbModule,
@@ -19,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         SportsbrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
+        BagviewModule
     ],
     declarations: [
         SportsbrasComponent,

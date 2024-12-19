@@ -2,29 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { TshirtbrasComponentRoutingModule } from './t-shirt-bras-routing.module';
-import { TshirtbrasComponent } from './t-shirt-bras.component';
+import { UseremailverifyRoutingModule } from './user-emailverify-routing.module';
+import { UseremailverifyComponent } from './user-emailverify.component';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {BagviewModule} from '../../product-components/bag/bag-view.module'
-
 @NgModule({
     imports: [
-        NgbModule,
-        FormsModule, ReactiveFormsModule,
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        TshirtbrasComponentRoutingModule,
+        UseremailverifyRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
-        BagviewModule
     ],
     declarations: [
-        TshirtbrasComponent,
+        UseremailverifyComponent,
     ]
 })
-export class TshirtbrasModule {}
+export class UseremailverifyModule {}

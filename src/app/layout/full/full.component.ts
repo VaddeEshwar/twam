@@ -17,7 +17,7 @@ export class FullComponent implements OnInit {
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
           // console.log('Current URL:', this.router.url); 
-          const noFooterRoutes = ['/login', '/product-components/registration'];
+          const noFooterRoutes = ['/login', '/product-components/registration','user/emailverify'];
           this.hideFooter = noFooterRoutes.some(route => this.router.url.startsWith(route));
           this.cdr.detectChanges();
         }

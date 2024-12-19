@@ -1,11 +1,11 @@
-import { Component, OnInit,inject,TemplateRef, } from '@angular/core';
+import { Component, OnInit, inject, TemplateRef, Input, } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
-import { ClientAddingComponent} from '../../user-components/client-adding/client-adding.component';
+import { ClientAddingComponent } from '../../user-components/client-adding/client-adding.component';
 import { Router } from '@angular/router';
 @Component({
     selector: 'app-straplessbra',
@@ -14,21 +14,25 @@ import { Router } from '@angular/router';
     // animations: [routerTransition()]
 })
 export class StraplessbraComponent implements OnInit {
+    @Input() filteredProducts:any[]=[];
+    
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
     rating = 2;
     price: string;
-   
+
     noWrapSlides = false;
     showIndicator = true;
-
+    filterProduct: any[] = [];
     constructor(config: NgbRatingConfig, private modalService: NgbModal, public router: Router) {
         this.price = '799.00';
+        this.filterProduct = this.prodExportArray;
     }
 
     ngOnInit() {
         console.log("dashboard");
+        console.log("Filtered Products:", this.filteredProducts);
     }
     ratingcount = 0;
     totalrating = 0;
@@ -49,8 +53,7 @@ export class StraplessbraComponent implements OnInit {
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
 
     }
-
- 
+    
     prodExportArray = [
         {
             prodId: 1,
@@ -66,7 +69,10 @@ export class StraplessbraComponent implements OnInit {
             price: '580.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1
+            qut: 1,
+            brand: 'Amante',
+            size: 'X',
+            Bra_size: '32A'
         },
         {
             prodId: 2,
@@ -82,7 +88,10 @@ export class StraplessbraComponent implements OnInit {
             price: '600.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1
+            qut: 1,
+            brand: 'Blossom',
+            size: 'M',
+            Bra_size: '32A'
         },
         {
             prodId: 3,
@@ -98,7 +107,10 @@ export class StraplessbraComponent implements OnInit {
             price: '620.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1
+            qut: 1,
+            brand: 'Soie',
+            size: 'M',
+            Bra_size: '32B'
         },
         {
             prodId: 4,
@@ -114,9 +126,14 @@ export class StraplessbraComponent implements OnInit {
             imageUrl: 'assets/images/product/strapless-bra-4.webp',
             selectedColor: '#cbad9e',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1
+            qut: 1,
+            brand: 'Trimuph',
+            size: 'L',
+            Bra_size: '32A',
+            
         },
     ]
+
     imageUrl: string = '';
     itemCart: any = []
     selectColor(productId: number, color: string): void {
@@ -140,6 +157,9 @@ export class StraplessbraComponent implements OnInit {
             title: category.title,
             images: selectedImg,
             qut: category.qut,
+            brand:category.brand,
+            size:category.size,
+            Bra_size:category.Bra_size,
         };
         console.log(cartItem)
         let cartDataNull = localStorage.getItem('localcart');
@@ -170,8 +190,10 @@ export class StraplessbraComponent implements OnInit {
         const image = this.imageUrl;
         const price = this.price;
     }
+
+  
 }
-     
-    
-    
+
+
+
 

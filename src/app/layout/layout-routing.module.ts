@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: 'product-components/brasview', loadChildren: () => import('./product-components/bras-view/bras-view.module').then(x => x.BrasviewModule) },
       { path: 'product-components/essview', loadChildren: () => import('./product-components/essentials-view/essentials-view.module').then(x => x.EssentialsviewModule) },
       { path: 'product-components/cart', loadChildren: () => import('./product-components/cart/cart-view.module').then(x => x.CartviewModule) },
-      { path: 'product-components/bag', loadChildren: () => import('./product-components/cart/cart-view.module').then(x => x.CartviewModule), canActivate: [AuthGuard] },///,canActivate:[AuthGuard]
+      { path: 'product-components/bag', loadChildren: () => import('./product-components/bag/bag-view.module').then(x => x.BagviewModule) },///,canActivate:[AuthGuard]
       { path: 'product-components/userform', loadChildren: () => import('./product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
       { path: 'login', loadChildren: () => import('../login/login.module').then(x => x.LoginModule) },
       //////////bras-styles///////////
@@ -63,7 +63,7 @@ const routes: Routes = [
       { path: 'product-components/ngx-wizard', loadChildren: () => import('./product-components/ngx-wizard/ngx-wizard.module').then(x => x.NGXFormWizardModule) },
       { path: 'product-components/registration', loadChildren: () => import('./user-order-components/user-odertrak/user-odertrak.module').then(x => x.UserordertrakModule) },
       { path: 'product-components/profile', loadChildren: () => import('./user-order-components/user-address/user-address.module').then(x => x.UseraddressModule) },
-      // { path: 'product-components/profile', loadChildren: () => import('./user-order-components/user-profile/user-profile.module').then(x => x.UserprofileModule) },
+      { path: 'user/emailverify', loadChildren: () => import('./user-order-components/user-emailverify/user-emailverify.module').then(x => x.UseremailverifyModule) },
       { path: 'product-components/Changepassword', loadChildren: () => import('./user-order-components/change-password/change-password.module').then(x => x.ChangepasswordModule) },
       { path: 'product-components/coupons', loadChildren: () => import('./user-order-components/user-giftcards/user-giftcards.module').then(x => x.UsergiftcardsModule) },
 

@@ -10,6 +10,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BagviewModule} from '../../product-components/bag/bag-view.module'
+
 @NgModule({
     imports: [
         NgbModule,
@@ -21,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         BalconettebrasRoutingModule,
         FeatherModule.pick(allIcons),
         CarouselModule.forRoot(),
+        BagviewModule
     ],
     declarations: [
         BalconettebrasComponent,

@@ -64,10 +64,14 @@ export class CartviewComponent implements OnInit {
 getCartDetails:any[]=[];
 cartDetails :any;
     CartDetails(){
-        const cartItem = localStorage.getItem('cartItem');
+        const cartItem = localStorage.getItem('localcart');
         if (cartItem !== null) {
             this.getCartDetails = JSON.parse(cartItem);
+            alert(this.getCartDetails)
             console.log(this.getCartDetails);
+          }else {
+            console.log("No items found in the cart.");
+            this.getCartDetails = []; 
           }
     }
     
