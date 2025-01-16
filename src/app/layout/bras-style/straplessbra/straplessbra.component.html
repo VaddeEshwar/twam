@@ -1,7 +1,7 @@
 <app-bag-view></app-bag-view>
 
   <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-3" *ngFor="let prod of filteredProducts">
+    <div class="col-lg-3 col-md-4 col-sm-3" *ngFor="let prod of prodExportArray">
       <div class="card">
         <img [src]="prod.imageUrl" alt="Product Image" class="product-image" (click)="dataview(prod)" />
         <div class="card-body">

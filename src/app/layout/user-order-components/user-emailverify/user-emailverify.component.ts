@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { routerTransition } from '../../router.animations';
+import { AdminserviceService } from '../../../services/user-service/user-service.service'
 
 @Component({
     selector: 'app-user-emailverify',
@@ -8,18 +10,28 @@ import { Component, OnInit } from '@angular/core';
     // animations: [routerTransition()]
 })
 export class UseremailverifyComponent implements OnInit {
-    rewardImagePath: string = ' assets/images/rating/star-on.png';
-    title: string;
-    price: string;
-    constructor() {
-        this.price = '799.00';
-        this.title = 'Swim Wear';
+    verificationToken: string = '';
+
+    constructor(private router: ActivatedRoute, private service: AdminserviceService,) {
+
     }
     ngOnInit() {
-        console.log("dashboard");
-      
+        this.router.queryParams.subscribe((params) => {
+            this.verificationToken = params['token'];
+            this.verifyEmail();
+          });
+          
     }
-     
-    
-    
+    verifyEmail() {
+        this.service.postFromRefreshToken().subscribe(
+          (response) => {
+            console.log('Email verified successfully!');
+          },
+          (error) => {
+            console.error('Verification failed:', error);
+          }
+        );
+      }
+
+
 }

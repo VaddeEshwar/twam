@@ -1,207 +1,408 @@
 <div class="row">
-    <!-- Column -->
-    <div class="col-lg-3 col-xlg-3 col-md-5">
-        <div class="card">
-            <div class="card-body">
-                <div class="mt-4 text-center">
-                    <img src="assets/images/users/user5.jpg" class="rounded-circle" width="150" />
-                    <h4 class="card-title mt-2">Eshwar</h4>
-                    <h6 class="card-subtitle">8500424039</h6>
-                    <div class="row text-center justify-content-md-center">
-                        <ul ngbNav #navVp="ngbNav" [(activeId)]="activev" class="nav-pills" orientation="vertical">
-                            <li ngbNavItem="top">
-                                <a ngbNavLink>Card Add</a>
-                                <ng-template ngbNavContent>
-                                    Card Add
-                                </ng-template>
-                            </li>
-                            <li ngbNavItem="2">
-                                <a ngbNavLink>Account</a>
-                                <ng-template ngbNavContent>
-                                    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-                                        <li [ngbNavItem]="1">
-                                            <a ngbNavLink>Profile</a>
-                                            <ng-template ngbNavContent>
-                                                <form class="form">
-                                                    <div class="form-group mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">firstName</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-search-input" class="col-2 col-form-label">lastName</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-email-input" class="col-2 col-form-label">mobile</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-url-input" class="col-2 col-form-label">Date ofBirth</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="datetime" id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">houseNumber</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">buildingName</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">addressLine1</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                   
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">addressLine2</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text" id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group  mt-4 pt-3 row">
-                                                        <label for="example-month-input" class="col-2 col-form-label">city</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-month-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mt-4 pt-3 row">
-                                                        <label for="example-month-input" class="col-2 col-form-label">District</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-month-input">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group mt-4 pt-3 row">
-                                                        <label for="example-text-input" class="col-2 col-form-label">state</label>
-                                                        <div class="col-10">
-                                                            <input class="form-control" type="text"  id="example-text-input">
-                                                        </div>
-                                                    </div>
-                                                
-                                                </form>
-                                            </ng-template>
-                                        </li>
-                                        <li [ngbNavItem]="2">
-                                            <a ngbNavLink>Addresses</a>
-                                            <ng-template ngbNavContent>
-                                                <form class="form-horizontal form-material">
-                                                    <div class="mb-3">
-                                                        <label class="col-md-12">First Name</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" placeholder="First Name" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label for="example-email" class="col-md-12">Email</label>
-                                                        <div class="col-md-12">
-                                                            <input type="email" placeholder="Email" class="form-control form-control-line" name="example-email" id="example-email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="col-md-12">Password</label>
-                                                        <div class="col-md-12">
-                                                            <input type="password" placeholder="Password" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="col-md-12">Phone No</label>
-                                                        <div class="col-md-12">
-                                                            <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="col-md-12">Message</label>
-                                                        <div class="col-md-12">
-                                                            <textarea rows="5" class="form-control form-control-line"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <label class="col-sm-12">Select Country</label>
-                                                        <div class="col-sm-12">
-                                                            <select class="form-select form-control-line">
-                                                                <option>London</option>
-                                                                <option>India</option>
-                                                                <option>Usa</option>
-                                                                <option>Canada</option>
-                                                                <option>Thailand</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <div class="col-sm-12">
-                                                            <button class="btn btn-success">Update Profile</button>
-                                                        </div>
-                                                    </div>
-                                                  </form>
-                                            </ng-template>
-                                        </li>
-                                        <li [ngbNavItem]="3">
-                                            <a ngbNavLink>Delete Account</a>
-                                            <ng-template ngbNavContent>
-                                                <p>
-                                                    Sed commodo, leo at suscipit dictum, quam est porttitor sapien,
-                                                    eget sodales nibh elit id diam. Nulla facilisi. Donec egestas
-                                                    ligula vitae odio interdum aliquet. Duis lectus turpis, luctus
-                                                    eget tincidunt eu, congue et odio. Duis pharetra et nisl at
-                                                    faucibus. Quisque luctus pulvinar arcu, et molestie lectus
-                                                    ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat
-                                                    volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus
-                                                    nisl enim, nec tristique ipsum euismod facilisis. Morbi ut
-                                                    bibendum est, eu tincidunt odio. Orci varius natoque penatibus
-                                                    et magnis dis parturient montes, nascetur ridiculus mus. Mauris
-                                                    aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus
-                                                    nec tortor vel tellus pulvinar feugiat.
-                                                </p>
-                                            </ng-template>
-                                        </li>
-                                    </ul>
-                                    <div [ngbNavOutlet]="nav" class="mt-2"></div>
-                                </ng-template>
-                            </li>
-                            <li ngbNavItem="3">
-                                <a ngbNavLink>Order Trak</a>
-                                <ng-template ngbNavContent>
-                                    Order Trak
-                                </ng-template>
-                            </li>
-                            <li ngbNavItem="4">
-                                <a ngbNavLink>Coupons</a>
-                                <ng-template ngbNavContent>
-                                    Coupons
-                                </ng-template>
-                            </li>
-                        </ul>
-
+    <div class="col-lg-6 d-flex align-items-stretch">
+        <div class="card card-hover w-100">
+            <div class="card-body" style="background:url(assets/images/users/gift-card.webp) no-repeat top center;">
+                <h1 class="display-6 font-medium">Terms and Conditions</h1>
+                <ul class="list-style-none">
+                    <li class="mt-3">
+                        This voucher is valid for a single purchase up to the value mentioned.
+                    </li>
+                    <li class="mt-3">
+                        This voucher is not redeemable for cash and cannot be combined with other offer
+                    </li>
+                    <li class="mt-3">
+                        If the purchase exceeds the voucher amount, the difference must be paid by the vodichar
+                        valger,This voucher is valid until (Expiry Date).
+                    </li>
+                    <li class="mt-3">
+                        Only original vouchers will be accepted. Photocopies or duplicates will not be honored.
+                    </li>
+                    <li class="mt-3">
+                        Lost or stolen vouchers cannot be replaced.
+                    </li>
+                    <li class="mt-3">
+                        The management reserves the right to change the terms and conditions without prior notice.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 d-flex align-items-stretch">
+        <div class="card card-hover w-100">
+            <div class="card-body" style="background:url(assets/images/background/active-bg.png) no-repeat top center;">
+                <h4 class="display-6  font-medium">Only Twam Gift Vouchers</h4>
+                <p>Want to spoil them even when you're not sure what they want? Our gift cards are the ideal method to
+                    win when you buy something now!</p>
+                <p>Give our Only Twam gift cards as a glamorous present. Pick between a digital or physical gift
+                    certificate.</p>
+                <form class="form-horizontal" name="form">
+                    <div class="mb-1 row ">
+                        <div class="col-12 ">
+                            <input class="form-control" type="text" formControlName="firstName" placeholder="Enter Your Own Amount"
+                                required="">
+                        </div>
                     </div>
-                </div>
+                    <div class="mb-1 text-center ">
+                        <div class="col-xs-12 mb-4">
+                            <button class="btn d-block w-100 btn-lg btn-info" type="submit">ADD TO BAG</button>
+                        </div>
+                    </div>
+                    <div class="mb-1 row">
+                        <div class="col-12">
+                            <div class="form-check form-check-inline">
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="customControlValidation2"
+                                        name="radio-stacked" formControlName="gender" value="Female">
+                                    <label class="form-check-label" for="customControlValidation2">Digital Gift
+                                        Voucher</label>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="customControlValidation3"
+                                        name="radio-stacked" formControlName="gender" value="Male">
+                                    <label class="form-check-label" for="customControlValidation3">Physical Gift
+                                        Voucher</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div>
-                <hr>
-            </div>
-
         </div>
     </div>
-    <!-- Column -->
-    <!-- Column -->
-    <div class="col-lg-9 col-xlg-9 col-md-7">
-        <div class="card">
-            <div class="card-body">
-                <div [ngbNavOutlet]="navVp" class="ms-4"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Column -->
 </div>
+<section>
+    <div class="container">
+      <h4 class="card-title m-b-40 text-center p-4">Best Collections</h4>
+      <swiper-container class="mySwiper"  navigation="true"
+        slides-per-view="4" grid-rows="1" space-between="30">
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img [src]="image1" alt="Twam" class="image1">
+              <img [src]="image2" alt="Twam" class="image2">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/001.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+  
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/005.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+  
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+  
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/ourbrand/003.webp" alt="Twam">
+            </div>
+            <div class="card-body">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li>
+                  <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                      aria-hidden="true"></i><span>View Details</span>
+                  </button>
+                </li>
+              </ul>
+              <div class="product-name">
+                <span href="">{{subtitle}}</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-02.webp" alt="Twam">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Triumph-Softy Panties for Women-Plain </span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-2.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+              <li>
+                <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                    aria-hidden="true"></i><span>View Details</span>
+                </button>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Soie-Seamless Multicolor Net Panties</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+  
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/paintes-1.webp" alt="Twam">
+            </div>
+            <ul class="action">
+              <li>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span>Add to wishlist</span>
+              </li>
+              <li>
+                <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                  cart</span>
+              </li>
+  
+              <li (click)="openModal()"><i class="fa fa-eye" aria-hidden="true"></i><span>View Details</span>
+              </li>
+            </ul>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Blossom-5-pack lace hipster briefs</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="card">
+            <div class="image-wrapper">
+              <img src="assets/images/product/panties.webp" alt="Twam">
+              <ul class="action">
+                <li>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  <span>Add to wishlist</span>
+                </li>
+                <li>
+                  <i class="fa fa-shopping-cart" aria-hidden="true" (click)="openEnd(content)"></i><span>Add to
+                    cart</span>
+                </li>
+                <li>
+                  <button type="button" class="btn  waves-effect waves-light" (click)="openModal()"> <i class="fa fa-eye"
+                      aria-hidden="true"></i><span>View Details</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="product-name">
+                <span href="">Amante-New Lace Bandeau Tanga-Fourth Coverage</span>
+              </div>
+              <div class="product-price">
+                <span class="old-price">{{oldprice}}</span>
+                <span class="price">{{price}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </section>
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">Cart Order List</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="el-card-item position-relative pb-3">
+        <div class="el-card-avatar mb-3 el-overlay-1 overflow-hidden w-100 position-relative text-center">
+          <img src="assets/images/big/001.webp" alt="" />
+          <div class="el-overlay overflow-hidden w-100 h-100">
+            <ul
+              class="list-style-none el-info text-decoration-none d-inline-block text-uppercase text-white bg-transparent p-0 m-auto">
+              <li class="el-item d-inline-block">
+                <a class="btn default btn-outline el-link border-white text-white" href="javascript:void(0);">
+                  <i class="icon-link"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex no-block align-items-center">
+          <div class="ms-3">
+            <h4 class="mb-0">Trimph</h4>
+            <span class="text-muted">Triaction Hybrid Lite P-BLACK</span>
+          </div>
+          <div class="ms-auto pe-3">
+            <button type="button" class="btn btn-dark  d-flex justify-content-center">759<i
+                class="fas fa-rupee-sign"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="text-end">
+        <button type="button" class="btn btn-outline-secondary" (click)="modalOpenVC(modalCenter)">Cart</button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #modalCenter let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        Shapping Address
+      </h4>
+      <button type="button" class="btn text-danger close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <i-feather name="x"></i-feather>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="mt-3" [formGroup]="shoppningModel.form" novalidate autocomplete="off"
+        (ngSubmit)="onSubmit(modalCenter)">
+        <div class="form-group p-2">
+          <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="username"
+            placeholder="User Name">
+        </div>
+        <div class="form-group p-2">
+          <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="emailid"
+            placeholder="Email id">
+        </div>
+        <div class="form-group p-2">
+          <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="mobileNo"
+            placeholder="Mobile Number">
+        </div>
+        <div class="form-group p-2">
+          <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="city"
+            placeholder="City">
+        </div>
+        <div class="form-group p-2">
+          <input type="text" class="form-control" id="nametext" aria-describedby="name" formControlName="state"
+            placeholder="State">
+        </div>
+        <div class="form-group p-2">
+          <textarea class="form-control" rows="3" placeholder="Address" formControlName="address"></textarea>
+        </div>
+        <div class="btn_div">
+          <button type="submit" class="btn btn-info waves-effect waves-light">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">
+        Close
+      </button>
+    </div>
+  </ng-template>

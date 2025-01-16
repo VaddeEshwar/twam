@@ -1,6 +1,6 @@
 /////////User-Services-Component///////////////////////////
-import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 
 import { tap } from 'rxjs/operators';
 import { catchError, map } from 'rxjs/operators';
@@ -20,7 +20,7 @@ import { Emailactivity } from '../../model/Users/emailuserid';
 import { User } from '../../model/user'
 import { resetPassword } from '../../model/Users/resetpass'
 import { Getping } from '../../model/Users/Getping';
-import { RefreshPayload } from '../../model/authentication/refresh';
+import { RefreshToken } from '../../model/authentication/refresh';
 import { AuthGuard } from '../../layout/shared/services/auth.guard'
 const backEndUrl = environment.backEndUrl;
 
@@ -59,8 +59,8 @@ const headers = new HttpHeaders({
   'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2',
   'ARRAffinity': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
   'ARRAffinitySameSite': '79e06db539acb57119e709978d2cf1da299e8341753d6f6345007fcab3f69bc5',
-  'userGUID': 'BBBA11D3-9E70-4BCF-AF20-5805ECB8BA07',
-  'refreshToken': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
+  'userGUID': 'C02CC54C-EDFF-43CC-B3FD-B153E0B42FD7',
+  // 'refreshToken': `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQzhCQzJDREYtQTE5RC00RUQxLUEzMEItNEZFQjJBNTA0NjBFIiwiZXhwIjoxNzI4MDUxMjM4LCJpc3MiOiJodHRwczovL3JuZHRlY2hpZXNzZXJ2aWNlcy1nbWUzYmhnY2IzYnNhOGN6LnNvdXRoaW5kaWEtMDEuYXp1cmV3ZWJzaXRlcy5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9ybmR0ZWNoaWVzc2VydmljZXMtZ21lM2JoZ2NiM2JzYThjei5zb3V0aGluZGlhLTAxLmF6dXJld2Vic2l0ZXMubmV0LyJ9.unjnfZK9K3wvXD_7t_2lA4zox2zf27FCcXx4geFxr4M`,
   "expiryDate": expiryDateString
 });
 
@@ -68,27 +68,34 @@ const headers = new HttpHeaders({
   providedIn: 'root'
 })
 ///////raki2830@gmail.com pass:rnarra
-export class AdminserviceService {
-  private tokenKey = 'token';
-  refreshToken(userGUID: string, refreshToken: string, expiryDate: string): Observable<any> {
-    const payload = { userGUID, refreshToken, expiryDate };
-    console.log('Payload for token refresh:', payload);
-    return this.http.post(baseUrlForAuthenticationrefresh, payload).pipe(
-      
-      tap(response => console.log('Token refresh response:', response))
-    );
+export class AdminserviceService { 
+  private readonly tokenKey = 'tokenKey';
+  private loggedUser?: string;
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  private router = inject(Router);
+  private http = inject(HttpClient);
+  constructor() { }
+  refreshToken(data:RefreshToken) {
+   const url = `${baseUrlForAuthenticationrefresh}`;
+    return this.http.post<any>(url, data, { headers });
   }
   getRefreshToken(): Observable<any> {
-    const headers = {
-      'content-type': 'application/json',
-      'userGUID': 'd3eb4796-8585-4313-8edd-b78879100a22',
-    }
-    debugger
     return this.http.get<any>(baseUrlForAuthenticationrefresh_token, { headers });
   }
-  constructor(private http: HttpClient, private router: Router) { }
+  // private storeJwtToken(jwt: string) {
+  //   localStorage.setItem(this.tokenKey, jwt);
+  // }
+  postFromRefreshToken(): Observable<any> {
+    let token: any = localStorage.getItem(this.tokenKey);
+    if (!token) return of(null);
+    token = JSON.parse(token);  
+    let refreshToken = token.refreshToken;
+    return this.http.post<any>(baseUrlForGetUserIdFromRefreshTokenAsync, { refreshToken }, { headers }) 
+    .pipe(tap((tokens: any) => this.storeJwtToken(JSON.stringify(tokens))));
+  }
 
-  //////////////////////////HttpErrorResponse//////////////////////////////////
+  // baseUrlForGetUserIdFromRefreshTokenAsync
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
@@ -115,7 +122,6 @@ export class AdminserviceService {
     return this.http.get<any>(baseUrlForGetRoles, { headers })
       .pipe(
         tap(response => {
-          // Save roles to localStorage for later use
           if (response && response.roles) {
             localStorage.setItem('userRoles', JSON.stringify(response.roles));
           }
@@ -150,7 +156,6 @@ export class AdminserviceService {
         console.error('No token found in localStorage');
         return throwError('No token provided');
     }
-
     const headers = new HttpHeaders({
         Authorization: `Bearer ${token}`,
     });
@@ -172,14 +177,13 @@ export class AdminserviceService {
     );
   }
   getStates(statesObj:states): Observable<any>{
-    debugger
+    // debugger
     return this.http.post<any>(baseUrlForGetStates,statesObj,{headers}).pipe(
       tap((data) => console.log('API response:', data)),
       catchError(this.handleError)
     );
   }
   // getAllCity(stateID: number): Observable<City[]> {
-    
   //   const headers = { 'Content-Type': 'application/json', 'X-App-Type': '50CE0F43-65E7-43E4-96AC-A6D1A2BD56E2' };
   //   console.log('API response:', stateID)
   //   return this.http.get<City[]>(this.baseUrlForGetCities, { 'headers': headers}).pipe(
@@ -222,22 +226,27 @@ export class AdminserviceService {
     );
   }
   //////////////////////////////login//////////////////////////////////////// 
+  // loginRequst(userobj: User): Observable<User> {
+  //   console.log("User login object:", userobj);
+  //   debugger
+  //   return this.http.post(baseUrlForLogin, userobj, { headers }).pipe(tap((tokenKey: any) => 
+  //   this.doLoginUser(JSON.stringify(tokenKey))));
+  // }
   loginRequst(userobj: User): Observable<User> {
     console.log("User login object:", userobj);
+    debugger
     return this.http.post(baseUrlForLogin, userobj, { headers }).pipe(
-      map((response: any) => {
-        if (response.isSuccess) {
-          debugger
-          localStorage.setItem(this.tokenKey, response.token)
-        }
-        return response;
-      })
+      tap((response: any) => this.doLoginUser(JSON.stringify(userobj), response.token))
     );
   }
-  IsLoggedIn() {
-    return localStorage.getItem('token') != null;
+  private doLoginUser(userobj: string, token: any) {
+    this.loggedUser = userobj;
+    this.storeJwtToken(token);
+    this.isAuthenticatedSubject.next(true);
   }
-
+  private storeJwtToken(jwt: string) {
+    localStorage.setItem(this.tokenKey, jwt);
+  }
   GetToken(): string {
     return localStorage.getItem('authToken') || '';
   }
@@ -254,6 +263,7 @@ export class AdminserviceService {
   }
 
   //////////////////////////////OtpValidation////////////////////////////////////////  
+
   // OtpValidation(UserOtpValidationobj: otpValidation) {
   //   console.log("hello");
   //   return this.http.post<otpValidation>(baseUrlForchangepassword, UserOtpValidationobj, { headers })

@@ -156,7 +156,6 @@ export class BrasviewComponent implements OnInit {
   }
   itemCart: any = []
   addCart(prod: any) {
-    alert('hello')
     let cartDataNull = localStorage.getItem('cartItem');
     if (cartDataNull == null) {
       let storeDataGet: any = [];

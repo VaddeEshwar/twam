@@ -87,7 +87,7 @@
   <!-- ============================================================== -->
   <!-- User profile and search -->
   <!-- ============================================================== -->
-  <li class="nav-item dropdown" ngbDropdown placement="bottom-end">
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" *ngIf="isLoggedIn">
     <a ngbDropdownToggle class="
         nav-link
         dropdown-toggle
@@ -97,7 +97,7 @@
       " href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <div>
         <!-- Show default or empty image before login -->
-        <div *ngIf="!validUser">
+        <div >
           <!-- https://feathericons.dev/?search=user&iconset=feather -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
             fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -106,7 +106,82 @@
           </svg>
         </div>
         <!-- Show user image after login -->
-        <div *ngIf="validUser">
+        <div >
+          <img [src]="userImage" alt="user" class="rounded-circle" width="31" />
+        </div>
+      </div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right user-dd dropdown-menu-animate-up" ngbDropdownMenu>
+      <span class="with-arrow">
+        <span class="bg-primary"></span>
+      </span>
+      <div class="
+          d-flex
+          no-block
+          align-items-center
+          p-3
+          bg-primary
+          text-white
+          mb-2
+        ">
+
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+
+        <img [src]="userImage" alt="user" class="img-circle" *ngIf="validUser" width="60" />
+
+        <div class="ms-2">
+          <h4 class="mb-0">Only Twam</h4>
+          <p class="mb-0">onlytwam@gmail.com</p>
+        </div>
+      </div>
+      <a class="dropdown-item" (click)="profile()">
+        <i class="ti-user me-2 ms-1"></i> My Profile</a>
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-wallet me-2 ms-1"></i> My Balance</a> -->
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-email me-2 ms-1"></i> Inbox</a> -->
+      <!-- <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-settings me-2 ms-1"></i> Account Setting</a> -->
+      <!-- <a class="dropdown-item" (click)="login()" *ngIf="!validUser">
+        <i class="fa fa-power-off me-2 ms-1"></i>Sign Up</a> -->
+      <a class="dropdown-item" (click)="logout()" >
+        <i class="fa fa-power-off me-2 ms-1"></i>Sign Out</a>
+      <!-- <div class="ps-4 p-2">
+        <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
+      </div> -->
+    </div>
+  </li>
+
+
+
+
+
+
+
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-end" (activate)="checkLoggedInUser()">
+    <a ngbDropdownToggle class="
+        nav-link
+        dropdown-toggle
+        text-muted
+        waves-effect waves-dark
+        pro-pic
+      " href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div>
+        <!-- Show default or empty image before login -->
+        <div >
+          <!-- https://feathericons.dev/?search=user&iconset=feather -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="main-grid-item-icon"
+            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+        <!-- Show user image after login -->
+        <div >
           <img [src]="userImage" alt="user" class="rounded-circle" width="31" />
         </div>
       </div>
@@ -146,16 +221,13 @@
         <i class="ti-email me-2 ms-1"></i> Inbox</a> -->
       <!-- <a class="dropdown-item" href="javascript:void(0)">
         <i class="ti-settings me-2 ms-1"></i> Account Setting</a> -->
-      <a class="dropdown-item" (click)="login()" *ngIf="!validUser">
+      <a class="dropdown-item" (click)="login()" >
         <i class="fa fa-power-off me-2 ms-1"></i>Sign Up</a>
-      <a class="dropdown-item" (click)="logout()" *ngIf="validUser">
-        <i class="fa fa-power-off me-2 ms-1"></i>Sign Out</a>
       <!-- <div class="ps-4 p-2">
         <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
       </div> -->
     </div>
   </li>
-
   <!-- ============================================================== -->
   <!-- User profile and search -->
   <!-- ============================================================== -->

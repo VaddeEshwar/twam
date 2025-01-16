@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, TemplateRef, } from '@angular/core';
+import { Component, OnInit, inject, TemplateRef, Output, Input, EventEmitter } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent } from '../../user-components/client-adding/client-adding.component';
-import {BagviewComponent } from '../../product-components/bag/bag-view.component'
+import { BagviewComponent } from '../../product-components/bag/bag-view.component'
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 @Component({
@@ -16,6 +16,9 @@ import { Router } from '@angular/router';
     // animations: [routerTransition()]
 })
 export class seamlessbrasComponent implements OnInit {
+    @Input() selectedProduct: { prodId: number; color: string } | null = null;
+    @Output() colorSelected = new EventEmitter<{ prodId: number; color: string }>();
+    @Output() productViewed = new EventEmitter<any>();
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
@@ -44,13 +47,10 @@ export class seamlessbrasComponent implements OnInit {
     openEnd(content: TemplateRef<any>) {
         this.offcanvasService.open(content, { position: 'end' });
     }
-
     openModal() {
         const modalRef = this.modalService.open(ClientAddingComponent, { windowClass: 'modal-xl modal-rounded' });
         modalRef.componentInstance.modalTitle = 'Left-to-Right Modal';
-
     }
-
     prodExportArray = [
         {
             prodId: 1,
@@ -66,7 +66,8 @@ export class seamlessbrasComponent implements OnInit {
             price: '599.00',
             oldprice: '700.00',
             colors: ['#202125', '#d6a583', '#e8e5e9', '#f8f2f9'],
-            qut: 1
+            qut: 1,
+            brands: 'Enamor'
         },
         {
             prodId: 2,
@@ -82,7 +83,8 @@ export class seamlessbrasComponent implements OnInit {
             price: '699.00',
             oldprice: '700.00',
             colors: ['#202125', '#d6a583', '#e8e5e9', '#f8f2f9'],
-            qut: 1
+            qut: 1,
+            brands: 'Triumph'
         },
         {
             prodId: 3,
@@ -98,7 +100,8 @@ export class seamlessbrasComponent implements OnInit {
             price: '649.00',
             oldprice: '700.00',
             colors: ['#202125', '#d6a583', '#e8e5e9', '#f8f2f9'],
-            qut: 1
+            qut: 1,
+            brands: 'Soie'
         },
         {
             prodId: 4,
@@ -114,7 +117,8 @@ export class seamlessbrasComponent implements OnInit {
             imageUrl: 'assets/Product/Amante/Bras/SeamlessBra/NonPadded/004.webp',
             selectedColor: '#f8f2f9',
             colors: ['#202125', '#d6a583', '#e8e5e9', '#f8f2f9'],
-            qut: 1
+            qut: 1,
+            brands: 'Blossom'
         },
     ]
     imageUrl: string = '';
@@ -130,7 +134,6 @@ export class seamlessbrasComponent implements OnInit {
             }
         }
     }
-
     dataview(category) {
         const allImages = Object.values(category.images);
         const AllColor = Object.values(category.colors);
@@ -142,7 +145,7 @@ export class seamlessbrasComponent implements OnInit {
             title: category.title,
             images: selectedImg,
             allImages: allImages,
-            AllColor:AllColor,
+            AllColor: AllColor,
             qut: category.qut,
             color: category.selectedColor,
         };

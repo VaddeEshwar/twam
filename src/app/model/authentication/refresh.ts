@@ -14,8 +14,8 @@
 //     }
   
 // }
-export interface RefreshPayload {
+export interface RefreshToken {
     userGUID: string;
     refreshToken: string;
-    expiryDate: string;
+    expiryDate: Date;
   }

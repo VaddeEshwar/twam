@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, TemplateRef, Input, } from '@angular/core';
+import { Component, OnInit, inject, TemplateRef, } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { NgbRatingConfig, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -8,32 +8,27 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { ClientAddingComponent } from '../../user-components/client-adding/client-adding.component';
 import { Router } from '@angular/router';
 @Component({
-    selector: 'app-straplessbra',
-    templateUrl: './straplessbra.component.html',
-    styleUrls: ['./straplessbra.component.scss'],
+    selector: 'app-strapless-bras',
+    templateUrl: './strapless-bras.component.html',
+    styleUrls: ['./strapless-bras.component.scss'],
     // animations: [routerTransition()]
 })
-export class StraplessbraComponent implements OnInit {
-    @Input() filteredProducts:any[]=[];
-    SearchKey: string = '';
-    
+export class StraplessbrasComponent implements OnInit {
     private offcanvasService = inject(NgbOffcanvas);
     rewardImagePath: string = ' assets/images/rating/star-on.png';
     active = 1;
     rating = 2;
     price: string;
-
+   
     noWrapSlides = false;
     showIndicator = true;
-    filterProduct: any[] = [];
+
     constructor(config: NgbRatingConfig, private modalService: NgbModal, public router: Router) {
         this.price = '799.00';
-      
     }
 
     ngOnInit() {
         console.log("dashboard");
-       
     }
     ratingcount = 0;
     totalrating = 0;
@@ -55,6 +50,7 @@ export class StraplessbraComponent implements OnInit {
 
     }
 
+ 
     prodExportArray = [
         {
             prodId: 1,
@@ -70,10 +66,7 @@ export class StraplessbraComponent implements OnInit {
             price: '580.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1,
-            brand: 'Amante',
-            Bra_size: '32',
-            Bra_Type: 'Non Padded Bras'
+            qut: 1
         },
         {
             prodId: 2,
@@ -89,10 +82,7 @@ export class StraplessbraComponent implements OnInit {
             price: '600.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1,
-            brand: 'Blossom',
-            Bra_size: '34',
-            Bra_Type: 'Padded Bras'
+            qut: 1
         },
         {
             prodId: 3,
@@ -108,10 +98,7 @@ export class StraplessbraComponent implements OnInit {
             price: '620.00',
             oldprice: '700.00',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1,
-            brand: 'Soie',
-            Bra_size: '36',
-            Bra_Type: 'Padded Bras'
+            qut: 1
         },
         {
             prodId: 4,
@@ -127,14 +114,9 @@ export class StraplessbraComponent implements OnInit {
             imageUrl: 'assets/images/product/strapless-bra-4.webp',
             selectedColor: '#cbad9e',
             colors: ['#d43743', '#d6a583', '#e8e5e9', '#cbad9e'],
-            qut: 1,
-            brand: 'Trimuph',
-            Bra_size: '38',
-            Bra_Type: 'Padded Bras'
-            
+            qut: 1
         },
     ]
-
     imageUrl: string = '';
     itemCart: any = []
     selectColor(productId: number, color: string): void {
@@ -158,9 +140,6 @@ export class StraplessbraComponent implements OnInit {
             title: category.title,
             images: selectedImg,
             qut: category.qut,
-            brand:category.brand,
-            size:category.size,
-            Bra_size:category.Bra_size,
         };
         console.log(cartItem)
         let cartDataNull = localStorage.getItem('localcart');
@@ -191,11 +170,5 @@ export class StraplessbraComponent implements OnInit {
         const image = this.imageUrl;
         const price = this.price;
     }
-  
-   
-  
+
 }
-
-
-
-

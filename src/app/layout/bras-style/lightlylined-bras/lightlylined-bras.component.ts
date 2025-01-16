@@ -64,7 +64,7 @@ export class LightlylinedbrasComponent implements OnInit {
     }
     dataview(){
         this.router.navigate(['product-components/brasview']);
-    }
+    }   
     prodExportArray = [
         {
             prodId: 1,

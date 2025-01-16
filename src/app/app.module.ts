@@ -15,8 +15,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataTablesModule } from 'angular-datatables'
-import { TokenintercepterservicesGuard } from './layout/shared/services/tokenintercepterservices.guard';
-
+import {InterceptorService} from '../app/layout/shared/services/interceptor.service';
+import { FilterPipe } from './filter.pipe'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -31,6 +31,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenintercepterservicesGuard,
+      useClass: InterceptorService,
       multi: true
     },
     AuthGuard],

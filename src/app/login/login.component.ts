@@ -1,11 +1,11 @@
 import { Component, inject, Injectable, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 // import { AuthenticateService } from '../layout/shared/services/authenticate.service';
+import {AuthService } from '../../app/layout/shared/services/auth.service';
 import { AdminserviceService } from '../services/user-service/user-service.service'
 import { otpValidation } from '../model/Users/otpValidation'
 import { User } from '../model/user';
 import { resetPassword } from  '../model/Users/resetpass'
-import { ToastService } from "src/app/layout/shared/toast/toast.service";
 import { HeaderFilterCellComp } from 'ag-grid-community';
 import Swal from 'sweetalert2';
 @Component({
@@ -20,14 +20,13 @@ export class LoginComponent implements OnInit {
   userobj: User;
   resetObj:resetPassword;
   Otpupdateobj: otpValidation;
-  router = inject(Router)
   activityMsg: string = '';
   rememberMe: boolean = false;
   type: string = "password"
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash'
   validUser: boolean = false;
-  constructor(private service: AdminserviceService, public toastService: ToastService) { }
+  constructor(private service: AdminserviceService,private authService:AuthService, private router:Router) { }
   ngOnInit(): void {
     this.userobj = new User();
     this.Otpupdateobj = new otpValidation();
@@ -49,12 +48,14 @@ export class LoginComponent implements OnInit {
     }
     const fromData = this.userobj.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
+    debugger
     this.service.loginRequst(fromData).subscribe({
       next: (response: any) => {
         debugger
         this.validUser = true;
         console.log("Login response:", response);
-        localStorage.setItem('token', response.token)
+        this.authService.addAccessToken(response.token);
+        this.authService.addRefreshToken(response.refreshToken);
            Swal.fire({
           toast: true,
           position: 'top-end',
@@ -97,10 +98,10 @@ export class LoginComponent implements OnInit {
     }
     const fromData = this.resetObj.form.value;
     console.log("fromData::" + JSON.stringify(fromData));
-    debugger
+    // debugger
     this.service.resetPassword(fromData).subscribe({
       next: (response: any) => {
-        debugger
+        // debugger
         console.log("Login response:", response);
         localStorage.setItem('token', response.token)
            Swal.fire({

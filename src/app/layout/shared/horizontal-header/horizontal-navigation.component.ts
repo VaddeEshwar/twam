@@ -4,7 +4,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { HttpClientJsonpModule } from '@angular/common/http';
-import { AuthGuard } from '../services/auth.guard'
+import { AuthService } from '../../shared/services/auth.service'
 import Swal from 'sweetalert2';
 
 declare var $: any;
@@ -17,6 +17,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   userImage: string = '';
   isRegistered = false;
   validUser: boolean = false;
+
   @Output() toggleSidebar = new EventEmitter<void>();
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) container: ViewContainerRef;
   public config: PerfectScrollbarConfigInterface = {};
@@ -120,7 +121,7 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     icon: 'de'
   }]
 
-  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router, private authService: AuthGuard) {
+  constructor(private modalService: NgbModal, private translate: TranslateService, public router: Router, private authService: AuthService) {
 
     translate.setDefaultLang('en');
 
@@ -186,9 +187,8 @@ export class HorizontalNavigationComponent implements AfterViewInit {
   ngOnInit() {
     this.cartItemFun();
     this.CartDetails();
-    this.isRegistered = this.authService.getRegistered();
-    this.validUser = this.authService.isLoggedIn();
-  
+    // this.isRegistered = this.authService.getRegistered();
+    // this.validUser = this.authService.isLoggedIn();
   }
   getCartDetails: any[] = [];
   cartItemFun() {
@@ -202,26 +202,27 @@ export class HorizontalNavigationComponent implements AfterViewInit {
     }
 
   }
-  get isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
-  }
+  
+  // get isLoggedIn(): boolean {
+  //   return this.authService.isLoggedIn();
+  // }
   login() {
-    debugger
-    this.authService.login();
+    // debugger
+    // this.authService.login();
     this.validUser = true;
     this.isRegistered = true;
     this.userImage = 'assets/images/logos/TWAM.png';
     this.router.navigate(['login']);
   }
 
-  logout(): void {
-    this.authService.logout();
-    this.validUser = false;
-    this.userImage = 'assets/images/users/user1.jpg';
-    debugger;
-    console.log('User logged out, validUser:', this.validUser);
-    this.router.navigate(['home']);
-  }
+  // logout(): void {
+  //   // this.authService.logout();
+  //   this.validUser = false;
+  //   this.userImage = 'assets/images/users/user1.jpg';
+  //   // debugger;
+  //   console.log('User logged out, validUser:', this.validUser);
+  //   this.router.navigate(['home']);
+  // }
   CartDetails() {
     const cartItem = localStorage.getItem('cartItem');
     if (cartItem !== null) {
@@ -233,6 +234,18 @@ export class HorizontalNavigationComponent implements AfterViewInit {
 
   afterLogin(): void {
     this.cartItemFun();
+  }
+  roles="";
+  isLoggedIn!:boolean;
+  checkLoggedInUser(){
+    debugger
+    this.isLoggedIn= this.authService.isLoggedIn();
+    this.roles=this.authService.getUserRole();
+    console.log(this.roles);
+  }
+  logout(){
+    debugger
+    this.authService.logout();
   }
 
 }

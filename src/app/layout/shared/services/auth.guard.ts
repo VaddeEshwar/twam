@@ -1,74 +1,49 @@
 import { Injectable } from '@angular/core';
-import {  ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AdminserviceService } from '../../../services/user-service/user-service.service'
-
+import { AuthService} from './auth.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private service: AdminserviceService,private router: Router) { }
 
-  // canActivate(route:ActivatedRouteSnapshot,
-  //   state:RouterStateSnapshot):Observable<boolean | UrlTree > |Promise <boolean | UrlTree> | boolean | UrlTree {
-  //   if (this.service.IsLoggedIn()){
-  //     return true;
-  //   }else
-  //   alert('hello eshwar please Login after do u r work ')
-  //   this.router.navigate(['login'])
-  //    return false;
-  //   }
+  async canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot){
+    if (this.authService.isLoggedIn())
+      return true;
+    else{
+      // move to the login page
+      // if our refresh token expires,then it will refresh the token
+      const isRefreshed=  await this.authService.refreshingToken();
+        if(!isRefreshed){
+          this.router.navigate(['/login']);
+        }
 
-  canActivate(): boolean {
-    const isAuthenticated = this.checkAuthentication();
-    if (!isAuthenticated) {
-      this.router.navigate(['/login']); 
-      return false;
+        return isRefreshed;
     }
-    return true;
+  }
+  
+  constructor(private authService:AuthService,private router:Router) {
+    
   }
 
-  private checkAuthentication(): boolean {
-    debugger;
-    const token = localStorage.getItem('token'); 
-    return !!token;
-  }
-  private loggedIn: boolean = false;
+  private loggedIn = false;
+  private firstTimeLogin = true;
 
- 
-
-  login(): void {
-    this.loggedIn = true;
-  }
-
-  logout(): void {
-    this.loggedIn = false;
-  }
-
-   isLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
+  isLoggedIn(): boolean {
     return this.loggedIn;
   }
 
   isFirstTimeLogin(): boolean {
-    const firstTime = localStorage.getItem('firstTime');
-    return firstTime === null; 
+    return this.firstTimeLogin;
   }
 
   setFirstTimeLogin(): void {
-    localStorage.setItem('firstTime', 'false');
+    this.firstTimeLogin = false;
   }
-
-
-  private isRegistered = false; 
-
-
-  setRegistered(status: boolean) {
-    this.isRegistered = status;
-  }
-
-  getRegistered(): boolean {
-    return this.isRegistered;
+  isTokenExpired(){
+    return this.authService.isToken
   }
 }

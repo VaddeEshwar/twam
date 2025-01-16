@@ -1,20 +1,15 @@
-
-
-  <app-bag-view></app-bag-view>
-
-
+<app-bag-view></app-bag-view>
 <div class="row">
   <div class="col-lg-3 col-md-4 col-sm-3" *ngFor="let prod of prodExportArray">
-    <div class="card">
+    <div class="card" [class.selected]="selectedProduct?.prodId === prod.prodId">
       <img [src]="prod.imageUrl" alt="Product Image" class="product-image" (click)="dataview(prod)" />
       <div class="card-body">
         <div class="d-flex">
           <button *ngFor="let color of prod.colors" [style.backgroundColor]="color"
-            (click)="selectColor(prod.prodId, color)"
-            class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
+            (click)="selectColor(prod.prodId, color)" class="btn me-2 btn-circle rounded-circle d-flex justify-content-center border">
           </button>
         </div>
-        <a class="card-title" (click)="productoverview()">{{ prod.title }} </a>
+        <a class="card-title">{{ prod.title }} </a>
         <div class="product-price">
           <span class="old-price">{{ prod.oldprice }}</span>
           <span class="price">{{ prod.price }}</span>

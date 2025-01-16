@@ -3,12 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { Registration } from '../../../model/Users/registration'
 import { AdminserviceService } from '../../../services/user-service/user-service.service';
 import { Router } from '@angular/router';
-import { Form } from '@angular/forms';
+import { Form, FormGroup } from '@angular/forms';
 import { Country } from '../../../model/Common/Countries';
 import { City } from '../../../model/Common/Cities';
 import { states } from '../../../model/Common/states'
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { AuthGuard } from '../../shared/services/auth.guard';
+
+
 
 @Component({
   selector: 'app-user-odertrak',
@@ -26,7 +28,7 @@ export class UserordertrakComponent implements OnInit {
   RegistrationForm: Registration;
   countries: Country[] = [];
   cities: City[] = [];
-
+  frm!:FormGroup;
 
   City: any;
   Country: any;
@@ -38,7 +40,9 @@ export class UserordertrakComponent implements OnInit {
     this.getCountries();
     this.getCity();
   }
-
+  get f(){
+    return this.frm.controls;
+  }
   onSubmit(): void {
     if (this.RegistrationForm.form.valid) {
       Swal.fire({
@@ -58,7 +62,6 @@ export class UserordertrakComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.activityMsg = "Data saved successfully!";
-          this.authService.setRegistered(true); 
           this.router.navigate(['product-components/profile']);
           Swal.fire({
             toast: true,

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { routerTransition } from '../../router.animations';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { AuthGuard} from '../../shared/services/auth.guard'
+import { AuthGuard } from '../../shared/services/auth.guard'
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
     selector: 'app-cart-view',
@@ -31,7 +31,7 @@ export class CartviewComponent implements OnInit {
         if (this.authService.isLoggedIn()) {
           if (this.authService.isFirstTimeLogin()) {
             this.router.navigate(['product-components/registration']);
-            this.authService.setFirstTimeLogin(); 
+            this.authService.isTokenExpired(); 
           } else {
             this.router.navigate(['/payment']);
           }
@@ -67,7 +67,7 @@ cartDetails :any;
         const cartItem = localStorage.getItem('localcart');
         if (cartItem !== null) {
             this.getCartDetails = JSON.parse(cartItem);
-            alert(this.getCartDetails)
+            // alert(this.getCartDetails)
             console.log(this.getCartDetails);
           }else {
             console.log("No items found in the cart.");
